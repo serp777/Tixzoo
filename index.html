@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Ember Starter Kit</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="css/bootstrap.css" rel="stylesheet">
+</head>
+<body>
+  <script type="text/x-handlebars">
+    <div id="logo">
+      <img id="top-left" {{bind-attr src=logoUrl alt="logo"}}>
+    </div>
+    <div id="topNavBar">
+      <img id="nav-bar" {{bind-attr src=navBarUrl alt="topNavBar"}}>
+      <div id="blueBtnSignUp" {{action 'showModal' 'signup-modal' model}}>
+        <img id="blue-Sign-Up" {{bind-attr src=blueBtnSignUp alt="blueBtnSignUp"}}>
+      </div>
+      <div id="blueBtnLogin" {{action 'showModal' 'login-modal' model}}>
+        <img id="blue-Login" {{bind-attr src=blueBtnLogin alt="blueBtnLogin"}}>
+      </div>   
+    </div>
+
+    <div id="LogoTriangle">
+      <img id="logo-Triangle" {{bind-attr src=tixzooLogoTriangle alt="tixzooLogoTriangle"}}>
+    </div>
+    <div id="container">
+    <div id="backgroundHomePage">
+      <img id="background-HomePage" {{bind-attr src=backgroundHomePage alt="backgroundHomePage"}}>
+    </div>
+    <div id="blueBuy">
+      <img id="blue-Buy" {{bind-attr src=blueBuy alt="blueBuyBack"}}>
+    </div>
+    <div id="orangeSell">
+      <img id="orange-Sell" {{bind-attr src=orangeSell alt="orangeSellBack"}}>
+    </div>
+    <div id="blueBtnBuy">
+      <img id="green-Btn-Buy" {{bind-attr src=greenBtnBuy alt="greenBtnBack"}}>
+    </div>
+    <div id="orangeBtnSell">
+      <img id="green-Btn-Sell" {{bind-attr src=greenBtnSell alt="greenBtnBack"}}>
+    </div>
+    
+    <div id="navBarJoinZoo">
+      <img id="nav-Join-Zoo" {{bind-attr src=navJoinZoo alt="navJoinZoo"}}>
+    </div>
+    </div>
+
+    <div id="container-Triangle-One">
+      <div id="greenTriangle">
+        <img id="green-Triangle" {{bind-attr src=greenTriangle alt="greenTriangle"}}>
+      </div>
+      <div id="orangeTriangle">
+        <img id="orange-Triangle" {{bind-attr src=orangeTriangle alt="orangeTriangle"}}>
+      </div>
+    </div>
+
+    <div id="container-Triangle-Two">
+      <div id="greenTriangle">
+        <img id="green-Triangle" {{bind-attr src=greenTriangle alt="greenTriangle"}}>
+      </div>
+      <div id="orangeTriangle">
+        <img id="orange-Triangle" {{bind-attr src=orangeTriangle alt="orangeTriangle"}}>
+      </div>
+      
+    </div>
+    <div id="navBottomTM">
+      <img id="nav-TM" {{bind-attr src=navTM alt="navTM"}}>
+    </div>
+    {{outlet}}
+    {{outlet 'modal'}}
+  </script>
+
+  <script type="text/x-handlebars" id="index">
+    
+    
+  </script>
+
+  <script src="js/libs/jquery-1.10.2.js"></script>
+  <script src="js/libs/handlebars-v2.0.0.js"></script>
+  <script src="js/libs/ember-1.9.1.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/ember-data.js" type="text/javascript"></script>
+  <!-- to activate the test runner, add the "?test" query string parameter -->
+  <script src="tests/runner.js"></script>
+</body>
+</html>
