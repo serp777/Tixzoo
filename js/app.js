@@ -33,12 +33,7 @@ App.Router.map(function() {
   // put your routes here
 });
 
-App.IndexRoute = Ember.Route.extend({
-	
-  model: function() {
-    return ['red', 'yellow', 'blue'];
-  }
-});
+
 
 App.ApplicationController = Ember.Controller.extend({
   // the initial value of the `search` property
@@ -48,7 +43,9 @@ App.ApplicationController = Ember.Controller.extend({
   logoUrl: '/img/tixzooLogo.png',
   navBarUrl: '/img/top_gray_navbar.png',
   tixzooLogoTriangle: '/img/tixzooLogoTriangle.png',
-  backgroundHomePage: '/img/backgroundHomePage.png',
+  backgroundHomePageOne: '/img/backgroundHomePageOne.png',
+  backgroundHomePageTwo: '/img/backgroundHomePageTwo.jpg',
+  backgroundHomePageThree: '/img/backgroundHomePageThree.jpg',
   blueBuy: '/img/blue_buy.png',
   orangeSell: '/img/orange_sell.png',
   greenBtnBuy: '/img/homeBuy.png',
@@ -99,6 +96,7 @@ App.IndexRoute = Ember.Route.extend({
   }
 });
 
+
 /*
  * SignupModalController
  */
@@ -108,15 +106,31 @@ App.SignupModalController = Ember.ObjectController.extend({
   passwordVerify: 'Verify Password',
   email: 'example@example.com',
   validatePassword: function(){
-
-    }.observes('password','passwordVerify'),
+      
+    }.property('password','passwordVerify'),
   actions: {
     save: function() {
-      console.log(this.get('password'));
+      var message = null;
+       var xhr = $.ajax({
+          url: "Rest/CreateAccount.php",
+          type: "POST",
+          dataType:'json',
+          data: {username: this.get('username'), password: this.get('password'), email: this.get('email')},
+            success: function(data){
+              console.log(data);
+            }
+          });
+          console.log(xhr);
+        if (xhr.status != 200) { // error
+            message = { errorCode: xhr.status, errorMessage: xhr.statusText };
+        }
+
+        return message;
 
     } 
   }
 });
+
 /*
  * LoginModalController
  */
@@ -125,7 +139,22 @@ App.LoginModalController = Ember.ObjectController.extend({
   password: 'Enter Password',
   actions: {
     save: function() {
-      console.log(this.get('password'));
+      var message = null;
+       var xhr = $.ajax({
+          url: "Rest/Login.php",
+          type: "POST",
+          dataType:'json',
+          data: {username: this.get('username'), password: this.get('password')},
+            success: function(data){
+              console.log(data);
+            }
+          });
+          console.log(xhr);
+        if (xhr.status != 200) { // error
+            message = { errorCode: xhr.status, errorMessage: xhr.statusText };
+        }
+
+        return message;
 
     } 
   }
@@ -158,3 +187,4 @@ App.MyModalComponent = Ember.Component.extend({
     }.bind(this));
   }.on('didInsertElement')
 });
+
