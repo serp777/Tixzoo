@@ -15,9 +15,16 @@
     <div id="bar-container">
       <div class="nav-bar">
           <div id="nav-input">
-          <input type="text" name="lastname" value="Search by artist, user, or venue">
-          <button type="button" id="nav-button">&#128269;</button>
-        </div>
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for...">
+                <span class="input-group-btn">
+                  <button class="btn btn-default" type="button">Go!</button>
+                </span>
+                </div><!-- /input-group -->
+            </div><!-- /.row -->
+          </div>
           <a id="logo" href="#">Tixzoo</a>
           <ul>
             <li><a href="#">Sign Up</a></li>
@@ -65,15 +72,35 @@
     <div id="middle-background-container">
         <img id="middle-img" {{bind-attr src=middleBackground alt="middleBackground"}}>
 
+        <div class="main-features">
+          <h1>Features</h1>
+            <div class="column"><h2>Peer To Peer</h2>
+            <p>Tixzoo Is A Peer To Peer Ticket Exchange Platform</p>
+            </div>
+            <div class="column"><h2>Security</h2>
+            <p>Every users exchange, identity, and payment is secured and authenticated</p>
+            </div>
+            <div class="column"><h2>Affordability</h2>
+              <p>Tixzoo charges the bare minimum for transaction fees and offers rewards as long term incentives</p>
+            </div>
+        </div>
 
     </div>
+
     <div id="bottom-background-container">
       <img id="bottom-img" {{bind-attr src=bottomBackground alt="bottomBackground"}}>
+      <div class="main-about">
+        <h1>About Us</h1>
+          <p>As concert goers and ticket resellers, we have dealt with the frustration of trying to sell and buy tickets at a price we want.</p>
+          <p>Tixzoo users love music and go the distance to support their favorite artists everyday.</p>
+      </div>
+
+
     </div>
 
-    <div id="nav-bar-container">
-      <footer>
-      </footer>
+    <div id="footer-bar-container">
+      <div id="footer-main">
+      </div>
     </div>
     {{outlet}}
     {{outlet 'modal'}}
