@@ -68,10 +68,9 @@ template {
 
 html {
     font-family: sans-serif; /* 1 */
-    -ms-text-size-adjust: 100%; /* 2 */
-    -webkit-text-size-adjust: 100%; /* 2 */
+
     height: 3000px;
-    width: 100%;
+    margin: 0px, 100px;
     }
 
 /**
@@ -79,11 +78,10 @@ html {
  */
 
 body {
-    margin: 0;
-    text-align: center;
+     top: 0px;
+    left: 0px;
     background: #28343b; /* Old browsers */
     height: 3000px;
-    width: 100%;
     background: -moz-linear-gradient(top, #28343b 0%, #828c95 75%, #b5bdc8 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#28343b), color-stop(75%,#828c95), color-stop(100%,#b5bdc8)); /* Chrome,Safari4+ */
     background: -webkit-linear-gradient(top, #28343b 0%,#828c95 75%,#b5bdc8 100%); /* Chrome10+,Safari5.1+ */
@@ -425,79 +423,76 @@ table {
 
 
 
-#top-left { 
-  display: table; 
-  position: absolute;   
+#top-left {
+  display: table;
+  position: absolute;
   margin: 10px 10px;
-  top: 0; 
-  left: 0; 
+  top: 0;
+  left: 0;
   border: 0;
-  z-index: 2; 
-} 
+  z-index: 2;
+}
 
 #nav-bar {
   display:table;
-  position: absolute; 
+  position: absolute;
   width: 100%;
   height: 133px;
-  top: 0; 
-  left: 0; 
+  top: 0;
+  left: 0;
   border: 0;
-  z-index: 1;   
+  z-index: 1;
 }
 
 #background-HomePage {
   z-index: 0;
-  margin: 100px -500px;
-  width: 1035px; 
-  height: 470px;  
+  margin: 100px -532px;
+  width: 1035px;
+  height: 470px;
 }
 #container {
   margin-left: auto;
   margin-right: auto;
   height: 440px;
-  display: table; 
+  display: table;
 }
 #bar-container {
   margin-left: auto;
   margin-right: auto;
-  height: 120px;
-  display: table; 
+  height: 132px;
+  display: table;
 }
-#black-bar {
-  position: absolute;
-  z-index: 3;
-  margin: 0px -500px;
-  width: 1035px;
-  height: 120px;
-}
+
 #middle-background-container{
-  
+
   margin-left: auto;
   margin-right: auto;
-  height: 580px;
-  display: table; 
+  height: 650px;
+  display: table;
 
 }
 #bottom-background-container{
   margin-left: auto;
   margin-right: auto;
   height: 688px;
-  display: table; 
+  display: table;
 
 }
 #nav-bar-container{
   margin-left: auto;
   margin-right: auto;
-  height: 100px;
-  display: table; 
+  height: 160px;
+  display: table;
+}
 
+footer {
+  background-color: #3D3D42;
 }
 
 #middle-img{
   position: absolute;
   z-index: 3;
-  margin: 0px -500px;
+  margin: 0px -518px;
   width: 1035px;
 }
 #our-story{
@@ -590,31 +585,24 @@ table {
   opacity: 0.7;
   filter: alpha(opacity=70); /* For IE8 and earlier */
 }
-#search-nav{
-  position: absolute;
-  margin: 20px -390px;
-  width: 800px;
-  height: 70px;
-  z-index: 6;
-}
 
 #blue-Sign-Up {
   display:table;
-  position: absolute; 
+  position: absolute;
   margin: 40px 0px;
   left: 90%;
-  top: 0; 
+  top: 0;
   border: 0;
-  z-index: 6; 
+  z-index: 6;
 }
 #blue-Login {
   display:table;
-  position: absolute; 
+  position: absolute;
   margin: 40px 0px;
   left: 80%;
-  top: 0; 
+  top: 0;
   border: 0;
-  z-index: 6; 
+  z-index: 6;
 }
 .css-slideshow {
 position: relative;

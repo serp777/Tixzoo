@@ -7,11 +7,24 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/button.css">
   <link href="css/bootstrap.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/stylesheet_nav.css">
 </head>
 <body>
-  /* test test tes */
   <script type="text/x-handlebars">
 
+    <div id="bar-container">
+      <div class="nav-bar">
+          <div id="nav-input">
+          <input type="text" name="lastname" value="Search by artist, user, or venue">
+          <button type="button" id="nav-button">&#128269;</button>
+        </div>
+          <a id="logo" href="#">Tixzoo</a>
+          <ul>
+            <li><a href="#">Sign Up</a></li>
+            <li><a href="#">Log In</a></li>
+          </ul>
+        </div>
+      </div>
 
     <div id="container">
       <div class="css-slideshow">
@@ -39,73 +52,28 @@
       <figure>
         <img id="background-HomePage" {{bind-attr src=backgroundHomePageOne alt="backgroundHomePage"}}>
       </figure>
-      </div>
-      <div id="tixzoo-Text">
-      <p><span style="color:#ffffff;"><span style="font-size: 36px;"><span style="font-family: tahoma,geneva,sans-serif;"><span >Tixzoo</span></span></span></span></p>
-      </div>
-      <div id="jungle-Text">
+    </div>
+    <div id="jungle-Text">
       <p><span style="color:#ffffff;"><span style="font-family: verdana,geneva,sans-serif;"><span style="font-size: 48px;">IT&#39;S A JUNGLE OUT THERE</span></span></span></p>
       </div>
       <div id="under-Jungle-Text">
       <p><span style="color:#ffffff;"><span style="font-size: 22px;"><span style="font-family: comic sans ms,cursive;">Introducing Peer-To-Peer Ticket Exchange Simplified</span></span></span></p>
       </div>
-    </div>
+  </div>
 
-    <div id="bar-container">
-        <img id="black-bar" {{bind-attr src=blackBar alt="blackBar"}}>
-        <img id="search-nav" {{bind-attr src=searchNav alt="search"}}>
-        <a id="btnNav1" href="">Who do you want to see?</a>
-        <a id="btnNav2" href="">Venue</a>
-        <a id="btnNav3" href="">Date</a>
-        <a id="btnNav4" href="">Quantity</a>
-        <a id="btnNav5" href="">Search</a>
-    </div>
+
     <div id="middle-background-container">
         <img id="middle-img" {{bind-attr src=middleBackground alt="middleBackground"}}>
-          <div id="our-story">
-            <p><span style="color:#666666;"><span style="font-size: 66px;"><span style="font-family: arial,helvetica,sans-serif;">Our Story</span></span></span></p>
-          </div>
-          <div id="our-story-two">
-            <p><span style="font-size:24px;"><span style="color: rgb(102, 102, 102);"><span style="font-family: arial,helvetica,sans-serif;">We are concert-goers and music lovers providing the most convenient ticket marketplace for music fans everywhere.</span></span></span></p>
-          </div>
-          <div id="our-story-three">
-            <p><span style="font-size:24px;"><span style="color: rgb(102, 102, 102);"><span style="font-family: arial,helvetica,sans-serif;">We focus on providing the best experience for users from search to purchase.</span></span></span></p>
-          </div>
+
+
     </div>
     <div id="bottom-background-container">
-        <img id="bottom-img" {{bind-attr src=bottomGrayBackground alt="middleBackground"}}>
-
-        <img id="tile-one" {{bind-attr src=bottomGrayTile alt="middleBackground"}}>
-        <img id="tile-two" {{bind-attr src=bottomGrayTile alt="middleBackground"}}>
-        <img id="tile-three" {{bind-attr src=bottomGrayTile alt="bottomGrayTile"}}>
-         <div id="bottom-text-one">
-            <p><span style="font-size:48px;"><span style="color: rgb(105, 105, 105);"><span style="font-family: arial,helvetica,sans-serif;">Secure.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Transparent.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Easy.</span></span></span></p>
-         </div>
-         <div id="bottom-text-two">
-          <p><span style="font-size:24px; color: #c0c0c0; font-family: arial, helvetica, sans-serif; ">Ticket Verification</span></p>
-          <p>&nbsp;</p>
-          <p><span style="font-size:24px; color: #c0c0c0; font-family: arial, helvetica, sans-serif; ">Personal Info Protected</span></p>
-          <p>&nbsp;</p>
-          <p><span style="font-size:24px; color: #c0c0c0; font-family: arial, helvetica, sans-serif; ">Payment Assurance</span></p>
-         </div>
-         <div id="bottom-text-three">
-          <p><span style="font-size:24px; color: #c0c0c0; font-family: arial, helvetica, sans-serif; ">Peer-To-Peer</span></p>
-          <p>&nbsp;</p>
-          <p><span style="font-size:24px; color: #c0c0c0; font-family: arial, helvetica, sans-serif; ">User Profiles</span></p>
-          <p>&nbsp;</p>
-          <p><span style="font-size:24px; color: #c0c0c0; font-family: arial, helvetica, sans-serif; ">Seller Rating System</span></p>
-         </div>
-         <div id="bottom-text-four">
-          <p><span style="font-size:24px; color: #c0c0c0; font-family: arial, helvetica, sans-serif; ">Private Messaging</span></p>
-          <p>&nbsp;</p>
-          <p><span style="font-size:24px; color: #c0c0c0; font-family: arial, helvetica, sans-serif; ">E-ticket Wallet</span></p>
-          <p>&nbsp;</p>
-          <p><span style="font-size:24px; color: #c0c0c0; font-family: arial, helvetica, sans-serif; ">Real-time Notifications</span></p>
-         </div>
-         </div>
+      <img id="bottom-img" {{bind-attr src=bottomBackground alt="bottomBackground"}}>
     </div>
+
     <div id="nav-bar-container">
-      <img id="nav-img" {{bind-attr src=navBar alt="navbar"}}>
+      <footer>
+      </footer>
     </div>
     {{outlet}}
     {{outlet 'modal'}}

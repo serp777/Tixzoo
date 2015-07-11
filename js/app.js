@@ -19,7 +19,7 @@ function loadTemplates(templates) {
             url: 'js/views/' + this,
             success: function(resp) {
                 tempObj.html(resp);
-                $('body').append(tempObj);                
+                $('body').append(tempObj);
             }
         });
     });
@@ -40,27 +40,13 @@ App.ApplicationController = Ember.Controller.extend({
   username: '',
   password: '',
   passwordVerify: '',
-  blackBar: 'img/black_bar.png',
-  logoUrl: 'img/tixzooLogo.png',
-  navBarUrl: 'img/top_gray_navbar.png',
-  tixzooLogoTriangle: 'img/tixzooLogoTriangle.png',
   backgroundHomePageOne: 'img/backgroundHomePageOne.png',
   backgroundHomePageTwo: 'img/backgroundHomePageTwo.png',
   backgroundHomePageThree: 'img/backgroundHomePageThree.jpg',
-  bottomGrayBackground: 'img/bottom_gray_background.png',
+
   middleBackground: 'img/middle_bckimg.png',
-  searchNav: 'img/search_nav.png',
-  blueBuy: 'img/blue_buy.png',
-  orangeSell: 'img/orange_sell.png',
-  greenBtnBuy: 'img/homeBuy.png',
-  greenBtnSell: 'img/homeSell.png',
-  navJoinZoo: 'img/join_the_zoo_bar.png',
-  greenTriangle: 'img/green_triangle.png',
-  orangeTriangle: 'img/orange_triangle.png',
-  navBar: 'img/TixzooTmNav.png',
-  blueBtnSignUp: 'img/SignUpBtn.png',
-  blueBtnLogin: 'img/loginButton.png',
-  bottomGrayTile: 'img/tixfeed_tile.png',
+  bottomBackground: 'img/tixzoo_land.png',
+
   actions: {
     query: function() {
       // the current value of the text field
@@ -111,7 +97,7 @@ App.SignupModalController = Ember.ObjectController.extend({
   passwordVerify: 'Verify Password',
   email: 'example@example.com',
   validatePassword: function(){
-      
+
     }.property('password','passwordVerify'),
   actions: {
     save: function() {
@@ -132,7 +118,7 @@ App.SignupModalController = Ember.ObjectController.extend({
 
         return message;
 
-    } 
+    }
   }
 });
 
@@ -161,7 +147,7 @@ App.LoginModalController = Ember.ObjectController.extend({
 
         return message;
 
-    } 
+    }
   }
 });
 
