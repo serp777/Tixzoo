@@ -42,7 +42,7 @@ App.ApplicationController = Ember.Controller.extend({
   passwordVerify: '',
   backgroundHomePageOne: 'img/backgroundHomePageOne.png',
   backgroundHomePageTwo: 'img/backgroundHomePageTwo.png',
-  backgroundHomePageThree: 'img/backgroundHomePageThree.jpg',
+  backgroundHomePageThree: 'img/backgroundHomePageThree.png',
 
   middleBackground: 'img/middle_bckimg.png',
   bottomBackground: 'img/tixzoo_land.png',
