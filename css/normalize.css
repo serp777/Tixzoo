@@ -438,15 +438,16 @@ table {
 
 #background-HomePage {
   z-index: 0;
-  margin: 100px -532px;
-  width: 1035px;
-  height: 470px;
+  margin: 120px 0px;
+  width: 100%;
+
 }
 #container {
   margin-left: auto;
   margin-right: auto;
-  height: 440px;
+  height: 1000px;
   display: table;
+  width: 100%;
 }
 #top-nav-bar-container {
   margin-left: auto;
@@ -474,10 +475,15 @@ table {
 }
 
 #middle-img{
-  position: absolute;
-  z-index: 2;
-  margin: 0px -518px;
-  width: 1035px;
+    width: 100%;
+    position: absolute;
+    height: 25%;
+    top: 0px;
+    left: 0px;
+    top: 50%;
+    color: transparent;
+    background-size: cover;
+    background-position: 50% 50%;
 }
 
 .main-features {
