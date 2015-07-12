@@ -46,6 +46,14 @@ App.ApplicationController = Ember.Controller.extend({
 
   middleBackground: 'img/middle_bckimg.png',
   bottomBackground: 'img/tixzoo_land.png',
+  tixzooLogo: 'img/tixzoo-logo.png',
+  affordabilityIcon: 'img/',
+  facebookIcon: 'img/',
+  instagramIcon: 'img/',
+  lockIcon: 'img/',
+  peertopeerIcon: 'img/',
+  snapchatIcon: 'img/',
+  twitterIcon: 'img/',
 
   actions: {
     query: function() {
