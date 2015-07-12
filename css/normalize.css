@@ -453,6 +453,7 @@ table {
   margin-right: auto;
   height: 130px;
   display: table;
+  z-index: 5;
 }
 
 /**** Middle container content ****/

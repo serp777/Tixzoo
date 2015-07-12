@@ -1,6 +1,10 @@
-.login_Btn{
+#btn-container{
 	position: absolute;
-	margin: 30px 83%;
+	margin: 50px 90%;
+}
+.login_Btn{
+	
+	margin: 0px -200px;
 	width: 100px;
 	z-index: 2;
 	-moz-box-shadow: 0px 1px 0px 0px #f0f7fa;
@@ -29,6 +33,7 @@
 	text-shadow:0px -1px 0px #5b6178;
 }
 .login_Btn:hover {
+	position: absolute;
 	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #019ad2), color-stop(1, #33bdef));
 	background:-moz-linear-gradient(top, #019ad2 5%, #33bdef 100%);
 	background:-webkit-linear-gradient(top, #019ad2 5%, #33bdef 100%);
@@ -39,12 +44,13 @@
 	background-color:#019ad2;
 }
 .login_Btn:active {
+	position: absolute;
 	position:relative;
 	top:1px;
 }
 .create_Btn{
 	position: absolute;
-	margin: 30px 90%;
+	margin: 0px -80px;
 	width: 170px;
 	z-index: 2;
 	-moz-box-shadow: 0px 1px 0px 0px #f0f7fa;
@@ -73,6 +79,7 @@
 	text-shadow:0px -1px 0px #5b6178;
 }
 .create_Btn:hover {
+	position: absolute;
 	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #019ad2), color-stop(1, #33bdef));
 	background:-moz-linear-gradient(top, #019ad2 5%, #33bdef 100%);
 	background:-webkit-linear-gradient(top, #019ad2 5%, #33bdef 100%);
@@ -83,7 +90,7 @@
 	background-color:#019ad2;
 }
 .create_Btn:active {
-	position:relative;
+	position:absolute;
 	top:1px;
 }
 .myButton {

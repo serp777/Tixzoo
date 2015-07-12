@@ -14,10 +14,6 @@ height: 370px;
 background: #fff;
 position: absolute;
 }
-.css-slideshow img {
--webkit-box-shadow: 0 0 2px #666;
-box-shadow: 0 0 2px #666;
-}
 .css-slideshow figcaption {
 position: absolute;
 top: 5px;

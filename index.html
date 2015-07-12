@@ -10,17 +10,32 @@
   <link rel="stylesheet" href="css/stylesheet_nav.css">
   <link rel="stylesheet" href="css/buttons.css">
   <link rel="stylesheet" href="css/slideshow.css">
+  <link rel="stylesheet" href="css/search.css">
 </head>
 <body>
   <script type="text/x-handlebars">
 
     <div id="top-nav-bar-container">
       <div class="nav-bar">
-        
+        <div id="btn-container">
          <a {{action 'showModal' 'signup-modal' model}} class="create_Btn">Create Account</a>
          <a {{action 'showModal' 'login-modal' model}} class="login_Btn">Login</a>
         </div>
-
+         <div id="search-bar">
+           <section class="main">
+             <form class="search" method="post" action="index.html" >
+               <input type="text" name="q" placeholder="Search..." />
+               <ul class="results" >
+                 <li><a href="index.html">Search Result #1<br /><span>Description...</span></a></li>
+                 <li><a href="index.html">Search Result #2<br /><span>Description...</span></a></li>
+                 <li><a href="index.html">Search Result #3<br /><span>Description...</span></a></li>
+                 <li><a href="index.html">Search Result #4</a></li>
+               </ul>
+             </form>
+          </section>
+         </div>
+         
+        </div>
       </div>
 
       
@@ -29,6 +44,7 @@
 
     <div id="container">
       <div class="css-slideshow">
+
       <figure>
         <img id="background-HomePage" {{bind-attr src=backgroundHomePageThree alt="backgroundHomePage"}}>
       </figure>
