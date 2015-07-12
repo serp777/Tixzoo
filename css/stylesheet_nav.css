@@ -7,7 +7,7 @@ a {
 /* Navigation bar styling */
 
 .nav-bar {
-  background-color: #242538;
+  background-color: black;
   position: absolute;
   z-index: 10;
   margin: 0px 0px;
@@ -77,7 +77,7 @@ a:hover {
 
 
 footer {
-  background-color: #3D3D42;
+  background-color: black;
   padding: 1.5em 1.5em;
   text-align: center;
   color: white;

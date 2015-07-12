@@ -17,6 +17,7 @@
 
     <div id="top-nav-bar-container">
       <div class="nav-bar">
+<<<<<<< HEAD
         <div id="btn-container">
          <a {{action 'showModal' 'signup-modal' model}} class="create_Btn">Create Account</a>
          <a {{action 'showModal' 'login-modal' model}} class="login_Btn">Login</a>
@@ -35,12 +36,14 @@
           </section>
          </div>
          
+=======
+        <img id="tixzoo-logo" {{bind-attr src=tixzooLogo alt="tixzooLogo"}}>
+         <a href="#" class="create_Btn">Create Account</a>
+         <a href="#" class="login_Btn">Login</a>
+>>>>>>> 4b2ab1e2543dbeb5bde2912df9e8e8d0a00db5ed
         </div>
       </div>
-
-      
-
-      </div>
+    </div>
 
     <div id="container">
       <div class="css-slideshow">
@@ -74,7 +77,7 @@
       <p><span style="color:#ffffff;"><span style="font-family: verdana,geneva,sans-serif;"><span style="font-size: 48px;">IT&#39;S A JUNGLE OUT THERE</span></span></span></p>
       </div>
       <div id="under-Jungle-Text">
-      <p><span style="color:#ffffff;"><span style="font-size: 22px;"><span style="font-family: comic sans ms,cursive;">Introducing Peer-To-Peer Ticket Exchange Simplified</span></span></span></p>
+      <p>Introducing Peer-To-Peer Ticket Exchange Simplified</p>
       </div>
   </div>
 
@@ -104,12 +107,14 @@
           <p>As concert goers and ticket resellers, we have dealt with the frustration of trying to sell and buy tickets at a price we want.</p>
           <p>Tixzoo users love music and go the distance to support their favorite artists everyday.</p>
       </div>
-
-
     </div>
 
     <div id="footer-bar-container">
       <div id="footer-main">
+      <img id="facebook-icon" {{bind-attr src=facebookIcon alt="facebookIcon"}}>
+      <img id="instagram-icon" {{bind-attr src=instagramIcon alt="instagramIcon"}}>
+      <img id="snapchat-icon" {{bind-attr src=snapchatIcon alt="snapchatIcon"}}>
+      <img id="twitter-icon" {{bind-attr src=twitterIcon alt="twitterIcon"}}>
       </div>
     </div>
     {{outlet}}

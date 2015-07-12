@@ -455,11 +455,13 @@ table {
   display: table;
   z-index: 5;
 }
+
 #tixzoo-logo {
   margin: 2em 43%;
   width: 20em;
   position: absolute;
 }
+
 /**** Middle container content ****/
 
 #middle-background-container{
@@ -547,8 +549,6 @@ table {
   padding-top: 4em;
   margin: 40px -485px;
   z-index: 5;
-
-
 }
 
 .main-about h1  {
@@ -557,11 +557,12 @@ table {
 }
 
 .main-about p {
-   width: 50%;
-   margin-left: 25%;
-   margin-right: 25%;
-   font-size: 1.5em;
-   margin-top: 4em;
+
+  width: 50%;
+  margin-left: 25%;
+  margin-right: 25%;
+  font-size: 1.5em;
+  margin-top: 4em;
 }
 
 /**** Footer container content ****/
@@ -595,13 +596,24 @@ table {
 #jungle-Text{
   position: absolute;
   z-index: 5;
-  margin: 50px -250px;
+  margin: 0px -250px;
 }
+
+#jungle-Text p {
+  color: #ffffff;
+  font-family: verdana, geneva, sans-serif;
+  font-size: 48px;
+}
+
 #under-Jungle-Text{
   position: absolute;
   z-index: 5;
   margin: 110px -210px;
-  opacity: 0.7;
-  filter: alpha(opacity=70); /* For IE8 and earlier */
+  font-size: 3em;
 }
 
+#under-Jungle-Text p {
+  font-family: comic sans ms,cursive;
+  font-size: 22px;
+  color:#ffffff;
+  }
