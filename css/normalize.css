@@ -532,33 +532,31 @@ table {
 
 /**** Bottom container content ****/
 
-
-
-.main-about {
-  padding: 0;
-  color: white;
-  height: 25em;
-
-  position: absolute;
-  padding-top: 4em;
-  margin-top: 110%;
-  z-index: 5;
+/* test div for aligning the text with the images regardless of zooming or screen size */
+#testtext { 
   margin-left: auto;
   margin-right: auto;
+  margin-top: 120%; /*for adjusting the relative height so that it stays with the image*/
+}
+.main-about {
+  padding: 0;
+  left: 50%;
+  color: white;
+  height: 25em;
+  width: 600px;
+  position: absolute; 
+
+  z-index: 5;
+
 }
 
 .main-about h1  {
-  margin-top: 5%;
-  font-size: 3.5em;
+margin: 0px -100px; /*use margin shifting for adjusting anywehre you want after the container has been adjusted by the left 50%*/
 }
 
 .main-about p {
+margin: 0px -400px;
 
-  width: 50%;
-  margin-left: 25%;
-  margin-right: 25%;
-  font-size: 1.5em;
-  margin-top: 4em;
 }
 
 /**** Footer container content ****/
