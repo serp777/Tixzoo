@@ -16,12 +16,13 @@
   <script type="text/x-handlebars">
 
     <div id="top-nav-bar-container">
-      <div class="nav-bar">
+       <div class="nav-bar">
         <div id="btn-container">
+         
          <a {{action 'showModal' 'signup-modal' model}} class="create_Btn">Create Account</a>
          <a {{action 'showModal' 'login-modal' model}} class="login_Btn">Login</a>
         </div>
-         <div id="search-bar">
+          <div id="search-bar">
            <section class="main">
              <form class="search" method="post" action="index.html" >
                <input type="text" name="q" placeholder="Search..." />
@@ -35,36 +36,28 @@
           </section>
          </div>
         <img id="tixzoo-logo" {{bind-attr src=tixzooLogo alt="tixzooLogo"}}>
-        </div>
+
+
       </div>
     </div>
 
+
+
+
     <div id="container">
         <ul class="cb-slideshow">
-            <li><span><img id="background-HomePage" {{bind-attr src=backgroundHomePageThree alt="backgroundHomePage"}}></span><div><h3>re·lax·a·tion</h3></div></li>
-            <li><span><img id="background-HomePage" {{bind-attr src=backgroundHomePageTwo alt="backgroundHomePage"}}></span><div><h3>qui·e·tude</h3></div></li>
-            <li><span><img id="background-HomePage" {{bind-attr src=backgroundHomePageOne alt="backgroundHomePage"}}></span><div><h3>bal·ance</h3></div></li>
-            <li><span><img id="background-HomePage" {{bind-attr src=backgroundHomePageThree alt="backgroundHomePage"}}></span><div><h3>e·qua·nim·i·ty</h3></div></li>
-            <li><span><img id="background-HomePage" {{bind-attr src=backgroundHomePageTwo alt="backgroundHomePage"}}></span><div><h3>com·po·sure</h3></div></li>
-            <li><span><img id="background-HomePage" {{bind-attr src=backgroundHomePageThree alt="backgroundHomePage"}}></span><div><h3>se·ren·i·ty</h3></div></li>
+            <li><span><img id="background-HomePage" {{bind-attr src=backgroundHomePageThree alt="backgroundHomePage"}}></span></li>
+            <li><span><img id="background-HomePage" {{bind-attr src=backgroundHomePageTwo alt="backgroundHomePage"}}></span></li>
+            <li><span><img id="background-HomePage" {{bind-attr src=backgroundHomePageOne alt="backgroundHomePage"}}></span></li>
+            <li><span><img id="background-HomePage" {{bind-attr src=backgroundHomePageThree alt="backgroundHomePage"}}></span></li>
+            <li><span><img id="background-HomePage" {{bind-attr src=backgroundHomePageTwo alt="backgroundHomePage"}}></span></li>
+            <li><span><img id="background-HomePage" {{bind-attr src=backgroundHomePageThree alt="backgroundHomePage"}}></span><</li>
         </ul>
-        </div>
+    </div>
+
+
     <div id="middle-background-container">
         <img id="middle-img" {{bind-attr src=middleBackground alt="middleBackground"}}>
-
-        <div class="main-features">
-          <h1>Features</h1>
-            <div class="column"><h2>Peer To Peer</h2>
-            <p>Tixzoo Is A Peer To Peer Ticket Exchange Platform</p>
-            </div>
-            <div class="column"><h2>Security</h2>
-            <p>Every users exchange, identity, and payment is secured and authenticated</p>
-            </div>
-            <div class="column"><h2>Affordability</h2>
-              <p>Tixzoo charges the bare minimum for transaction fees and offers rewards as long term incentives</p>
-            </div>
-        </div>
-
     </div>
 
     <div id="bottom-background-container">
@@ -76,14 +69,6 @@
       </div>
     </div>
 
-    <div id="footer-bar-container">
-      <div id="footer-main">
-      <img id="facebook-icon" {{bind-attr src=facebookIcon alt="facebookIcon"}}>
-      <img id="instagram-icon" {{bind-attr src=instagramIcon alt="instagramIcon"}}>
-      <img id="snapchat-icon" {{bind-attr src=snapchatIcon alt="snapchatIcon"}}>
-      <img id="twitter-icon" {{bind-attr src=twitterIcon alt="twitterIcon"}}>
-      </div>
-    </div>
     {{outlet}}
     {{outlet 'modal'}}
   </script>
