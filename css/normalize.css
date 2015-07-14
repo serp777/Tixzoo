@@ -78,10 +78,11 @@ html {
  */
 
 body {
-     top: 0px;
+    top: 0px;
     left: 0px;
     background: #28343b; /* Old browsers */
-    height: 100%;    
+    height: 100%;
+    min-width: 100%;    
     background: -moz-linear-gradient(top, #28343b 0%, #828c95 75%, #b5bdc8 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#28343b), color-stop(75%,#828c95), color-stop(100%,#b5bdc8)); /* Chrome,Safari4+ */
     background: -webkit-linear-gradient(top, #28343b 0%,#828c95 75%,#b5bdc8 100%); /* Chrome10+,Safari5.1+ */
@@ -90,6 +91,10 @@ body {
     background: linear-gradient(to bottom, #28343b 0%,#828c95 75%,#b5bdc8 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#28343b', endColorstr='#b5bdc8',GradientType=0 ); /* IE6-9 */
 
+}
+body > .ember-view {
+    height: 100%;
+    width: 100%;
 }
 
 /* ==========================================================================
@@ -438,21 +443,21 @@ table {
 
 #background-HomePage {
   z-index: 0;
-  margin: -50px 0px;
+  top: 0px;
   width: 100%;
-
+  
 }
 #container {
-  position: absolute;
-
-  display: table;
-  width: 100%;
   left: 0px;
+  display: table;
+  position: relative;
+  width: 100%;
+  height: 120%;
 }
 #top-nav-bar-container {
   margin-left: auto;
   margin-right: auto;
-  height: 130px;
+  height: 120px;
   display: table;
   z-index: 5;
 }
@@ -466,19 +471,17 @@ table {
 /**** Middle container content ****/
 
 #middle-background-container{
-
-  position: absolute;
+  position: relative;
   display: table;
   width: 100%;
   left: 0px;
 }
 
 #middle-img{
-  position: absolute;
-  left: 0px;
+  
+  left: 0%;
   z-index: 2;
   width: 100%;
-  margin: 50% 0px;
 }
 
 .main-features {
@@ -536,7 +539,6 @@ table {
 #testtext { 
   margin-left: auto;
   margin-right: auto;
-  margin-top: 120%; /*for adjusting the relative height so that it stays with the image*/
 }
 .main-about {
   padding: 0;
@@ -577,19 +579,17 @@ margin: 0px -400px;
 }
 
 #bottom-background-container{
-  position: absolute;
   display: table;
   width: 100%;
   left: 0px;
-
+  position: relative;
 }
 
 #bottom-img{
-  position: absolute;
+  
   left: 0px;
   z-index: 2;
   width: 100%;
-  margin: 110% 0px;
 }
 
 
