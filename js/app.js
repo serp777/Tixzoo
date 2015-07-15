@@ -51,7 +51,7 @@ App.ApplicationController = Ember.Controller.extend({
   facebookIcon: 'img/fb.png',
   instagramIcon: 'img/instagram.png',
   lockIcon: 'img/lock-icon.png',
-  peertopeerIcon: 'img/message-icon.png',
+  peertopeerIcon: 'img/messaging-icon.png',
   snapchatIcon: 'img/',
   twitterIcon: 'img/twitter.png',
 

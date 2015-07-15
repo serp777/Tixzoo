@@ -544,11 +544,10 @@ table {
   padding: 0;
   left: 50%;
   color: white;
-  height: 25em;
   width: 600px;
   position: absolute;
-
   z-index: 5;
+  margin: -300px -400px;
 
 }
 
@@ -557,17 +556,12 @@ margin: 0px -100px; /*use margin shifting for adjusting anywehre you want after 
 }
 
 .main-about p {
-margin: 0px -400px;
+margin: 0px -150px;
 
 }
 
 /**** Footer container content ****/
-#footer-bar-container{
-  margin-left: auto;
-  margin-right: auto;
-  height: 100px;
-  display: table;
-}
+
 
 #footer-main {
   background-color: gray;
@@ -586,7 +580,7 @@ footer {
   width: 100%;
   z-index: 12;
   position: absolute;
-  margin-top: 60%;
+
 }
 
 .footer-link {
@@ -594,7 +588,9 @@ footer {
   font-size: 1.3em;
 }
 
-
+.social-media-icon {
+  height: 2em;
+}
 
 #message-icon {
   border-radius: 30% 50% 50% 50%;
