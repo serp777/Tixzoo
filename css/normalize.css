@@ -457,12 +457,11 @@ table {
   margin-left: auto;
   margin-right: auto;
   height: 120px;
-  display: table;
   z-index: 5;
 }
 
 #tixzoo-logo {
-  margin: 2em 43%;
+  margin: 2em 38%;
   width: 20em;
   position: absolute;
 }
@@ -489,6 +488,7 @@ table {
   z-index: 10;
   text-align: center;
   color: black;
+  width: 100%;
   position: absolute;
   margin: -600px 0;
 }
@@ -534,32 +534,40 @@ table {
 /**** Bottom container content ****/
 
 /* test div for aligning the text with the images regardless of zooming or screen size */
-#testtext {
-  margin-left: auto;
-  margin-right: auto;
-}
+
 .main-about {
   padding: 0;
   left: 50%;
   color: white;
-  width: 600px;
   position: absolute;
   z-index: 5;
-  margin: -300px -400px;
-
+  margin: -500px -420px;
+  text-align: center;
 }
 
+
+
 .main-about h1  {
-margin: 0px -100px; /*use margin shifting for adjusting anywehre you want after the container has been adjusted by the left 50%*/
+margin: 0px -250px; /*use margin shifting for adjusting anywehre you want after the container has been adjusted by the left 50%*/
+padding-bottom: 1.5em;
+font-size: 3.5em;
 }
 
 .main-about p {
-margin: 0px -150px;
-
+  margin: 0px -150px;
+  width: 50%;
+  padding: 0;
+  margin-left: 25%;
+  margin-right: 25%;
+  padding-top: 3em;
+  font-size: 1.1em;
+  z-index: 10;
 }
 
 /**** Footer container content ****/
+#footer-container {
 
+}
 
 #footer-main {
   background-color: gray;
@@ -577,35 +585,41 @@ footer {
   width: 100%;
   z-index: 12;
   position: absolute;
-
+  display: inline;
+  text-align: center;
+  height: 8em;
 }
 
 .footer-link {
   color: white;
   font-size: 1.3em;
   padding-left: 2em;
+  position: relative;
+  top: 1.5em;
 }
 
 .social-media-icon {
-  height: 2em;
-  -webkit-transition: height 1s, -webkit-transform 1s;
-    transition: height 1s, transform 1s;
+  height: 3em;
+  -webkit-transition: height .5s, -webkit-transform .5s;
+    transition: height .5s, transform .5s;
+    margin-right: 1.2em;
 }
 
 .social-media-icon:hover {
-  height: 3em;
+  height: 4em;
 
 }
 
-.social {
+#social {
   position: absolute;
-  width: 4%;
-  left: 2px;
-
+  left: 3em;
+  padding-right: 2em;
+  padding-top: 1.4em;
 }
 
-.social a {
-    margin: 0 2em 0 2em;
+footer a:hover {
+  color: orange;
+  text-decoration: none;
 }
 
 #message-icon {
@@ -625,6 +639,7 @@ footer {
   width: 100%;
   left: 0px;
   position: relative;
+  text-align: center;
 }
 
 #bottom-img{
