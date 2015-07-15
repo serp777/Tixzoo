@@ -18,7 +18,7 @@
     <div id="top-nav-bar-container">
        <div class="nav-bar">
         <div id="btn-container">
-         
+
          <a {{action 'showModal' 'signup-modal' model}} class="create_Btn">Create Account</a>
          <a {{action 'showModal' 'login-modal' model}} class="login_Btn">Login</a>
         </div>
@@ -67,10 +67,19 @@
           <p>As concert goers and ticket resellers, we have dealt with the frustration of trying to sell and buy tickets at a price we want.</p>
           <p>Tixzoo users love music and go the distance to support their favorite artists everyday.</p>
       </div>
+      <footer>
+        <a href='#'><img class="social-media-icon" {{bind-attr src=facebookIcon alt="facebookIcon"}}></a>
+        <a href='#'><img class="social-media-icon" {{bind-attr src=instagramIcon alt="instagramIcon"}}></a>
+        <a href='#'><img class="social-media-icon" {{bind-attr src=twitterIcon alt="twitterIcon"}}></a>
+        <a class="footer-link" href="#">About</a>
+        <a class="footer-link" href="#">Careers</a>
+        <a class="footer-link" href="#">Deve</a>
+        <a class="footer-link" href="#"></a>
+      </footer>
       </div>
     </div>
 
-    
+
     {{outlet}}
     {{outlet 'modal'}}
   </script>

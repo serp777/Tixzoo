@@ -82,7 +82,7 @@ body {
     left: 0px;
     background: #28343b; /* Old browsers */
     height: 100%;
-    min-width: 100%;    
+    min-width: 100%;
     background: -moz-linear-gradient(top, #28343b 0%, #828c95 75%, #b5bdc8 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#28343b), color-stop(75%,#828c95), color-stop(100%,#b5bdc8)); /* Chrome,Safari4+ */
     background: -webkit-linear-gradient(top, #28343b 0%,#828c95 75%,#b5bdc8 100%); /* Chrome10+,Safari5.1+ */
@@ -445,7 +445,7 @@ table {
   z-index: 0;
   top: 0px;
   width: 100%;
-  
+
 }
 #container {
   left: 0px;
@@ -478,7 +478,7 @@ table {
 }
 
 #middle-img{
-  
+
   left: 0%;
   z-index: 2;
   width: 100%;
@@ -536,7 +536,7 @@ table {
 /**** Bottom container content ****/
 
 /* test div for aligning the text with the images regardless of zooming or screen size */
-#testtext { 
+#testtext {
   margin-left: auto;
   margin-right: auto;
 }
@@ -546,7 +546,7 @@ table {
   color: white;
   height: 25em;
   width: 600px;
-  position: absolute; 
+  position: absolute;
 
   z-index: 5;
 
@@ -578,6 +578,36 @@ margin: 0px -400px;
   margin-right: 0;
 }
 
+footer {
+  background-color: black;
+  padding: 1.5em 1.5em;
+  text-align: center;
+  color: white;
+  width: 100%;
+  z-index: 12;
+  position: absolute;
+  margin-top: 60%;
+}
+
+.footer-link {
+  color: white;
+  font-size: 1.3em;
+}
+
+
+
+#message-icon {
+  border-radius: 30% 50% 50% 50%;
+}
+
+#affordability-icon {
+  border-radius: 50%;
+}
+
+#lock-icon {
+  border-radius: 40% 40% 0 0;
+}
+
 #bottom-background-container{
   display: table;
   width: 100%;
@@ -586,7 +616,7 @@ margin: 0px -400px;
 }
 
 #bottom-img{
-  
+
   left: 0px;
   z-index: 2;
   width: 100%;
