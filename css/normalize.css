@@ -475,6 +475,7 @@ table {
   display: table;
   width: 100%;
   left: 0px;
+  color: white;
 }
 
 #middle-img{
@@ -484,19 +485,17 @@ table {
   width: 100%;
 }
 
-.main-features {
+#main-features {
   padding: 0;
-  padding-top: 4em;
-  margin: 0px -518px;
-  height: 25em;
-  width: 1035px;
   z-index: 10;
-  position: absolute;
   text-align: center;
+  color: white;
+  width: 600px;
+  position: absolute;
 }
 
-.main-features h1  {
-  margin-top: 4%;
+#main-features h1  {
+  color: white;
   margin-bottom: 0;
   font-size: 3.5em;
   z-index: 10;
