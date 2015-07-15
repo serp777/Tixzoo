@@ -13,7 +13,6 @@ aside,
 details,
 figcaption,
 figure,
-footer,
 header{
     margin: 0;
     text-align: center;
@@ -489,13 +488,13 @@ table {
   padding: 0;
   z-index: 10;
   text-align: center;
-  color: white;
-  width: 600px;
+  color: black;
   position: absolute;
+  margin: -600px 0;
 }
 
 #main-features h1  {
-  color: white;
+  color: black;
   margin-bottom: 0;
   font-size: 3.5em;
   z-index: 10;
@@ -574,7 +573,6 @@ margin: 0px -150px;
 footer {
   background-color: black;
   padding: 1.5em 1.5em;
-  text-align: center;
   color: white;
   width: 100%;
   z-index: 12;
@@ -585,10 +583,29 @@ footer {
 .footer-link {
   color: white;
   font-size: 1.3em;
+  padding-left: 2em;
 }
 
 .social-media-icon {
   height: 2em;
+  -webkit-transition: height 1s, -webkit-transform 1s;
+    transition: height 1s, transform 1s;
+}
+
+.social-media-icon:hover {
+  height: 3em;
+
+}
+
+.social {
+  position: absolute;
+  width: 4%;
+  left: 2px;
+
+}
+
+.social a {
+    margin: 0 2em 0 2em;
 }
 
 #message-icon {
