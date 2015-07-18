@@ -1,10 +1,21 @@
 var loaderObj = {
-
     templates : [
     'tmpl/modal.html'
 ]
 };
-
+var loaderObjCss = {
+    css : [
+    '../../css/bootstrap.css',
+    '../../css/bootstrap.map.css',
+    '../../css/buttons.css',
+    '../../css/media_queries.css',
+    '../../css/normalize.css',
+    '../../css/search.css',
+    '../../css/slideshow.css',
+    '../../css/style.css',
+    '../../css/stylesheet_nav.css'
+]
+};
 loadTemplates(loaderObj.templates);
 //This function loads all templates into the view
 function loadTemplates(templates) {
@@ -20,6 +31,24 @@ function loadTemplates(templates) {
             success: function(resp) {
                 tempObj.html(resp);
                 $('body').append(tempObj);
+            }
+        });
+    });
+
+}
+loadCss(loaderObjCss.css);
+function loadCss(css) {
+    $(css).each(function() {
+        var tempObjCss = $('<style>');
+
+        var dataTemplateNameCss = this.substring(0, this.indexOf('.'));
+        $.ajax({
+            async: false,
+            type: 'GET',
+            url: 'js/views/' + this,
+            success: function(resp) {
+                tempObjCss.html(resp);
+                $('body').append(tempObjCss);
             }
         });
     });
