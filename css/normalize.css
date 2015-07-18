@@ -70,6 +70,7 @@ html {
     height: 100%;
     /*height: 3000px;*/
     margin: 0px;
+    background-color: black;
     }
 
 /**
@@ -458,7 +459,7 @@ table {
 #top-nav-bar-container {
   margin-left: auto;
   margin-right: auto;
-  height: 7vw;
+  height: 10vw;
   z-index: 5;
   background-color: black;
 }
@@ -541,6 +542,22 @@ table {
 
 /* test div for aligning the text with the images regardless of zooming or screen size */
 
+#bottom-background-container{
+  display: table;
+  margin-top: ;
+  width: 100%;
+  left: 0px;
+  position: relative;
+  text-align: center;
+}
+
+#bottom-img{
+  left: 0px;
+  z-index: 2;
+  width: 100%;
+}
+
+
 .main-about {
   padding: 0;
   left: 50%;
@@ -554,15 +571,12 @@ table {
 
 
 .main-about h1  {
-margin: 0px -250px; /*use margin shifting for adjusting anywehre you want after the container has been adjusted by the left 50%*/
+
 padding-bottom: 1.5em;
 font-size: 3.5em;
 }
 
 .main-about p {
-  margin: 0px -150px;
-  width: 50%;
-  padding: 0;
   margin-left: 25%;
   margin-right: 25%;
   padding-top: 3em;
@@ -640,21 +654,6 @@ footer a:hover {
   border-radius: 40% 40% 0 0;
 }
 
-#bottom-background-container{
-  display: table;
-  margin-top: ;
-  width: 100%;
-  left: 0px;
-  position: relative;
-  text-align: center;
-}
-
-#bottom-img{
-
-  left: 0px;
-  z-index: 2;
-  width: 100%;
-}
 
 
 #jungle-Text{
