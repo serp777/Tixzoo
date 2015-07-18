@@ -465,10 +465,9 @@ table {
 }
 
 #tixzoo-logo {
-  width: 25%;
-  right: 37.5%;
-  left: 37.5%;
-  top: 2em;
+  top: 3vw;
+  width: 30vw;
+  left: 33%;
   position: absolute;
 }
 
@@ -560,24 +559,24 @@ table {
 
 .main-about {
   padding: 0;
-  left: 50%;
+  width: 100%;
+  left: 0%;
+  top: 20%;
   color: white;
   position: absolute;
   z-index: 5;
-  margin: -500px -420px;
-  text-align: center;
 }
 
 .main-about h1  {
-padding-bottom: 1.5em;
-font-size: 3.5em;
+  padding-bottom: 1em;
+  font-size: 4vw;
 }
 
 .main-about p {
   margin-left: 25%;
   margin-right: 25%;
-  padding-top: 1em;
-  font-size: 1.1em;
+  padding-top: 3em;
+  font-size: 1vw;
   z-index: 10;
 }
 
@@ -602,7 +601,6 @@ footer {
   width: 100%;
   z-index: 12;
   position: absolute;
-  display: inline;
   text-align: center;
   height: 8em;
 }
@@ -615,23 +613,56 @@ footer {
   top: 1.5em;
 }
 
-#social-media-icon1, #social-media-icon2, #social-media-icon3 {
-  height: 3em;
-  -webkit-transition: height .3s, width .3s, -webkit-transform .3s;
-    transition: height .3s, width .3s, transform .3s;
-  margin-right: 1.2em;
-}
-
-#social-media-icon1:hover, #social-media-icon2:hover, #social-media-icon3:hover {
-  transform: scaleX(1.5);
-  transform: scaley(1.5);
-}
-
-#social {
+.social-media-icon1 {
   position: absolute;
-  left: 3em;
-  padding-right: 2em;
-  padding-top: 1.4em;
+  height: 3em;
+  width: 3em;
+  left: 2vw;
+  bottom: 2vw;
+  -webkit-transition: height .5s, -webkit-transform .5s;
+    transition: height .5s, transform .5s;
+
+}
+.social-media-icon2 {
+  position: absolute;
+  height: 3em;
+  width: 3em;
+  left: 5vw;
+  bottom: 2vw;
+  -webkit-transition: height .5s, -webkit-transform .5s;
+    transition: height .5s, transform .5s;
+
+}
+.social-media-icon3 {
+  position: absolute;
+  height: 3em;
+  width: 3em;
+  left: 8vw;
+  bottom: 2vw;
+  -webkit-transition: height .5s, -webkit-transform .5s;
+    transition: height .5s, transform .5s;
+
+}
+.social-media-icon1:hover {
+  position: absolute;
+  height: 4em;
+  width: 4em;
+  left: 1.6vw;
+  bottom: 1.6vw;
+}
+.social-media-icon2:hover {
+  position: absolute;
+  height: 4em;
+  width: 4em;
+  left: 4.6vw;
+  bottom: 1.6vw;
+}
+.social-media-icon3:hover {
+  position: absolute;
+  height: 4em;
+  width: 4em;
+  left: 7.6vw;
+  bottom: 1.6vw;
 }
 
 footer a:hover {

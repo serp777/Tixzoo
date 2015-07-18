@@ -7,13 +7,14 @@ a:hover { text-decoration: underline }
 
 .container, .main {
     position: absolute;
-    width: 640px;
-    margin: 0px -100px;
-    height: 300px;
+    width: 6vw;
+    margin: 0px 4vw;
+    height: 3vw;
     z-index: 10;
+
 }
 
-.main { margin-top: 50px }
+.main { margin-top: 4vw }
 
 input {
     font-family: 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -24,7 +25,8 @@ input {
 .search {
     position: relative;
     margin: 0 auto;
-    width: 300px;
+    width: 25vw;
+    height: 5vw;
 }
 
 .search input {
