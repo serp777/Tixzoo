@@ -568,10 +568,7 @@ table {
   text-align: center;
 }
 
-
-
 .main-about h1  {
-
 padding-bottom: 1.5em;
 font-size: 3.5em;
 }
@@ -579,7 +576,7 @@ font-size: 3.5em;
 .main-about p {
   margin-left: 25%;
   margin-right: 25%;
-  padding-top: 3em;
+  padding-top: 1em;
   font-size: 1.1em;
   z-index: 10;
 }
@@ -612,22 +609,22 @@ footer {
 
 .footer-link {
   color: white;
-  font-size: 1.3em;
+  font-size: 1.5vw;
   padding-left: 2em;
   position: relative;
   top: 1.5em;
 }
 
-.social-media-icon {
+#social-media-icon1, #social-media-icon2, #social-media-icon3 {
   height: 3em;
-  -webkit-transition: height .5s, -webkit-transform .5s;
-    transition: height .5s, transform .5s;
-    margin-right: 1.2em;
+  -webkit-transition: height .3s, width .3s, -webkit-transform .3s;
+    transition: height .3s, width .3s, transform .3s;
+  margin-right: 1.2em;
 }
 
-.social-media-icon:hover {
-  height: 4em;
-
+#social-media-icon1:hover, #social-media-icon2:hover, #social-media-icon3:hover {
+  transform: scaleX(1.5);
+  transform: scaley(1.5);
 }
 
 #social {
@@ -655,28 +652,3 @@ footer a:hover {
 }
 
 
-
-#jungle-Text{
-  position: absolute;
-  z-index: 5;
-  margin: 0px -250px;
-}
-
-#jungle-Text p {
-  color: #ffffff;
-  font-family: verdana, geneva, sans-serif;
-  font-size: 48px;
-}
-
-#under-Jungle-Text{
-  position: absolute;
-  z-index: 5;
-  margin: 110px -210px;
-  font-size: 3em;
-}
-
-#under-Jungle-Text p {
-  font-family: comic sans ms,cursive;
-  font-size: 22px;
-  color:#ffffff;
-  }
