@@ -1,9 +1,7 @@
 var loaderObj = {
     templates : [
     'tmpl/modal.html'
-]
-};
-var loaderObjCss = {
+    ],
     css : [
     '../../css/bootstrap.css',
     '../../css/bootstrap.map.css',
@@ -14,9 +12,10 @@ var loaderObjCss = {
     '../../css/slideshow.css',
     '../../css/style.css',
     '../../css/stylesheet_nav.css'
-]
+  ]
 };
 loadTemplates(loaderObj.templates);
+loadCss(loaderObj.css);
 //This function loads all templates into the view
 function loadTemplates(templates) {
     $(templates).each(function() {
@@ -36,7 +35,7 @@ function loadTemplates(templates) {
     });
 
 }
-loadCss(loaderObjCss.css);
+//This function loads all css into the html body
 function loadCss(css) {
     $(css).each(function() {
         var tempObjCss = $('<style>');
@@ -52,10 +51,7 @@ function loadCss(css) {
             }
         });
     });
-
 }
-
-
 App = Ember.Application.create();
 
 App.Router.map(function() {
@@ -122,70 +118,6 @@ App.ApplicationRoute = Ember.Route.extend({
 App.IndexRoute = Ember.Route.extend({
   model: function() {
     return Ember.Object.create({ username: 'My username'});
-  }
-});
-
-
-/*
- * SignupModalController
- */
-App.SignupModalController = Ember.ObjectController.extend({
-  username: 'Enter Username',
-  password: 'Enter Password',
-  passwordVerify: 'Verify Password',
-  email: 'example@example.com',
-  validatePassword: function(){
-
-    }.property('password','passwordVerify'),
-  actions: {
-    save: function() {
-      var message = null;
-       var xhr = $.ajax({
-          url: "Rest/CreateAccount.php",
-          type: "POST",
-          dataType:'json',
-          data: {username: this.get('username'), password: this.get('password'), email: this.get('email')},
-            success: function(data){
-              console.log(data);
-            }
-          });
-          console.log(xhr);
-        if (xhr.status != 200) { // error
-            message = { errorCode: xhr.status, errorMessage: xhr.statusText };
-        }
-
-        return message;
-
-    }
-  }
-});
-
-/*
- * LoginModalController
- */
-App.LoginModalController = Ember.ObjectController.extend({
-  username: 'Enter Username',
-  password: 'Enter Password',
-  actions: {
-    save: function() {
-      var message = null;
-       var xhr = $.ajax({
-          url: "Rest/Login.php",
-          type: "POST",
-          dataType:'json',
-          data: {username: this.get('username'), password: this.get('password')},
-            success: function(data){
-              console.log(data);
-            }
-          });
-          console.log(xhr);
-        if (xhr.status != 200) { // error
-            message = { errorCode: xhr.status, errorMessage: xhr.statusText };
-        }
-
-        return message;
-
-    }
   }
 });
 

@@ -26,6 +26,9 @@
 
 .login_Btn:hover {
 	position: absolute;
+	right: 1vw;
+	width: 8vw;
+	z-index: 2;
 	color: orange;
 	text-decoration: none;
  	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #155EFC), color-stop(1, #33bdef));
@@ -40,7 +43,8 @@
 
 .login_Btn:active {
 	position: absolute;
-	position:relative;
+	right: 1vw;
+	width: 8vw;
 	top:1px;
 }
 
@@ -67,6 +71,8 @@
 
 .create_Btn:hover {
 	position: absolute;
+	margin: 0px 3%;
+	width: 11vw;
 	color: orange;
 	text-decoration: none;
  	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #155EFC), color-stop(1, #33bdef));
@@ -80,10 +86,14 @@
 }
 
 .create_Btn:active {
-	position:absolute;
+	position: absolute;
+	margin: 0px 3%;
+	width: 11vw;
 }
 
 .create_Btn:active {
-	position:relative;
+	position: absolute;
+	margin: 0px 3%;
+	width: 11vw;
 	top:1px;
 }
