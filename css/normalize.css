@@ -465,10 +465,9 @@ table {
 }
 
 #tixzoo-logo {
-  width: 25%;
-  right: 37.5%;
-  left: 37.5%;
-  top: 2em;
+  top: 3vw;
+  width: 30vw;
+  left: 33%;
   position: absolute;
 }
 
@@ -560,27 +559,27 @@ table {
 
 .main-about {
   padding: 0;
-  left: 50%;
+  width: 100%;
+  left: 0%;
+  top: 20%;
   color: white;
   position: absolute;
   z-index: 5;
-  margin: -500px -420px;
-  text-align: center;
 }
 
 
 
 .main-about h1  {
 
-padding-bottom: 1.5em;
-font-size: 3.5em;
+padding-bottom: 1em;
+font-size: 4vw;
 }
 
 .main-about p {
   margin-left: 25%;
   margin-right: 25%;
   padding-top: 3em;
-  font-size: 1.1em;
+  font-size: 1vw;
   z-index: 10;
 }
 
