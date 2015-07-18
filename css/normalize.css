@@ -440,12 +440,18 @@ table {
   width: 100%;
 
 }
-#container {
-  left: 0px;
-  display: table;
-  position: relative;
+#background-HomePage-Hax {
+  z-index: 0;
+  top: 0px;
   width: 100%;
-  height: 109%;
+}
+#container {
+  position: relative;
+  display: table;
+  width: 100%;
+
+  left: 0px;
+
 }
 #top-nav-bar-container {
   margin-left: auto;
