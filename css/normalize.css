@@ -604,7 +604,6 @@ footer {
   width: 100%;
   z-index: 12;
   position: absolute;
-  display: inline;
   text-align: center;
   height: 8em;
 }
@@ -617,23 +616,56 @@ footer {
   top: 1.5em;
 }
 
-.social-media-icon {
+.social-media-icon1 {
+  position: absolute;
   height: 3em;
+  width: 3em;
+  left: 2vw;
+  bottom: 2vw;
   -webkit-transition: height .5s, -webkit-transform .5s;
     transition: height .5s, transform .5s;
-    margin-right: 1.2em;
-}
-
-.social-media-icon:hover {
-  height: 4em;
 
 }
-
-#social {
+.social-media-icon2 {
   position: absolute;
-  left: 3em;
-  padding-right: 2em;
-  padding-top: 1.4em;
+  height: 3em;
+  width: 3em;
+  left: 5vw;
+  bottom: 2vw;
+  -webkit-transition: height .5s, -webkit-transform .5s;
+    transition: height .5s, transform .5s;
+
+}
+.social-media-icon3 {
+  position: absolute;
+  height: 3em;
+  width: 3em;
+  left: 8vw;
+  bottom: 2vw;
+  -webkit-transition: height .5s, -webkit-transform .5s;
+    transition: height .5s, transform .5s;
+
+}
+.social-media-icon1:hover {
+  position: absolute;
+  height: 4em;
+  width: 4em;
+  left: 1.6vw;
+  bottom: 1.6vw;
+}
+.social-media-icon2:hover {
+  position: absolute;
+  height: 4em;
+  width: 4em;
+  left: 4.6vw;
+  bottom: 1.6vw;
+}
+.social-media-icon3:hover {
+  position: absolute;
+  height: 4em;
+  width: 4em;
+  left: 7.6vw;
+  bottom: 1.6vw;
 }
 
 footer a:hover {
