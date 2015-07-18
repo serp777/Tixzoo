@@ -456,7 +456,7 @@ table {
 #top-nav-bar-container {
   margin-left: auto;
   margin-right: auto;
-  height: 120px;
+  height: 7vw;
   z-index: 5;
   background-color: black;
 }
@@ -480,26 +480,27 @@ table {
 }
 
 #middle-img{
-
   left: 0%;
   z-index: 2;
   width: 100%;
 }
 
 #main-features {
-  padding: 0;
   z-index: 10;
+   display: table;
   text-align: center;
-  color: black;
   width: 100%;
+  color: black;
+  left: 0px;
+  top: 20%;
   position: absolute;
-  margin: -600px 0;
+
 }
 
 #main-features h1  {
   color: black;
   margin-bottom: 0;
-  font-size: 3.5em;
+  font-size: 4vw;
   z-index: 10;
 }
 
@@ -507,14 +508,14 @@ table {
   float: left;
   width: 31.33%;
   margin: 1%;
-  margin-top: 8em;
+  margin-top: 10vw;
   z-index: 10;
 }
 
 .column h3 {
   margin: 0;
   padding: 0;
-  font-size: 2.5em;
+  font-size: 3vw;
   z-index: 10;
 }
 
@@ -524,8 +525,8 @@ table {
   padding: 0;
   margin-left: 25%;
   margin-right: 25%;
-  margin-top: 1em;
-  font-size: 1.1em;
+  margin-top: 1vw;
+  font-size: 1vw;
   z-index: 10;
 }
 
@@ -639,6 +640,7 @@ footer a:hover {
 
 #bottom-background-container{
   display: table;
+  margin-top: ;
   width: 100%;
   left: 0px;
   position: relative;

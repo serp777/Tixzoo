@@ -17,13 +17,19 @@
     background-position: 50% 50%;
     background-repeat: none;
     opacity: 0;
-    z-index: 0;
+    z-index: 1001;
   -webkit-backface-visibility: hidden;
     -webkit-animation: imageAnimation 36s linear infinite 0s;
     -moz-animation: imageAnimation 36s linear infinite 0s;
     -o-animation: imageAnimation 36s linear infinite 0s;
     -ms-animation: imageAnimation 36s linear infinite 0s;
     animation: imageAnimation 36s linear infinite 0s; 
+}
+.cb-slideshow li span ti { 
+    z-index: 1001;
+        position: absolute;
+    top: 0px;
+    left: 0px;
 }
 .cb-slideshow li div { 
     z-index: 1000;
