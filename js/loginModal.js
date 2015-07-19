@@ -15,12 +15,16 @@ App.LoginModalController = Ember.ObjectController.extend({
           dataType:'json',
           data: {username: this.get('username'), password: this.get('password'), loginMode: "true"},
             success: function(data){
-              that.set('controllers.application.username',that.get('username'));
-              that.set('controllers.application.password',that.get('password'));
-              that.set('controllers.application.loginSuccess',true);
+              console.log(data);
+              if(data){
+                that.set('controllers.application.username',that.get('username'));
+                that.set('controllers.application.password',that.get('password'));
+                that.set('controllers.application.loginSuccess',true);
+              }
+              
             }
           });
-          console.log(xhr);
+          
         if (xhr.status != 200) { // error
             message = { errorCode: xhr.status, errorMessage: xhr.statusText };
         }
