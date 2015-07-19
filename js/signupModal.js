@@ -3,17 +3,14 @@ App.SignupModalController = Ember.ObjectController.extend({
   password: 'Enter Password',
   passwordVerify: 'Verify Password',
   email: 'example@example.com',
-  validatePassword: function(){
-
-    }.property('password','passwordVerify'),
   actions: {
     save: function() {
       var message = null;
        var xhr = $.ajax({
-          url: "Rest/CreateAccount.php",
+          url: "Rest/mainController.php",
           type: "POST",
           dataType:'json',
-          data: {username: this.get('username'), password: this.get('password'), email: this.get('email')},
+          data: {username: this.get('username'), password: this.get('password'), email: this.get('email'), createMode: "true"},
             success: function(data){
               console.log(data);
             }

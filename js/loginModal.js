@@ -8,10 +8,10 @@ App.LoginModalController = Ember.ObjectController.extend({
     save: function() {
       var message = null;
        var xhr = $.ajax({
-          url: "Rest/Login.php",
+          url: "Rest/mainController.php",
           type: "POST",
           dataType:'json',
-          data: {username: this.get('username'), password: this.get('password')},
+          data: {username: this.get('username'), password: this.get('password'), loginMode: "true"},
             success: function(data){
               console.log(data);
             }
