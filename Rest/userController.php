@@ -6,13 +6,12 @@ class userControllerClass {
 		$password="computer123"; // Mysql password 
 		$db_name="tixzoo"; // Database name 
 		// Connect to server and select databse.
-		$dbconn = mysqli_connect($localhost,$username,$password,$db_name) or die("Error " . mysqli_error($dbconn));
+		$dbconn = mysqli_connect($host,$username,$password,$db_name) or die("Error " . mysqli_error($dbconn));
 		return $dbconn;
 	}
 	public function executeSqlQuery($sql,$dbconn){
 		$result= $dbconn->query($sql);
-		$count=mysql_num_rows($result);
-		return $count;
+		return $result;
 	}
 	public function login($username,$password){
 		// To protect MySQL injection (more detail about MySQL injection)
@@ -21,10 +20,11 @@ class userControllerClass {
 		$password = stripslashes($password);
 		$username = mysql_escape_string($username);
 		$password = mysql_escape_string($password);
-		$tbl_name="accountinfo"; // Table name 
 		$sql="SELECT * FROM accountinfo WHERE username='$username' and password='$password'";
 		$result = $this->executeSqlQuery($sql,$dbconn);
-		return $result===1;
+		$count = $result->num_rows;
+		echo $count;
+		return $count;
 		
 	}
 	public function createAccount($username,$password,$email){
@@ -40,7 +40,7 @@ class userControllerClass {
 		echo $sql;
 		$result = $this->executeSqlQuery($sql,$dbconn);
 
-		return $result===1;
+		return $result;
 	}
 }
 ?>

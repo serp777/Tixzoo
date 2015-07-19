@@ -10,9 +10,16 @@
     <div id="top-nav-bar-container">
        <div class="nav-bar">
         <div id="btn-container">
-
+        {{#if loginSuccess}}
+        <button {{action "logout"}} class="login_Btn">Logout</button>
+        <br>
+          Hello user {{username}}
+         <br>
+         
+         {{else}}
          <a {{action 'showModal' 'signup-modal' model}} class="create_Btn">Sign Up</a>
          <a {{action 'showModal' 'login-modal' model}} class="login_Btn">Login</a>
+         {{/if}}
         </div>
           <div id="search-bar">
            <section class="main">
