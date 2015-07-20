@@ -4,7 +4,6 @@ var loaderObj = {
     ],
     css : [
     '../../css/bootstrap.css',
-    '../../css/bootstrap.map.css',
     '../../css/buttons.css',
     '../../css/media_queries.css',
     '../../css/normalize.css',
@@ -52,6 +51,7 @@ function loadCss(css) {
         });
     });
 }
+
 App = Ember.Application.create();
 
 App.Router.map(function() {
@@ -61,7 +61,6 @@ App.Router.map(function() {
 
 
 App.ApplicationController = Ember.Controller.extend({
-  // the initial value of the `search` property
   username: 'Enter Username',
   password: 'Enter Password',
   passwordVerify: 'Verify Password',
@@ -80,6 +79,32 @@ App.ApplicationController = Ember.Controller.extend({
   peertopeerIcon: 'img/messaging-icon.png',
   snapchatIcon: 'img/',
   twitterIcon: 'img/twitter.png',
+  init: function() {
+    this._super();
+    var that = this;
+    var message = null;
+    var xhr = $.ajax({
+        url: "Rest/mainController.php",
+        type: "POST",
+        dataType:'json',
+        data: {cookieMode: true},
+          success: function(data){
+            console.log(data);
+
+            that.set('loginSuccess',true);
+            if(false){
+              that.set('username',data["user"]["username"]);
+              that.set('password',data["user"]["password"]);
+              that.set('email',data["user"]["email"]);
+            }
+          }
+        });
+        
+      if (xhr.status != 200) { // error
+          message = { errorCode: xhr.status, errorMessage: xhr.statusText };
+      }
+      return message;
+  },
   pageUpdate: function(){
     console.log(this.get('username') + " : " + this.get('password'));
   }.observes('username','password'),
@@ -91,9 +116,31 @@ App.ApplicationController = Ember.Controller.extend({
     },
     logout: function() {
       this.set('loginSuccess', false);
+        var that = this;
+        var message = null;
+        var xhr = $.ajax({
+          url: "Rest/mainController.php",
+          type: "POST",
+          dataType:'json',
+          data: {logoutMode: "true"},
+            success: function(data){
+                that
+            }
+          });
+          
+        if (xhr.status != 200) { // error
+            message = { errorCode: xhr.status, errorMessage: xhr.statusText };
+        }
+        return message;
+
     }
   }
 });
+
+
+
+
+
 
 /*
  * ApplicationRoute

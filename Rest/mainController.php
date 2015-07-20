@@ -6,6 +6,11 @@ header("Content-Type: application/json", true);
 		$login = new userControllerClass();
     	$result = $login->login($_POST['username'],$_POST['password']);
 	} 
+    if(isset($_POST['cookieMode']) && $_POST['cookieMode'] == "true"){
+        $login = new userControllerClass();
+
+        $result = 1;
+    }
 
 	if(isset($_POST['createMode']) && $_POST['createMode'] == "true"){
 		$create = new userControllerClass();
