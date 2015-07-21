@@ -11,6 +11,12 @@
   height: 200em;
 }
 
+#tixzoo-logo-feed {
+  position:absolute;
+  left: 3vw;
+  top: 3vw;
+}
+
 a:hover {
   text-decoration: none;
   color: orange;
