@@ -11,7 +11,8 @@ var loaderObj = {
     '../../css/search.css',
     '../../css/slideshow.css',
     '../../css/style.css',
-    '../../css/stylesheet_nav.css'
+    '../../css/stylesheet_nav.css',
+    '../../css/ticket-feed.css'
   ]
 };
 loadTemplates(loaderObj.templates);
@@ -70,6 +71,7 @@ App.ApplicationController = Ember.Controller.extend({
   backgroundHomePageOne: 'img/backgroundHomePageOne.png',
   backgroundHomePageTwo: 'img/backgroundHomePageTwo.png',
   backgroundHomePageThree: 'img/backgroundHomePageThree.png',
+  backgroundHomePageFour: 'img/backgroundHomePageFour.png',
   middleBackground: 'img/middle_bckimg.png',
   bottomBackground: 'img/tixzoo_land.png',
   tixzooLogo: 'img/tixzoo-logo.png',
@@ -80,6 +82,10 @@ App.ApplicationController = Ember.Controller.extend({
   peertopeerIcon: 'img/messaging-icon.png',
   snapchatIcon: 'img/',
   twitterIcon: 'img/twitter.png',
+  maxFrat: 'img/max-frat.png',
+  disclosurePhoto: 'img/disclosure-artist.png',
+
+
   pageUpdate: function(){
     console.log(this.get('username') + " : " + this.get('password'));
   }.observes('username','password'),
