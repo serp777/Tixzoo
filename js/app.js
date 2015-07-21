@@ -90,12 +90,13 @@ App.ApplicationController = Ember.Controller.extend({
         data: {cookieMode: true},
           success: function(data){
             console.log(data);
-
             that.set('loginSuccess',true);
-            if(false){
+            if(data["success"]){
               that.set('username',data["user"]["username"]);
               that.set('password',data["user"]["password"]);
-              that.set('email',data["user"]["email"]);
+              //that.set('email',data["user"]["email"]);
+              console.log("username from Cookie:" + data["user"]["username"]);
+              console.log("password from Cookie:" + data["user"]["password"]);
             }
           }
         });
