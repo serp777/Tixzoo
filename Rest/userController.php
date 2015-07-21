@@ -42,11 +42,6 @@ class userControllerClass {
 
 		return $result;
 	}
-	public function createCookie($param1, $param2) {
-		$cookie_value = json_encode(array("user" => (array("username" => $param1, "password" => $param2)), "success" => true));
-		setcookie("user", $cookie_value, time()+3600, "/", "localhost");
-		error_log("new cookie created");
-	}
 }
 ?>
 

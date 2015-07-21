@@ -1,31 +1,31 @@
 <?php
+ob_start();
+    if(isset($_POST['loginMode']) && $_POST['loginMode'] == "true"){
+        $cookie_value = json_encode(array("user" => (array("username" => $_POST['username'], "password" => $_POST['password'])), "successOut" => true));
+        setcookie('user', $cookie_value, time()+60*60*24*365, '/', '127.0.0.1');
+    } 
+ob_end_flush();  
+  
 require_once 'userController.php';
 header("Content-Type: application/json", true);
 
 	if(isset($_POST['loginMode']) && $_POST['loginMode'] == "true"){
 		$login = new userControllerClass();
     	$result = $login->login($_POST['username'],$_POST['password']);
-
-        if(/*isset($_POST['useCookie']) && $_POST['useCookie'] == "true" && $result > 0*/ true) {
-            $login->createCookie($_POST['username'], $_POST['password']);
+           
             if (isset($_COOKIE['user'])) {
                 error_log("good");
             }
-        }
+        
 	} 
-    if(isset($_POST['cookieMode']) && $_POST['cookieMode'] == "true"){
-        $login = new userControllerClass();
-        $result = $login->login($_POST['username'],$_POST['password']);
+    if(isset($_GET['cookieMode']) && $_GET['cookieMode'] == "true"){
         if(!isset($_COOKIE['user'])){
             $result = 0;
             error_log("Cookie is not set!");
         } else {
             $result = json_decode($_COOKIE['user']);
-            error_log("cookie is set, butt.......");
-            error_log($_COOKIE['user']);
         }
-
-        //$result = 1;
+        //return $result;
     }
 
 	if(isset($_POST['createMode']) && $_POST['createMode'] == "true"){
@@ -45,6 +45,7 @@ header("Content-Type: application/json", true);
     if(isset($_POST['logoutMode']) && $_POST['logoutMode'] == "true") {
 
     }
+
 	return $result;
 
 	
