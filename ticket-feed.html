@@ -27,7 +27,7 @@
              </form>
           </section>
          </div>
-        <img id="tixzoo-logo-feed" {{bind-attr src=tixzooLogo alt="tixzooLogo"}}>
+        <a href="index.html"><img id="tixzoo-logo-feed" {{bind-attr src=tixzooLogo alt="tixzooLogo"}}></a>
       </div>
     </div>
 
@@ -38,7 +38,16 @@
       <img id="background-feedimg" {{bind-attr src=backgroundHomePageFour alt="backgroundHomePageFour"}}>
 
        <div id="ticket-feed-filter">
-         <div class="dropdown">
+
+        <div id="filter-suggestion-links">
+        <p id="users-also-searched">users also searched:</p>
+          <a href="#">Justin Martin</a>
+          <a href="#">Disclosure</a>
+          <a href="#">Hannah Wants</a>
+          <a href="#">Avalon Nightclub</a>
+
+        </div>
+        <div class="dropdown">
             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
               Sort by:
               <span class="caret"></span>

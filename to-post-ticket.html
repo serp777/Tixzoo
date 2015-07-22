@@ -16,7 +16,7 @@
         </div>
           <div id="search-bar">
            <section class="main">
-             <form class="search" method="post" action="index.html" >
+             <form class="search-feed" method="post" action="index.html" >
                <input type="text" name="q" placeholder="Search..." />
                <ul class="results" >
                  <li><a href="index.html">Search Result #1<br /><span>Description...</span></a></li>
@@ -27,21 +27,27 @@
              </form>
           </section>
          </div>
-        <img id="tixzoo-logo" {{bind-attr src=tixzooLogo alt="tixzooLogo"}}>
+        <a href="index.html"><img id="tixzoo-logo-feed" {{bind-attr src=tixzooLogo alt="tixzooLogo"}}></a>
       </div>
     </div>
 
 
-      <div id="content-container">
-
-      <div id="user-profile-top-container"
-
-      </div>
-
-      <div class="user-profile-bottom-container">
-
-      </div>
-
+      <div id="ticket-post-container">
+        <div id="ticket-post-positioner-left">
+        <div id="ticket-input-box">
+          <p id="enter-post-info">Enter your ticket info below:</p>
+          <form id="ticket-post-inputs">
+            <input type="text" name="artist" value="Artist | Event Name">
+            <input type="text" name="venue" value="Venue">
+            <input type="text" name="date" value="Date">
+            <input type="text" name="quantity" value="Quantity">
+            <input type="text" name="type/section" value="Type/ Section">
+            <input type="submit" value="Submit">
+          </form>
+        </div>
+        </div>
+        <div id="ticket-post-positioner-right">
+        </div>
       </div>
 
 

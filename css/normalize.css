@@ -627,7 +627,7 @@ footer {
   position: absolute;
   height: 3em;
   width: 3em;
-  left: 5vw;
+  left: 6vw;
   bottom: 2vw;
   -webkit-transition: height .5s, -webkit-transform .5s;
     transition: height .5s, transform .5s;
@@ -637,7 +637,7 @@ footer {
   position: absolute;
   height: 3em;
   width: 3em;
-  left: 8vw;
+  left: 10vw;
   bottom: 2vw;
   -webkit-transition: height .5s, -webkit-transform .5s;
     transition: height .5s, transform .5s;
@@ -654,14 +654,14 @@ footer {
   position: absolute;
   height: 4em;
   width: 4em;
-  left: 4.6vw;
+  left: 5.6vw;
   bottom: 1.6vw;
 }
 .social-media-icon3:hover {
   position: absolute;
   height: 4em;
   width: 4em;
-  left: 7.6vw;
+  left: 9.6vw;
   bottom: 1.6vw;
 }
 

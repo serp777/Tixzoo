@@ -1,0 +1,64 @@
+#ticket-post-container {
+  height: 120em;
+  background-color: white;
+}
+
+#ticket-post-positioner-left {
+  height: 120em;
+  position: absolute;
+  width: 50%;
+  background-color: #f0f0f0;
+  text-align: center;
+}
+
+#ticket-post-positioner-right {
+  height: 120em;
+  position: absolute;
+  width: 50%;
+  background-color: lightgray;
+  right: 0;
+}
+
+#ticket-input-box {
+  position: absolute;
+  top: 5vw;
+  left: 5vw;
+  width: 39vw;
+  height: 45vw;
+  background-color: black;
+  border-radius: 3px;
+}
+
+#ticket-post-inputs input {
+  height: 3vw;
+  width: 22vw;
+  font-size: 1.1em;
+  display: block;
+  border-radius: 5px;
+  margin: 15px;
+  text-align: center;
+}
+
+#ticket-post-inputs input[type=submit] {
+  position: absolute;
+  left: 3.2vw;
+  height: 3vw;
+  width: 15vw;
+  background-color: #155EFC;
+  color: white;
+  font-size: 1.3em;
+  border: none;
+}
+
+#ticket-post-inputs {
+  position: absolute;
+  left: 8vw;
+  top: 10vw;
+}
+
+#enter-post-info {
+  color: white;
+  top: 1.8em;
+  position: relative;
+  font-size: 2.5vw;
+}

@@ -41,7 +41,7 @@ a:hover {
 .dropdown {
   position: absolute;
   top: .5vw;
-  right: 12vw;
+  right: 6.2vw;
 }
 
 #ticket-feed-filter {
@@ -50,6 +50,22 @@ a:hover {
   position: absolute;
   top: 0;
   height: 3.2em;
+}
+
+#filter-suggestion-links {
+  text-align: center;
+  padding: 1em 1.5em 0 1.5em;
+}
+
+#filter-suggestion-links a {
+  margin: .5em;
+}
+
+#users-also-searched {
+  display: inline-block;
+
+  top: 1em;
+  color: black;
 }
 
 #background-feedimg {

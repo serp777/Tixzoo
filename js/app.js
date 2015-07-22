@@ -11,7 +11,8 @@ var loaderObj = {
     '../../css/slideshow.css',
     '../../css/style.css',
     '../../css/stylesheet_nav.css',
-    '../../css/ticket-feed.css'
+    '../../css/ticket-feed.css',
+    '../../css/to-post-ticket.css'
   ]
 };
 loadTemplates(loaderObj.templates);
