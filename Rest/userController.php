@@ -9,8 +9,8 @@ class userControllerClass {
 		$dbconn = mysqli_connect($host,$username,$password,$db_name) or die("Error " . mysqli_error($dbconn));
 		return $dbconn;
 	}
-	public function executeSqlQuery($sql,$dbconn){
-		$result= $dbconn->query($sql);
+	private function executeSqlQuery($sql,$dbconn){
+		$result = $dbconn->query($sql);
 		return $result;
 	}
 	public function login($username,$password){
@@ -41,6 +41,11 @@ class userControllerClass {
 		$result = $this->executeSqlQuery($sql,$dbconn);
 
 		return $result;
+	}
+	public function deleteCookie(){
+		ob_start();
+		unset($_COOKIE['user']);
+		ob_end_flush();  
 	}
 }
 ?>

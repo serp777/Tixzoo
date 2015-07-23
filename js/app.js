@@ -91,20 +91,25 @@ App.ApplicationController = Ember.Controller.extend({
     var that = this;
     var message = null;
     var xhr = $.ajax({
-        url: "Rest/mainController.php",
-        type: "POST",
+        url: "Rest/cookie.php",
+        type: "GET",
         dataType:'json',
         data: {cookieMode: true},
           success: function(data){
             console.log(data);
 
-            that.set('loginSuccess',true);
-            if(false){
+            if(data["successOut"]){
               that.set('username',data["user"]["username"]);
               that.set('password',data["user"]["password"]);
-              that.set('email',data["user"]["email"]);
+              that.set('loginSuccess',true);
+              //that.set('email',data["user"]["email"]);
+              console.log("username from Cookie:" + data["user"]["username"]);
+              console.log("password from Cookie:" + data["user"]["password"]);
             }
-          }
+          },
+        error: function(data){
+          console.log(data["successOut"]);
+        }
         });
 
       if (xhr.status != 200) { // error
@@ -123,16 +128,21 @@ App.ApplicationController = Ember.Controller.extend({
       this.transitionToRoute('search', { query: query });
     },
     logout: function() {
+
       this.set('loginSuccess', false);
         var that = this;
         var message = null;
         var xhr = $.ajax({
           url: "Rest/mainController.php",
-          type: "POST",
+          type: "GET",
           dataType:'json',
           data: {logoutMode: "true"},
             success: function(data){
-                that
+                that.set('controllers.application.loginSuccess',false);
+            },
+            error: function(error){
+              console.log("why");
+              console.log(error);
             }
           });
 
