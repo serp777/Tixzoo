@@ -120,16 +120,21 @@ App.ApplicationController = Ember.Controller.extend({
       this.transitionToRoute('search', { query: query });
     },
     logout: function() {
+
       this.set('loginSuccess', false);
         var that = this;
         var message = null;
         var xhr = $.ajax({
           url: "Rest/mainController.php",
-          type: "POST",
+          type: "GET",
           dataType:'json',
           data: {logoutMode: "true"},
             success: function(data){
-                that
+                that.set('controllers.application.loginSuccess',false);
+            },
+            error: function(error){
+              console.log("why");
+              console.log(error);
             }
           });
           

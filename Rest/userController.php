@@ -42,6 +42,11 @@ class userControllerClass {
 
 		return $result;
 	}
+	public function deleteCookie(){
+		ob_start();
+		unset($_COOKIE['user']);
+		ob_end_flush();  
+	}
 }
 ?>
 
