@@ -12,7 +12,8 @@ var loaderObj = {
     '../../css/style.css',
     '../../css/stylesheet_nav.css',
     '../../css/ticket-feed.css',
-    '../../css/to-post-ticket.css'
+    '../../css/to-post-ticket.css',
+    '../../css/date_test.css'
   ]
 };
 loadTemplates(loaderObj.templates);
@@ -84,6 +85,16 @@ App.ApplicationController = Ember.Controller.extend({
   twitterIcon: 'img/twitter.png',
   maxFrat: 'img/max-frat.png',
   disclosurePhoto: 'img/disclosure-artist.png',
+  artist: '',
+  artistText: 'Artist | Event',
+  venue: '',
+  venueText: 'Venue',
+  date: '',
+  dateText: 'Date',
+  quantity: '',
+  quantityText: 'Quantity',
+  price: '',
+  priceText: 'Price (each)',
 
 
   init: function() {

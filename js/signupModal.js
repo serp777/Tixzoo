@@ -1,8 +1,12 @@
 App.SignupModalController = Ember.ObjectController.extend({
-  username: 'Enter Username',
-  password: 'Enter Password',
-  passwordVerify: 'Verify Password',
-  email: 'example@example.com',
+  username: '',
+  usernameText: 'Enter Username',
+  password: '',
+  passwordText: 'Enter Password',
+  passwordVerify: '',
+  passwordVerifyText: 'Verify Password',
+  email: '',
+  emailText: 'example@example.com',
   actions: {
     save: function() {
       var message = null;
