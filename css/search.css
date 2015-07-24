@@ -18,7 +18,7 @@ a:hover { text-decoration: underline }
 
 input {
     font-family: 'HelveticaNeue', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    font-size: 13px;
+    font-size: 1vw;
     color: #555860;
 }
 
@@ -30,8 +30,8 @@ input {
 }
 
 .search input {
-    height: 26px;
-    width: 70%;
+    height: 2vw;
+    width: 18vw;
     padding: 0 12px 0 25px;
     background: white url("http://cssdeck.com/uploads/media/items/5/5JuDgOa.png") 8px 6px no-repeat;
     border-width: 1px;

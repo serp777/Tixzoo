@@ -3,13 +3,13 @@
         <form {{action 'ok' on='submit' target=view}}>
           <div class="form-group">
             <label>Username</label>
-            {{input class="form-control" value=username}}
+            {{input class="form-control" placeholder=usernameText value=username}}
             <label>Password</label>
-            {{input class="form-control" type="password" value=password }}
+            {{input class="form-control" type="password" placeholder=passwordText value=password }}
             <label>Re-Enter Password</label>
-            {{input class="form-control" type="password" value=passwordVerify }}
+            {{input class="form-control" type="password" placeholder=passwordText value=passwordVerify }}
             <label>Email Address</label>
-            {{input class="form-control" value=email }}
+            {{input class="form-control" placeholder=emailText value=email }}
           </div>
         </form>
       {{/my-modal}}

@@ -102,9 +102,6 @@ App.ApplicationController = Ember.Controller.extend({
               that.set('username',data["user"]["username"]);
               that.set('password',data["user"]["password"]);
               that.set('loginSuccess',true);
-              //that.set('email',data["user"]["email"]);
-              console.log("username from Cookie:" + data["user"]["username"]);
-              console.log("password from Cookie:" + data["user"]["password"]);
             }
           },
         error: function(data){
@@ -188,17 +185,6 @@ App.ApplicationRoute = Ember.Route.extend({
 App.IndexRoute = Ember.Route.extend({
   model: function() {
     return Ember.Object.create({ username: 'My username'});
-  }
-});
-
-/*
- * LogoutModalController
- */
-App.LogoutModalController = Ember.Controller.extend({
-  actions: {
-    logout: function() {
-      alert('logout');
-    }
   }
 });
 

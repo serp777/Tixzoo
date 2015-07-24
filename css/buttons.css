@@ -7,18 +7,19 @@
 	position: absolute;
 	right: 1vw;
 	width: 8vw;
+	height: 2.5vw;
 	z-index: 2;
 	background-color: #155EFC;
 	-moz-border-radius:6px;
 	-webkit-border-radius:6px;
-	border-radius:6px;
+	border-radius:0.5vw;
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
 	font-family:Arial;
 	font-size:1.3vw;
 	font-weight:bold;
-	padding:6px 24px;
+	padding:0.5vw 1vw;
 	text-decoration:none;
 	text-shadow:0px -1px 0px #5b6178;
 	text-align: center;
@@ -28,6 +29,7 @@
 	position: absolute;
 	right: 1vw;
 	width: 8vw;
+	height: 2.5vw;
 	z-index: 2;
 	color: orange;
 	text-decoration: none;
@@ -45,6 +47,7 @@
 	position: absolute;
 	right: 1vw;
 	width: 8vw;
+	height: 2.5vw;
 	top:1px;
 }
 
@@ -52,19 +55,20 @@
 	position: absolute;
 	margin: 0px 3%;
 	width: 11vw;
+	height: 2.5vw;
 	text-align: center;
 	z-index: 2;
 	background-color: #155EFC;
 	-moz-border-radius:6px;
 	-webkit-border-radius:6px;
-	border-radius:6px;
+	border-radius:0.5vw;
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
 	font-family:Arial;
 	font-size:1.3vw;
 	font-weight:bold;
-	padding:6px 24px;
+	padding:0.5vw 1vw;
 	text-decoration:none;
 	text-shadow:0px -1px 0px #5b6178;
 }
@@ -72,6 +76,7 @@
 .create_Btn:hover {
 	position: absolute;
 	margin: 0px 3%;
+	height: 2.5vw;
 	width: 11vw;
 	color: orange;
 	text-decoration: none;
@@ -87,6 +92,7 @@
 
 .create_Btn:active {
 	position: absolute;
+	height: 2.5vw;
 	margin: 0px 3%;
 	width: 11vw;
 }

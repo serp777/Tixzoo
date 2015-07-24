@@ -36,6 +36,11 @@ header("Content-Type: application/json", true);
 	if(isset($_POST['createMode']) && $_POST['createMode'] == "true"){
 		$create = new userControllerClass();
     	$result = $create->createAccount($_POST['username'],$_POST['password'],$_POST['email']);
+        if($result === "unEx" || $result === "emEx"){
+            $out["response"] = $result;
+            echo json_encode($out);
+            return $result;
+        }
     	if($result == 1){
     		$result = true;
             error_log("Account created succesfully.");

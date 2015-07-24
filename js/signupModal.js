@@ -1,10 +1,14 @@
 App.SignupModalController = Ember.ObjectController.extend({
-  username: 'Enter Username',
-  password: 'Enter Password',
-  passwordVerify: 'Verify Password',
-  email: 'example@example.com',
+  needs: ['application'],
+  username: '',
+  usernameText: 'Enter Username',
+  password: '',
+  passwordVerify: '',
+  passwordText: 'Enter Password',
+  email: '',
+  emailText: 'example@example.com',
   actions: {
-    save: function() {
+    save: function() { 
       var message = null;
        var xhr = $.ajax({
           url: "Rest/mainController.php",
@@ -12,10 +16,13 @@ App.SignupModalController = Ember.ObjectController.extend({
           dataType:'json',
           data: {username: this.get('username'), password: this.get('password'), email: this.get('email'), createMode: "true"},
             success: function(data){
-              console.log(data);
+              console.log(data["response"]);
+            },
+            error: function(error){
+
             }
           });
-          console.log(xhr);
+
         if (xhr.status != 200) { // error
             message = { errorCode: xhr.status, errorMessage: xhr.statusText };
         }
