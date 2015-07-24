@@ -1,5 +1,5 @@
 <?php
-class userControllerClass {
+class ticketControllerClass {
 	private function establishConnection(){
 		$host="localhost"; // Host name 
 		$username="root"; // Mysql username 
@@ -13,40 +13,39 @@ class userControllerClass {
 		$result = $dbconn->query($sql);
 		return $result;
 	}
-	public function login($username,$password){
+	public function search($keyword){ // search fields include name, location
 		// To protect MySQL injection (more detail about MySQL injection)
 		$dbconn = $this->establishConnection();
 		$username = stripslashes($username);
 		$password = stripslashes($password);
-		$username = mysqli_real_escape_string($dbconn, $username);
-		$password = mysqli_real_escape_string($dbconn, $password);
+		//$username = mysqli_real_escape_string($username);
+		//$password = mysqli_real_escape_string($password);
 		$sql="SELECT * FROM accountinfo WHERE username='$username' and password='$password'";
 		$result = $this->executeSqlQuery($sql,$dbconn);
 		$count = $result->num_rows;
 		echo $count;
-		mysqli_close($dbconn);
 		return $count;
 		
 	}
-	public function createAccount($username,$password,$email){
+	public function createTicket($name, $sellerID, $location, $price, $type, $description){
 		// To protect MySQL injection (more detail about MySQL injection)
 		$dbconn = $this->establishConnection();
-		$myusername = stripslashes($username);
-		$mypassword = stripslashes($password);
-		$myemail = stripslashes($email);
-		$myusername = mysqli_real_escape_string($dbconn, $myusername);
-		$mypassword = mysqli_real_escape_string($dbconn, $mypassword);
-		$myemail = mysqli_real_escape_string($dbconn, $myemail);
-		$sql="INSERT INTO accountinfo (username, password, emailAddress, credit) VALUES ('$myusername','$mypassword','$myemail','1000')";
+		$myname = stripslashes($name);
+		$mysellerID = intval($sellerID);
+		$mylocation = stripslashes($location);
+		$myprice = floatval($price);
+		$mytype = stripslashes($type);
+		$mydescription = stripslashes($description);
+		$myname = mysqli_real_escape_string($dbconn, $myname);
+		$mylocation = mysqli_real_escape_string($dbconn, $mylocation);
+		$mytype = mysqli_real_escape_string($dbconn, $mytype);
+		$mydescription = mysqli_real_escape_string($dbconn, $mydescription);
+		
+		//current_timestamp
+		$sql="INSERT INTO ticket (name, sellerID, location, price, type, description) VALUES ('$myname','$mysellerID','$mylocation','$myprice', '$mytype', '$mydescription')";
 		echo $sql;
 		$result = $this->executeSqlQuery($sql,$dbconn);
-
 		return $result;
-	}
-	public function deleteCookie(){
-		ob_start();
-		unset($_COOKIE['user']);
-		ob_end_flush();  
 	}
 }
 ?>

@@ -12,6 +12,7 @@ ob_start();
 ob_end_flush();  
 
 require_once 'userController.php';
+require_once 'ticketController.php';
 header("Content-Type: application/json", true);
 
 	if(isset($_POST['loginMode']) && $_POST['loginMode'] == "true"){
@@ -48,6 +49,4 @@ header("Content-Type: application/json", true);
 	} 
 
 	return $result;
-
-	
 ?>
