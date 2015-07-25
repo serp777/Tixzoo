@@ -13,7 +13,8 @@ var loaderObj = {
     '../../css/stylesheet_nav.css',
     '../../css/ticket-feed.css',
     '../../css/to-post-ticket.css',
-    '../../css/date_test.css'
+    '../../css/date_test.css',
+    '../../css/user-profile.css'
   ]
 };
 loadTemplates(loaderObj.templates);

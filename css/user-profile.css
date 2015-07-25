@@ -1,0 +1,98 @@
+#user-profile-container {
+  height: 60em;
+  background-color: white;
+}
+
+#profile-upright-container {
+  position: absolute;
+  right: 0;
+  background-color: gray;
+  height: 35vw;
+  width: 64%;
+  margin: 1vw;
+  background-color: #E3E3E3;
+}
+
+.user-prof-pic {
+  position: absolute;
+  height: 20vw;
+  width: 20vw;
+  border-radius: 10px;
+  top: 1vw;
+  left: 1vw;
+}
+
+#profile-title {
+  position: absolute;
+  left: 24vw;
+  top: 0vw;
+}
+
+#profile-status {
+  position: absolute;
+  width: 60%;
+  left: 24vw;
+  top: 9vw;
+}
+
+#user-rating {
+  position: absolute;
+  width: 60%;
+  left: 24vw;
+  top: 6vw;
+}
+
+#profile-midright-container {
+  position: absolute;
+  right: 0vw;
+  top: 46vw;
+  background-color: gray;
+  height: 11vw;
+  width: 64%;
+  margin: 1vw;
+  background-color: #E3E3E3;
+}
+
+#profile-downright-container {
+  position: absolute;
+  right: 0vw;
+  top: 58vw;
+  background-color: gray;
+  height: 16vw;
+  width: 64%;
+  margin: 1vw;
+  background-color: #E3E3E3;
+}
+
+#profile-upleft-container {
+  position: absolute;
+  background-color: gray;
+  height: 35vw;
+  width: 33%;
+  margin: 1vw;
+  left: 0vw;
+  background-color: #E3E3E3;
+}
+
+#profile-midleft-container {
+  position: absolute;
+  background-color: gray;
+  height: 11vw;
+  width: 33%;
+  margin: 1vw;
+  left: 0vw;
+  top: 46vw;
+  background-color: #E3E3E3;
+}
+
+#profile-downleft-container {
+  position: absolute;
+  background-color: gray;
+  height: 16vw;
+  width: 33%;
+  margin: 1vw;
+  left: 0vw;
+  top: 58vw;
+  background-color: #E3E3E3;
+}
+

@@ -79,11 +79,22 @@
         <div id="ticket-post-positioner-right">
 
         <div id="ticket-input-box">
-          <div id="payment-info">
-          <p >Your credit and debit cards</p>
-            <a href="#">Add a debit or credit card</a>
-          </div>
+          <div class="credit-dropdown">
+              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                Select Payment Method
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                <li><a href="#">Add Payment Method</a></li>
+                <li><a href="#">Visa ending in 2998</a></li>
+                <li><a href="#">MasterCard ending in 5490</a></li>
+
+
+              </ul>
+            </div>
+
           <div id="drag-and-drop">
+
           </div>
           <p id="enter-validation">Validate your ticket</p>
           <span class="btn btn-default btn-file">
