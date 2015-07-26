@@ -1,0 +1,272 @@
+#view-ticket-container {
+  height: 80em;
+  background-color: gray;
+
+}
+
+#view-ticket-main {
+  height: 45vw;
+  width: 60vw;
+  position: absolute;
+  left: 20%;
+  right: 20%;
+  top: 15vw;
+  border-radius: 5px;
+  background-color: #F0F0F0;
+  border: solid gray 1px;
+}
+
+.view-ticket-userpic {
+  position: absolute;
+  top: 2vw;
+  left: 26vw;
+  height: 8vw;
+  width: 8vw;
+  border-radius: 50%;
+
+}
+
+#view-ticket-info {
+  position: absolute;
+  width: 45vw;
+  height:32vw;
+
+  top: 12vw;
+  left: 8vw;
+  border-radius: 5px;
+  text-align: center;
+}
+
+#view-ticket-price {
+  border-top: 1px solid black;
+  position: absolute;
+  left: 7.5vw;
+  top: .2vw;
+  color: #155EFC;
+  font-size: 1.7vw;
+  width:29vw;
+}
+
+#view-ticket-price span {
+  font-size: 2vw;
+}
+
+#view-ticket-artist {
+  position: absolute;
+  left: 7.5vw;
+  top: 5.5vw;
+  width:29vw;
+  font-size: 1.5vw;
+  padding-top: 1vw;
+  color: #155EFC;
+  border-top: solid black 1px;
+}
+
+#view-ticket-date {
+  position: absolute;
+  left: 17vw;
+  top: 9vw;
+}
+
+#view-ticket-time {
+  position: absolute;
+  left: 20vw;
+  top: 11vw;
+}
+
+#view-ticket-venue {
+  position: absolute;
+  left: 7.5vw;
+  top: 13vw;
+  padding-bottom: 1vw;
+  width: 29vw;
+  border-bottom: 1px solid black;
+}
+
+#view-ticket-mins-ago {
+  position: absolute;
+  top: 17vw;
+  left: 18vw;
+}
+
+#want-this {
+  position: absolute;
+  top: 19.5vw;
+  left: 15vw;
+}
+
+#user-agreement {
+  position: absolute;
+  bottom: 1vw;
+  width: 40vw;
+  left: 2vw;
+}
+
+
+
+.view-rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  position: absolute;
+  left: 18.5vw;
+  top: 2.8vw;
+
+}
+.view-rating > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+
+}
+.view-rating > span:hover:before,
+.view-rating > span:hover ~ span:before {
+   content: "\2605";
+   position: absolute;
+}
+
+.login_Btn-postview{
+  position: absolute;
+  right: 8vw;
+  width: 8vw;
+  z-index: 2;
+  background-color: #155EFC;
+  -moz-border-radius:6px;
+  -webkit-border-radius:6px;
+  border-radius:6px;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:1.3vw;
+  font-weight:bold;
+  padding:6px 24px;
+  text-decoration:none;
+  text-shadow:0px -1px 0px #5b6178;
+  text-align: center;
+}
+
+.login_Btn-postview:hover {
+  position: absolute;
+
+  width: 8vw;
+  z-index: 2;
+  color: orange;
+  text-decoration: none;
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #155EFC), color-stop(1, #33bdef));
+  background:-moz-linear-gradient(top, #155EFC 5%, #33bdef 100%);
+  background:-webkit-linear-gradient(top, #155EFC 5%, #33bdef 100%);
+  background:-o-linear-gradient(top, #155EFC 5%, #33bdef 100%);
+  background:-ms-linear-gradient(top, #155EFC 5%, #33bdef 100%);
+  background:linear-gradient(to bottom, #155EFC 5%, #33bdef 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#155EFC', endColorstr='#33bdef',GradientType=0);
+  background-color:#155EFC
+}
+
+.login_Btn-postview:active {
+  position: absolute;
+  right: 1vw;
+  width: 8vw;
+  top:1px;
+}
+
+
+.create_Btn-postview{
+  position: absolute;
+  right: -6vw;
+  width: 11vw;
+  text-align: center;
+  z-index: 2;
+  background-color: #155EFC;
+  -moz-border-radius:6px;
+  -webkit-border-radius:6px;
+  border-radius:6px;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:1.3vw;
+  font-weight:bold;
+  padding:6px 24px;
+  text-decoration:none;
+  text-shadow:0px -1px 0px #5b6178;
+}
+
+.create_Btn-postview:hover {
+  position: absolute;
+
+  width: 11vw;
+  color: orange;
+  text-decoration: none;
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #155EFC), color-stop(1, #33bdef));
+  background:-moz-linear-gradient(top, #155EFC 5%, #33bdef 100%);
+  background:-webkit-linear-gradient(top, #155EFC 5%, #33bdef 100%);
+  background:-o-linear-gradient(top, #155EFC 5%, #33bdef 100%);
+  background:-ms-linear-gradient(top, #155EFC 5%, #33bdef 100%);
+  background:linear-gradient(to bottom, #155EFC 5%, #33bdef 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#155EFC', endColorstr='#33bdef',GradientType=0);
+  background-color:#155EFC;
+}
+
+.create_Btn-postview:active {
+  position: absolute;
+  margin: 0px 3%;
+  width: 11vw;
+}
+
+.create_Btn-postview:active {
+  position: absolute;
+  margin: 0px 3%;
+  width: 11vw;
+  top:1px;
+}
+
+.buy_Btn-postview {
+  position: absolute;
+  left: 17vw;
+  bottom: 7vw;
+  width: 11vw;
+  text-align: center;
+  z-index: 2;
+  background-color: #155EFC;
+  -moz-border-radius:6px;
+  -webkit-border-radius:6px;
+  border-radius:6px;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:1.3vw;
+  font-weight:bold;
+  padding:6px 24px;
+  text-decoration:none;
+  text-shadow:0px -1px 0px #5b6178;
+}
+
+.buy_Btn-postview:hover {
+  position: absolute;
+
+  width: 11vw;
+  color: orange;
+  text-decoration: none;
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #155EFC), color-stop(1, #33bdef));
+  background:-moz-linear-gradient(top, #155EFC 5%, #33bdef 100%);
+  background:-webkit-linear-gradient(top, #155EFC 5%, #33bdef 100%);
+  background:-o-linear-gradient(top, #155EFC 5%, #33bdef 100%);
+  background:-ms-linear-gradient(top, #155EFC 5%, #33bdef 100%);
+  background:linear-gradient(to bottom, #155EFC 5%, #33bdef 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#155EFC', endColorstr='#33bdef',GradientType=0);
+  background-color:#155EFC;
+}
+
+.buy_Btn-postview:active {
+  position: absolute;
+  margin: 0px 3%;
+  width: 11vw;
+}
+
+.buy_Btn-postview:active {
+  position: absolute;
+  margin: 0px 3%;
+  width: 11vw;
+  top:1px;
+}

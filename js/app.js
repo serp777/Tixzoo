@@ -14,7 +14,8 @@ var loaderObj = {
     '../../css/ticket-feed.css',
     '../../css/to-post-ticket.css',
     '../../css/date_test.css',
-    '../../css/user-profile.css'
+    '../../css/user-profile.css',
+    '../../css/view-ticket.css'
   ]
 };
 loadTemplates(loaderObj.templates);
@@ -69,7 +70,7 @@ App.ApplicationController = Ember.Controller.extend({
   password: 'Enter Password',
   passwordVerify: 'Verify Password',
   email: 'example@example.com',
-  loginSuccess: false,
+  loginSuccess: true,
   backgroundHomePageOne: 'img/backgroundHomePageOne.png',
   backgroundHomePageTwo: 'img/backgroundHomePageTwo.png',
   backgroundHomePageThree: 'img/backgroundHomePageThree.png',

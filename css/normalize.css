@@ -471,6 +471,15 @@ table {
   position: absolute;
 }
 
+.my-account-pic {
+  position: absolute;
+  border-radius: 50%;
+  width: 5vw;
+  bottom: 0vw;
+  left: 5vw;
+}
+
+
 /**** Middle container content ****/
 
 #middle-background-container{
@@ -619,6 +628,7 @@ footer {
   width: 3em;
   left: 2vw;
   bottom: 2vw;
+
   -webkit-transition: height .5s, -webkit-transform .5s;
     transition: height .5s, transform .5s;
 
@@ -629,6 +639,7 @@ footer {
   width: 3em;
   left: 6vw;
   bottom: 2vw;
+  margin-right: 1vw;
   -webkit-transition: height .5s, -webkit-transform .5s;
     transition: height .5s, transform .5s;
 
@@ -639,6 +650,7 @@ footer {
   width: 3em;
   left: 10vw;
   bottom: 2vw;
+  margin-right: 1vw;
   -webkit-transition: height .5s, -webkit-transform .5s;
     transition: height .5s, transform .5s;
 
@@ -649,6 +661,7 @@ footer {
   width: 4em;
   left: 1.6vw;
   bottom: 1.6vw;
+  margin-right: 1vw;
 }
 .social-media-icon2:hover {
   position: absolute;
@@ -656,6 +669,7 @@ footer {
   width: 4em;
   left: 5.6vw;
   bottom: 1.6vw;
+  margin-right: 1vw;
 }
 .social-media-icon3:hover {
   position: absolute;
@@ -663,6 +677,7 @@ footer {
   width: 4em;
   left: 9.6vw;
   bottom: 1.6vw;
+  margin-right: 1vw;
 }
 
 footer a:hover {
