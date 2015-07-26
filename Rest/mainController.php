@@ -48,5 +48,12 @@ header("Content-Type: application/json", true);
     	}
 	} 
 
+    if(isset($_POST['createTicketMode']) && $_POST['createTicketMode'] == "true"){
+        $ticketController = new ticketControllerClass();
+        $result = $ticketController->getTickets();
+        
+    } 
+
+
 	return $result;
 ?>

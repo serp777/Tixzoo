@@ -13,11 +13,24 @@ class ticketControllerClass {
 		$result = $dbconn->query($sql);
 		return $result;
 	}
-	public function search($quickSearch){ // search fields include name, location
+	public function getTickets() {
+		$dbconn = $this->establishConnection();
+		$sql = "SELECT * FROM tickets";
+		$result = $this->executeSqlQuery($sql, $dbconn);
+		$rows = array();
+		while($r = mysqli_fetch_assoc($result)) {
+			$rows[] = $r;
+		}
+		$result = json_encode($rows);
+		error_log($result);
+		return $result;
+	}
+	public function searchTicket($quickSearch){ // search fields include name, location
 		// To protect MySQL injection (more detail about MySQL injection)
 		$dbconn = $this->establishConnection();
 		$searchKeywords = explode(" ", $quickSearch);
 
+		
 		$sql="SELECT * FROM accountinfo WHERE username='$username' and password='$password'";
 		$result = $this->executeSqlQuery($sql,$dbconn);
 		$count = $result->num_rows;
@@ -46,5 +59,6 @@ class ticketControllerClass {
 		$result = $this->executeSqlQuery($sql,$dbconn);
 		return $result;
 	}
+
 }
 ?>

@@ -34,6 +34,23 @@
       {{/my-modal}}
     </script>
 
+    <script type="text/x-handlebars" data-template-name="createticket-modal">
+      {{#my-modal title='Add your ticket' ok='save' close='removeModal'}}
+        <form {{action 'ok' on='submit' target=view}}>
+          <div class="form-group">
+            <label>Name</label>
+            {{input class="form-control" value=name}}
+            <label>location</label>
+            {{input class="form-control" type="password" value=location }}
+            <label>Date </label>
+            {{input class="form-control" type="password" value=date }}
+            <label>Price</label>
+            {{input class="form-control" value=price }}
+          </div>
+        </form>
+      {{/my-modal}}
+    </script>
+
     <script type="text/x-handlebars" data-template-name="components/my-modal">
       <div class="modal fade">
         <div class="modal-dialog">

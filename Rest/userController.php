@@ -26,7 +26,6 @@ class userControllerClass {
 		echo $count;
 		mysqli_close($dbconn);
 		return $count;
-		
 	}
 	public function createAccount($username,$password,$email){
 		// To protect MySQL injection (more detail about MySQL injection)
@@ -43,6 +42,9 @@ class userControllerClass {
 
 		return $result;
 	}
+
+	// public function getUserInfo($username, $password);
+	
 	public function deleteCookie(){
 		ob_start();
 		unset($_COOKIE['user']);
