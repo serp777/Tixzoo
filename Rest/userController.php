@@ -22,10 +22,7 @@ class userControllerClass {
 		$password = mysqli_real_escape_string($dbconn, $password);
 		$sql="SELECT * FROM accountinfo WHERE username='$username' and password='$password'";
 		$result = $this->executeSqlQuery($sql,$dbconn);
-		$count = $result->num_rows;
-		echo $count;
-		mysqli_close($dbconn);
-		return $count;
+		return $result;
 	}
 	public function createAccount($username,$password,$email){
 		// To protect MySQL injection (more detail about MySQL injection)
@@ -39,12 +36,14 @@ class userControllerClass {
 		$sql="INSERT INTO accountinfo (username, password, emailAddress, credit) VALUES ('$myusername','$mypassword','$myemail','1000')";
 		echo $sql;
 		$result = $this->executeSqlQuery($sql,$dbconn);
-
 		return $result;
 	}
-
-	// public function getUserInfo($username, $password);
-	
+	public function getUserInfo($username, $password) {
+		$result = $this->login($username, $password);
+		$row = mysqli_fetch_assoc($result);
+		$result = json_encode($row);
+		return $result;
+	}
 	public function deleteCookie(){
 		ob_start();
 		unset($_COOKIE['user']);

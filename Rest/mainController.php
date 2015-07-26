@@ -48,9 +48,15 @@ header("Content-Type: application/json", true);
     	}
 	} 
 
-    if(isset($_POST['createTicketMode']) && $_POST['createTicketMode'] == "true"){
+    if(isset($_POST['createticketMode']) && $_POST['createticketMode'] == "true"){
         $ticketController = new ticketControllerClass();
-        $result = $ticketController->getTickets();
+        $login = new userControllerClass();
+        $userInfo = $login->getUserInfo($_POST['username'], $_POST['password']);
+        $userInfo = json_decode($userInfo, true);
+        $sellerID = $userInfo['accountID'];
+        error_log($sellerID);
+        $result = $ticketController->createTicket($_POST['name'], $sellerID, $_POST['location'], 
+            $_POST['date'], $_POST['price'], $_POST['type'], $_POST['description']);
         
     } 
 
