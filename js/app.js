@@ -121,7 +121,7 @@ App.ApplicationController = Ember.Controller.extend({
   pageUpdate: function(){
     console.log(this.get('username') + " : " + this.get('password'));
   }.observes('username','password'),
-  actions: {
+    actions: {
     query: function() {
       // the current value of the text field
       var query = this.get('search');
