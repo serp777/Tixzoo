@@ -9,6 +9,13 @@ ob_end_flush();
 require_once 'userController.php';
 require_once 'ticketController.php';
 header("Content-Type: application/json", true);
+    if(isset($_GET['init']) && $_GET['init'] == "true"){
+        $tickets = new ticketControllerClass();
+        $result["tickets"] = $tickets->getTickets();
+        $result["cookie"] = json_decode($_COOKIE['user']);
+        echo json_encode($result);
+        return $result;
+    }
 
 	if(isset($_POST['loginMode']) && $_POST['loginMode'] == "true"){
 		$login = new userControllerClass();
@@ -66,6 +73,7 @@ header("Content-Type: application/json", true);
         
     } 
 
+        return $result || '';
 
-	return $result;
+	
 ?>

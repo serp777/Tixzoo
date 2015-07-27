@@ -21,8 +21,7 @@ class ticketControllerClass {
 		while($r = mysqli_fetch_assoc($result)) {
 			$rows[] = $r;
 		}
-		$result = json_encode($rows);
-		error_log($result);
+		$result = $rows;
 		return $result;
 	}
 	public function searchTicket($quickSearch){ // search fields include name, location
