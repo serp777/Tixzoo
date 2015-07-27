@@ -16,6 +16,14 @@
   border: solid gray 1px;
 }
 
+#step-one {
+  position: absolute;
+  right: 3vw;
+  top: 1vw;
+  font-size: 1.5vw;
+  color: rgb(0,128,255);
+}
+
 .view-ticket-userpic {
   position: absolute;
   top: 2vw;

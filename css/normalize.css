@@ -503,7 +503,7 @@ table {
   width: 100%;
   color: black;
   left: 0px;
-  top: 20%;
+  top: 6vw;
   position: absolute;
 
 }
@@ -517,13 +517,28 @@ table {
 
 .column {
   float: left;
-  width: 31.33%;
+  width: 28.33%;
+  height: 26vw;
+  position: relative;
+  left: 5vw;
   margin: 1%;
-  margin-top: 10vw;
+  margin-top: 5vw;
   z-index: 10;
+  border-radius: 5px;
+
+  transition: all .5s ease;
+}
+
+.column:hover {
+  background-color: white;
+  transform: scale(1.2);
+
+  z-index: 11;
 }
 
 .column h3 {
+  position: relative;
+  top: 4vw;
   margin: 0;
   padding: 0;
   font-size: 3vw;
@@ -531,14 +546,18 @@ table {
 }
 
 .column p {
-  width: 50%;
+  position: relative;
+  right: 3vw;
+  top: 7vw;
+  width: 70%;
   margin: 0;
   padding: 0;
   margin-left: 25%;
   margin-right: 25%;
   margin-top: 1vw;
-  font-size: 1vw;
+  font-size: 1.5vw;
   z-index: 10;
+  text-align: left;
 }
 
 #column-3 {
@@ -570,23 +589,59 @@ table {
   padding: 0;
   width: 100%;
   left: 0%;
-  top: 20%;
+  top: 0vw;
   color: white;
   position: absolute;
   z-index: 5;
+  text-align: center;
 }
 
 .main-about h1  {
   padding-bottom: 1em;
   font-size: 4vw;
+  position: relative;
+  top: 8vw;
 }
 
 .main-about p {
-  margin-left: 25%;
-  margin-right: 25%;
-  padding-top: 3em;
-  font-size: 1vw;
+  width: 40vw;
+  padding-top: 7vw;
+  padding-bottom: 7vw;
+  font-size: 1.6vw;
   z-index: 10;
+  position: relative;
+  border-radius: 5px;
+}
+
+#about-text-right {
+  position: absolute;
+  left: 52vw;
+  top: 24vw;
+  transition: all .5s ease;
+}
+
+#about-text-left {
+  position: absolute;
+  left: 5vw;
+  top: 24vw;
+  transition: all .5s ease;
+}
+
+#about-text-right:hover {
+  position: absolute;
+  left: 52vw;
+  top: 24vw;
+  color: gray;
+  background-color: white;
+  transform: scale(1.2);
+}
+
+#about-text-left:hover {
+  position: absolute;
+  left: 5vw;
+  top: 24vw;
+  background-color: white;
+  transform: scale(1.2);
 }
 
 /**** Footer container content ****/
@@ -628,7 +683,6 @@ footer {
   width: 3em;
   left: 2vw;
   bottom: 2vw;
-
   -webkit-transition: height .5s, -webkit-transform .5s;
     transition: height .5s, transform .5s;
 
@@ -654,14 +708,6 @@ footer {
   -webkit-transition: height .5s, -webkit-transform .5s;
     transition: height .5s, transform .5s;
 
-}
-.social-media-icon1:hover {
-  position: absolute;
-  height: 4em;
-  width: 4em;
-  left: 1.6vw;
-  bottom: 1.6vw;
-  margin-right: 1vw;
 }
 .social-media-icon2:hover {
   position: absolute;
