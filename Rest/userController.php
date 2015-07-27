@@ -1,10 +1,10 @@
 <?php
 class userControllerClass {
 	private function establishConnection(){
-		$host="localhost"; // Host name 
-		$username="root"; // Mysql username 
-		$password="computer123"; // Mysql password 
-		$db_name="tixzoo"; // Database name 
+		$host="localhost"; // Host name
+		$username="root"; // Mysql username
+		$password="computer123"; // Mysql password
+		$db_name="tixzoo"; // Database name
 		// Connect to server and select databse.
 		$dbconn = mysqli_connect($host,$username,$password,$db_name) or die("Error " . mysqli_error($dbconn));
 		return $dbconn;
@@ -22,7 +22,10 @@ class userControllerClass {
 		$password = mysqli_real_escape_string($dbconn, $password);
 		$sql="SELECT * FROM accountinfo WHERE username='$username' and password='$password'";
 		$result = $this->executeSqlQuery($sql,$dbconn);
-		return $result;
+
+		$count = $result->num_rows;
+		return $count;
+
 	}
 	public function createAccount($username,$password,$email){
 		// To protect MySQL injection (more detail about MySQL injection)
@@ -47,7 +50,7 @@ class userControllerClass {
 	public function deleteCookie(){
 		ob_start();
 		unset($_COOKIE['user']);
-		ob_end_flush();  
+		ob_end_flush();
 	}
 }
 ?>

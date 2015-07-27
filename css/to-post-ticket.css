@@ -1,10 +1,10 @@
 #ticket-post-container {
-  height: 120em;
+  height: 60em;
   background-color: white;
 }
 
 #ticket-post-positioner-left {
-  height: 120em;
+  height: 60em;
   position: absolute;
   width: 50%;
   background-color: #f0f0f0;
@@ -12,7 +12,7 @@
 }
 
 #ticket-post-positioner-right {
-  height: 120em;
+  height: 60em;
   position: absolute;
   width: 50%;
   background-color: lightgray;
@@ -27,6 +27,7 @@
   height: 45vw;
   background-color: black;
   border-radius: 3px;
+  text-align: center;
 }
 
 #ticket-post-inputs input {
@@ -39,9 +40,11 @@
   text-align: center;
 }
 
+
 #ticket-post-inputs input[type=submit] {
   position: absolute;
   left: 3.2vw;
+  top: 26vw;
   height: 3vw;
   width: 15vw;
   background-color: #155EFC;
@@ -50,10 +53,23 @@
   border: none;
 }
 
+#ticket-post-inputs input[type=submit]:hover {
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #155EFC), color-stop(1, #33bdef));
+  background:-moz-linear-gradient(top, #155EFC 5%, #33bdef 100%);
+  background:-webkit-linear-gradient(top, #155EFC 5%, #33bdef 100%);
+  background:-o-linear-gradient(top, #155EFC 5%, #33bdef 100%);
+  background:-ms-linear-gradient(top, #155EFC 5%, #33bdef 100%);
+  background:linear-gradient(to bottom, #155EFC 5%, #33bdef 100%);
+  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#155EFC', endColorstr='#33bdef',GradientType=0);
+  background-color:#155EFC
+}
+
+
 #ticket-post-inputs {
   position: absolute;
   left: 8vw;
   top: 10vw;
+  text-align: center;
 }
 
 #enter-post-info {
@@ -61,4 +77,81 @@
   top: 1.8em;
   position: relative;
   font-size: 2.5vw;
+}
+
+#enter-validation {
+  color: white;
+  top: 1.8em;
+  position: relative;
+  font-size: 2.5vw;
+}
+
+.quantity-dropdown {
+  position: relative;
+  display: inline;
+  right: 1em;
+}
+
+.type-dropdown {
+  position: relative;
+  display: inline;
+  left: 1em;
+}
+
+.btn-file {
+  overflow: hidden;
+  background-color: white;
+  position: absolute;
+  bottom: 9.5vw;
+  left: 22vw;
+  height: 3em;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+#drag-and-drop {
+  height: 8vw;
+  width: 12vw;
+  background-color: white;
+  position: absolute;
+  bottom: 9.5vw;
+  left: 8vw;
+  border-radius: 3px;
+}
+
+#payment-info {
+  background-color: lightgray;
+  position: absolute;
+  left: 6vw;
+  top: 9vw;
+  width: 27vw;
+  height: 16vw;
+  border-radius: 5px
+}
+
+#payment-info p {
+  position: absolute;
+  left: 2vw;
+  top: .5vw;
+  color: black;
+  font-size: 1.4vw;
+}
+
+#payment-info a {
+  position: absolute;
+  left: 6vw;
+  top: 9vw;
 }
