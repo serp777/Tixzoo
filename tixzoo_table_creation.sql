@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:3306
--- Generation Time: Jul 25, 2015 at 06:28 PM
+-- Generation Time: Jul 26, 2015 at 05:36 PM
 -- Server version: 5.6.25
 -- PHP Version: 5.5.27
 
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS `accountinfo` (
   `last_name` varchar(40) DEFAULT NULL,
   `rating` decimal(1,1) DEFAULT NULL,
   `credit` int(10) NOT NULL DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=1015 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1016 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `accountinfo`
@@ -54,7 +54,8 @@ INSERT INTO `accountinfo` (`accountID`, `emailAddress`, `phone`, `username`, `pa
 (1011, 'ssssssss', NULL, 'enoch', 'okokok', '2015-07-24 03:19:54', NULL, NULL, NULL, NULL, 1000),
 (1012, 'aaa', NULL, 'num3', 'k', '2015-07-24 03:21:58', NULL, NULL, NULL, NULL, 1000),
 (1013, 'example@example.com', NULL, 'nick123', 'pass', '2015-07-25 01:47:54', NULL, NULL, NULL, NULL, 1000),
-(1014, 'aaa', NULL, 'hellohellook', 'aaa', '2015-07-25 05:21:27', NULL, NULL, NULL, NULL, 1000);
+(1014, 'aaa', NULL, 'hellohellook', 'aaa', '2015-07-25 05:21:27', NULL, NULL, NULL, NULL, 1000),
+(1015, 'nick', NULL, 'new user 123', 'wait', '2015-07-27 00:34:02', NULL, NULL, NULL, NULL, 1000);
 
 -- --------------------------------------------------------
 
@@ -76,21 +77,42 @@ CREATE TABLE IF NOT EXISTS `friends` (
 CREATE TABLE IF NOT EXISTS `tickets` (
   `ticketID` int(11) NOT NULL,
   `name` varchar(40) DEFAULT NULL,
-  `sellerID` int(11) NOT NULL,
+  `sellerID` int(11) DEFAULT NULL,
   `location` varchar(400) DEFAULT NULL,
-  `date` date DEFAULT NULL,
-  `price` decimal(8,2) NOT NULL,
+  `date` varchar(40) DEFAULT NULL,
+  `price` decimal(8,2) DEFAULT NULL,
   `type` varchar(5) NOT NULL DEFAULT 'GA',
   `description` varchar(4000) DEFAULT NULL,
   `submit_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `tickets`
 --
 
 INSERT INTO `tickets` (`ticketID`, `name`, `sellerID`, `location`, `date`, `price`, `type`, `description`, `submit_time`) VALUES
-(1, 'Lakers vs Celtics', 1001, 'Staples Center', '2015-08-28', '8.20', 'GA', NULL, '2015-07-24 04:29:59');
+(1, 'Lakers vs Celtics', 1001, 'Staples Center', '2015-08-28', '8.20', 'GA', NULL, '2015-07-24 04:29:59'),
+(2, 'Maroon 5 LA', 1001, 'Hollywood Bowl', '2015-08-13', '130.00', 'GA', 'Maroon 5 in LA!!!!!', '2015-07-26 04:20:12'),
+(3, 'hahaha', 1001, 'LA', NULL, NULL, 'GA', NULL, '2015-07-26 06:53:49'),
+(4, 'maroon 5 ', 1001, 'LA', NULL, '80.00', 'GA', 'Maroon 5!', '2015-07-26 07:02:21'),
+(5, NULL, NULL, NULL, '2015-08-25', NULL, 'GA', NULL, '2015-07-26 07:12:43'),
+(6, 'haha', 1001, 'la', 'ok', '10.00', 'GA', NULL, '2015-07-26 07:27:51'),
+(7, 'haha', 1001, 'la', 'ok', '10.00', 'GA', NULL, '2015-07-26 07:29:59'),
+(8, 'haha', 1001, 'la', '1298966400', '10.00', 'GA', NULL, '2015-07-26 07:32:06'),
+(9, 'haha', 1001, 'la', '1298966400', '10.00', 'GA', NULL, '2015-07-26 07:32:42'),
+(10, 'haha', 1001, 'la', '1298966400', '10.00', 'GA', 'can u hear me', '2015-07-26 07:34:22'),
+(11, 'haha', 1001, 'la', '1298966400', '10.00', 'VIP', 'can u hear me', '2015-07-26 07:35:45'),
+(12, 'haha', 1001, 'la', '1298966400', '10.00', 'VIP', 'can u hear me', '2015-07-26 07:36:44'),
+(13, 'airbnb', 1001, 'la', '1432537200', '10.00', 'SUPER', 'hoooo', '2015-07-26 07:38:26'),
+(14, 'airbnb', 1001, 'mylocation', '1432537200', '20.00', 'SUPER', 'hoooo', '2015-07-26 07:39:34'),
+(15, 'airbnb', 1001, 'mylocation', '1432537200', '20.00', 'SUPER', 'hoooo', '2015-07-26 07:39:51'),
+(16, 'asdfasdf', 1001, 'mylocation', '1432969200', '30.00', 'AAA', 'ssssss', '2015-07-26 07:40:21'),
+(17, 'asdfasdf', 1001, 'ok', '1432969200', '30.00', 'AAA', 'ssssss', '2015-07-26 07:41:16'),
+(18, 'asdfasdf', 1001, 'ok', '1432969200', '30.00', 'AAA', 'ssssss', '2015-07-26 07:44:07'),
+(19, 'root', 1001, 'ok', '1432969200', '30.00', 'AAA', 'ssssss', '2015-07-26 07:44:59'),
+(20, 'root', 1001, 'ok', '1432969200', '30.00', 'AAA', 'ssssss', '2015-07-26 07:47:23'),
+(21, 'new root', 1000, '', '', '0.00', '', '', '2015-07-26 07:49:46'),
+(22, 'max', 0, 'LA', '1425542400', '20.00', 'GA', '', '2015-07-27 00:30:43');
 
 --
 -- Indexes for dumped tables
@@ -119,12 +141,12 @@ ALTER TABLE `tickets`
 -- AUTO_INCREMENT for table `accountinfo`
 --
 ALTER TABLE `accountinfo`
-  MODIFY `accountID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1015;
+  MODIFY `accountID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1016;
 --
 -- AUTO_INCREMENT for table `tickets`
 --
 ALTER TABLE `tickets`
-  MODIFY `ticketID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `ticketID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=23;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
