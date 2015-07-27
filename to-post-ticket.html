@@ -12,7 +12,7 @@
        <div class="nav-bar">
         <div id="btn-container">
 
-         <a {{action 'showModal' 'signup-modal' model}} class="create_Btn">Sell Tix</a>
+         <a {{action 'showModal' 'createticket-modal' model}} class="create_Btn">Sell Tix</a>
          <a {{action 'showModal' 'login-modal' model}} class="login_Btn">Login</a>
         </div>
           <div id="search-bar">
@@ -31,8 +31,7 @@
         <a href="index.html"><img id="tixzoo-logo-feed" {{bind-attr src=tixzooLogo alt="tixzooLogo"}}></a>
       </div>
     </div>
-
-
+    
       <div id="ticket-post-container">
         <div id="ticket-post-positioner-left">
         <div id="ticket-input-box">
@@ -72,7 +71,6 @@
                 <li><a href="#">10</a></li>
               </ul>
             </div>
-
           </form>
         </div>
         </div>
@@ -140,6 +138,7 @@
   <script src="js/app.js"></script>
   <script src="js/loginModal.js"></script>
   <script src="js/signupModal.js"></script>
+  <script src="js/createticketModal.js"></script>
   <script src="js/bootstrap.js"></script>
   <script src="js/ember-data.js" type="text/javascript"></script>
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>

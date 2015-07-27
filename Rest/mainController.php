@@ -7,7 +7,15 @@ ob_start();
 ob_end_flush();
 
 require_once 'userController.php';
+require_once 'ticketController.php';
 header("Content-Type: application/json", true);
+    if(isset($_GET['init']) && $_GET['init'] == "true"){
+        $tickets = new ticketControllerClass();
+        $result["tickets"] = $tickets->getTickets();
+        $result["cookie"] = json_decode($_COOKIE['user']);
+        echo json_encode($result);
+        return $result;
+    }
 
 	if(isset($_POST['loginMode']) && $_POST['loginMode'] == "true"){
 		$login = new userControllerClass();
@@ -53,7 +61,19 @@ header("Content-Type: application/json", true);
     	}
 	}
 
-	return $result;
+    if(isset($_POST['createticketMode']) && $_POST['createticketMode'] == "true"){
+        $ticketController = new ticketControllerClass();
+        $login = new userControllerClass();
+        $userInfo = $login->getUserInfo($_POST['username'], $_POST['password']);
+        $userInfo = json_decode($userInfo, true);
+        $sellerID = $userInfo['accountID'];
+        error_log($sellerID);
+        $result = $ticketController->createTicket($_POST['name'], $sellerID, $_POST['location'],
+            $_POST['date'], $_POST['price'], $_POST['type'], $_POST['description']);
 
+    }
+
+        return $result || '';
 
 ?>
+

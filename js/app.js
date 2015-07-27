@@ -10,7 +10,6 @@ var loaderObj = {
     '../../css/search.css',
     '../../css/slideshow.css',
     '../../css/style.css',
-    '../../css/stylesheet_nav.css',
     '../../css/ticket-feed.css',
     '../../css/to-post-ticket.css',
     '../../css/date_test.css',
@@ -97,31 +96,28 @@ App.ApplicationController = Ember.Controller.extend({
   quantityText: 'Quantity',
   price: '',
   priceText: 'Price (each)',
-
+  ticketJson: [],
 
   init: function() {
     this._super();
     var that = this;
     var message = null;
     var xhr = $.ajax({
-        url: "Rest/cookie.php",
+        url: "Rest/mainController.php",
         type: "GET",
         dataType:'json',
-        data: {cookieMode: true},
+        data: {init: true},
           success: function(data){
             console.log(data);
 
-            if(data["successOut"]){
-              that.set('username',data["user"]["username"]);
-              that.set('password',data["user"]["password"]);
+            if(data["cookie"]){
+              that.set('username',data["cookie"]["user"]["username"]);
+              that.set('password',data["cookie"]["user"]["password"]);
               that.set('loginSuccess',true);
-              //that.set('email',data["user"]["email"]);
-              console.log("username from Cookie:" + data["user"]["username"]);
-              console.log("password from Cookie:" + data["user"]["password"]);
             }
           },
         error: function(data){
-          console.log(data["successOut"]);
+          console.log(data);
         }
         });
 
@@ -130,11 +126,7 @@ App.ApplicationController = Ember.Controller.extend({
       }
       return message;
   },
-
-  pageUpdate: function(){
-    console.log(this.get('username') + " : " + this.get('password'));
-  }.observes('username','password'),
-  actions: {
+    actions: {
     query: function() {
       // the current value of the text field
       var query = this.get('search');

@@ -18,10 +18,11 @@ class userControllerClass {
 		$dbconn = $this->establishConnection();
 		$username = stripslashes($username);
 		$password = stripslashes($password);
-		$username = mysql_escape_string($username);
-		$password = mysql_escape_string($password);
+		$username = mysqli_real_escape_string($dbconn, $username);
+		$password = mysqli_real_escape_string($dbconn, $password);
 		$sql="SELECT * FROM accountinfo WHERE username='$username' and password='$password'";
 		$result = $this->executeSqlQuery($sql,$dbconn);
+
 		$count = $result->num_rows;
 		return $count;
 
@@ -32,13 +33,18 @@ class userControllerClass {
 		$myusername = stripslashes($username);
 		$mypassword = stripslashes($password);
 		$myemail = stripslashes($email);
-		$myusername = mysql_escape_string($myusername);
-		$mypassword = mysql_escape_string($mypassword);
-		$myemail = mysql_escape_string($myemail);
+		$myusername = mysqli_real_escape_string($dbconn, $myusername);
+		$mypassword = mysqli_real_escape_string($dbconn, $mypassword);
+		$myemail = mysqli_real_escape_string($dbconn, $myemail);
 		$sql="INSERT INTO accountinfo (username, password, emailAddress, credit) VALUES ('$myusername','$mypassword','$myemail','1000')";
 		echo $sql;
 		$result = $this->executeSqlQuery($sql,$dbconn);
-
+		return $result;
+	}
+	public function getUserInfo($username, $password) {
+		$result = $this->login($username, $password);
+		$row = mysqli_fetch_assoc($result);
+		$result = json_encode($row);
 		return $result;
 	}
 	public function deleteCookie(){
