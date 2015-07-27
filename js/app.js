@@ -107,7 +107,7 @@ App.ApplicationController = Ember.Controller.extend({
         data: {init: true},
           success: function(data){
             console.log(data);
-
+            that.set('ticketJson', data["tickets"]);
             if(data["cookie"]){
               that.set('username',data["cookie"]["user"]["username"]);
               that.set('password',data["cookie"]["user"]["password"]);
