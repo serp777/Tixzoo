@@ -28,6 +28,8 @@ input {
     margin: 0 auto;
     width: 70vw;
     height: 10vw;
+    top: 10vw;
+    left: 10vw;
 }
 
 #search-mag {
@@ -42,7 +44,7 @@ input {
     position: absolute;
     border: none;
     z-index: 4;
-    right: 11.55vw;
+    right: 20.55vw;
     height: 4.1vw;
     border-radius: 0 4px 4px 0;
     top: 0px;
