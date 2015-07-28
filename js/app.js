@@ -97,6 +97,7 @@ App.ApplicationController = Ember.Controller.extend({
   quantityText: 'Quantity',
   price: '',
   priceText: 'Price (each)',
+  searchMag: 'img/searchbar1.png',
 
 
   init: function() {

@@ -1,4 +1,6 @@
 
+
+
 /* Nav Container Contents */
 
 #content-container {
@@ -124,7 +126,9 @@ a:hover {
   height: 5vw;
   width: 5vw;
   border-radius: 50%;
-  position: relative;
+  position: absolute;
+  left: 1vw;
+  top: 1vw;
   margin-left: 1vw;
   margin-top: 1vw;
 }
@@ -141,18 +145,30 @@ a:hover {
 
 #artist-link {
   font-size: 1.75vw;
+  position: absolute;
+  top: 6vw;
+  left: 3vw;
 }
 
 #date-link {
   color: black;
+  position: absolute;
+  top: 8.5vw;
+  left: 6vw;
 }
 
 #time-link {
   color: black;
+  position: absolute;
+  top: 10.75vw;
+  left: 5.75vw;
 }
 
 #location-link {
   color: black;
+  position: absolute;
+  top: 13vw;
+  left: 5;
 }
 
 #price-link {

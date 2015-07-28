@@ -9,6 +9,7 @@
 
     <div id="top-nav-bar-container">
        <div class="nav-bar">
+
         <div id="btn-container">
         {{#if loginSuccess}}
             <a {{action "logout"}} class="my-tix-btn">My Tix</a>
@@ -21,19 +22,8 @@
           <a {{action 'showModal' 'login-modal' model}} class="login_Btn">Login</a>
         {{/if}}
         </div>
-          <div id="search-bar">
-           <section class="main">
-             <form class="search" method="post" action="index.html" >
-               <input type="text" name="q" placeholder="Search..." />
-               <ul class="results" >
-                 <li><a href="index.html">Search Result #1<br /><span>Description...</span></a></li>
-                 <li><a href="index.html">Search Result #2<br /><span>Description...</span></a></li>
-                 <li><a href="index.html">Search Result #3<br /><span>Description...</span></a></li>
-                 <li><a href="index.html">Search Result #4</a></li>
-               </ul>
-             </form>
-          </section>
-         </div>
+
+
         <img id="tixzoo-logo" {{bind-attr src=tixzooLogo alt="tixzooLogo"}}>
 
 
@@ -41,6 +31,21 @@
     </div>
 
     <div id="container">
+      <div id="search-bar">
+            <section class="main">
+              <form class="search" method="post" action="index.html" >
+                 <input type="text" name="q" placeholder="Search..." />
+                 <img id="search-mag" {{bind-attr src=searchMag alt="searchMag"}}>
+                 <button id="search-button" type="submit">
+                <ul class="results" >
+                   <li><a href="index.html">Search Result #1<br /><span>Description...</span></a></li>
+                   <li><a href="index.html">Search Result #2<br /><span>Description...</span></a></li>
+                   <li><a href="index.html">Search Result #3<br /><span>Description...</span></a></li>
+                   <li><a href="index.html">Search Result #4</a></li>
+                 </ul>
+               </form>
+            </section>
+         </div>
         <img id="background-HomePage-Hax" {{bind-attr src=backgroundHomePageThree alt="backgroundHomePage"}}>
         <ul class="cb-slideshow">
             <li><span><h1>Its a Jungle Out There</h1><h3>Peer to Peer Ticket Exchange Simplified</h3><img id="background-HomePage" {{bind-attr src=backgroundHomePageThree alt="backgroundHomePage"}}></span></li>
@@ -75,8 +80,8 @@
       <img id="bottom-img" {{bind-attr src=bottomBackground alt="bottomBackground"}}>
       <div class="main-about">
         <h1>About Us</h1>
-          <p id="about-text-left">As concert goers and ticket resellers, we have dealt with the frustration of trying to sell and buy tickets at a price we want.</p>
-          <p id="about-text-right">Tixzoo users love music and go the distance to support their favorite artists everyday.</p>
+          <p>As concert goers and ticket resellers, we have dealt with the frustration of trying to sell and buy tickets at a price we want.</p>
+          <p>Tixzoo users love music and go the distance to support their favorite artists everyday.</p>
       </div>
 
     </div>
