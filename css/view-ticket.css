@@ -1,3 +1,5 @@
+
+
 #view-ticket-container {
   height: 80em;
   background-color: gray;
@@ -14,6 +16,14 @@
   border-radius: 5px;
   background-color: #F0F0F0;
   border: solid gray 1px;
+}
+
+#step-one {
+  position: absolute;
+  right: 3vw;
+  top: 1vw;
+  font-size: 1.5vw;
+  color: rgb(0,128,255);
 }
 
 .view-ticket-userpic {

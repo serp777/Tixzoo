@@ -66,7 +66,7 @@ template {
  */
 
 html {
-    font-family: sans-serif; /* 1 */
+    font-family: NEOTERIC, sans-serif; /* 1 */
     height: 100%;
     /*height: 3000px;*/
     margin: 0px;
@@ -83,6 +83,7 @@ body {
     background: #28343b; /* Old browsers */
     height: 100%;
     min-width: 100%;
+
 
 
 }
@@ -456,6 +457,7 @@ table {
 
 
 
+
 #top-nav-bar-container {
   margin-left: auto;
   margin-right: auto;
@@ -466,8 +468,8 @@ table {
 
 #tixzoo-logo {
   top: 2vw;
-  width: 28vw;
-  left: 33%;
+  width: 20vw;
+  left: 40vw;
   position: absolute;
 }
 
@@ -503,27 +505,43 @@ table {
   width: 100%;
   color: black;
   left: 0px;
-  top: 20%;
+  top: 6vw;
   position: absolute;
 
 }
 
 #main-features h1  {
   color: black;
+  font-family: NEOTERIC;
   margin-bottom: 0;
-  font-size: 4vw;
+  font-size: 6vw;
   z-index: 10;
 }
 
 .column {
   float: left;
-  width: 31.33%;
+  width: 28.33%;
+  height: 26vw;
+  position: relative;
+  left: 5vw;
   margin: 1%;
-  margin-top: 10vw;
+  margin-top: 5vw;
   z-index: 10;
+  border-radius: 5px;
+  font-family: NEOTERIC;
+  transition: all .5s ease;
+}
+
+.column:hover {
+  background-color: white;
+  transform: scale(1.2);
+
+  z-index: 11;
 }
 
 .column h3 {
+  position: relative;
+  top: 4vw;
   margin: 0;
   padding: 0;
   font-size: 3vw;
@@ -531,14 +549,18 @@ table {
 }
 
 .column p {
-  width: 50%;
+  position: relative;
+  right: 3vw;
+  top: 7vw;
+  width: 70%;
   margin: 0;
   padding: 0;
   margin-left: 25%;
   margin-right: 25%;
   margin-top: 1vw;
-  font-size: 1vw;
+  font-size: 1.5vw;
   z-index: 10;
+  text-align: left;
 }
 
 #column-3 {
@@ -570,23 +592,51 @@ table {
   padding: 0;
   width: 100%;
   left: 0%;
-  top: 20%;
+  top: 0vw;
   color: white;
   position: absolute;
   z-index: 5;
+  text-align: center;
 }
 
 .main-about h1  {
   padding-bottom: 1em;
   font-size: 4vw;
+  position: relative;
+  font-family: NEOTERIC;
+  top: 7vw;
 }
 
 .main-about p {
-  margin-left: 25%;
-  margin-right: 25%;
-  padding-top: 3em;
-  font-size: 1vw;
+  width: 40vw;
+  padding-top: 2vw;
+  padding-bottom: 2vw;
+  font-size: 2vw;
   z-index: 10;
+  left: 30vw;
+  top: 8vw;
+  position: relative;
+  border-radius: 5px;
+  font-family: NEOTERIC;
+}
+
+
+
+#about-text-right:hover {
+  position: absolute;
+  left: 52vw;
+  top: 24vw;
+  color: gray;
+  background-color: white;
+  transform: scale(1.2);
+}
+
+#about-text-left:hover {
+  position: absolute;
+  left: 5vw;
+  top: 24vw;
+  background-color: white;
+  transform: scale(1.2);
 }
 
 /**** Footer container content ****/
@@ -628,7 +678,6 @@ footer {
   width: 3em;
   left: 2vw;
   bottom: 2vw;
-
   -webkit-transition: height .5s, -webkit-transform .5s;
     transition: height .5s, transform .5s;
 
@@ -654,14 +703,6 @@ footer {
   -webkit-transition: height .5s, -webkit-transform .5s;
     transition: height .5s, transform .5s;
 
-}
-.social-media-icon1:hover {
-  position: absolute;
-  height: 4em;
-  width: 4em;
-  left: 1.6vw;
-  bottom: 1.6vw;
-  margin-right: 1vw;
 }
 .social-media-icon2:hover {
   position: absolute;

@@ -10,22 +10,23 @@
 
 .cb-slideshow h1 {
     color: white;
-    font-size: 5vw;
+    font-size: 6vw;
+    font-weight: bold;
     position: absolute;
     width: 100%;
     left: 0%;
-    font-family: sans-serif;
-    top: 20%;
+    font-family: NEOTERIC;
+    top: 18%;
 }
 
 .cb-slideshow h3 {
     color: white;
-    font-size: 2vw;
+    font-size: 3vw;
     position: absolute;
     width: 100%;
     left: 0%;
-    font-family: sans-serif;
-    top: 35%;
+    font-family: NEOTERIC;
+    top: 38%;
 }
 
 .cb-slideshow li span {

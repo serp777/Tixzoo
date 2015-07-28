@@ -69,7 +69,7 @@ App.ApplicationController = Ember.Controller.extend({
   password: 'Enter Password',
   passwordVerify: 'Verify Password',
   email: 'example@example.com',
-  loginSuccess: true,
+  loginSuccess: false,
   backgroundHomePageOne: 'img/backgroundHomePageOne.png',
   backgroundHomePageTwo: 'img/backgroundHomePageTwo.png',
   backgroundHomePageThree: 'img/backgroundHomePageThree.png',
@@ -100,6 +100,9 @@ App.ApplicationController = Ember.Controller.extend({
   tempTicketJson: [],
   ticketEn: false,
   searchText: '',
+  searchMag: 'img/searchbar1.png',
+
+
   init: function() {
     this._super();
     var that = this;

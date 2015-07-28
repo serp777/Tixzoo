@@ -8,7 +8,8 @@ a:hover { text-decoration: underline }
 .container, .main {
     position: absolute;
     width: 6vw;
-    margin: 0px 4vw;
+    top: 32vw;
+    left: 15.5vw;
     height: 3vw;
     z-index: 10;
 
@@ -25,19 +26,44 @@ input {
 .search {
     position: relative;
     margin: 0 auto;
-    width: 25vw;
-    height: 5vw;
+    width: 70vw;
+    height: 10vw;
+}
+
+#search-mag {
+    position: relative;
+    right: 3.7vw;
+    bottom: .2vw;
+    height: 2.5vw;
+    z-index: 5;
+}
+
+#search-button {
+    position: absolute;
+    border: none;
+    z-index: 4;
+    right: 11.55vw;
+    height: 4.1vw;
+    border-radius: 0 4px 4px 0;
+    top: 0px;
+    width: 5vw;
+    background-color:rgb(0,128,255);
+
 }
 
 .search input {
-    height: 26px;
+    height: 4vw;
     width: 70%;
-    padding: 0 12px 0 25px;
-    background: white url("http://cssdeck.com/uploads/media/items/5/5JuDgOa.png") 8px 6px no-repeat;
+
+    font-size: 1.6vw;
+    padding-left: 2vw;
+
+    background: white url(img/searchbar1.png) 60vw 6px no-repeat;
+
     border-width: 1px;
     border-style: solid;
     border-color: #a8acbc #babdcc #c0c3d2;
-    border-radius: 13px;
+    border-radius: 4px;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     -ms-box-sizing: border-box;
@@ -135,7 +161,7 @@ input {
 .search .results a:before {
     content: '';
     width: 18px;
-    height: 18px;
+    height: 40px;
     position: absolute;
     top: 50%;
     right: 10px;

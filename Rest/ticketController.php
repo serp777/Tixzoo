@@ -1,10 +1,10 @@
 <?php
 class ticketControllerClass {
 	private function establishConnection(){
-		$host="localhost"; // Host name 
-		$username="root"; // Mysql username 
-		$password="computer123"; // Mysql password 
-		$db_name="tixzoo"; // Database name 
+		$host="localhost"; // Host name
+		$username="root"; // Mysql username
+		$password="Computer123"; // Mysql password
+		$db_name="tixzoo"; // Database name
 		// Connect to server and select databse.
 		$dbconn = mysqli_connect($host,$username,$password,$db_name) or die("Error " . mysqli_error($dbconn));
 		return $dbconn;
@@ -29,12 +29,12 @@ class ticketControllerClass {
 		$dbconn = $this->establishConnection();
 		$searchKeywords = explode(" ", $quickSearch);
 
-		
+
 		$sql="SELECT * FROM accountinfo WHERE username='$username' and password='$password'";
 		$result = $this->executeSqlQuery($sql,$dbconn);
 		$count = $result->num_rows;
 		return $count;
-		
+
 	}
 	public function createTicket($name, $sellerID, $location, $date, $price, $type, $description){
 		// To protect MySQL injection (more detail about MySQL injection)
