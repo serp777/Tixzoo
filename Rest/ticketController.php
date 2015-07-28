@@ -36,22 +36,24 @@ class ticketControllerClass {
 		return $count;
 		
 	}
-	public function createTicket($name, $sellerID, $location, $date, $price, $type, $description){
+	public function createTicket($name, $sellerID, $location, $date, $time, $price, $type, $description){
 		// To protect MySQL injection (more detail about MySQL injection)
 		$dbconn = $this->establishConnection();
 		$myname = stripslashes($name);
 		$mysellerID = intval($sellerID);
 		$mylocation = stripslashes($location);
 		$mydate = (string) strtotime($date);
+		$mytime = stripslashes($time);
 		$myprice = floatval($price);
 		$mytype = stripslashes($type);
 		$mydescription = stripslashes($description);
 		$myname = mysqli_real_escape_string($dbconn, $myname);
 		$mylocation = mysqli_real_escape_string($dbconn, $mylocation);
+		$mytime = mysqli_real_escape_string($dbconn, $mytime);
 		$mytype = mysqli_real_escape_string($dbconn, $mytype);
 		$mydescription = mysqli_real_escape_string($dbconn, $mydescription);
 		error_log($mysellerID);
-		$sql = "INSERT INTO tickets (`name`, `sellerID`, `location`, `date`, `price`, `type`, `description`) VALUES ('$myname', '$mysellerID', '$mylocation', '$mydate', '$myprice', '$mytype', '$mydescription')";
+		$sql = "INSERT INTO tickets (`name`, `sellerID`, `location`, `date`, `time`, `price`, `type`, `description`) VALUES ('$myname', '$mysellerID', '$mylocation', '$mydate', '$mytime', '$myprice', '$mytype', '$mydescription')";
 
 		// $sql = "INSERT INTO tickets (`name`, `sellerID`, `location`, `date`, `price`, `type`, `description`) VALUES ('haha', '1001', 'la', 'ok', '10', 'GA', NULL)";
 

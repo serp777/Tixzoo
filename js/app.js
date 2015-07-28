@@ -95,6 +95,9 @@ App.ApplicationController = Ember.Controller.extend({
   price: '',
   priceText: 'Price (each)',
   ticketJson: [],
+  sortAlgorithm: 'relevance',
+  sortProperties: ['rating', 'title', 'price'],
+  isSorted: false,
 
   init: function() {
     this._super();
@@ -154,6 +157,18 @@ App.ApplicationController = Ember.Controller.extend({
         }
         return message;
 
+    },
+    sortBySellerRating: function() {
+      this.set('sortAlgorithm', 'sellerRating');
+    },
+    sortByHighToLow: function() {
+      this.set('sortAlgorithm', 'highToLow');
+    },
+    sortByLowToHigh: function() {
+      this.set('sortAlgorithm', 'lowToHigh');
+    },
+    sortByRelevance: function() {
+      this.set('sortAlgorithm', 'relevance');
     }
   }
 });
@@ -222,3 +237,26 @@ App.MyModalComponent = Ember.Component.extend({
   }.on('didInsertElement')
 });
 
+/*
+ * SortingKeyComponent
+ */
+App.SortingKeyComponent = Ember.Component.extend({
+  tagName: 'dd',
+  classNameBindings: ['isSorted:active', 'isAsc:asc', 'isDesc:desc'],
+  isSorted: (function() {
+    if (this.get('sortProperties')) {
+      return this.get('sortProperties')[0] === this.get('key');
+    } else {
+      return false;
+    }
+  }).property('sortProperties'),
+  isAsc: (function() {
+    return this.get('isSorted') && this.get('sortAscending');
+  }).property('isSorted', 'sortAscending'),
+  isDesc: (function() {
+    return this.get('isSorted') && !this.get('sortAscending');
+  }).property('isSorted', 'sortAscending'),
+  click: function() {
+    this.sendAction('action', this.get('key'));
+  }
+});
