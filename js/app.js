@@ -95,7 +95,9 @@ App.ApplicationController = Ember.Controller.extend({
   price: '',
   priceText: 'Price (each)',
   ticketJson: [],
-
+  tempTicketJson: [],
+  ticketEn: false,
+  searchText: '',
   init: function() {
     this._super();
     var that = this;
@@ -107,7 +109,9 @@ App.ApplicationController = Ember.Controller.extend({
         data: {init: true},
           success: function(data){
             console.log(data);
-
+              that.set('ticketJson',data["tickets"]);
+              that.set('tempTicketJson',data["tickets"]);
+              that.set('ticketEn',true);
             if(data["cookie"]){
               that.set('username',data["cookie"]["user"]["username"]);
               that.set('password',data["cookie"]["user"]["password"]);
@@ -124,6 +128,34 @@ App.ApplicationController = Ember.Controller.extend({
       }
       return message;
   },
+  modifiedContent: function(){
+
+    var that = this;
+    var search = this.get('searchText');
+    var tickets = this.get('ticketJson');
+    //console.log("huh");
+    this.set('tempTicketJson',tickets);
+    if (!this.get('ticketEn') || !search || search == '') { return tickets }
+            var message = null;
+            var xhr = $.ajax({
+                url: "Rest/similarity.php",
+                type: "GET",
+                dataType:'json',
+                data: {search: search, list: tickets},
+                  success: function(data){
+                    console.log(data);
+                    if(data && data !== null){
+                      that.set('tempTicketJson',data["tickets"]);
+                    } else {
+                      that.set('tempTicketJson',[]);
+                    }
+                  }
+                });
+            //return "";
+  }.observes('searchText','ticketEn'),
+  output: function() {
+    return this.get('tempTicketJson');
+  }.property('tempTicketJson','searchText'),
     actions: {
     query: function() {
       // the current value of the text field
