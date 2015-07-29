@@ -101,7 +101,8 @@ App.ApplicationController = Ember.Controller.extend({
   ticketEn: false,
   searchText: '',
   searchMag: 'img/searchbar1.png',
-
+  libPhoto: 'img/libphoto.png',
+  festivalPhoto: 'img/Festival-Crowd.png',
 
   init: function() {
     this._super();

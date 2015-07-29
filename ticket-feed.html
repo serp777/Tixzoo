@@ -14,16 +14,18 @@
          <a {{action 'showModal' 'signup-modal' model}} class="create_Btn">Sell Tix</a>
          <a {{action 'showModal' 'login-modal' model}} class="login_Btn">Login</a>
         </div>
-          <div id="search-bar">
-           <section class="main">
-             <form class="search-feed" method="post" action="index.html" >
-               <input type="text" name="q" placeholder="Search..." />
+          <div id="search-bar-top">
+            <section class="main">
+             <form class="search-top" method="post" action="index.html" >
+               {{input placeholder="Search..." value=searchText}}
                <ul class="results" >
-                 <li><a href="index.html">Search Result #1<br /><span>Description...</span></a></li>
-                 <li><a href="index.html">Search Result #2<br /><span>Description...</span></a></li>
-                 <li><a href="index.html">Search Result #3<br /><span>Description...</span></a></li>
-                 <li><a href="index.html">Search Result #4</a></li>
+                {{#each object in output}}
+                 <li><a href="index.html">{{object.name}}<br /><span>{{object.location}}</span></a></li>
+                 {{/each}}
+
                </ul>
+               <img id="search-mag" {{bind-attr src=searchMag alt="searchMag"}}>
+                 <a href="ticket-feed.html"><button id="search-button" type="submit"></a>
              </form>
           </section>
          </div>

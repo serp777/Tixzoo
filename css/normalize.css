@@ -456,7 +456,9 @@ table {
 }
 
 
-
+#black-slide-changer {
+  color: gray;
+}
 
 #top-nav-bar-container {
   margin-left: auto;

@@ -15,9 +15,9 @@
          <a {{action 'showModal' 'createticket-modal' model}} class="create_Btn">Sell Tix</a>
          <a {{action 'showModal' 'login-modal' model}} class="login_Btn">Login</a>
         </div>
-          <div id="search-bar">
+          <div id="search-bar-top">
            <section class="main">
-             <form class="search-feed" method="post" action="index.html" >
+             <form class="search-top" method="post" action="index.html" >
                <input type="text" name="q" placeholder="Search..." />
                <ul class="results" >
                  <li><a href="index.html">Search Result #1<br /><span>Description...</span></a></li>
@@ -31,7 +31,7 @@
         <a href="index.html"><img id="tixzoo-logo-feed" {{bind-attr src=tixzooLogo alt="tixzooLogo"}}></a>
       </div>
     </div>
-    
+
       <div id="ticket-post-container">
         <div id="ticket-post-positioner-left">
         <div id="ticket-input-box">
