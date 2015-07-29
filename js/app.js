@@ -111,7 +111,7 @@ App.ApplicationController = Ember.Controller.extend({
         url: "Rest/mainController.php",
         type: "GET",
         dataType:'json',
-        data: {init: true},
+        data: {init: "true"},
           success: function(data){
             console.log(data);
               that.set('ticketJson',data["tickets"]);
@@ -258,4 +258,3 @@ App.MyModalComponent = Ember.Component.extend({
     }.bind(this));
   }.on('didInsertElement')
 });
-

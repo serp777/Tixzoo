@@ -2,8 +2,8 @@
 class userControllerClass {
 	private function establishConnection(){
 		$host="localhost"; // Host name
-		$username="root"; // Mysql username
-		$password="Computer123"; // Mysql password
+		$username="tixzoo"; // Mysql username
+		$password="Computer123#"; // Mysql password
 		$db_name="tixzoo"; // Database name
 		// Connect to server and select databse.
 		$dbconn = mysqli_connect($host,$username,$password,$db_name) or die("Error " . mysqli_error($dbconn));
@@ -22,7 +22,6 @@ class userControllerClass {
 		$password = mysqli_real_escape_string($dbconn, $password);
 		$sql="SELECT * FROM accountinfo WHERE username='$username' and password='$password'";
 		$result = $this->executeSqlQuery($sql,$dbconn);
-
 		$count = $result->num_rows;
 		return $count;
 
