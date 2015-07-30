@@ -20,9 +20,67 @@ App.MainPageController = Ember.ObjectController.extend({
   twitterIcon: '/img/twitter.png',
   maxFrat: '/img/max-frat.png',
   disclosurePhoto: '/img/disclosure-artist.png',
+  ticketEn: false,
+  ticketJson: [],
+  tempTicketJson: [],
   searchText: '',
+    init: function() {
+    this._super();
+    var that = this;
+    var message = null;
+    var xhr = $.ajax({
+        url: "Rest/mainController.php",
+        type: "GET",
+        dataType:'json',
+        data: {init: true},
+          success: function(data){
+            console.log(data);
+              that.set('ticketJson',data["tickets"]);
+              that.set('tempTicketJson',data["tickets"]);
+              that.set('ticketEn',true);
+            if(data["cookie"]){
+              that.set('username',data["cookie"]["user"]["username"]);
+              that.set('password',data["cookie"]["user"]["password"]);
+              that.set('loginSuccess',true);
+            }
+          },
+        error: function(data){
+          console.log(data);
+        }
+        });
+
+      if (xhr.status != 200) { // error
+          message = { errorCode: xhr.status, errorMessage: xhr.statusText };
+      }
+      return message;
+  },
+  modifiedContent: function(){
+
+      var that = this;
+      var search = this.get('searchText');
+      var tickets = this.get('ticketJson');
+
+      this.set('tempTicketJson',tickets);
+      if (!this.get('ticketEn') || !search || search == '') { return tickets }
+              var message = null;
+              var xhr = $.ajax({
+                  url: "Rest/similarity.php",
+                  type: "GET",
+                  dataType:'json',
+                  data: {search: search, list: tickets},
+                    success: function(data){
+                      console.log(data);
+                      if(data && data !== null){
+                        that.set('tempTicketJson',data["tickets"]);
+                      } else {
+                        that.set('tempTicketJson',[]);
+                      }
+                    }
+                  });
+              //return "";
+    }.property('searchText','ticketEn'),
     ticketFeed: function() {
       console.log("test");
-      return "";
-    }.property('searchText'),
+      return this.get('tempTicketJson');
+    }.property('tempTicketJson','searchText'),
 });

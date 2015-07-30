@@ -75,27 +75,6 @@ App.Router.map(function() {
 
 
 App.ApplicationController = Ember.Controller.extend({
-  username: 'Enter Username',
-  password: 'Enter Password',
-  passwordVerify: 'Verify Password',
-  email: 'example@example.com',
-  loginSuccess: false,
-  backgroundHomePageOne: '/img/backgroundHomePageOne.png',
-  backgroundHomePageTwo: '/img/backgroundHomePageTwo.png',
-  backgroundHomePageThree: '/img/backgroundHomePageThree.png',
-  backgroundHomePageFour: '/img/backgroundHomePageFour.png',
-  middleBackground: '/img/middle_bckimg.png',
-  bottomBackground: '/img/tixzoo_land.png',
-  tixzooLogo: '/img/tixzoo-logo.png',
-  affordabilityIcon: '/img/affordability-icon.png',
-  facebookIcon: '/img/fb.png',
-  instagramIcon: '/img/instagram.png',
-  lockIcon: '/img/lock-icon.png',
-  peertopeerIcon: '/img/messaging-icon.png',
-  snapchatIcon: '/img/',
-  twitterIcon: '/img/twitter.png',
-  maxFrat: '/img/max-frat.png',
-  disclosurePhoto: '/img/disclosure-artist.png',
   artist: '',
   artistText: 'Artist | Event',
   venue: '',
@@ -105,74 +84,14 @@ App.ApplicationController = Ember.Controller.extend({
   quantity: '',
   quantityText: 'Quantity',
   price: '',
-  priceText: 'Price (each)',
-  ticketJson: [],
-  tempTicketJson: [],
-  ticketEn: false,
-  searchText: '',
   searchMag: 'img/searchbar1.png',
 
 
   init: function() {
     this._super();
-    var that = this;
-    var message = null;
-    var xhr = $.ajax({
-        url: "Rest/mainController.php",
-        type: "GET",
-        dataType:'json',
-        data: {init: true},
-          success: function(data){
-            console.log(data);
-              that.set('ticketJson',data["tickets"]);
-              that.set('tempTicketJson',data["tickets"]);
-              that.set('ticketEn',true);
-            if(data["cookie"]){
-              that.set('username',data["cookie"]["user"]["username"]);
-              that.set('password',data["cookie"]["user"]["password"]);
-              that.set('loginSuccess',true);
-            }
-          },
-        error: function(data){
-          console.log(data);
-        }
-        });
-
-      if (xhr.status != 200) { // error
-          message = { errorCode: xhr.status, errorMessage: xhr.statusText };
-      }
-      this.transitionToRoute('main-page');
-      return message;
+    this.transitionToRoute('main-page');
+      
   },
-  modifiedContent: function(){
-
-    var that = this;
-    var search = this.get('searchText');
-    var tickets = this.get('ticketJson');
-
-    this.set('tempTicketJson',tickets);
-    if (!this.get('ticketEn') || !search || search == '') { return tickets }
-            var message = null;
-            var xhr = $.ajax({
-                url: "Rest/similarity.php",
-                type: "GET",
-                dataType:'json',
-                data: {search: search, list: tickets},
-                  success: function(data){
-                    console.log(data);
-                    if(data && data !== null){
-                      that.set('tempTicketJson',data["tickets"]);
-                    } else {
-                      that.set('tempTicketJson',[]);
-                    }
-                  }
-                });
-            //return "";
-  }.property('searchText','ticketEn'),
-  ticketFeed: function() {
-    console.log("test");
-    return this.get('tempTicketJson');
-  }.property('tempTicketJson','searchText'),
     actions: {
     query: function() {
       // the current value of the text field
