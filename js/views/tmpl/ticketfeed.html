@@ -1,0 +1,263 @@
+<script type="text/x-handlebars" data-template-name="ticketFeed">
+
+    <div id="top-nav-bar-container">
+       <div class="nav-bar">
+        <div id="btn-container">
+
+         <a {{action 'showModal' 'signup-modal' model}} class="create_Btn">Sell Tix</a>
+         <a {{action 'showModal' 'login-modal' model}} class="login_Btn">Login</a>
+        </div>
+          <div id="search-bar">
+           <section class="main">
+             <form class="search-feed" method="post" action="index.html" >
+               <input type="text" name="q" placeholder="Search..." />
+               <ul class="results" >
+                 <li><a href="index.html">Search Result #1<br /><span>Description...</span></a></li>
+                 <li><a href="index.html">Search Result #2<br /><span>Description...</span></a></li>
+                 <li><a href="index.html">Search Result #3<br /><span>Description...</span></a></li>
+                 <li><a href="index.html">Search Result #4</a></li>
+               </ul>
+             </form>
+          </section>
+         </div>
+        <a href="index.html"><img id="tixzoo-logo-feed" {{bind-attr src=tixzooLogo alt="tixzooLogo"}}></a>
+      </div>
+    </div>
+
+
+      <div id="ticket-feed-container">
+      <img id="background-feedimg" {{bind-attr src=backgroundHomePageFour alt="backgroundHomePageFour"}}>
+      <img id="background-feedimg" {{bind-attr src=backgroundHomePageFour alt="backgroundHomePageFour"}}>
+      <img id="background-feedimg" {{bind-attr src=backgroundHomePageFour alt="backgroundHomePageFour"}}>
+
+       <div id="ticket-feed-filter">
+
+        <div id="filter-suggestion-links">
+        <p id="users-also-searched">users also searched:</p>
+          <a href="#">Justin Martin</a>
+          <a href="#">Disclosure</a>
+          <a href="#">Hannah Wants</a>
+          <a href="#">Avalon Nightclub</a>
+
+        </div>
+        <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+              Sort by:
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+              <li><a href="#">Seller Rating</a></li>
+
+              <li><a href="#">Price: High to Low</a></li>
+              <li><a href="#">Price: Low to High</a></li>
+              <li><a href="#">Relevance</a></li>
+            </ul>
+          </div>
+        </div>
+
+
+        <div id="ticket-feed-positioner">
+          <li class="ticket-feed-item">
+            <img class="user-feed-pic" {{bind-attr src=maxFrat alt="maxFrat"}}>
+            <p id="time-ago">24 min ago</p>
+            <div id="ticket-info">
+              <a id="artist-link" href="#">Claude Vonstroke</a>
+              <a id="date-link">June 15th</a>
+              <a id="time-link">Fri 5:00pm</a>
+              <a id="location-link" href="#">Avalon Nightclub - Hollywood, CA</a>
+            </div>
+            <img class="artist-feed-pic" {{bind-attr src=disclosurePhoto alt="disclosurePhoto"}}>
+            <a id="price-link" href="#">$24</a>
+          </li>
+          <li class="ticket-feed-item">
+            <img class="user-feed-pic" {{bind-attr src=maxFrat alt="maxFrat"}}>
+            <p id="time-ago">24 min ago</p>
+            <div id="ticket-info">
+              <a id="artist-link" href="#">Claude Vonstroke</a>
+              <a id="date-link">June 15th</a>
+              <a id="time-link">Fri 5:00pm</a>
+              <a id="location-link" href="#">Avalon Nightclub - Hollywood, CA</a>
+            </div>
+            <img class="artist-feed-pic" {{bind-attr src=disclosurePhoto alt="disclosurePhoto"}}>
+            <a id="price-link" href="#">$24</a>
+          </li>
+          <li class="ticket-feed-item">
+            <img class="user-feed-pic" {{bind-attr src=maxFrat alt="maxFrat"}}>
+            <p id="time-ago">24 min ago</p>
+            <div id="ticket-info">
+              <a id="artist-link" href="#">AC/DC</a>
+              <a id="date-link">June 15th</a>
+              <a id="time-link">Fri 5:00pm</a>
+              <a id="location-link" href="#">blah blah blah venue</a>
+            </div>
+            <img class="artist-feed-pic" {{bind-attr src=disclosurePhoto alt="disclosurePhoto"}}>
+            <a id="price-link" href="#">$24</a>
+          </li>
+          <li class="ticket-feed-item">
+           <img class="user-feed-pic" {{bind-attr src=maxFrat alt="maxFrat"}}>
+            <p id="time-ago">24 min ago</p>
+            <div id="ticket-info">
+              <a id="artist-link" href="#">Claude Vonstroke</a>
+              <a id="date-link">June 15th</a>
+              <a id="time-link">Fri 5:00pm</a>
+              <a id="location-link" href="#">Avalon Nightclub - Hollywood, CA</a>
+            </div>
+            <img class="artist-feed-pic" {{bind-attr src=disclosurePhoto alt="disclosurePhoto"}}>
+            <a id="price-link" href="#">$24</a>
+          </li>
+          <li class="ticket-feed-item">
+            <img class="user-feed-pic" {{bind-attr src=maxFrat alt="maxFrat"}}>
+            <p id="time-ago">24 min ago</p>
+            <div id="ticket-info">
+              <a id="artist-link" href="#">Claude Vonstroke</a>
+              <a id="date-link">June 15th</a>
+              <a id="time-link">Fri 5:00pm</a>
+              <a id="location-link" href="#">Avalon Nightclub - Hollywood, CA</a>
+            </div>
+            <img class="artist-feed-pic" {{bind-attr src=disclosurePhoto alt="disclosurePhoto"}}>
+            <a id="price-link" href="#">$24</a>
+          </li>
+          <li class="ticket-feed-item">
+            <img class="user-feed-pic" {{bind-attr src=maxFrat alt="maxFrat"}}>
+            <p id="time-ago">24 min ago</p>
+            <div id="ticket-info">
+              <a id="artist-link" href="#">Claude Vonstroke</a>
+              <a id="date-link">June 15th</a>
+              <a id="time-link">Fri 5:00pm</a>
+              <a id="location-link" href="#">Avalon Nightclub - Hollywood, CA</a>
+            </div>
+            <img class="artist-feed-pic" {{bind-attr src=disclosurePhoto alt="disclosurePhoto"}}>
+            <a id="price-link" href="#">$24</a>
+          </li>
+          <li class="ticket-feed-item">
+            <img class="user-feed-pic" {{bind-attr src=maxFrat alt="maxFrat"}}>
+            <p id="time-ago">24 min ago</p>
+            <div id="ticket-info">
+              <a id="artist-link" href="#">Claude Vonstroke</a>
+              <a id="date-link">June 15th</a>
+              <a id="time-link">Fri 5:00pm</a>
+              <a id="location-link" href="#">Avalon Nightclub - Hollywood, CA</a>
+            </div>
+            <img class="artist-feed-pic" {{bind-attr src=disclosurePhoto alt="disclosurePhoto"}}>
+            <a id="price-link" href="#">$24</a>
+          </li>
+          <li class="ticket-feed-item">
+            <img class="user-feed-pic" {{bind-attr src=maxFrat alt="maxFrat"}}>
+            <p id="time-ago">24 min ago</p>
+            <div id="ticket-info">
+              <a id="artist-link" href="#">Claude Vonstroke</a>
+              <a id="date-link">June 15th</a>
+              <a id="time-link">Fri 5:00pm</a>
+              <a id="location-link" href="#">Avalon Nightclub - Hollywood, CA</a>
+            </div>
+            <img class="artist-feed-pic" {{bind-attr src=disclosurePhoto alt="disclosurePhoto"}}>
+            <a id="price-link" href="#">$24</a>
+          </li>
+          <li class="ticket-feed-item">
+            <img class="user-feed-pic" {{bind-attr src=maxFrat alt="maxFrat"}}>
+            <p id="time-ago">24 min ago</p>
+            <div id="ticket-info">
+              <a id="artist-link" href="#">Claude Vonstroke</a>
+              <a id="date-link">June 15th</a>
+              <a id="time-link">Fri 5:00pm</a>
+              <a id="location-link" href="#">Avalon Nightclub - Hollywood, CA</a>
+            </div>
+            <img class="artist-feed-pic" {{bind-attr src=disclosurePhoto alt="disclosurePhoto"}}>
+            <a id="price-link" href="#">$24</a>
+          </li>
+          <li class="ticket-feed-item">
+            <img class="user-feed-pic" {{bind-attr src=maxFrat alt="maxFrat"}}>
+            <p id="time-ago">24 min ago</p>
+            <div id="ticket-info">
+              <a id="artist-link" href="#">Claude Vonstroke</a>
+              <a id="date-link">June 15th</a>
+              <a id="time-link">Fri 5:00pm</a>
+              <a id="location-link" href="#">Avalon Nightclub - Hollywood, CA</a>
+            </div>
+            <img class="artist-feed-pic" {{bind-attr src=disclosurePhoto alt="disclosurePhoto"}}>
+            <a id="price-link" href="#">$24</a>
+          </li>
+          <li class="ticket-feed-item">
+            <img class="user-feed-pic" {{bind-attr src=maxFrat alt="maxFrat"}}>
+            <p id="time-ago">24 min ago</p>
+            <div id="ticket-info">
+              <a id="artist-link" href="#">Claude Vonstroke</a>
+              <a id="date-link">June 15th</a>
+              <a id="time-link">Fri 5:00pm</a>
+              <a id="location-link" href="#">Avalon Nightclub - Hollywood, CA</a>
+            </div>
+            <img class="artist-feed-pic" {{bind-attr src=disclosurePhoto alt="disclosurePhoto"}}>
+            <a id="price-link" href="#">$24</a>
+          </li>
+          <li class="ticket-feed-item">
+            <img class="user-feed-pic" {{bind-attr src=maxFrat alt="maxFrat"}}>
+            <p id="time-ago">24 min ago</p>
+            <div id="ticket-info">
+              <a id="artist-link" href="#">Claude Vonstroke</a>
+              <a id="date-link">June 15th</a>
+              <a id="time-link">Fri 5:00pm</a>
+              <a id="location-link" href="#">Avalon Nightclub - Hollywood, CA</a>
+            </div>
+            <img class="artist-feed-pic" {{bind-attr src=disclosurePhoto alt="disclosurePhoto"}}>
+            <a id="price-link" href="#">$24</a>
+          </li>
+          <li class="ticket-feed-item">
+            <img class="user-feed-pic" {{bind-attr src=maxFrat alt="maxFrat"}}>
+            <p id="time-ago">24 min ago</p>
+            <div id="ticket-info">
+              <a id="artist-link" href="#">Claude Vonstroke</a>
+              <a id="date-link">June 15th</a>
+              <a id="time-link">Fri 5:00pm</a>
+              <a id="location-link" href="#">Avalon Nightclub - Hollywood, CA</a>
+            </div>
+            <img class="artist-feed-pic" {{bind-attr src=disclosurePhoto alt="disclosurePhoto"}}>
+            <a id="price-link" href="#">$24</a>
+          </li>
+          <li class="ticket-feed-item">
+            <img class="user-feed-pic" {{bind-attr src=maxFrat alt="maxFrat"}}>
+            <p id="time-ago">24 min ago</p>
+            <div id="ticket-info">
+              <a id="artist-link" href="#">Claude Vonstroke</a>
+              <a id="date-link">June 15th</a>
+              <a id="time-link">Fri 5:00pm</a>
+              <a id="location-link" href="#">Avalon Nightclub - Hollywood, CA</a>
+            </div>
+            <img class="artist-feed-pic" {{bind-attr src=disclosurePhoto alt="disclosurePhoto"}}>
+            <a id="price-link" href="#">$24</a>
+          </li>
+          <li class="ticket-feed-item">
+            <img class="user-feed-pic" {{bind-attr src=maxFrat alt="maxFrat"}}>
+            <p id="time-ago">24 min ago</p>
+            <div id="ticket-info">
+              <a id="artist-link" href="#">Claude Vonstroke</a>
+              <a id="date-link">June 15th</a>
+              <a id="time-link">Fri 5:00pm</a>
+              <a id="location-link" href="#">Avalon Nightclub - Hollywood, CA</a>
+            </div>
+            <img class="artist-feed-pic" {{bind-attr src=disclosurePhoto alt="disclosurePhoto"}}>
+            <a id="price-link" href="#">$24</a>
+          </li>
+        </div>
+      </div>
+
+
+
+    <div id="footer-container">
+      <footer>
+        <div id="social">
+        <a href='#'><img class="social-media-icon1" {{bind-attr src=facebookIcon alt="facebookIcon"}}></a>
+        <a href='#'><img class="social-media-icon2" {{bind-attr src=instagramIcon alt="instagramIcon"}}></a>
+        <a href='#'><img class="social-media-icon3" {{bind-attr src=twitterIcon alt="twitterIcon"}}></a>
+        </div>
+        <a class="footer-link" href="#">Home</a>
+        <a class="footer-link" href="#">Careers</a>
+        <a class="footer-link" href="#">Developers</a>
+        <a class="footer-link" href="#">Contact Us</a>
+
+      </footer>
+    </div>
+
+
+    {{outlet}}
+    {{outlet 'modal'}}
+  </script>

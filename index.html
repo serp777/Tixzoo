@@ -7,102 +7,6 @@
 <body>
   <script type="text/x-handlebars">
 
-    <div id="top-nav-bar-container">
-       <div class="nav-bar">
-
-        <div id="btn-container">
-        {{#if loginSuccess}}
-            <a {{action "logout"}} class="my-tix-btn">My Tix</a>
-          <br>
-            <a {{action "logout"}} class="sell-btn">Sell</a>
-          <br>
-            <img class="my-account-pic" {{action "logout"}} {{bind-attr src=maxFrat alt="maxFrat"}}>
-        {{else}}
-          <a {{action 'showModal' 'signup-modal' model}} class="create_Btn">Sign Up</a>
-          <a {{action 'showModal' 'login-modal' model}} class="login_Btn">Login</a>
-        {{/if}}
-        </div>
-
-          <div id="search-bar">
-           <section class="main">
-             <form class="search" method="post" action="index.html" >
-               {{input placeholder="Search..." value=searchText}}
-               <ul class="results" >
-                {{#each object in output}}
-                 <li><a href="index.html">{{object.name}}<br /><span>{{object.location}}</span></a></li>
-                 {{/each}}
-
-               </ul>
-               <img id="search-mag" {{bind-attr src=searchMag alt="searchMag"}}>
-                 <button id="search-button" type="submit">
-             </form>
-          </section>
-         </div>
-
-        <img id="tixzoo-logo" {{bind-attr src=tixzooLogo alt="tixzooLogo"}}>
-
-
-      </div>
-    </div>
-
-    <div id="container">
-
-        <img id="background-HomePage-Hax" {{bind-attr src=backgroundHomePageThree alt="backgroundHomePage"}}>
-        <ul class="cb-slideshow">
-            <li><span><h1>Its a Jungle Out There</h1><h3>Peer to Peer Ticket Exchange Simplified</h3><img id="background-HomePage" {{bind-attr src=backgroundHomePageThree alt="backgroundHomePage"}}></span></li>
-            <li><span><h1>Ticket Exchange Simplified</h1><h3>Buy, Sell, or Trade Tickets on the Go</h3><img id="background-HomePage" {{bind-attr src=backgroundHomePageTwo alt="backgroundHomePage"}}></span></li>
-            <li><span><h1>Its a Jungle Out There</h1><h3>Peer to Peer Ticket Exchange Simplified</h3><img id="background-HomePage" {{bind-attr src=backgroundHomePageOne alt="backgroundHomePage"}}></span></li>
-            <li><span><h1>Ticket Exchange Simplified</h1><h3>Buy, Sell, or Trade Tickets on the Go</h3><img id="background-HomePage" {{bind-attr src=backgroundHomePageThree alt="backgroundHomePage"}}></span></li>
-            <li><span><h1>Its a Jungle Out There</h1><h3>Peer to Peer Ticket Exchange Simplified</h3><img id="background-HomePage" {{bind-attr src=backgroundHomePageTwo alt="backgroundHomePage"}}></span></li>
-            <li><span><h1>Ticket Exchange Simplified</h1><h3>Buy, Sell, or Trade Tickets on the Go</h3><img id="background-HomePage" {{bind-attr src=backgroundHomePageThree alt="backgroundHomePage"}}></span><</li>
-        </ul>
-    </div>
-
-    <div id="middle-background-container">
-        <img id="middle-img" {{bind-attr src=middleBackground alt="middleBackground"}}>
-        <div id="main-features">
-          <h1>Features</h1>
-          <div class="column">
-            <h3>Peer To Peer</h3>
-            <p>Tixzoo is a peer-to-peer ticket exchange platform</p>
-          </div>
-          <div class="column">
-            <h3>Security</h3>
-            <p>User exchange, identity, and payment is secured and authenticated</p>
-          </div>
-          <div class="column">
-            <h3>Affordability</h3>
-            <p>Tixzoo charges the bare minimum for transaction fees and offers rewards as long term incentive</p>
-          </div>
-        </div>
-    </div>
-
-    <div id="bottom-background-container">
-      <img id="bottom-img" {{bind-attr src=bottomBackground alt="bottomBackground"}}>
-      <div class="main-about">
-        <h1>About Us</h1>
-          <p>As concert goers and ticket resellers, we have dealt with the frustration of trying to sell and buy tickets at a price we want.</p>
-          <p>Tixzoo users love music and go the distance to support their favorite artists everyday.</p>
-      </div>
-
-    </div>
-
-    <div id="footer-container">
-      <footer>
-        <div id="social">
-        <a href='#'><img class="social-media-icon1" {{bind-attr src=facebookIcon alt="facebookIcon"}}></a>
-        <a href='#'><img class="social-media-icon2" {{bind-attr src=instagramIcon alt="instagramIcon"}}></a>
-        <a href='#'><img class="social-media-icon3" {{bind-attr src=twitterIcon alt="twitterIcon"}}></a>
-        </div>
-        <a class="footer-link" href="#">Home</a>
-        <a class="footer-link" href="#">Careers</a>
-        <a class="footer-link" href="#">Developers</a>
-        <a class="footer-link" href="#">Contact Us</a>
-
-      </footer>
-    </div>
-
-
     {{outlet}}
     {{outlet 'modal'}}
   </script>
@@ -119,6 +23,7 @@
   <script src="js/loginModal.js"></script>
   <script src="js/signupModal.js"></script>
   <script src="js/bootstrap.js"></script>
+  <script src="js/mainPage.js"></script>
   <script src="js/ember-data.js" type="text/javascript"></script>
   <!-- to activate the test runner, add the "?test" query string parameter -->
   <script src="tests/runner.js"></script>

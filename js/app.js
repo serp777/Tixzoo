@@ -1,6 +1,8 @@
 var loaderObj = {
     templates : [
-    'tmpl/modal.html'
+    'tmpl/modal.html',
+    'tmpl/ticketfeed.html',
+    'tmpl/mainPage.html'
     ],
     css : [
     '../../css/bootstrap.css',
@@ -17,8 +19,8 @@ var loaderObj = {
     '../../css/view-ticket.css'
   ]
 };
-loadTemplates(loaderObj.templates);
-loadCss(loaderObj.css);
+
+
 //This function loads all templates into the view
 function loadTemplates(templates) {
     $(templates).each(function() {
@@ -56,10 +58,18 @@ function loadCss(css) {
     });
 }
 
+loadCss(loaderObj.css);
+loadTemplates(loaderObj.templates);
+
 App = Ember.Application.create();
 
 App.Router.map(function() {
-  // put your routes here
+  this.resource("ticketFeed", function(){
+    this.route("buy", { path: "/:ticketID" });
+  });
+  this.resource("main-page", function(){
+    this.route("load", { path: "/" });
+  });
 });
 
 
@@ -70,22 +80,22 @@ App.ApplicationController = Ember.Controller.extend({
   passwordVerify: 'Verify Password',
   email: 'example@example.com',
   loginSuccess: false,
-  backgroundHomePageOne: 'img/backgroundHomePageOne.png',
-  backgroundHomePageTwo: 'img/backgroundHomePageTwo.png',
-  backgroundHomePageThree: 'img/backgroundHomePageThree.png',
-  backgroundHomePageFour: 'img/backgroundHomePageFour.png',
-  middleBackground: 'img/middle_bckimg.png',
-  bottomBackground: 'img/tixzoo_land.png',
-  tixzooLogo: 'img/tixzoo-logo.png',
-  affordabilityIcon: 'img/affordability-icon.png',
-  facebookIcon: 'img/fb.png',
-  instagramIcon: 'img/instagram.png',
-  lockIcon: 'img/lock-icon.png',
-  peertopeerIcon: 'img/messaging-icon.png',
-  snapchatIcon: 'img/',
-  twitterIcon: 'img/twitter.png',
-  maxFrat: 'img/max-frat.png',
-  disclosurePhoto: 'img/disclosure-artist.png',
+  backgroundHomePageOne: '/img/backgroundHomePageOne.png',
+  backgroundHomePageTwo: '/img/backgroundHomePageTwo.png',
+  backgroundHomePageThree: '/img/backgroundHomePageThree.png',
+  backgroundHomePageFour: '/img/backgroundHomePageFour.png',
+  middleBackground: '/img/middle_bckimg.png',
+  bottomBackground: '/img/tixzoo_land.png',
+  tixzooLogo: '/img/tixzoo-logo.png',
+  affordabilityIcon: '/img/affordability-icon.png',
+  facebookIcon: '/img/fb.png',
+  instagramIcon: '/img/instagram.png',
+  lockIcon: '/img/lock-icon.png',
+  peertopeerIcon: '/img/messaging-icon.png',
+  snapchatIcon: '/img/',
+  twitterIcon: '/img/twitter.png',
+  maxFrat: '/img/max-frat.png',
+  disclosurePhoto: '/img/disclosure-artist.png',
   artist: '',
   artistText: 'Artist | Event',
   venue: '',
@@ -131,6 +141,7 @@ App.ApplicationController = Ember.Controller.extend({
       if (xhr.status != 200) { // error
           message = { errorCode: xhr.status, errorMessage: xhr.statusText };
       }
+      this.transitionToRoute('main-page');
       return message;
   },
   modifiedContent: function(){
@@ -138,7 +149,7 @@ App.ApplicationController = Ember.Controller.extend({
     var that = this;
     var search = this.get('searchText');
     var tickets = this.get('ticketJson');
-    //console.log("huh");
+
     this.set('tempTicketJson',tickets);
     if (!this.get('ticketEn') || !search || search == '') { return tickets }
             var message = null;
@@ -157,8 +168,9 @@ App.ApplicationController = Ember.Controller.extend({
                   }
                 });
             //return "";
-  }.observes('searchText','ticketEn'),
-  output: function() {
+  }.property('searchText','ticketEn'),
+  ticketFeed: function() {
+    console.log("test");
     return this.get('tempTicketJson');
   }.property('tempTicketJson','searchText'),
     actions: {
@@ -221,6 +233,7 @@ App.ApplicationRoute = Ember.Route.extend({
     }
   }
 });
+
 
 /*
  * IndexRoute
