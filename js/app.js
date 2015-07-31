@@ -2,7 +2,11 @@ var loaderObj = {
     templates : [
     'tmpl/modal.html',
     'tmpl/ticketfeed.html',
-    'tmpl/mainPage.html'
+    'tmpl/mainPage.html',
+    'tmpl/postticket.html',
+    'tmpl/userprofile.html',
+    'tmpl/viewticket.html',
+    'tmpl/confirmticket.html'
     ],
     css : [
     '../../css/bootstrap.css',
@@ -64,10 +68,22 @@ loadTemplates(loaderObj.templates);
 App = Ember.Application.create();
 
 App.Router.map(function() {
-  this.resource("ticketFeed", function(){
+  this.resource("ticket-feed", function(){
     this.route("buy", { path: "/:ticketID" });
   });
   this.resource("main-page", function(){
+    this.route("load", { path: "/" });
+  });
+  this.resource("post-ticket", function(){
+    this.route("load", { path: "/" });
+  });
+  this.resource("confirm-ticket", function(){
+    this.route("load", { path: "/" });
+  });
+  this.resource("user-profile", function(){
+    this.route("load", { path: "/" });
+  });
+  this.resource("view-ticket", function(){
     this.route("load", { path: "/" });
   });
 });
@@ -85,51 +101,18 @@ App.ApplicationController = Ember.Controller.extend({
   quantityText: 'Quantity',
   price: '',
   searchMag: 'img/searchbar1.png',
-
-
   init: function() {
     this._super();
     this.transitionToRoute('main-page');
-      
   },
     actions: {
     query: function() {
       // the current value of the text field
       var query = this.get('search');
       this.transitionToRoute('search', { query: query });
-    },
-    logout: function() {
-
-      this.set('loginSuccess', false);
-        var that = this;
-        var message = null;
-        var xhr = $.ajax({
-          url: "Rest/mainController.php",
-          type: "GET",
-          dataType:'json',
-          data: {logoutMode: "true"},
-            success: function(data){
-                that.set('controllers.application.loginSuccess',false);
-            },
-            error: function(error){
-              console.log("why");
-              console.log(error);
-            }
-          });
-
-        if (xhr.status != 200) { // error
-            message = { errorCode: xhr.status, errorMessage: xhr.statusText };
-        }
-        return message;
-
     }
   }
 });
-
-
-
-
-
 
 /*
  * ApplicationRoute

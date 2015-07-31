@@ -60,8 +60,11 @@ App.MainPageController = Ember.ObjectController.extend({
       var search = this.get('searchText');
       var tickets = this.get('ticketJson');
 
-      this.set('tempTicketJson',tickets);
-      if (!this.get('ticketEn') || !search || search == '') { return tickets }
+      
+      if (!this.get('ticketEn') || !search || search == '') { 
+        this.set('tempTicketJson',tickets);
+        return tickets; 
+      }
               var message = null;
               var xhr = $.ajax({
                   url: "Rest/similarity.php",
@@ -78,9 +81,35 @@ App.MainPageController = Ember.ObjectController.extend({
                     }
                   });
               //return "";
-    }.property('searchText','ticketEn'),
+    }.observes('searchText','ticketEn'),
     ticketFeed: function() {
-      console.log("test");
+      console.log(this.get('tempTicketJson'));
       return this.get('tempTicketJson');
     }.property('tempTicketJson','searchText'),
+    actions: {
+    logout: function() {
+      this.set('loginSuccess', false);
+        var that = this;
+        var message = null;
+        var xhr = $.ajax({
+          url: "Rest/mainController.php",
+          type: "GET",
+          dataType:'json',
+          data: {logoutMode: "true"},
+            success: function(data){
+                that.set('controllers.application.loginSuccess',false);
+            },
+            error: function(error){
+              console.log("why");
+              console.log(error);
+            }
+          });
+
+        if (xhr.status != 200) { // error
+            message = { errorCode: xhr.status, errorMessage: xhr.statusText };
+        }
+        return message;
+
+    }
+    }
 });

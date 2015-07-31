@@ -91,12 +91,11 @@ input {
 .search input:focus + .results { display: block }
 
 .search .results {
-    display: none;
     position: absolute;
     top: 35px;
     left: 0;
     right: 0;
-    z-index: 10;
+    z-index: 1000;
     padding: 0;
     margin: 0;
     border-width: 1px;
@@ -122,6 +121,7 @@ input {
 .search .results li:first-child { margin-top: -1px }
 
 .search .results li:first-child:before, .search .results li:first-child:after {
+    z-index: 1000;
     display: block;
     content: '';
     width: 0;

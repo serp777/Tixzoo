@@ -22,10 +22,10 @@
                {{input placeholder="Search..." value=searchText}}
                <ul class="results" >
                 {{#each object in ticketFeed}}
-                 <li>{{#link-to 'ticketFeed.buy' object}}{{object.name}}{{/link-to}}<a <br/><span>{{object.location}}</span></a></li>
-                
+                {{#link-to 'ticket-feed.buy' object}}
+                {{object.name}} 
+                {{/link-to}}
                  {{/each}}
-
                </ul>
                <img id="search-mag" {{bind-attr src=searchMag alt="searchMag"}}>
                  <button id="search-button" type="submit">
