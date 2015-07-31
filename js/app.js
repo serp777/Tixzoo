@@ -106,7 +106,10 @@ App.ApplicationController = Ember.Controller.extend({
   searchMag: 'img/searchbar1.png',
   init: function() {
     this._super();
-    this.transitionToRoute('main-page');
+    var url = window.location.href.split("/");
+    if(url[3] === null || url[3] === ""){
+      this.transitionToRoute('main-page');
+    }
   },
     actions: {
     query: function() {
@@ -144,6 +147,7 @@ App.ApplicationRoute = Ember.Route.extend({
  * IndexRoute
  */
 App.IndexRoute = Ember.Route.extend({
+
   model: function() {
     return Ember.Object.create({ username: 'My username'});
   }

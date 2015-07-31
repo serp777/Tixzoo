@@ -20,11 +20,13 @@
            <section class="main">
              <form class="search" method="post" action="ticket-feed.html" >
                {{input placeholder="Search..." value=searchText}}
-               <ul class="results" >
+               <ul>
                 {{#each object in ticketFeed}}
+                <li class='active has-sub'>
                 {{#link-to 'ticket-feed.buy' object}}
                 {{object.name}} 
                 {{/link-to}}
+                </li>
                  {{/each}}
                </ul>
                <img id="search-mag" {{bind-attr src=searchMag alt="searchMag"}}>
