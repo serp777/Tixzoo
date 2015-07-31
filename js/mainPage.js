@@ -1,8 +1,9 @@
 App.MainPageController = Ember.ObjectController.extend({
-  username: 'Enter Username',
-  password: 'Enter Password',
-  passwordVerify: 'Verify Password',
-  email: 'example@example.com',
+  needs: ['application'],
+  username: '',
+  password: '',
+  passwordVerify: '',
+  email: '',
   loginSuccess: false,
   backgroundHomePageOne: '/img/backgroundHomePageOne.png',
   backgroundHomePageTwo: '/img/backgroundHomePageTwo.png',
@@ -54,6 +55,11 @@ App.MainPageController = Ember.ObjectController.extend({
       }
       return message;
   },
+  updateLogin: function(){
+    this.set('loginSuccess',this.get('controllers.application.loginSuccess'));
+    this.set('username',this.get('controllers.application.username'));
+    this.set('password',this.get('controllers.application.password'));
+  }.observes('controllers.application.loginSuccess'),
   modifiedContent: function(){
 
       var that = this;

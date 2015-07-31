@@ -91,6 +91,9 @@ App.Router.map(function() {
 
 
 App.ApplicationController = Ember.Controller.extend({
+  username: '',
+  password: '',
+  loginSuccess: false,
   artist: '',
   artistText: 'Artist | Event',
   venue: '',
