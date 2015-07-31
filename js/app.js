@@ -65,6 +65,7 @@ App.Router.map(function() {
 
 
 App.ApplicationController = Ember.Controller.extend({
+  needs: ['tickets'],
   username: 'Enter Username',
   password: 'Enter Password',
   passwordVerify: 'Verify Password',
@@ -105,7 +106,7 @@ App.ApplicationController = Ember.Controller.extend({
   festivalPhoto: 'img/Festival-Crowd.png',
 
   init: function() {
-    this._super();
+    //this._super();
     var that = this;
     var message = null;
     var xhr = $.ajax({
@@ -192,6 +193,10 @@ App.ApplicationController = Ember.Controller.extend({
         }
         return message;
 
+    },
+    sortBy: function(sortProperties) {
+      console.log(sortProperties);
+      this.set('ticketJson',this.get('controllers.tickets').sortBy(sortProperties));
     }
   }
 });
