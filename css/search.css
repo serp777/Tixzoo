@@ -1,9 +1,26 @@
+#search-bar {
+    position: absolute;
+    height: 6vw;
+    width: 350px;
+    bottom: 28vw;
+    left: 28vw;
+    z-index: 16;
+}
+
+#search-bar-feed {
+    position: absolute;
+    height: 2vw;
+    width: 350vw;
+    bottom: 38vw;
+    left: 26vw;
+}
+
 .searchbox{
 /*definint width of form element*/
-
+    z-index: 15;
     width:350px;
 /*centering the form element*/
-    margin:100px auto;
+
 }
 input[type="search"]{
     padding:10px 15px 10px 50px;
@@ -22,25 +39,26 @@ input[type="search"]{
 /*positioning background image*/
     background-position:8px 12px;
 /*changing background color form white*/
-    background-color:#7accc8;
+    background-color: white;
+    border-radius: 8px;
 }
 /*now using placeholder property to change color of placholder text and making it consitent accross the browser by use of prefix*/
 input[type="search"]::-webkit-input-placeholder{
-    color:#b1e0de;
+    color: lightgray;
 }
 input[type="search"]:-moz-placeholder { /* Firefox 18- */
-   color: #b1e0de;
+   color: lightgray;
 }
 input[type="search"]::-moz-placeholder {  /* Firefox 19+ */
-   color: #b1e0de;
+   color: lightgray;
 }
 input[type="search"]:-ms-input-placeholder {  /* interner explorer*/
-   color: #b1e0de;
+   color: lightgray;
 }
 .suggestions a {
     display:block;
 /*removing underlines from anchor element*/
-    text-decoration:none; 
+    text-decoration:none;
     color:#1f5350;
     font-size:30px;
     background-color:#ace5e2;

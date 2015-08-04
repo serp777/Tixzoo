@@ -16,7 +16,7 @@
         {{/if}}
         </div>
 
-      
+
 
         <img id="tixzoo-logo" {{bind-attr src=tixzooLogo alt="tixzooLogo"}}>
 
@@ -26,27 +26,27 @@
 
     <div id="container">
 
-        <img id="background-HomePage-Hax" {{bind-attr src=backgroundHomePageThree alt="backgroundHomePage"}}>
+        <img id="background-HomePage-Hax" {{bind-attr src=backgroundHomePageFive alt="backgroundHomePage"}}>
         <ul class="cb-slideshow">
-            <li><span><h1>Its a Jungle Out There</h1><h3>Peer to Peer Ticket Exchange Simplified</h3><img id="background-HomePage" {{bind-attr src=backgroundHomePageThree alt="backgroundHomePage"}}></span></li>
-            <li><span><h1>Ticket Exchange Simplified</h1><h3>Buy, Sell, or Trade Tickets on the Go</h3><img id="background-HomePage" {{bind-attr src=backgroundHomePageTwo alt="backgroundHomePage"}}></span></li>
-            <li><span><h1>Its a Jungle Out There</h1><h3>Peer to Peer Ticket Exchange Simplified</h3><img id="background-HomePage" {{bind-attr src=backgroundHomePageOne alt="backgroundHomePage"}}></span></li>
+            <li><span><h1>Its a Jungle Out There</h1><h3>Peer to Peer Ticket Exchange Simplified</h3><img id="background-HomePage" {{bind-attr src=backgroundHomePageFive alt="backgroundHomePage"}}></span></li>
             <li><span><h1>Ticket Exchange Simplified</h1><h3>Buy, Sell, or Trade Tickets on the Go</h3><img id="background-HomePage" {{bind-attr src=backgroundHomePageThree alt="backgroundHomePage"}}></span></li>
-            <li><span><h1>Its a Jungle Out There</h1><h3>Peer to Peer Ticket Exchange Simplified</h3><img id="background-HomePage" {{bind-attr src=backgroundHomePageTwo alt="backgroundHomePage"}}></span></li>
-            <li><span><h1>Ticket Exchange Simplified</h1><h3>Buy, Sell, or Trade Tickets on the Go</h3><img id="background-HomePage" {{bind-attr src=backgroundHomePageThree alt="backgroundHomePage"}}></span><</li>
+            <li><span><h1>Its a Jungle Out There</h1><h3>Peer to Peer Ticket Exchange Simplified</h3><img id="background-HomePage" {{bind-attr src=backgroundHomePageOne alt="backgroundHomePage"}}></span></li>
+            <li><span><h1>Ticket Exchange Simplified</h1><h3>Buy, Sell, or Trade Tickets on the Go</h3><img id="background-HomePage" {{bind-attr src=backgroundHomePageTwo alt="backgroundHomePage"}}></span></li>
+            <li><span><h1>Its a Jungle Out There</h1><h3>Peer to Peer Ticket Exchange Simplified</h3><img id="background-HomePage" {{bind-attr src=backgroundHomePageFive alt="backgroundHomePage"}}></span></li>
+            <li><span><h1>Ticket Exchange Simplified</h1><h3>Buy, Sell, or Trade Tickets on the Go</h3><img id="background-HomePage" {{bind-attr src=backgroundHomePageThree alt="backgroundHomePage"}}></span></li>
         </ul>
             <div id="search-bar">
           <form class="searchbox" action="">
             <input type="search" placeholder="search.." />
             <ul class="suggestions">
             {{#each object in ticketFeed}}
-            
+
                 <li><bc>{{#link-to 'ticket-feed.buy' object}}{{object.name}}{{/link-to}}</bc></li>
-                 
+
              {{/each}}
             </ul>
         </form>
-            
+
          </div>
     </div>
 

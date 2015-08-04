@@ -9,6 +9,8 @@ App.MainPageController = Ember.ObjectController.extend({
   backgroundHomePageTwo: '/img/backgroundHomePageTwo.png',
   backgroundHomePageThree: '/img/backgroundHomePageThree.png',
   backgroundHomePageFour: '/img/backgroundHomePageFour.png',
+  backgroundHomePageFive: '/img/backgroundHomePageFive.png',
+  backgroundHomePageSix: '/img/backgroundHomePageSix.png',
   middleBackground: '/img/middle_bckimg.png',
   bottomBackground: '/img/tixzoo_land.png',
   tixzooLogo: '/img/tixzoo-logo.png',
@@ -66,10 +68,10 @@ App.MainPageController = Ember.ObjectController.extend({
       var search = this.get('searchText');
       var tickets = this.get('ticketJson');
 
-      
-      if (!this.get('ticketEn') || !search || search == '') { 
+
+      if (!this.get('ticketEn') || !search || search == '') {
         this.set('tempTicketJson',tickets);
-        return tickets; 
+        return tickets;
       }
               var message = null;
               var xhr = $.ajax({
