@@ -5,13 +5,12 @@ App.TicketFeedController = Ember.ArrayController.extend({
   sortedTickets: Ember.computed.sort('ticketJson', 'sortProperties'),
   init: function() {
     this._super();
-    console.log("testtesttest");
-  },
+    this.set('ticketJson', this.get('controllers.application.ticketJson'));
+  }.observes("controllers.application.ticketJson"),
   actions: {
   	sortBy: function(sortProperties) {
-      this.set('ticketJson', this.get('controllers.application.ticketJson'));
       this.set('sortProperties', [sortProperties]);
-      console.log("testsortBy");
+      //console.log("testsortBy");
   	},
     echo: function(){
       console.log("testecho");
