@@ -25,40 +25,15 @@ App.MainPageController = Ember.ObjectController.extend({
   ticketJson: [],
   tempTicketJson: [],
   searchText: '',
-    init: function() {
+  init: function() {
     this._super();
-    var that = this;
-    var message = null;
-    var xhr = $.ajax({
-        url: "Rest/mainController.php",
-        type: "GET",
-        dataType:'json',
-        data: {init: true},
-          success: function(data){
-            console.log(data);
-              that.set('ticketJson',data["tickets"]);
-              that.set('tempTicketJson',data["tickets"]);
-              that.set('ticketEn',true);
-            if(data["cookie"]){
-              that.set('username',data["cookie"]["user"]["username"]);
-              that.set('password',data["cookie"]["user"]["password"]);
-              that.set('loginSuccess',true);
-            }
-          },
-        error: function(data){
-          console.log(data);
-        }
-        });
-
-      if (xhr.status != 200) { // error
-          message = { errorCode: xhr.status, errorMessage: xhr.statusText };
-      }
-      return message;
+    this.set('ticketJson',this.get('controllers.application.ticketJson'));
+    this.set('tempTicketJson',this.get('ticketJson'));
   },
   updateLogin: function(){
     this.set('loginSuccess',this.get('controllers.application.loginSuccess'));
     this.set('username',this.get('controllers.application.username'));
-    this.set('password',this.get('controllers.application.password'));
+    this.set('password',this.get('controllers.application.password')); 
   }.observes('controllers.application.loginSuccess'),
   modifiedContent: function(){
 
@@ -88,11 +63,11 @@ App.MainPageController = Ember.ObjectController.extend({
                   });
               //return "";
     }.observes('searchText','ticketEn'),
-    ticketFeed: function() {
-      console.log(this.get('tempTicketJson'));
-      return this.get('tempTicketJson');
-    }.property('tempTicketJson','searchText'),
-    actions: {
+  ticketFeed: function() {
+    this.set('controllers.application.tempTicketJson', this.get('tempTicketJson'));
+    return this.get('tempTicketJson');
+  }.property('tempTicketJson','searchText'),
+  actions: {
     logout: function() {
       this.set('loginSuccess', false);
         var that = this;
@@ -117,5 +92,5 @@ App.MainPageController = Ember.ObjectController.extend({
         return message;
 
     }
-    }
+  }
 });

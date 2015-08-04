@@ -2,7 +2,7 @@ var loaderObj = {
     templates : [
     'tmpl/modal.html',
     'tmpl/ticketfeed.html',
-    'tmpl/mainPage.html',
+    'tmpl/mainpage.html',
     'tmpl/postticket.html',
     'tmpl/userprofile.html',
     'tmpl/viewticket.html',
@@ -104,8 +104,36 @@ App.ApplicationController = Ember.Controller.extend({
   quantityText: 'Quantity',
   price: '',
   searchMag: 'img/searchbar1.png',
+  ticketJson: [],
+  tempTicketJson: [],
   init: function() {
     this._super();
+    var that = this;
+    var message = null;
+    var xhr = $.ajax({
+        url: "Rest/mainController.php",
+        type: "GET",
+        dataType:'json',
+        data: {init: true},
+          success: function(data){
+            console.log(data);
+              that.set('ticketJson',data["tickets"]);
+              that.set('tempTicketJson',data["tickets"]);
+              that.set('ticketEn',true);
+            if(data["cookie"]){
+              that.set('username',data["cookie"]["user"]["username"]);
+              that.set('password',data["cookie"]["user"]["password"]);
+              that.set('loginSuccess',true);
+            }
+          },
+        error: function(data){
+          console.log(data);
+        }
+        });
+
+    if (xhr.status != 200) { // error
+      message = { errorCode: xhr.status, errorMessage: xhr.statusText };
+    }
     var url = window.location.href.split("/");
     if(url[3] === null || url[3] === ""){
       this.transitionToRoute('main-page');
