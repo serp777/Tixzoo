@@ -466,6 +466,10 @@ table {
   background-color: black;
 }
 
+#menu_btn  {
+  width:2vw;
+}
+
 #tixzoo-logo {
   top: 2vw;
   width: 20vw;

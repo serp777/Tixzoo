@@ -109,7 +109,7 @@ App.ApplicationController = Ember.Controller.extend({
   init: function() {
     this._super();
     var url = window.location.href.split("/");
-    if(url[3] === null || url[3] === ""){
+    if(url[4] === null || url[4] === ""){
 
       this.transitionToRoute('main-page');
     }
