@@ -67,8 +67,6 @@ App.MainPageController = Ember.ObjectController.extend({
       var that = this;
       var search = this.get('searchText');
       var tickets = this.get('ticketJson');
-
-
       if (!this.get('ticketEn') || !search || search == '') {
         this.set('tempTicketJson',tickets);
         return tickets;
@@ -82,13 +80,11 @@ App.MainPageController = Ember.ObjectController.extend({
                     success: function(data){
                       if(data && data !== null){
                         that.set('tempTicketJson',data["tickets"]);
-                        console.log("testestest");
                       } else {
                         that.set('tempTicketJson',[]);
                       }
                     }
                   });
-              //return "";
     }.observes('searchText','ticketEn'),
   ticketFeed: function() {
     this.set('controllers.application.tempTicketJson', this.get('tempTicketJson'));
