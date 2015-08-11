@@ -40,7 +40,8 @@
         </ul>
             <div id="search-bar">
           <form class="searchbox" action="">
-            <input type="search" placeholder="search.." />
+          {{input type="search" value=searchText placeholder="search.."}}
+
             <ul class="suggestions">
             {{#each object in ticketFeed}}
 
