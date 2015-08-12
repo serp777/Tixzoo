@@ -467,15 +467,24 @@ table {
 }
 
 #menu_btn  {
+  position:absolute;
+  padding:4vw;
+  margin:auto;
+}
+
+a img {
   width:2vw;
 }
 
+
 #tixzoo-logo {
-  top: 2vw;
   width: 20vw;
-  left: 40vw;
-  position: absolute;
+  margin:2vw 38vw;
+  position: relative;
 }
+
+
+
 
 .my-account-pic {
   position: absolute;
@@ -494,12 +503,14 @@ table {
   width: 100%;
   left: 0px;
   color: white;
+  border:none;
 }
 
 #middle-img{
   left: 0%;
   z-index: 2;
   width: 100%;
+  border:none;
 }
 
 #main-features {
@@ -511,6 +522,7 @@ table {
   left: 0px;
   top: 6vw;
   position: absolute;
+  border:none;
 
 }
 

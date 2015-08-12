@@ -1,10 +1,19 @@
 <script type="text/x-handlebars" data-template-name="main-page">
 
+    
+
     <div id="top-nav-bar-container">
 
-      
+
+
        <div class="nav-bar">
+
+       <div id="menu_btn">
+
        <a href="#"><img src="img/menu.png"></a>
+
+       </div>
+
 
         <div id="btn-container">
         {{#if loginSuccess}}
@@ -20,12 +29,16 @@
         </div>
 
 
-
+        <div id="logo">
         <img id="tixzoo-logo" {{bind-attr src=tixzooLogo alt="tixzooLogo"}}>
+        </div>
 
 
       </div>
+   
     </div>
+
+    
 
     <div id="container">
 

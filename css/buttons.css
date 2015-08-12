@@ -4,7 +4,7 @@ html {
 
 #btn-container{
 	position: absolute;
-	margin: 4vw 87%;
+	margin: 3.5vw 87%;
 }
 
 .login_Btn{
@@ -12,7 +12,7 @@ html {
 	right: 1vw;
 	width: 8vw;
 	z-index: 2;
-	background-color: #155EFC;
+	font-family:gill sans;
 	-moz-border-radius:6px;
 	-webkit-border-radius:6px;
 	border-radius:6px;
@@ -20,8 +20,7 @@ html {
 	cursor:pointer;
 	color:#ffffff;
 
-	font-size:1.3vw;
-	font-weight:bold;
+	font-size:1.5vw;
 	padding:6px 24px;
 	text-decoration:none;
 	text-shadow:0px -1px 0px #5b6178;
@@ -29,78 +28,57 @@ html {
 }
 
 .login_Btn:hover {
+	color: #fff;
+	text-decoration: none;
 	position: absolute;
 	right: 1vw;
 	width: 8vw;
 	z-index: 2;
-	color: orange;
-	text-decoration: none;
- 	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #155EFC), color-stop(1, #33bdef));
-	background:-moz-linear-gradient(top, #155EFC 5%, #33bdef 100%);
-	background:-webkit-linear-gradient(top, #155EFC 5%, #33bdef 100%);
-	background:-o-linear-gradient(top, #155EFC 5%, #33bdef 100%);
-	background:-ms-linear-gradient(top, #155EFC 5%, #33bdef 100%);
-	background:linear-gradient(to bottom, #155EFC 5%, #33bdef 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#155EFC', endColorstr='#33bdef',GradientType=0);
-	background-color:#155EFC
+ 	
 }
 
-.login_Btn:active {
+.login_Btn:active  {
+
 	position: absolute;
 	right: 1vw;
 	width: 8vw;
-	top:1px;
+	z-index: 2;
+
 }
 
 .create_Btn{
 	position: absolute;
-	margin: 0px 3%;
+	margin: 0 3% 10% 3%;
 	width: 11vw;
 	text-align: center;
 	z-index: 2;
-	background-color: #155EFC;
-	-moz-border-radius:6px;
-	-webkit-border-radius:6px;
-	border-radius:6px;
+	background-color: rgb(22,124,255);
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
+	font-family: gill sans;
 
-	font-size:1.3vw;
-	font-weight:bold;
+	font-size:1.5vw;
 	padding:6px 24px;
 	text-decoration:none;
-	text-shadow:0px -1px 0px #5b6178;
+	border-color:rgb(39,175,208);
+	border-width:.2vw;
+	border-style: solid;
+	box-sizing:border-box;
+	
 }
 
 .create_Btn:hover {
-	position: absolute;
-	margin: 0px 3%;
-	width: 11vw;
-	color: orange;
-	text-decoration: none;
- 	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #155EFC), color-stop(1, #33bdef));
-	background:-moz-linear-gradient(top, #155EFC 5%, #33bdef 100%);
-	background:-webkit-linear-gradient(top, #155EFC 5%, #33bdef 100%);
-	background:-o-linear-gradient(top, #155EFC 5%, #33bdef 100%);
-	background:-ms-linear-gradient(top, #155EFC 5%, #33bdef 100%);
-	background:linear-gradient(to bottom, #155EFC 5%, #33bdef 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#155EFC', endColorstr='#33bdef',GradientType=0);
-	background-color:#155EFC;
+	padding:6px 24px;
+	border:none;
+	color:#fff;
+	box-sizing:border-box;
+
 }
 
-.create_Btn:active {
-	position: absolute;
-	margin: 0px 3%;
-	width: 11vw;
-}
-
-.create_Btn:active {
-	position: absolute;
-	margin: 0px 3%;
-	width: 11vw;
-	top:1px;
-}
 
 /* Once user is logged in, nav bar buttons change */
 

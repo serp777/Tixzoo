@@ -1,14 +1,10 @@
 <script type="text/x-handlebars" data-template-name="signup-modal">
-      {{#my-modal title='Sign Up Information' ok='save' close='removeModal'}}
+      {{#my-modal title='Welcome' ok='save' close='removeModal'}}
         <form {{action 'ok' on='submit' target=view}}>
           <div class="form-group">
-            <label>Username</label>
             {{input class="form-control" placeholder=usernameText value=username}}
-            <label>Password</label>
             {{input class="form-control" type="password" placeholder=passwordText value=password }}
-            <label>Re-Enter Password</label>
             {{input class="form-control" type="password" placeholder=passwordVerifyText value=passwordVerify }}
-            <label>Email Address</label>
             {{input class="form-control" placeholder=emailText value=email }}
           </div>
         </form>
@@ -16,14 +12,14 @@
     </script>
 
     <script type="text/x-handlebars" data-template-name="login-modal">
-      {{#my-modal title='Sign Up Information' ok='save' close='removeModal'}}
+      {{#my-modal title='Welcome' ok='save' close='removeModal'}}
         <form {{action 'ok' on='submit' target=view}}>
+        <div class="login_modal">
           <div class="form-group">
-            <label>Username</label>
             {{input class="form-control" placeholder=usernameText value=username}}
-            <label>Password</label>
             {{input class="form-control" type="password" placeholder=passwordText value=password }}
           </div>
+        </div>  
         </form>
       {{/my-modal}}
     </script>
@@ -67,7 +63,6 @@
               {{yield}}
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
               <button type="button" class="btn btn-primary" {{action 'ok'}}>Submit</button>
             </div>
           </div>
