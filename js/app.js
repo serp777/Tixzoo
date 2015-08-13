@@ -119,6 +119,17 @@ App.ApplicationController = Ember.Controller.extend({
       this.transitionToRoute(this.get('route'));
     }
   },
+  getTicketAjax: function() {
+      return $.ajax({
+          url: "Rest/mainController.php",
+          type: "GET",
+          dataType:'json',
+          data: {init: true},
+          error: function(data){
+            console.log(data);
+          }
+          });
+  },
     actions: {
     query: function() {
       // the current value of the text field
