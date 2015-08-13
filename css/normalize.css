@@ -528,7 +528,7 @@ table {
   margin: 1%;
   margin-top: 5vw;
   z-index: 10;
-  border-radius: 5px;
+  border-radius: 50%;
   font-family: NEOTERIC;
   transition: all .5s ease;
 }

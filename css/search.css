@@ -3,7 +3,7 @@
     height: 4vw;
     width: 10vw;
     bottom: 25vw;
-    left: 24.5vw;
+    left: 24.2vw;
     z-index: 16;
 }
 
@@ -68,7 +68,7 @@ input[type="search"]{
      -o-background-size:2vw 2vw;
         background-size:2vw 2vw;
 /*positioning background image*/
-    background-position:47vw .3vw;
+    background-position:47vw .4vw;
 /*changing background color form white*/
     background-color: white;
     border-radius: 3px;

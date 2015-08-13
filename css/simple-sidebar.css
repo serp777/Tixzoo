@@ -115,11 +115,16 @@
 
     #page-content-wrapper {
         padding: 20px;
-        position: relative;
+    }
+
+    a img  {
+        width:2vw;
+        margin:2.05vw 2vw;
+        cursor: pointer;
+        position:fixed;
     }
 
     #wrapper.toggled #page-content-wrapper {
-        position: relative;
         margin-right: 0;
     }
 }
