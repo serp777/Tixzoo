@@ -10,6 +10,7 @@ var loaderObj = {
     ],
     css : [
     '../../css/bootstrap.css',
+    '../../css/simple-sidebar.css',
     '../../css/buttons.css',
     '../../css/media_queries.css',
     '../../css/normalize.css',
@@ -65,6 +66,12 @@ function loadCss(css) {
 loadCss(loaderObj.css);
 loadTemplates(loaderObj.templates);
 
+$("#menu-toggle").click(function(e) {
+  console.log("test");
+    e.preventDefault();
+    $("#wrapper").toggleClass("toggled");
+});
+
 App = Ember.Application.create();
 
 App.Router.map(function() {
@@ -94,6 +101,8 @@ App.ApplicationController = Ember.Controller.extend({
   username: '',
   password: '',
   loginSuccess: false,
+  wrapper: 'wrapper',
+  wrapperClass: 'toggled',
   artist: '',
   artistText: 'Artist | Event',
   venue: '',
@@ -109,7 +118,7 @@ App.ApplicationController = Ember.Controller.extend({
   init: function() {
     this._super();
     var url = window.location.href.split("/");
-    if(url[4] === null || url[4] === ""){
+    if(url[3] === null || url[3] === "" || url[4] === null || url[4] === ""){
 
       this.transitionToRoute('main-page');
     }
@@ -119,6 +128,15 @@ App.ApplicationController = Ember.Controller.extend({
       // the current value of the text field
       var query = this.get('search');
       this.transitionToRoute('search', { query: query });
+    },
+    sideBar: function() {
+      console.log('test');
+      if(this.get('wrapperClass') == ''){
+        this.set('wrapperClass','toggled');
+      } else {
+        this.set('wrapperClass','');
+      }
+      
     }
   }
 });

@@ -4,7 +4,7 @@ html {
 
 #btn-container{
 	position: absolute;
-	margin: 3.5vw 87%;
+	margin: 3.7vw 87%;
 }
 
 .login_Btn{
@@ -12,55 +12,53 @@ html {
 	right: 1vw;
 	width: 8vw;
 	z-index: 2;
+	font-weight:lighter;
 	font-family:gill sans;
 	-moz-border-radius:6px;
 	-webkit-border-radius:6px;
-	border-radius:6px;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-size:1.5vw;
-	padding:6px 24px;
-	text-decoration:none;
-	text-shadow:0px -1px 0px #5b6178;
-
-}
-
-.login_Btn:hover {
-	color: #fff;
-	text-decoration: none;
-	position: absolute;
-	right: 1vw;
-	width: 8vw;
-	z-index: 2;
- 	
-}
-
-.login_Btn:active  {
-
-	position: absolute;
-	right: 1vw;
-	width: 8vw;
-	z-index: 2;
-
-}
-
-.create_Btn{
-	position: absolute;
-	margin: 0 3% 10% 3%;
-	width: 11vw;
-	text-align: center;
-	z-index: 2;
-	background-color: rgb(22,124,255);
-	-moz-border-radius:3px;
-	-webkit-border-radius:3px;
 	border-radius:3px;
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
-	font-family: gill sans;
+	font-size:1.4vw;
+	padding:6px 24px;
+	text-decoration:none;
 
-	font-size:1.5vw;
+}
+
+.login_Btn:hover {
+	position: absolute;
+	right: 1vw;
+	width: 8vw;
+	z-index: 2;
+	color:rgb(22,124,255);
+	text-decoration: none;
+ 	
+	}
+
+.login_Btn:active {
+	position: absolute;
+	right: 1vw;
+	width: 8vw;
+	top:1px;
+}
+
+.create_Btn{
+	position: absolute;
+	margin: 0px 3%;
+	width: 11vw;
+	text-align: center;
+	z-index: 2;
+	background-color:rgb(22,124,255);
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:6px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-weight:lighter;
+	font-family:gill sans;
+	font-size:1.4vw;
 	padding:6px 24px;
 	text-decoration:none;
 	border-color:rgb(39,175,208);
@@ -77,9 +75,20 @@ html {
 	border-style: solid;
 	color:#fff;
 	box-sizing:border-box;
-
 }
 
+.create_Btn:active {
+	position: absolute;
+	margin: 0px 3%;
+	width: 11vw;
+}
+
+.create_Btn:active {
+	position: absolute;
+	margin: 0px 3%;
+	width: 11vw;
+	top:1px;
+}
 
 /* Once user is logged in, nav bar buttons change */
 
