@@ -1,9 +1,15 @@
 
-
+#user-search  {
+  position:absolute;
+  padding: 16.3vw 50vw;
+}
 
 #user-profile-container {
   height: 70em;
-  background-color: lightgray;
+  background-image: url(img/profile-background.png);
+  background-repeat: no-repeat;
+  background-size-width:100%;
+  background-size-height:100%;
 }
 
 #profile-upright-container {
@@ -112,11 +118,9 @@
   position: absolute;
   right: 0vw;
   top: 43vw;
-  background-color: gray;
   height: 24vw;
   width: 64%;
   margin: 1vw;
-  background-color: #F7F7F7;
 }
 
 #buy-profile {
@@ -347,12 +351,11 @@
 
 #profile-upleft-container {
   position: absolute;
-  background-color: gray;
   height: 30vw;
   width: 33%;
   margin: 1vw;
   left: 0vw;
-  background-color: #F7F7F7;
+
 }
 
 #recent-activity {
@@ -370,7 +373,7 @@
 #recent-activity ul {
   position: absolute;
   top: 4vw;
-  left: 0vw;
+  left: 3vw;
   width: 8vw;
   list-style: none;
 
@@ -413,13 +416,11 @@
 
 #profile-midleft-container {
   position: absolute;
-  background-color: gray;
   height: 26vw;
   width: 33%;
   margin: 1vw;
   left: 0vw;
   top: 41vw;
-  background-color: #F7F7F7;
 }
 
 .video-wrapper {
@@ -434,6 +435,7 @@
   padding-top:30px;
   height:0;
   overflow:hidden;
+  background-color:none;
 }
 
 .video-wrapper iframe, .video-wrapper object, .video-wrapper embed {

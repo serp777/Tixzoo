@@ -44,16 +44,16 @@
 
         <img id="background-HomePage-Hax" {{bind-attr src=backgroundHomePageFive alt="backgroundHomePage"}}>
         <ul class="cb-slideshow">
-            <li><span><h1>Its a Jungle Out There</h1><h3>Peer to Peer Ticket Exchange Simplified</h3><img id="background-HomePage" {{bind-attr src=backgroundHomePageFive alt="backgroundHomePage"}}></span></li>
-            <li><span><h1>Ticket Exchange Simplified</h1><h3>Buy, Sell, or Trade Tickets on the Go</h3><img id="background-HomePage" {{bind-attr src=backgroundHomePageThree alt="backgroundHomePage"}}></span></li>
-            <li><span><h1>Its a Jungle Out There</h1><h3>Peer to Peer Ticket Exchange Simplified</h3><img id="background-HomePage" {{bind-attr src=backgroundHomePageOne alt="backgroundHomePage"}}></span></li>
-            <li><span><h1>Ticket Exchange Simplified</h1><h3>Buy, Sell, or Trade Tickets on the Go</h3><img id="background-HomePage" {{bind-attr src=backgroundHomePageTwo alt="backgroundHomePage"}}></span></li>
-            <li><span><h1>Its a Jungle Out There</h1><h3>Peer to Peer Ticket Exchange Simplified</h3><img id="background-HomePage" {{bind-attr src=backgroundHomePageFive alt="backgroundHomePage"}}></span></li>
-            <li><span><h1>Ticket Exchange Simplified</h1><h3>Buy, Sell, or Trade Tickets on the Go</h3><img id="background-HomePage" {{bind-attr src=backgroundHomePageThree alt="backgroundHomePage"}}></span></li>
+            <li><span><h1>its a jungle out there</h1><h3>peer to peer ticket exchange simplified</h3><img id="background-HomePage" {{bind-attr src=backgroundHomePageFive alt="backgroundHomePage"}}></span></li>
+            <li><span><h1>ticket exchange simplified</h1><h3>buy, sell, or trade tickets on the go</h3><img id="background-HomePage" {{bind-attr src=backgroundHomePageThree alt="backgroundHomePage"}}></span></li>
+            <li><span><h1>it is a jungle out there</h1><h3>peer to peer ticket exchange simplified</h3><img id="background-HomePage" {{bind-attr src=backgroundHomePageOne alt="backgroundHomePage"}}></span></li>
+            <li><span><h1>ticket exchange simplified</h1><h3>buy, sell, or trade tickets on the go</h3><img id="background-HomePage" {{bind-attr src=backgroundHomePageTwo alt="backgroundHomePage"}}></span></li>
+            <li><span><h1>it is a jungle out there</h1><h3>peer to peer ticket exchange simplified</h3><img id="background-HomePage" {{bind-attr src=backgroundHomePageFive alt="backgroundHomePage"}}></span></li>
+            <li><span><h1>ticket exchange simplified</h1><h3>buy, sell, or trade tickets on the go</h3><img id="background-HomePage" {{bind-attr src=backgroundHomePageThree alt="backgroundHomePage"}}></span></li>
         </ul>
             <div id="search-bar">
           <form class="searchbox" action="">
-          {{input type="search" value=searchText placeholder="search.."}}
+          {{input type="search" value=searchText placeholder="Search by artist, genre or location"}}
 
             <ul class="suggestions">
             {{#each object in ticketFeed}}
@@ -70,17 +70,17 @@
     <div id="middle-background-container">
         <img id="middle-img" {{bind-attr src=middleBackground alt="middleBackground"}}>
         <div id="main-features">
-          <h1>Features</h1>
-          <div class="column">
-            <h3>Peer To Peer</h3>
+          <h1>features</h1>
+          <div class="column" id="peer-to-peer-icon">
+            <h3>peer to peer</h3>
             <p>Tixzoo is a peer-to-peer ticket exchange platform</p>
           </div>
-          <div class="column">
-            <h3>Security</h3>
-            <p>User exchange, identity, and payment is secured and authenticated</p>
+          <div class="column" id="security-icon">
+            <h3>security</h3>
+            <p>sser exchange, identity, and payment is secured and authenticated</p>
           </div>
-          <div class="column">
-            <h3>Affordability</h3>
+          <div class="column" id="affordability-icon">
+            <h3>affordability</h3>
             <p>Tixzoo charges the bare minimum for transaction fees and offers rewards as long term incentive</p>
           </div>
         </div>

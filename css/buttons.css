@@ -19,7 +19,6 @@ html {
 	display:inline-block;
 	cursor:pointer;
 	color:#ffffff;
-
 	font-size:1.5vw;
 	padding:6px 24px;
 	text-decoration:none;
@@ -68,12 +67,14 @@ html {
 	border-width:.2vw;
 	border-style: solid;
 	box-sizing:border-box;
+
 	
 }
 
 .create_Btn:hover {
-	padding:6px 24px;
-	border:none;
+	border-color:rgb(22,124,255);
+	border-width:.2vw;
+	border-style: solid;
 	color:#fff;
 	box-sizing:border-box;
 
