@@ -47,8 +47,8 @@ input[type="search"]:focus  {
 }
 
 input[type="search"]{
-    padding:.5vw 4vw .4vw 1.3vw;
-    font-size:1.5vw;
+    padding:1vw 4vw 1vw 1.5vw;
+    font-size:1.75vw;
     color:rgb(167,172,194);
     font-family:gill sans;
     font-weight: lighter;
@@ -68,7 +68,7 @@ input[type="search"]{
      -o-background-size:2vw 2vw;
         background-size:2vw 2vw;
 /*positioning background image*/
-    background-position:47vw .4vw;
+    background-position:47vw 1vw;
 /*changing background color form white*/
     background-color: white;
     border-radius: 3px;
@@ -150,7 +150,6 @@ input[type="search"]:focus + .suggestions li{
     height:3.8vw;
     padding:0;
     margin:0;
-    font-weight: bold;
     border-width:1px 0 1px 0;
     border-style:solid;
     border-color:rgb(167,172,194);

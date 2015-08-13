@@ -122,9 +122,9 @@
 
     a img  {
         width:2vw;
-        margin:2.05vw 2vw;
+        margin:2.2vw 2vw;
         cursor: pointer;
-        position:fixed;
+        position:absolute;
     }
 
     #wrapper.toggled #page-content-wrapper {
