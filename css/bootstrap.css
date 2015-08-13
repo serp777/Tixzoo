@@ -5777,9 +5777,8 @@ button.close {
   opacity: .5;
 }
 
-.login_modal {
-  padding-top:4.5vw;
-
+.login_modal_padding {
+  padding-top:5vw;
 }
 
 

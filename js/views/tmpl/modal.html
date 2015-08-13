@@ -15,8 +15,10 @@
       {{#my-modal title='Welcome' ok='save' close='removeModal'}}
         <form {{action 'ok' on='submit' target=view}}>
           <div class="form-group">
+            <div class="login_modal_padding">
             {{input class="form-control" placeholder=usernameText value=username}}
             {{input class="form-control" type="password" placeholder=passwordText value=password }}
+            </div>
           </div>
         </form>
       {{/my-modal}}
