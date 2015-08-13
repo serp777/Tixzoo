@@ -66,11 +66,7 @@ function loadCss(css) {
 loadCss(loaderObj.css);
 loadTemplates(loaderObj.templates);
 
-$("#menu-toggle").click(function(e) {
-  console.log("test");
-    e.preventDefault();
-    $("#wrapper").toggleClass("toggled");
-});
+
 
 App = Ember.Application.create();
 
@@ -113,14 +109,14 @@ App.ApplicationController = Ember.Controller.extend({
   quantityText: 'Quantity',
   price: '',
   searchMag: 'img/searchbar1.png',
+  route: 'main-page',
   ticketJson: [],
   tempTicketJson: [],
   init: function() {
     this._super();
     var url = window.location.href.split("/");
     if(url[3] === null || url[3] === "" || url[4] === null || url[4] === ""){
-
-      this.transitionToRoute('main-page');
+      this.transitionToRoute(this.get('route'));
     }
   },
     actions: {
