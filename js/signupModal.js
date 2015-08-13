@@ -7,7 +7,7 @@ App.SignupModalController = Ember.ObjectController.extend({
   passwordVerifyText: 'Verify Password',
   email: '',
   emailText: 'example@example.com',
-  signupModal: 'img/background_modal.png',
+  signupModal: '/img/background_modal.png',
   actions: {
     save: function() {
       var message = null;
