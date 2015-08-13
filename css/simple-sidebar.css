@@ -67,12 +67,14 @@
 .sidebar-nav li a {
     display: block;
     text-decoration: none;
-    color: #999999;
+    color: white;
+    transition: all .4s ease-out;
 }
 
 .sidebar-nav li a:hover {
     text-decoration: none;
     color: #fff;
+    transition: all .4s ease-out;
     background: rgba(255,255,255,0.2);
 }
 
@@ -88,7 +90,7 @@
 }
 
 .sidebar-nav > .sidebar-brand a {
-    color: #999999;
+    color: white;
 }
 
 .sidebar-nav > .sidebar-brand a:hover {
@@ -115,6 +117,7 @@
 
     #page-content-wrapper {
         padding: 20px;
+
     }
 
     a img  {
@@ -125,6 +128,6 @@
     }
 
     #wrapper.toggled #page-content-wrapper {
+
         margin-right: 0;
     }
-}
