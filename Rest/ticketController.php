@@ -3,7 +3,7 @@ class ticketControllerClass {
 	private function establishConnection(){
 		$host="localhost"; // Host name
 		$username="root"; // Mysql username
-		$password="Computer123"; // Mysql password
+		$password="computer123"; // Mysql password
 		$db_name="tixzoo"; // Database name
 		// Connect to server and select databse.
 		$dbconn = mysqli_connect($host,$username,$password,$db_name) or die("Error " . mysqli_error($dbconn));
