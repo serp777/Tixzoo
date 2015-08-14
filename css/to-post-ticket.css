@@ -91,13 +91,15 @@
 .quantity-dropdown {
   position: relative;
   display: inline;
-  right: 1em;
+  right: 4vw;
+  top: 1vw;
 }
 
 .type-dropdown {
   position: relative;
   display: inline;
-  left: 1em;
+  right: 4vw;
+  top: 2vw;
 }
 
 .btn-file {

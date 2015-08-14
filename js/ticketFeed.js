@@ -1,5 +1,10 @@
 App.TicketFeedController = Ember.ArrayController.extend({
   needs: ['application'],
+  disclosurePhoto: 'img/disclosure-artist.png',
+  maxFrat: 'img/max-frat.png',
+  facebookIcon: 'img/fb.png',
+  instagramIcon: 'img/instagram.png',
+  twitterIcon: 'img/twitter.png',
   ticketJson: [],
   sortProperties: ['rating:desc', 'price:asc'],
   sortedTickets: Ember.computed.sort('ticketJson', 'sortProperties'),
