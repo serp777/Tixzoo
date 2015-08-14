@@ -23,6 +23,7 @@ html {
 	font-size:1.4vw;
 	padding:6px 24px;
 	text-decoration:none;
+	transition:all .3s ease-in-out;
 
 }
 
@@ -65,6 +66,7 @@ html {
 	border-width:.2vw;
 	border-style: solid;
 	box-sizing:border-box;
+	transition:all .3s ease-in-out;
 
 	
 }

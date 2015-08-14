@@ -6,6 +6,33 @@
 
 /* Toggle Styles */
 
+html  {
+    font-family:gill sans;
+    font-weight:lighter;
+    text-transform:uppercase;
+}
+body{
+    padding:0;
+    margin:0;
+}
+
+a {
+    font-size: 1.3vw;
+}
+
+#edit_profile {
+    border:0;
+    padding-top:.3vw;
+    width:10vw;
+
+
+}
+
+#edit_profile:hover  {
+    transform:none;
+}
+
+
 #wrapper {
     padding-left: 0;
     -webkit-transition: all 0.5s ease;
@@ -15,7 +42,6 @@
 }
 
 #wrapper.toggled {
-    padding-left: 250px;
 }
 
 #sidebar-wrapper {
@@ -34,13 +60,12 @@
 }
 
 #wrapper.toggled #sidebar-wrapper {
-    width: 250px;
+    width: 25vw;
 }
 
 #page-content-wrapper {
-    width: 100%;
+    width: 0;
     position: absolute;
-    padding: 15px;
 }
 
 #wrapper.toggled #page-content-wrapper {
@@ -53,18 +78,22 @@
 .sidebar-nav {
     position: absolute;
     top: 0;
-    width: 250px;
-    margin: 0;
+    width: 100%;
+    margin-: 0;
     padding: 0;
     list-style: none;
 }
 
 .sidebar-nav li {
     text-indent: 20px;
-    line-height: 40px;
+    line-height: 50px;
+
 }
 
 .sidebar-nav li a {
+    border-width:0 0 1px 0;
+    border-style:solid;
+    border-color:rgb(39,175,208);
     display: block;
     text-decoration: none;
     color: white;
@@ -76,6 +105,7 @@
     color: #fff;
     transition: all .4s ease-out;
     background: rgba(255,255,255,0.2);
+    transform:scale(1.1);
 }
 
 .sidebar-nav li a:active,
@@ -83,9 +113,28 @@
     text-decoration: none;
 }
 
+#close  {
+    margin:.8vw 1.2vw;
+    position:relative;
+    z-index:1010;
+    color:white;
+    cursor: pointer;
+    box-sizing:border box;
+    float:right;
+    border:none;
+
+}
+
+#menu  {
+    width:2vw;
+    position:absolute;
+    margin:4vw;
+    cursor: pointer;
+}
+
 .sidebar-nav > .sidebar-brand {
     height: 65px;
-    font-size: 18px;
+    font-size: 1.3vw;
     line-height: 60px;
 }
 
@@ -100,7 +149,6 @@
 
 @media(min-width:768px) {
     #wrapper {
-        padding-left: 250px;
     }
 
     #wrapper.toggled {
@@ -115,19 +163,23 @@
         width: 0;
     }
 
-    #page-content-wrapper {
-        padding: 20px;
+  
 
-    }
 
-    a img  {
-        width:2vw;
-        margin:2.2vw 2vw;
-        cursor: pointer;
-        position:absolute;
-    }
+
 
     #wrapper.toggled #page-content-wrapper {
 
         margin-right: 0;
     }
+
+#appstore {
+    width:20vw;
+}
+
+#drop_footer {
+    width:100%;
+    text-align: center;
+    margin-top:4vw;
+    padding:.3vw 0 .3vw 0;
+}

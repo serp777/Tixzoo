@@ -9,11 +9,13 @@
   <script type="text/x-handlebars">
     <div {{bind-attr id=wrapper class=wrapperClass}}>
         <div id="sidebar-wrapper">
+           <a {{action "sideBar"}} id="close">X</a>
             <ul class="sidebar-nav">
+
                 <li class="sidebar-brand">
-                    <a href="#">
-                        account settings
-                    </a>
+                    
+                    
+                    <a href="#" id="edit_profile">edit profile</a>
                 </li>
                 <li>
                     <a href="#"></a>
@@ -36,25 +38,40 @@
                 <li>
                     <a href="#">logout</a>
                 </li>
-            </ul>
-        </div>
-        <div id="page-content-wrapper">
 
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
+                <div id="drop_footer">
 
-                        <a {{action "sideBar"}}><img src="img/menu.png"></a>
-                    </div>
+                <a href="#"><img src="img/appstore.png" id="appstore"></a>
+
                 </div>
-            </div>
+
+                
+
+
+
+
+            </ul>
+
+            
+
         </div>
+    
+
+       
     </div>
+<a {{action "sideBar"}} class="menu"><img src="img/menu.png" id="menu"></a>
+
+
+</div>
+
+
+   
+
 
       {{outlet}}
       {{outlet 'modal'}}
     </script>
-    <script type="text/x-handlebars" id="index">
+    <script type="text/x-handlebars" id="index" id"mainPage">
 
     </script>
     <script src="js/libs/jquery-1.10.2.js"></script>
