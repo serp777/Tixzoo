@@ -23,7 +23,8 @@ a {
 #edit_profile {
     border:0;
     padding-top:.3vw;
-    width:10vw;
+    width:20vw;
+
 
 
 }
@@ -174,7 +175,7 @@ a {
     }
 
 #appstore {
-    width:20vw;
+    width:10vw;
 }
 
 #drop_footer {
