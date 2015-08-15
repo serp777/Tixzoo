@@ -988,6 +988,9 @@ th {
 .glyphicon-modal-window:before {
   content: "\e237";
 }
+.glyphicon-modalls-window:before {
+  content: "\e237";
+}
 .glyphicon-oil:before {
   content: "\e238";
 }
@@ -5750,23 +5753,22 @@ button.close {
 }
 .modal-content {
   position: relative;
-  padding: 0;
-  height: 48vw;
-  margin: auto;
+  background-color: #fff;
+  -webkit-background-clip: padding-box;
+          background-clip: padding-box;
+  border: 1px solid #999;
+  border: 1px solid rgba(0, 0, 0, .2);
   border-radius: 6px;
   outline: 0;
-  width: 45vw;
-  background-image: url(img/background_modal.png);
-  background-repeat: no-repeat;
-  background-size: 45vw 50vw;
-  background-position: 0vw -1.5vw;
+  -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+          box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
 }
 .modal-backdrop {
   position: absolute;
   top: 0;
   right: 0;
   left: 0;
-  background-color: rgba(255, 255, 255, .8);
+  background-color: #000;
 }
 .modal-backdrop.fade {
   filter: alpha(opacity=0);
@@ -5776,32 +5778,26 @@ button.close {
   filter: alpha(opacity=50);
   opacity: .5;
 }
-
-.login_modal_padding {
-  padding-top:5vw;
+.modal-header {
+  min-height: 16.42857143px;
+  padding: 15px;
+  border-bottom: 1px solid #e5e5e5;
 }
-
-
+.modal-header .close {
+  margin-top: -2px;
+}
 .modal-title {
   margin: 0;
-  position: absolute;
-  top: 18vw;
-  left: 17.3vw;
   line-height: 1.42857143;
 }
 .modal-body {
   position: relative;
-  padding: 1vw;
-  top: 18vw;
-  width: 100%;
-
+  padding: 15px;
 }
 .modal-footer {
   padding: 15px;
   text-align: right;
-  position: absolute;
-  bottom: 2.5vw;
-  left: 8.8vw;
+  border-top: 1px solid #e5e5e5;
 }
 .modal-footer .btn + .btn {
   margin-bottom: 0;
@@ -5826,7 +5822,8 @@ button.close {
     margin: 30px auto;
   }
   .modal-content {
-
+    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
   }
   .modal-sm {
     width: 300px;
@@ -5834,6 +5831,134 @@ button.close {
 }
 @media (min-width: 992px) {
   .modal-lg {
+    width: 900px;
+  }
+}
+.modalls-open {
+  overflow: hidden;
+}
+.modalls {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1040;
+  display: none;
+  overflow: hidden;
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
+}
+.modalls.fade .modalls-dialog {
+  -webkit-transition: -webkit-transform .3s ease-out;
+       -o-transition:      -o-transform .3s ease-out;
+          transition:         transform .3s ease-out;
+  -webkit-transform: translate(0, -25%);
+      -ms-transform: translate(0, -25%);
+       -o-transform: translate(0, -25%);
+          transform: translate(0, -25%);
+}
+.modalls.in .modalls-dialog {
+  -webkit-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+       -o-transform: translate(0, 0);
+          transform: translate(0, 0);
+}
+.modalls-open .modalls {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.modalls-dialog {
+  position: relative;
+  width: auto;
+  margin: 10px;
+}
+.modalls-content {
+  position: relative;
+  padding: 0;
+  height: 48vw;
+  margin: auto;
+  border-radius: 6px;
+  outline: 0;
+  width: 45vw;
+  background-image: url(img/background_modal.png);
+  background-repeat: no-repeat;
+  background-size: 45vw 50vw;
+  background-position: 0vw -1.5vw;
+}
+.modalls-backdrop {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, .8);
+}
+.modalls-backdrop.fade {
+  filter: alpha(opacity=0);
+  opacity: 0;
+}
+.modalls-backdrop.in {
+  filter: alpha(opacity=50);
+  opacity: .5;
+}
+
+.login_modalls_padding {
+  padding-top:5vw;
+}
+
+
+.modalls-title {
+  margin: 0;
+  position: absolute;
+  top: 18vw;
+  left: 17.3vw;
+  line-height: 1.42857143;
+}
+.modalls-body {
+  position: relative;
+  padding: 1vw;
+  top: 18vw;
+  width: 100%;
+
+}
+.modalls-footer {
+  padding: 15px;
+  text-align: right;
+  position: absolute;
+  bottom: 2.5vw;
+  left: 8.8vw;
+}
+.modalls-footer .btn + .btn {
+  margin-bottom: 0;
+  margin-left: 5px;
+}
+.modalls-footer .btn-group .btn + .btn {
+  margin-left: -1px;
+}
+.modalls-footer .btn-block + .btn-block {
+  margin-left: 0;
+}
+.modalls-scrollbar-measure {
+  position: absolute;
+  top: -9999px;
+  width: 50px;
+  height: 50px;
+  overflow: scroll;
+}
+@media (min-width: 768px) {
+  .modalls-dialog {
+    width: 600px;
+    margin: 30px auto;
+  }
+  .modalls-content {
+
+  }
+  .modalls-sm {
+    width: 300px;
+  }
+}
+@media (min-width: 992px) {
+  .modalls-lg {
     width: 900px;
   }
 }
@@ -6314,8 +6439,8 @@ button.close {
 .pager:after,
 .panel-body:before,
 .panel-body:after,
-.modal-footer:before,
-.modal-footer:after {
+.modalls-footer:before,
+.modalls-footer:after {
   display: table;
   content: " ";
 }
@@ -6333,7 +6458,7 @@ button.close {
 .navbar-collapse:after,
 .pager:after,
 .panel-body:after,
-.modal-footer:after {
+.modalls-footer:after {
   clear: both;
 }
 .center-block {

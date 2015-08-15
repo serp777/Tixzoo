@@ -23,6 +23,7 @@ App.MainPageController = Ember.ObjectController.extend({
   twitterIcon: 'img/twitter.png',
   maxFrat: 'img/max-frat.png',
   disclosurePhoto: 'img/disclosure-artist.png',
+  secondmodel: true,
   ticketEn: false,
   ticketJson: [],
   tempTicketJson: [],
@@ -49,12 +50,12 @@ App.MainPageController = Ember.ObjectController.extend({
       var tickets = this.get('ticketJson');
       if (!this.get('ticketEn') || !search || search == '') {
         this.set('tempTicketJson',tickets);
+        this.set('tempTicketJson',this.get('tempTicketJson'));
         return tickets;
       }
       var that = this;
       this.get('controllers.application').similarText(search,tickets).success(function (data) {
         if(data && data !== null){
-          that.set('controllers.application.tempTicketJson', data["tickets"]);
           that.set('tempTicketJson',data["tickets"]);
         } else {
           that.set('tempTicketJson',[]);
