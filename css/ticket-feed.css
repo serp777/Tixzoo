@@ -42,11 +42,9 @@ a:hover {
 }
 
 .dropdown {
-  position: absolute;
-  top: .8vw;
-  right: .2vw;
-
-
+  position: relative;
+  bottom: 3vw;
+  right: 0vw;
 
 }
 
@@ -60,7 +58,7 @@ a:hover {
 
 #filter-suggestion-links {
   text-align: center;
-  padding: 2em 1.5em 0 1.5em;
+  padding: 2.5em 1.5em 0 1.5em;
   height: 6em;
 
 }
@@ -86,7 +84,7 @@ a:hover {
 .ticket-feed-item {
   z-index: 3;
   margin: 1.4em;
-  width: 30%;
+  width: 28%;
   height: 25vw;
   display: inline-block;
   background-color: white;
@@ -110,6 +108,7 @@ a:hover {
   height: 290em;
   margin-left: 0vw;
   margin-right: 0vw;
+  text-align: center;
   background: -webkit-linear-gradient(gray, lightgrey); /* For Safari 5.1 to 6.0 */
   background: -o-linear-gradient(gray, lightgrey); /* For Opera 11.1 to 12.0 */
   background: -moz-linear-gradient(gray, lightgrey); /* For Firefox 3.6 to 15 */
@@ -145,9 +144,9 @@ a:hover {
 
 .artist-feed-pic {
   max-height: 10vw;
-  margin: 0vw 1.5vw;
+  left: 1vw;
   border-radius: 5%;
-  width: 24vw;
+  width: 26vw;
   bottom: 1vw;
   position: absolute;
 
