@@ -128,7 +128,18 @@ App.ApplicationController = Ember.Controller.extend({
           error: function(data){
             console.log(data);
           }
-          });
+      });
+  },
+  similarText: function(search, tickets) {
+      return $.ajax({
+          url: "Rest/similarity.php",
+          type: "GET",
+          dataType:'json',
+          data: {search: search, list: tickets},
+          error: function(data){
+            console.log(data);
+          }
+      });
   },
     actions: {
     query: function() {

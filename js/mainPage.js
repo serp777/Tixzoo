@@ -35,6 +35,7 @@ App.MainPageController = Ember.ObjectController.extend({
       that.set('tempTicketJson', data["tickets"]);
       that.set('controllers.application.ticketJson', data["tickets"]);
       that.set('controllers.application.tempTicketJson', data["tickets"]);
+      that.set('ticketEn',true);
     });
   },
   updateLogin: function(){
@@ -43,7 +44,6 @@ App.MainPageController = Ember.ObjectController.extend({
     this.set('password',this.get('controllers.application.password')); 
   }.observes('controllers.application.loginSuccess'),
   modifiedContent: function(){
-
       var that = this;
       var search = this.get('searchText');
       var tickets = this.get('ticketJson');
@@ -51,26 +51,17 @@ App.MainPageController = Ember.ObjectController.extend({
         this.set('tempTicketJson',tickets);
         return tickets;
       }
-              var message = null;
-              var xhr = $.ajax({
-                  url: "Rest/similarity.php",
-                  type: "GET",
-                  dataType:'json',
-                  data: {search: search, list: tickets},
-                    success: function(data){
-                      if(data && data !== null){
-                        that.set('tempTicketJson',data["tickets"]);
-                      } else {
-                        that.set('tempTicketJson',[]);
-                      }
-                    }
-                  });
+      var that = this;
+      this.get('controllers.application').similarText(search,tickets).success(function (data) {
+        if(data && data !== null){
+          that.set('controllers.application.tempTicketJson', data["tickets"]);
+          that.set('tempTicketJson',data["tickets"]);
+        } else {
+          that.set('tempTicketJson',[]);
+        }
+      });
     }.observes('searchText','ticketEn'),
-  ticketFeed: function() {
-    this.set('controllers.application.tempTicketJson', this.get('tempTicketJson'));
-    return this.get('tempTicketJson');
-  }.property('tempTicketJson','searchText'),
-  actions: {
+  actions: { 
     logout: function() {
       this.set('loginSuccess', false);
         var that = this;

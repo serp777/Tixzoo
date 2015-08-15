@@ -1,3 +1,16 @@
+<script type="text/x-handlebars" data-template-name="buyticket-modal">
+      {{#my-modal title='Welcome' ok='save' close='removeModal'}}
+        <form {{action 'ok' on='submit' target=view}}>
+          <div class="buy-form-group">
+            {{input class="form-control" placeholder=usernameText value=username}}
+            {{input class="form-control" type="password" placeholder=passwordText value=password }}
+            {{input class="form-control" type="password" placeholder=passwordVerifyText value=passwordVerify }}
+            {{input class="form-control" placeholder=emailText value=email }}
+          </div>
+        </form>
+      {{/my-modal}}
+    </script>
+
 <script type="text/x-handlebars" data-template-name="signup-modal">
       {{#my-modal title='Welcome' ok='save' close='removeModal'}}
         <form {{action 'ok' on='submit' target=view}}>
