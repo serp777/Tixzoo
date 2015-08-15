@@ -156,6 +156,10 @@ input[type="search"]:focus + .suggestions li{
     text-align:justify;
 }
 
+.suggestions:focus li {
+  text-align: justify;
+}
+
 .byline{
   text-align:justify;
   font-size:18px;
@@ -171,4 +175,5 @@ input[type="search"]:focus + .suggestions li{
 
 textarea:focus, input:focus{
     outline: 0;
+    text-align: justify;
 }
