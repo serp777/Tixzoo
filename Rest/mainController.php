@@ -4,7 +4,7 @@ ob_start();
         setcookie('user', "", time()-1000, '/', '127.0.0.1');
         $result = "success";
     }
-ob_end_flush();
+
 
 require_once 'userController.php';
 require_once 'ticketController.php';
@@ -75,5 +75,4 @@ header("Content-Type: application/json", true);
 
         return $result || '';
 
-?>
 

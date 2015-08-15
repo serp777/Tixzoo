@@ -3,6 +3,7 @@
 
 /* Nav Container Contents */
 
+
 #content-container {
   position: relative;
   display: table;
@@ -32,32 +33,34 @@ a:hover {
 }
 
 #ticket-feed-container {
-   position: relative;
+  position: relative;
   display: table;
   width: 100%;
   left: 0px;
-  height: ;
   color: white;
   z-index: 1
 }
 
 .dropdown {
-  position: absolute;
-  top: .5vw;
-  right: 6.2vw;
+  position: relative;
+  bottom: 3vw;
+  right: 0vw;
+
 }
 
 #ticket-feed-filter {
   width: 100%;
   background-color: #EEEFF7;
-  position: absolute;
+  position: relative;
   top: 0;
-  height: 3.2em;
+  height: 6.2em;
 }
 
 #filter-suggestion-links {
   text-align: center;
-  padding: 1em 1.5em 0 1.5em;
+  padding: 2.5em 1.5em 0 1.5em;
+  height: 6em;
+
 }
 
 #filter-suggestion-links a {
@@ -99,14 +102,19 @@ a:hover {
 }
 
 #ticket-feed-positioner {
-  background-color: transparent;
+  background-color: lightgrey;
   z-index: 2;
   height: 110vw;
-  margin-left: 1.5vw;
-  margin-right: 1.5vw;
-  margin-top: 3vw;
-  position: absolute;
-  top: 3vw;
+  height: 290em;
+  margin-left: 0vw;
+  margin-right: 0vw;
+  text-align: center;
+  background: -webkit-linear-gradient(gray, lightgrey); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(gray, lightgrey); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(gray, lightgrey); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(gray, lightgrey); /* Standard syntax */
+  position: relative;
+
 }
 
 #ticket-info {
@@ -136,9 +144,9 @@ a:hover {
 
 .artist-feed-pic {
   max-height: 10vw;
-  margin: 0vw 1.5vw;
+  left: 1vw;
   border-radius: 5%;
-  width: 24vw;
+  width: 26vw;
   bottom: 1vw;
   position: absolute;
 

@@ -1,3 +1,5 @@
+
+
 #search-bar {
     position: absolute;
     height: 4vw;
@@ -10,14 +12,14 @@
 #search-bar-feed {
     position: absolute;
     height: 2vw;
-    width: 350px;
+
     top: 2vw;
-    left: 26vw;
+    left: 34vw;
 }
 
 .ember-view.ember-text-field {
     width:50vw;
-    
+
 }
 
 .searchbox{
@@ -38,11 +40,11 @@ input[type="search"]:hover  {
 }
 
 input[type="search"]:focus  {
-  background-image:url(img/searchbar2.png); 
+  background-image:url(img/searchbar2.png);
   border-width:1.5px;
   border-color:rgb(22,124,255);
   border-style:solid;
-  
+
 
 }
 
@@ -57,7 +59,7 @@ input[type="search"]{
     border-color:#fff;
     border-style:solid;
 /*removing boder from search box*/
-   
+
 /*defining background image as a search symbol*/
 
     background-image:url(img/searchbar1.png);
@@ -120,7 +122,7 @@ padding:0;
 }
 
 .suggestions ul li  {
-  
+
 }
 /*adding effect when the mouse is hovered over list item*/
 .searchbox ul li a:hover{
