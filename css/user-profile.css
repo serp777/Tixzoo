@@ -421,6 +421,7 @@
   margin: 1vw;
   left: 0vw;
   top: 41vw;
+  background-color: white;
 }
 
 .video-wrapper {
@@ -446,5 +447,7 @@
   height:93%;
 }
 
-
+#account-settings {
+  background-color: white;
+}
 

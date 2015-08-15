@@ -675,7 +675,6 @@ footer {
   width: 100%;
   z-index: 12;
   position: absolute;
-
   text-align: center;
   height: 8em;
 }
@@ -685,7 +684,7 @@ footer {
   font-size: 1.5vw;
   padding-left: 2em;
   position: relative;
-  top: 1.5em;
+  top: 1em;
 }
 
 .social-media-icon1 {

@@ -2993,6 +2993,7 @@ select[multiple].form-group-lg .form-control {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
+
 }
 .btn:hover,
 .btn:focus,
@@ -3404,8 +3405,11 @@ tbody.collapse.in {
 .dropdown {
   position: relative;
 }
+
+
 .dropdown-toggle:focus {
   outline: 0;
+
 }
 .
  {
