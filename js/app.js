@@ -165,6 +165,7 @@ App.ApplicationController = Ember.Controller.extend({
 App.ApplicationRoute = Ember.Route.extend({
   actions: {
     showModal: function(name, model) {
+      console.log(model);
         this.render(name, {
           into: 'application',
           outlet: 'modal',

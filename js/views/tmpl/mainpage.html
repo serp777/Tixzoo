@@ -43,7 +43,7 @@
             <ul class="suggestions">
             {{#each object in tempTicketJson}}
 
-                <li><bc><a {{action 'showModal' 'buyticket-modal' model}}>Ticket: {{object.name}}</a></bc></li>
+                <li><bc><a {{action 'showModal' 'buyticket-modal' object}}>Ticket: {{object.name}}</a></bc></li>
 
              {{/each}}
             </ul>
