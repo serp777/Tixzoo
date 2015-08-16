@@ -6,14 +6,14 @@
 
         <div id="btn-container">
         {{#if loginSuccess}}
-            <a {{action "logout"}} class="my-tix-btn">My Tix</a>
+          {{#link-to 'user-profile' class="my-tix-btn"}}My Tix{{/link-to}}
           <br>
-            <a {{action "logout"}} class="sell-btn">Sell</a>
+            
           <br>
             <img class="my-account-pic" {{action "logout"}} {{bind-attr src=maxFrat alt="maxFrat"}}>
         {{else}}
-          <a {{action 'showModal' 'signup-modal' model}} class="create_Btn">Sign Up</a>
-          <a {{action 'showModal' 'login-modal' model}} class="login_Btn">Login</a>
+          <a {{action 'showModal' 'signup-modal'}} class="create_Btn">Sign Up</a>
+          <a {{action 'showModal' 'login-modal' secondmodel}} class="login_Btn">Login</a>
         {{/if}}
         </div>
 
@@ -41,9 +41,9 @@
           {{input type="search" value=searchText placeholder="Search by artist, genre or location"}}
 
             <ul class="suggestions">
-            {{#each object in ticketFeed}}
+            {{#each object in tempTicketJson}}
 
-                <li><bc>{{#link-to 'ticket-feed.buy' object}}{{object.name}}{{/link-to}}</bc></li>
+                <li><bc><a {{action 'showModal' 'buyticket-modal' object}}>Ticket: {{object.name}}</a></bc></li>
 
              {{/each}}
             </ul>

@@ -1,7 +1,8 @@
-<script type="text/x-handlebars" data-template-name="signup-modal">
+<script type="text/x-handlebars" data-template-name="buyticket-modal">
       {{#my-modal title='Welcome' ok='save' close='removeModal'}}
         <form {{action 'ok' on='submit' target=view}}>
-          <div class="form-group">
+          <div class="buy-form-group">
+            {{model.name}}
             {{input class="form-control" placeholder=usernameText value=username}}
             {{input class="form-control" type="password" placeholder=passwordText value=password }}
             {{input class="form-control" type="password" placeholder=passwordVerifyText value=passwordVerify }}
@@ -11,8 +12,21 @@
       {{/my-modal}}
     </script>
 
+<script type="text/x-handlebars" data-template-name="signup-modal">
+      {{#mysecond-modal title='Welcome' ok='save' close='removeModal'}}
+        <form {{action 'ok' on='submit' target=view}}>
+          <div class="form-group">
+            {{input class="form-control" placeholder=usernameText value=username}}
+            {{input class="form-control" type="password" placeholder=passwordText value=password }}
+            {{input class="form-control" type="password" placeholder=passwordVerifyText value=passwordVerify }}
+            {{input class="form-control" placeholder=emailText value=email }}
+          </div>
+        </form>
+      {{/mysecond-modal}}
+    </script>
+
     <script type="text/x-handlebars" data-template-name="login-modal">
-      {{#my-modal title='Welcome' ok='save' close='removeModal'}}
+      {{#mysecond-modal title='Welcome' ok='save' close='removeModal'}}
         <form {{action 'ok' on='submit' target=view}}>
           <div class="form-group">
             <div class="login_modal_padding">
@@ -21,7 +35,7 @@
             </div>
           </div>
         </form>
-      {{/my-modal}}
+      {{/mysecond-modal}}
     </script>
 
     <script type="text/x-handlebars" data-template-name="logout-modal">
@@ -51,7 +65,6 @@
       {{/my-modal}}
     </script>
 
-
     <script type="text/x-handlebars" data-template-name="components/my-modal">
       <div class="modal fade">
         <div class="modal-dialog">
@@ -64,6 +77,25 @@
               {{yield}}
             </div>
             <div class="modal-footer">
+              <button type="button" class="btn btn-primary" {{action 'ok'}}>Submit</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="components/mysecond-modal">
+      <div class="modal fade">
+        <div class="modalls-dialog">
+          <div class="modalls-content">
+            <div class="modalls-header">
+              <button type="button" class="close" data-dismiss="modalls-headerls" aria-hidden="true">&times;</button>
+              <h4 class="modalls-title">{{title}}</h4>
+            </div>
+            <div class="modalls-body">
+              {{yield}}
+            </div>
+            <div class="modalls-footer">
               <button type="button" class="btn btn-primary" {{action 'ok'}}>Submit</button>
             </div>
           </div>
