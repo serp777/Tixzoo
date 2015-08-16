@@ -580,6 +580,7 @@ table {
   z-index: 10;
 }
 
+
 /**** Bottom container content ****/
 
 /* test div for aligning the text with the images regardless of zooming or screen size */
@@ -656,100 +657,77 @@ table {
 #footer-container {
   position: relative;
   bottom: 0vw;
+  text-align:center;
 }
 
-#footer-main {
-  background-color: gray;
-  width: 100%;
-  height: 9em;
-  position: absolute;
-  left: 0vw;
-  bottom: 0vw;
-  margin-right: 0;
-}
+
 
 footer {
   background-color: black;
-  padding: 1.5em 1.5em;
   color: white;
   width: 100%;
   z-index: 12;
   position: absolute;
+  box-sizing:border-box;
+  
+ }
 
-  text-align: center;
-  height: 8em;
-}
+ footer a {
+  transition:all .3s ease-in-out;
+
+ }
 
 .footer-link {
   color: white;
   font-size: 1.5vw;
-  padding-left: 2em;
+  padding: 1vw;
   position: relative;
-  top: 1.5em;
+
+  width:100%;
+
+}
+
+#social {
+  padding-bottom:.5vw;
+  margin-top:.5vw;
+ 
 }
 
 .social-media-icon1 {
-  position: absolute;
-  height: 3em;
-  width: 3em;
-  left: 2vw;
-  bottom: 2vw;
-  -webkit-transition: height .5s, -webkit-transform .5s;
-    transition: height .5s, transform .5s;
+  position: relative;
+  width:3vw;
+  margin:right:1vw;
+  -webkit-transition: all .3s ease-in-out;
 
 }
 .social-media-icon2 {
-  position: absolute;
-  height: 3em;
-  width: 3em;
-  left: 6vw;
-  bottom: 2vw;
-  margin-right: 1vw;
-  -webkit-transition: height .5s, -webkit-transform .5s;
-    transition: height .5s, transform .5s;
+  position: relative;
+  width:3vw;
+ -webkit-transition: all .3s ease-in-out;
 
 }
 .social-media-icon3 {
-  position: absolute;
-  height: 3em;
-  width: 3em;
-  left: 10vw;
-  bottom: 2vw;
-  margin-right: 1vw;
-  -webkit-transition: height .5s, -webkit-transform .5s;
-    transition: height .5s, transform .5s;
-
+  position: relative;
+  width:3vw;
+  -webkit-transition: all .3s ease-in-out;
 }
 
 .social-media-icon1:hover {
-  position: absolute;
-  height: 4em;
-  width: 4em;
-  left: 1.6vw;
-  bottom: 1.6vw;
-  margin-right: 1vw;
+ transform:scale(1.3);
 }
 
 .social-media-icon2:hover {
-  position: absolute;
-  height: 4em;
-  width: 4em;
-  left: 5.6vw;
-  bottom: 1.6vw;
-  margin-right: 1vw;
+ transform:scale(1.3);
 }
+
 .social-media-icon3:hover {
-  position: absolute;
-  height: 4em;
-  width: 4em;
-  left: 9.6vw;
-  bottom: 1.6vw;
-  margin-right: 1vw;
+  transform:scale(1.3);
 }
 
 footer a:hover {
-  color: orange;
+  color: rgb(22,124,255);
   text-decoration: none;
+
 }
 
 #message-icon {
@@ -763,5 +741,11 @@ footer a:hover {
 #lock-icon {
   border-radius: 40% 40% 0 0;
 }
+
+
+
+
+
+
 
 
