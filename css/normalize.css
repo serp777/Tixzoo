@@ -691,10 +691,12 @@ footer {
 
  }
 
+
 .footer-link {
   color: white;
   font-size: 1.5vw;
   position: relative;
+<<<<<<< HEAD
   float:left;
   padding-left:2vw;
   margin-left:2.5vw;
@@ -718,6 +720,9 @@ footer {
   margin-top:1vw;
   text-align: center
  
+=======
+  top: 1em;
+>>>>>>> 4b78883d19e2ae1a804184a546b236471a561c31
 }
 
 .social-media-icon1 {

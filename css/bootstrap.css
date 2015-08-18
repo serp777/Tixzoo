@@ -2996,6 +2996,7 @@ select[multiple].form-group-lg .form-control {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
+
 }
 .btn:hover,
 .btn:focus,
@@ -3407,8 +3408,11 @@ tbody.collapse.in {
 .dropdown {
   position: relative;
 }
+
+
 .dropdown-toggle:focus {
   outline: 0;
+
 }
 .
  {
@@ -5692,7 +5696,7 @@ a.list-group-item-danger.active:focus {
   font-weight: bold;
   line-height: 1;
   position: absolute;
-  top: 16vw;
+
   right: 3vw;
   color: #000;
   text-shadow: 0 1px 0 #fff;
@@ -5771,6 +5775,7 @@ button.close {
   right: 0;
   left: 0;
   background-color: #000;
+  width: 30vw;
 }
 .modal-backdrop.fade {
   filter: alpha(opacity=0);
@@ -5795,10 +5800,11 @@ button.close {
 .modal-body {
   position: relative;
   padding: 15px;
+
 }
 .modal-footer {
   padding: 15px;
-  text-align: right;
+  text-align: center;
   border-top: 1px solid #e5e5e5;
 }
 .modal-footer .btn + .btn {
