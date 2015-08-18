@@ -49,14 +49,13 @@ App.MainPageController = Ember.ObjectController.extend({
       var search = this.get('searchText');
       var tickets = this.get('ticketJson');
       if (!this.get('ticketEn') || !search || search == '') {
-        this.set('tempTicketJson',tickets);
-        this.set('tempTicketJson',this.get('tempTicketJson'));
+        this.set('tempTicketJson',tickets.slice().splice(0,5));
         return tickets;
       }
       var that = this;
       this.get('controllers.application').similarText(search,tickets).success(function (data) {
         if(data && data !== null){
-          that.set('tempTicketJson',data["tickets"]);
+          that.set('tempTicketJson',data["tickets"].slice().splice(0,5));
         } else {
           that.set('tempTicketJson',[]);
         }
