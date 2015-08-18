@@ -36,8 +36,26 @@ class userControllerClass {
 		$myusername = mysqli_real_escape_string($dbconn, $myusername);
 		$mypassword = mysqli_real_escape_string($dbconn, $mypassword);
 		$myemail = mysqli_real_escape_string($dbconn, $myemail);
+
+		$sql="SELECT * FROM accountinfo WHERE username='$myusername'";
+		$usrnameTest = $this->executeSqlQuery($sql,$dbconn);
+		$usrnameTest = $usrnameTest->num_rows;
+		$sql="SELECT * FROM accountinfo WHERE username='$myemail'";
+		$emlTest = $this->executeSqlQuery($sql,$dbconn);
+		$emlTest = $emlTest->num_rows;
+
+		if($usrnameTest > 0 && $emlTest > 0){
+			$result["dataError"] = "email and username in use";
+			return $result; 
+		} elseif($usrnameTest > 0 && $emlTest == 0){
+			$result["dataError"] = "username in use";
+			return $result;  
+		} elseif($emlTest > 0 && $usrnameTest == 0){
+			$result["dataError"] = "email in use";
+			return $result;  
+		}
+
 		$sql="INSERT INTO accountinfo (username, password, emailAddress, credit) VALUES ('$myusername','$mypassword','$myemail','1000')";
-		echo $sql;
 		$result = $this->executeSqlQuery($sql,$dbconn);
 		return $result;
 	}

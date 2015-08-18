@@ -28,7 +28,7 @@
 
 
 <script type="text/x-handlebars" data-template-name="signup-modal">
-      {{#mysecond-modal title='Welcome' ok='save' close='removeModal'}}
+      {{#mysecond-modal id="signupmodal" title='Welcome' ok='save' close='removeModal'}}
 
         <form {{action 'ok' on='submit' target=view}}>
           <div class="form-group">
@@ -36,9 +36,13 @@
             {{input class="form-control" type="password" placeholder=passwordText value=password }}
             {{input class="form-control" type="password" placeholder=passwordVerifyText value=passwordVerify }}
             {{input class="form-control" placeholder=emailText value=email }}
+            {{#if existsAlready}}
+              <div style="color: red;">
+              <strong>{{errorMessage}}</strong>
+              </div>
+            {{/if}}
           </div>
         </form>
-
 
       {{/mysecond-modal}}
 

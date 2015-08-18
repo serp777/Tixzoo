@@ -208,12 +208,11 @@ App.LogoutModalController = Ember.Controller.extend({
 App.MysecondModalComponent = Ember.Component.extend({
   actions: {
     ok: function() {
-      this.$('.modal').modal('hide');
+
       this.sendAction('ok');
     }
   },
   show: function() {
-    console.log("test");
     this.$('.modal').modal().on('hidden.bs.modal', function() {
       this.sendAction('close');
     }.bind(this));

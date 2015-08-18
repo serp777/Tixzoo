@@ -50,15 +50,22 @@ header("Content-Type: application/json", true);
 	if(isset($_POST['createMode']) && $_POST['createMode'] == "true"){
 		$create = new userControllerClass();
     	$result = $create->createAccount($_POST['username'],$_POST['password'],$_POST['email']);
-    	if($result == 1){
-    		$result = true;
+    	if(isset($result["dataError"]))
+        {
+            echo json_encode($result);
+            return "";
+        }
+        if($result == 1){
+    		$result["success"] = true;
             error_log("Account created succesfully.");
     	} elseif($result == 0) {
-    		$result = false;
+            $result["success"] = false;
     	} else {
     		error_log("There is a duplicate name and password which is a big problem. Handle this error manually in the database");
-    		$result = true;
+    		$result["success"] = true;
     	}
+        echo json_encode($result);
+        return "";
 	}
 
     if(isset($_POST['createticketMode']) && $_POST['createticketMode'] == "true"){
