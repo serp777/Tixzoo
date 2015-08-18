@@ -62,7 +62,7 @@
           </div>
           <div class="column" id="security-icon">
             <h3>security</h3>
-            <p>sser exchange, identity, and payment is secured and authenticated</p>
+            <p>User exchange, identity, and payment is secured and authenticated</p>
           </div>
           <div class="column" id="affordability-icon">
             <h3>affordability</h3>
@@ -71,14 +71,18 @@
         </div>
     </div>
 
+    <div="gif-cover">
     <div id="bottom-background-container">
-      <img id="bottom-img" {{bind-attr src=bottomBackground alt="bottomBackground"}}>
       <div class="main-about">
-        <h1>About Us</h1>
-          <p></p>
-          <p></p>
-      </div>
+       
+        <form class="newsletter">
+        <h1 class="newsletter-title">newsletter</h1>
 
+          <p>{{input class="newsletter-form" placeholder="Your email address" value=email }}</p>
+          <button type="button" id="newsletter-btn" {action 'ok'}}>Join the zoo</button>
+        </form>
+      </div>
+    </div>
     </div>
 
     <div id="footer-container">
@@ -89,14 +93,15 @@
         <a href='#'><img class="social-media-icon2" {{bind-attr src=instagramIcon alt="instagramIcon"}}></a>
         <a href='#'><img class="social-media-icon3" {{bind-attr src=twitterIcon alt="twitterIcon"}}></a>
         </ul>
-        </div>
-
-        <ul class="footer-class">
-        <li><a class="footer-link" id="no-dot-footer" href="#">Home</a></li>
+      </div>
+      <div class="footer-pages">
+        <ul id="footer-class">
+        <li><a class="footer-link"  href="#">Home</a></li>
         <li><a class="footer-link" href="#">Careers</a></li>
         <li><a class="footer-link" href="#">Developers</a></li>
-        <li><a class="footer-link" href="#">Contact Us</a></li>
+        <li><a class="footer-link" id="no-dot-footer" href="#">Contact Us</a></li>
         </ul>
+      </div>
 
       <div class="copyright">
       <p>-Tixzoo inc. 2015-</p>

@@ -51,7 +51,7 @@ input[type="search"]:focus  {
 input[type="search"]{
     padding:1vw 4vw 1vw 1.5vw;
     font-size:1.75vw;
-    color:rgb(167,172,194);
+    color:darkgray;
     font-family:gill sans;
     font-weight: lighter;
     box-sizing:border-box;
@@ -78,7 +78,7 @@ input[type="search"]{
 }
 /*now using placeholder property to change color of placholder text and making it consitent accross the browser by use of prefix*/
 input[type="search"]::-webkit-input-placeholder{
-    color: rgb(167,172,194);
+    color: darkgray;
 }
 input[type="search"]:-moz-placeholder { /* Firefox 18- */
    color: rgb(167,172,194);
@@ -94,7 +94,7 @@ input[type="search"]:-ms-input-placeholder {  /* interner explorer*/
     display:block;
 /*removing underlines from anchor element*/
     text-decoration:none;
-    color:rgb(167,172,194);
+    color:darkgray;
     font-size:1.3vw;
     background-color:#fff;
     padding:1vw;

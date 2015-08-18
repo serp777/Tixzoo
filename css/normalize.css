@@ -68,7 +68,7 @@ template {
  */
 
 html {
-    font-family: NEOTERIC, gill sans; /* 1 */
+    font-family: gill sans; /* 1 */
     height: 100%;
     /*height: 3000px;*/
     margin: 0px;
@@ -133,7 +133,7 @@ a:hover {
  */
 
 h1 {
-    font-size: 2em;
+    font-size: 1.7em;
     margin: 0.67em 0;
 }
 
@@ -515,9 +515,9 @@ table {
 
 #main-features h1  {
   color: black;
-  font-family: NEOTERIC;
+  font-family: gill sans;
   margin-bottom: 0;
-  font-size: 6vw;
+  font-size: 4vw;
   z-index: 10;
 }
 
@@ -531,7 +531,7 @@ table {
   margin-top: 5vw;
   z-index: 10;
   border-radius: 50%;
-  font-family: NEOTERIC;
+  font-family: gill sans;
   transition: all .5s ease;
 }
 
@@ -556,7 +556,7 @@ table {
   top: 4vw;
   margin: 0;
   padding: 0;
-  font-size: 3vw;
+  font-size: 2vw;
   z-index: 10;
 }
 
@@ -570,7 +570,7 @@ table {
   margin-left: 25%;
   margin-right: 25%;
   margin-top: 1vw;
-  font-size: 1.5vw;
+  font-size: 1.2vw;
   z-index: 10;
   text-align: center;
 }
@@ -587,53 +587,66 @@ table {
 
 #bottom-background-container{
   display: table;
-  margin-top: ;
+  height:45vw;
   width: 100%;
   left: 0px;
+  margin-top: 0;
   position: relative;
   text-align: center;
+  background-image:url(img/bottom-background.gif);
+  background-repeat: no-repeat;
+  background-size: 100% 110%;
+  padding-top:13vw;
 }
 
-#bottom-img{
-  left: 0px;
-  z-index: 2;
-  width: 100%;
+.newsletter-form {
+  color:white;
+  height:3vw;
+  font-size:1.5vw;
+  margin-top:1vw;
+  padding-left: 1vw;
+  border:2px solid white;
+  background-color:rgba(255, 255, 255, .1);
+
+}
+ input[type="button"] {
+  background-color:#FFF;
+ }
+.newsletter-form:hover {
+
+}
+
+.newsletter-form::-webkit-input-placeholder {
+color:white;
+
+}
+
+button {
+  background:none;
+  background-color:none;
+}
+
+#newsletter-btn {
+  padding:1vw 4vw;
+  margin:2vw;
+  border:1px solid rgb(22,124,255);
+  color:white;
+  background:none;
+
+}
+
+#newsletter-btn:hover {
+  background:rgba(0 0 0 0);
+}
+
+.newsletter-title {
+  color:white;
 }
 
 
-.main-about {
-  padding: 0;
-  width: 100%;
-  left: 0%;
-  top: 0vw;
-  color: white;
-  position: absolute;
-  z-index: 5;
-  text-align: center;
-
+.column {
+  font-family: gill sans;
 }
-
-.main-about h1  {
-  padding-bottom: 1em;
-  font-size: 4vw;
-  position: relative;
-  font-family: NEOTERIC;
-  top: 7vw;
-}
-
-.main-about p {
-  width: 40vw;
-  padding-top: 2vw;
-  padding-bottom: 2vw;
-  font-size: 2vw;
-  z-index: 10;
-  left: 30vw;
-  top: 8vw;
-  position: relative;
-  border-radius: 5px;
-  font-family: NEOTERIC;
-}
-
 
 
 #about-text-right:hover {
@@ -657,7 +670,8 @@ table {
 #footer-container {
   position: relative;
   bottom: 0vw;
-  text-align:center;
+  text-align: center;
+
 }
 
 
@@ -680,16 +694,29 @@ footer {
 .footer-link {
   color: white;
   font-size: 1.5vw;
-  padding: 1vw;
   position: relative;
+  float:left;
+  padding-left:2vw;
+  margin-left:2.5vw;
+  border-width: 0 0 0 1px;
+  border-style: solid;
+  border-color:rgb(39,175,208);
 
-  width:100%;
+ 
+}
+
+#no-dot-footer {
+  border-width: 0 1px 0 1px;
+  border-style: solid;
+  border-color:rgb(39,175,208);
+  padding-right:2vw;
 
 }
 
 #social {
-  padding-bottom:.5vw;
-  margin-top:.5vw;
+  padding-bottom:1vw;
+  margin-top:1vw;
+  text-align: center
  
 }
 
@@ -741,11 +768,21 @@ footer a:hover {
 #lock-icon {
   border-radius: 40% 40% 0 0;
 }
+ul#footer-class {
+  display:inline-block;
+  text-align: center;
+ 
+}
 
+.footer-pages {
+  width:100%;
+  text-align: center
+}
 
-
-
-
+p {
+  margin-top:.5vw;
+  font-size:1vw;
+}
 
 
 
