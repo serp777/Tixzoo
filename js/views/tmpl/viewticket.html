@@ -36,15 +36,22 @@
             <div class="view-rating">
             <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
             </div>
-
-            <p id="view-ticket-artist">Justin Martin</p>
-            <p id="view-ticket-date">June 25th, 2015</p>
-            <p id="view-ticket-time">8:00 pm</p>
-            <a id="view-ticket-venue">Avalon Nightclub, Hollywood, CA</a>
-            <a id="view-ticket-mins-ago">25 mins ago</a>
-            <p id="want-this">Want this ticket? <a href="#">Buy now.</a></p>
-            <a {{action 'showModal' 'signup-modal' model}} class="buy_Btn-postview">Buy</a>
-            <p id="user-agreement">By clicking "Buy", you agree to Tixzoo"'"s <a href="#">Terms of Service</a> and <a href="#">User Agreement</a>.</p>
+            <div id="ticket-details">
+            <ul class="ticket-details">
+            <li><p>Justin Martin</p></li>
+            <li><p>June 25th, 2015</p></li>
+            <li><p>8:00 pm</p></li>
+            <li><a>Avalon Nightclub, Hollywood, CA</a></li>
+            </ul>
+            </div>
+            <div id="lower-ticket-details"></li>
+            <li><ul class="ticket-details"></li>
+            <li><a id="view-ticket-mins-ago">25 mins ago</a></li>
+            <li><p id="want-this">Want this ticket? <a href="#">Buy now.</a></p></li>
+            <li><a {{action 'showModal' 'signup-modal' model}} class="buy_Btn-postview">Buy</a></li>
+            <li><p id="user-agreement">By clicking "Buy", you agree to Tixzoo"'"s <a href="#">Terms of Service</a> and <a href="#">User Agreement</a>.</p></li>
+            </ul>
+            </div>
           </div>
         </div>
 

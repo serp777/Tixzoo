@@ -467,11 +467,15 @@ table {
   z-index: 5;
   background-color: black;
   width:100%;
+  position:fixed;
+  left:0;
+  right:0;
+  top:0;
 }
 
 #tixzoo-logo {
   width: 17vw;
-  margin:2.5vw 40vw;
+  margin:3.2vw 44vw;
   position: relative;
 
 }
@@ -605,19 +609,21 @@ table {
   font-size:1.5vw;
   margin-top:1vw;
   padding-left: 1vw;
-  border:2px solid white;
-  background-color:rgba(255, 255, 255, .1);
-
+  border:1px solid white;
+  background:none;
+  border-radius: 2px;
+  font-family:gill sans;
 }
+ 
  input[type="button"] {
   background-color:#FFF;
  }
-.newsletter-form:hover {
 
-}
 
 .newsletter-form::-webkit-input-placeholder {
 color:white;
+font-family:gill sans;
+font-weight: lighter;
 
 }
 
@@ -629,14 +635,22 @@ button {
 #newsletter-btn {
   padding:1vw 4vw;
   margin:2vw;
-  border:1px solid rgb(22,124,255);
+  border:1px solid #FFF;
   color:white;
   background:none;
+  transition:all .3s ease-in-out;
+  font-weight:lighter;
+  font-size: 1vw;
+  text-transform: uppercase;
+  font-family: gill sans;
 
 }
 
-#newsletter-btn:hover {
-  background:rgba(0 0 0 0);
+.newsletter #newsletter-btn:hover {
+  color:rgb(22,124,255);
+  font-weight: lighter;
+  background-color:#FFF;
+  opacity:.8;
 }
 
 .newsletter-title {
