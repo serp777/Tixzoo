@@ -13,7 +13,7 @@ $mail->Password = 'computer123';                           // SMTP password
 $mail->Port = 80;                                    // TCP port to connect to
 $mail->From = 'tixzooadmin@mytixzoo.com';
 $mail->FromName = 'AutoMailer';
-$mail->addAddress('arusse02@gmail.com', 'Aubs test');     // Add a recipient
+$mail->addAddress('nickliuyanzhe@gmail.com', 'Nick test');     // Add a recipient
 $mail->addAddress('arusse02@gmail.com');               // Name is optional
 $mail->addReplyTo('tixzooadmin@mytixzoo.com', 'Information');
 //$mail->addCC('cc@example.com');
