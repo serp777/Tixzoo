@@ -1,13 +1,9 @@
 <?php
+require_once 'databaseController.php';
 class userControllerClass {
 	private function establishConnection(){
-		$host="tixzoo.db.4445716.hostedresource.com"; // Host name
-		$username="tixzoo"; // Mysql username
-		$password="Computer123#"; // Mysql password
-		$db_name="tixzoo"; // Database name
-		// Connect to server and select databse.
-		$dbconn = mysqli_connect($host,$username,$password,$db_name) or die("Error " . mysqli_error($dbconn));
-		return $dbconn;
+		$db = new databaseControllerClass();
+		return $db->establishConnection();
 	}
 	private function executeSqlQuery($sql,$dbconn){
 		$result = $dbconn->query($sql);
@@ -64,6 +60,34 @@ class userControllerClass {
 		$row = mysqli_fetch_assoc($result);
 		$result = json_encode($row);
 		return $result;
+	}
+	public function setAssocCustomerId($id, $username){
+		$dbconn = $this->establishConnection();
+		$id = stripslashes($id);
+		$id = mysqli_real_escape_string($dbconn, $id);
+		$sql = "UPDATE accountinfo SET cstmrAssocId = '$id' WHERE username = '$username'";
+		$result = $this->executeSqlQuery($sql,$dbconn);
+		$output["response"] = $result;
+		return $output;
+	}
+	public function setAssocTicketCustomerBuyId($id, $ticketID){
+		$dbconn = $this->establishConnection();
+		$id = stripslashes($id);
+		$id = mysqli_real_escape_string($dbconn, $id);
+		$sql = "UPDATE tickets SET cstmrPurchaseId = '$id' WHERE ticketID = '$ticketID'";
+		$result = $this->executeSqlQuery($sql,$dbconn);
+		$output["response"] = $result;
+		return $output;
+	}
+	public function getAssocCustomerId($username){
+		$dbconn = $this->establishConnection();
+		$sql = "SELECT * FROM accountinfo WHERE username = '$username'";
+		$result = $this->executeSqlQuery($sql, $dbconn);
+		$row = mysql_fetch_object($result);
+		return $row->cstmrAssocId;
+	}
+	public function getAssocTicketCustomerBuyId($ticketID){
+
 	}
 	public function deleteCookie(){
 		ob_start();

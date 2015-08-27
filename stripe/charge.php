@@ -1,6 +1,5 @@
 <?php
-  require_once('config.php');
-  echo 'While this is going to be parsed.';
+  require_once 'config.php';
   $token  = $_POST['stripeToken'];
 
   $customer = \Stripe\Customer::create(array(
@@ -15,5 +14,5 @@
   ));
   // example
   echo $stripe['publishable_key']
-  echo '<h1>Successfully charged $50.00!</h1>';
+  echo '<h1>Successfully charged $100.00!</h1>';
 ?>

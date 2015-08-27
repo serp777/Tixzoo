@@ -1,13 +1,8 @@
 <?php
 class ticketControllerClass {
 	private function establishConnection(){
-		$host="tixzoo.db.4445716.hostedresource.com"; // Host name
-		$username="tixzoo"; // Mysql username
-		$password="Computer123#"; // Mysql password
-		$db_name="tixzoo"; // Database name
-		// Connect to server and select databse.
-		$dbconn = mysqli_connect($host,$username,$password,$db_name) or die("Error " . mysqli_error($dbconn));
-		return $dbconn;
+		$db = new databaseControllerClass();
+		return $db->establishConnection();
 	}
 	private function executeSqlQuery($sql, $dbconn){
 		$result = $dbconn->query($sql);
