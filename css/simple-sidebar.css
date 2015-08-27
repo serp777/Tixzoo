@@ -8,7 +8,6 @@
 
 html  {
     font-family:gill sans;
-    font-weight:lighter;
     text-transform:uppercase;
 }
 body{
@@ -175,11 +174,13 @@ a {
         margin-right: 0;
     }
 
-#appstore {
-    width:10vw;
+#drop_footer #appstore {
+    width:100%;
+
 }
 
 #drop_footer {
+    position:relative;
     width:100%;
     text-align: center;
     margin-top:4vw;
