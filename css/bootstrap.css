@@ -5804,7 +5804,7 @@ button.close {
   text-align: center;
 }
 
-.modal-body #view-ticket-info:target {
+.modal-body #view-ticket-info-affect {
   transform:rotateY(180deg);
 }
 

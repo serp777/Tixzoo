@@ -9,7 +9,7 @@ App.BuyticketModalController = Ember.ObjectController.extend({
   	creditCard: function() {
       console.log('test');
       if(this.get('creditCard') == 'view-ticket-info'){
-        this.set('creditCard','view-ticket-info:target');
+        this.set('creditCard','view-ticket-info-affect');
       } else {
         this.set('creditCard','view-ticket-info');
       }
