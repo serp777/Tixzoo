@@ -45,7 +45,7 @@ a {
 }
 
 #sidebar-wrapper {
-    z-index: 1000;
+    z-index: 1020;
     position: fixed;
     left: 250px;
     width: 0;
@@ -130,7 +130,7 @@ a {
     position:fixed;
     margin:4vw;
     cursor: pointer;
-    z-index: 100;
+    z-index: 1010;
 }
 
 .sidebar-nav > .sidebar-brand {

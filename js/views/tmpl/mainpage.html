@@ -36,9 +36,14 @@
             <li><span><h1>it's a jungle out<br>there</br></h1><h3>peer to peer ticket exchange simplified</h3><img id="background-HomePage" {{bind-attr src=backgroundHomePageFive alt="backgroundHomePage"}}></span></li>
             <li><span><h1>ticket exchange simplified</h1><h3>buy, sell, or trade tickets on the go</h3><img id="background-HomePage" {{bind-attr src=backgroundHomePageThree alt="backgroundHomePage"}}></span></li>
         </ul>
+
             <div id="search-bar">
+
+
           <form class="searchbox" action="">
+          <div id="search-btn"><a href="#"><img src="img/searchbar2.png"></a></div>
           {{input type="search" value=searchText placeholder="Search by artist, genre or location"}}
+
 
             <ul class="suggestions">
             {{#each object in tempTicketJson}}

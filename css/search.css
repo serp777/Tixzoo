@@ -12,13 +12,13 @@
 #search-bar-feed {
     position: absolute;
     height: 2vw;
-
     top: 2vw;
     left: 34vw;
 }
 
 .ember-view.ember-text-field {
     width:50vw;
+    overflow:hidden;
 
 }
 
@@ -31,18 +31,47 @@
 /*centering the form element*/
 
 }
+.ember-view #search-btn {
+  overflow:hidden;
+  width:5vw;
+  display:block;
+  padding:1vw 0 1.04vw 0;
+  margin-left:45vw;
+  background:background: rgb(22,124,255); /* Old browsers */
+background: -moz-linear-gradient(top, rgba(22,124,255,1) 0%, rgba(41,137,216,1) 50%, rgba(125,185,232,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(22,124,255,1)), color-stop(50%,rgba(41,137,216,1)), color-stop(100%,rgba(125,185,232,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(22,124,255,1) 0%,rgba(41,137,216,1) 50%,rgba(125,185,232,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(22,124,255,1) 0%,rgba(41,137,216,1) 50%,rgba(125,185,232,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgba(22,124,255,1) 0%,rgba(41,137,216,1) 50%,rgba(125,185,232,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom, rgba(22,124,255,1) 0%,rgba(41,137,216,1) 50%,rgba(125,185,232,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#167cff', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */;
+  position:absolute;
+  z-index:10;
+  -webkit-box-sizing:border-box;
+  border-bottom-right-radius: 3px;
+  border-top-right-radius: 3px;
+  border-bottom: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(22,124,255,1)), color-stop(50%,rgba(41,137,216,1)), color-stop(100%,rgba(125,185,232,1))), 1px, solid;
+  transition: all .5s ease-in-out;
+}
+
+#search-btn img {
+  width:2vw;
+}
+
+#search-btn:hover {
+  background:darkgray;
+
+}
 
 input[type="search"]:hover  {
   background-image:url(img/searchbar2.png);
   border-width:1.5px;
-  border-color:rgb(22,124,255);
   border-style:solid;
 }
 
 input[type="search"]:focus  {
   background-image:url(img/searchbar2.png);
   border-width:1.5px;
-  border-color:rgb(22,124,255);
   border-style:solid;
 
 
@@ -178,4 +207,15 @@ input[type="search"]:focus + .suggestions li{
 textarea:focus, input:focus{
     outline: 0;
     text-align: justify;
+}
+
+#user-search input[type="search"]{
+  padding:.5vw 3vw .5vw 1.2vw;
+   background-position:47.5vw .5vw;
+   font-size:1.3vw;
+   background-size:1.5vw 1.5vw;
+}
+
+#user-search {
+  padding-bottom: 2vw
 }
