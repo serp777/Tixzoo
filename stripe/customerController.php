@@ -34,7 +34,23 @@ class customerControllerClass {
     $result['cards'] = $cards["data"];
     return $result;
   }
+
+  // update a specific credit cards that a user have
+  public function updateCreditCard(){
+    $user = new userControllerClass();
+    $cstmrAssocId = $user->getAssocCustomerId($username);
+  }
   
-  
+  // delete a credit card
+  public function deleteCreditCard($username, $index){
+    $user = new userControllerClass();
+    $cstmrAssocId = $user->getAssocCustomerId($username);
+    $customer = \Stripe\Customer::retrieve($cstmrAssocId);
+    $list = $this->getCreditCards($username);
+    $card_id = $list['cards'][$index]['id'];
+    $customer->sources->retrieve($card_id)->delete();
+    return $this->getCreditCards($username);
+  }
+
 }
 ?>
