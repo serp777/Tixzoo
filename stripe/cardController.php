@@ -1,5 +1,5 @@
 <?php
-require_once '../Rest/databaseController.php';
+require_once '../Rest/authController.php';
 class userControllerClass {
 	private function establishConnection(){
 		$db = new databaseControllerClass();

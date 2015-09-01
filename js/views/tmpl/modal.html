@@ -1,26 +1,30 @@
 <script type="text/x-handlebars" data-template-name="buyticket-modal">
       {{#my-modal title='Welcome' ok='save' close='removeModal'}}
-
-
         <form {{action 'ok' on='submit' target=view}}>
           <div class="buy-form-group">
-
-
-          <div id="view-ticket-info">
-            <img class="view-ticket-userpic" {{bind-attr src=maxFrat alt="maxFrat"}}>
-            <p id="view-ticket-price">Price: <span>$24</span></p>
-            <div class="view-rating">
-            <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span></div>
-            <p id="view-ticket-artist">{{model.name}}</p>
-            <p id="view-ticket-date">June 25th, 2015</p>
-            <p id="view-ticket-time">8:00 pm</p>
-            <a id="view-ticket-venue">Avalon Nightclub, Hollywood, CA</a>
-            <a id="view-ticket-mins-ago">25 mins ago</a>
-            <p id="want-this">Want this ticket? <a href="#">Buy now.</a></p>
-            <p id="user-agreement">By clicking "Buy", you agree to Tixzoo"'"s <a href="#">Terms of Service</a> and <a href="#">User Agreement</a>.</p>
-          </div>
-          </div>
-
+            {{#if toggled}}
+            <div {{bind-attr id=creditCard}}>
+              <div class="credit-card-info">
+               <form class="payment-info">
+                <p><input type="text">Your name</p>
+                </form>
+              </div>
+            </div>
+            {{else}}
+            <div id="front">
+              <img class="view-ticket-userpic" {{bind-attr src=maxFrat alt="maxFrat"}}>
+              <p id="view-ticket-price"><span>$24</span></p>
+              <div class="view-rating">
+                <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span></div>
+                <p id="view-ticket-artist">{{model.name}}</p>
+                <p id="view-ticket-date">June 25th, 2015</p>
+                <p id="view-ticket-time">8:00 pm</p>
+                <a id="view-ticket-venue">Avalon Nightclub, Hollywood, CA</a>
+                <p id="user-agreement">By clicking "Buy", you agree to Tixzoos <a href="#">Terms of Service</a> and <a href="#">User Agreement</a>.</p>
+              </div>
+            </div>
+            {{/if}}
+            <a {{action 'creditCard'}}>Add Credit Card</a>
           </div>
         </form>
       {{/my-modal}}
@@ -99,7 +103,7 @@
               {{yield}}
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-primary" {{action 'ok'}}>Submit</button>
+              <button type="button" class="btn btn-primary" {{action 'ok'}}>Complete</button>
             </div>
           </div>
         </div>

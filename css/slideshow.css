@@ -16,7 +16,7 @@
     position: absolute;
     width: 100%;
     left: 0%;
-    font-family: NEOTERIC;
+    font-family: gill sans;
     top: 18%;
 }
 
@@ -26,8 +26,9 @@
     position: absolute;
     width: 100%;
     left: 0%;
-    font-family: NEOTERIC;
-    top: 38%;
+    font-family: gill sans;
+    top: 42%;
+    font-weight: lighter;
 }
 
 .cb-slideshow li span {
@@ -65,7 +66,7 @@
     animation: titleAnimation 36s linear infinite 0s;
 }
 .cb-slideshow li div h3 {
-    font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'gill sans', 'Arial Narrow', Arial, sans-serif;
     font-size: 240px;
     padding: 0;
     line-height: 200px;

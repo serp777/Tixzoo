@@ -1,45 +1,53 @@
 <?php
-require_once 'databaseController.php';
+require_once 'authController.php';
 require_once '../stripe/customerController.php';
-
 class userControllerClass {
-	private function establishConnection(){
-		$db = new databaseControllerClass();
-		return $db->establishConnection();
+	private function setupConnection(){
+		$con = new authControllerClass();
+		return $con->getConnection();
 	}
 	private function executeSqlQuery($sql,$dbconn){
 		$result = $dbconn->query($sql);
 		return $result;
 	}
-	public function login($username,$password){
+	public function login($username,$password)
+	{
 		// To protect MySQL injection (more detail about MySQL injection)
-		$dbconn = $this->establishConnection();
+		$dbconn = $this->setupConnection();
 		$username = stripslashes($username);
 		$password = stripslashes($password);
 		$username = mysqli_real_escape_string($dbconn, $username);
 		$password = mysqli_real_escape_string($dbconn, $password);
 		$sql="SELECT * FROM accountinfo WHERE username='$username' and password='$password'";
+
 		$result['query'] = $this->executeSqlQuery($sql,$dbconn);
 		$result['count'] = $result->num_rows;
+		return $count;
+	}
+	public function addNewsletterEmail($email)
+	{
+		$dbconn = $this->setupConnection();
+		$myemail = stripslashes($email);
+		$myemail = mysqli_real_escape_string($dbconn, $myemail);		
+		$sql="INSERT INTO newsletterlist (emailAddress) VALUES ('$myemail')";
+		$result = $this->executeSqlQuery($sql,$dbconn);
 		return $result;
 	}
 	public function createAccount($username,$password,$email){
 		// To protect MySQL injection (more detail about MySQL injection)
-		$dbconn = $this->establishConnection();
+		$dbconn = $this->setupConnection();
 		$myusername = stripslashes($username);
 		$mypassword = stripslashes($password);
 		$myemail = stripslashes($email);
 		$myusername = mysqli_real_escape_string($dbconn, $myusername);
 		$mypassword = mysqli_real_escape_string($dbconn, $mypassword);
 		$myemail = mysqli_real_escape_string($dbconn, $myemail);
-
 		$sql="SELECT * FROM accountinfo WHERE username='$myusername'";
 		$usrnameTest = $this->executeSqlQuery($sql,$dbconn);
 		$usrnameTest = $usrnameTest->num_rows;
 		$sql="SELECT * FROM accountinfo WHERE username='$myemail'";
 		$emlTest = $this->executeSqlQuery($sql,$dbconn);
 		$emlTest = $emlTest->num_rows;
-
 		if($usrnameTest > 0 && $emlTest > 0){
 			$result["dataError"] = "email and username in use";
 			return $result; 
@@ -50,7 +58,6 @@ class userControllerClass {
 			$result["dataError"] = "email in use";
 			return $result;  
 		}
-
 		$sql="INSERT INTO accountinfo (username, password, emailAddress, credit) VALUES ('$myusername','$mypassword','$myemail','1000')";
 		$customer = new customerControllerClass();
 		$result['customer'] = $customer->createCustomer($_POST['username']);

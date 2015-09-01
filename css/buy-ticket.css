@@ -1,4 +1,12 @@
 .buy-form-group {
-  text-align: center;
+  text-align: center !important;
   position: relative;
+}
+
+#view-ticket-info {
+	text-align: center !important;
+}
+
+#ticket-details {
+	padding:5vw !important;
 }

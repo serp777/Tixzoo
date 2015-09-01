@@ -2,11 +2,7 @@
 
     <div id="top-nav-bar-container">
        <div class="nav-bar">
-       <div id="menu_btn">
-
-       <a href="#"><img src="img/menu.png"></a>
-
-       </div>
+    
         <div id="btn-container">
 
          <a {{action 'showModal' 'signup-modal' model}} class="create_Btn">Sign Up</a>
@@ -124,17 +120,27 @@
 
 
 
-    <div id="footer-container">
+   <div id="footer-container">
       <footer>
         <div id="social">
+        <ul id="social_media_icon">
         <a href='#'><img class="social-media-icon1" {{bind-attr src=facebookIcon alt="facebookIcon"}}></a>
         <a href='#'><img class="social-media-icon2" {{bind-attr src=instagramIcon alt="instagramIcon"}}></a>
         <a href='#'><img class="social-media-icon3" {{bind-attr src=twitterIcon alt="twitterIcon"}}></a>
-        </div>
-        <a class="footer-link" href="#">Home</a>
-        <a class="footer-link" href="#">Careers</a>
-        <a class="footer-link" href="#">Developers</a>
-        <a class="footer-link" href="#">Contact Us</a>
+        </ul>
+      </div>
+      <div class="footer-pages">
+        <ul id="footer-class">
+        <li><a class="footer-link"  href="#">Home</a></li>
+        <li><a class="footer-link" href="#">Careers</a></li>
+        <li><a class="footer-link" href="#">Developers</a></li>
+        <li><a class="footer-link" id="no-dot-footer" href="#">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="copyright">
+      <p>-Tixzoo inc. 2015-</p>
+      </div>
 
       </footer>
     </div>

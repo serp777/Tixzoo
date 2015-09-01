@@ -1,5 +1,6 @@
 App.MainPageController = Ember.ObjectController.extend({
   needs: ['application'],
+  creditCard: '',
   username: '',
   password: '',
   passwordVerify: '',
@@ -61,7 +62,7 @@ App.MainPageController = Ember.ObjectController.extend({
         }
       });
     }.observes('searchText','ticketEn'),
-  actions: { 
+  actions: {
     logout: function() {
       this.set('loginSuccess', false);
         var that = this;

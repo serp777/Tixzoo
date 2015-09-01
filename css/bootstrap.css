@@ -1077,7 +1077,6 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
   color: #333;
@@ -5775,7 +5774,7 @@ button.close {
   right: 0;
   left: 0;
   background-color: #000;
-  width: 30vw;
+  width: 100%;
 }
 .modal-backdrop.fade {
   filter: alpha(opacity=0);
@@ -5787,8 +5786,9 @@ button.close {
 }
 .modal-header {
   min-height: 16.42857143px;
-  padding: 15px;
+  padding: 10vw;
   border-bottom: 1px solid #e5e5e5;
+  display:none;
 }
 .modal-header .close {
   margin-top: -2px;
@@ -5799,14 +5799,65 @@ button.close {
 }
 .modal-body {
   position: relative;
-  padding: 15px;
+  padding-right: 7vw;
+  padding-left: 7vw;
+  text-align: center;
+}
+#view-ticket-info-affect #front {
+  backface-visibility:hidden;
+  transform:rotateY(180deg);
+}
+
+#view-ticket-info-affect .credit-card-info{
+  transform:rotateY(180deg);
+}
+
+
+#view-ticket-info-affect {
+  transform:rotateY(180deg);
+  backface-visibility:hidden;
+}
+
+.modal-body #view-ticket-price {
+  font-size: 4vw;
+  font-weight:lighter;
+}
+
+.modal-body .view-rating {
+  font-size:2vw;
+  border-top:black 1px solid;
+  padding-top:.4vw;
 
 }
-.modal-footer {
-  padding: 15px;
-  text-align: center;
-  border-top: 1px solid #e5e5e5;
+
+.modal-body p {
+  font-size:1vw;
 }
+
+.modal-body img {
+  width:12vw;
+  border-radius:100%;
+  border:rgb(22,124,255) solid 3px;
+  margin-top:1vw;
+  
+}
+
+.modal-body #user-agreement{
+  font-size: .9vw;
+  border-top: 1px solid black;
+  padding-top:.9vw;
+}
+
+.modal-body #user-agreement a {
+  font-size:.9vw;
+}
+
+.modal-footer {
+  padding-bottom:2vw;
+  padding-top:1vw;
+  text-align: center;
+}
+
 .modal-footer .btn + .btn {
   margin-bottom: 0;
   margin-left: 5px;

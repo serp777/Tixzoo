@@ -8,7 +8,6 @@
 
 html  {
     font-family:gill sans;
-    font-weight:lighter;
     text-transform:uppercase;
 }
 body{
@@ -46,7 +45,7 @@ a {
 }
 
 #sidebar-wrapper {
-    z-index: 1000;
+    z-index: 1020;
     position: fixed;
     left: 250px;
     width: 0;
@@ -128,9 +127,10 @@ a {
 
 #menu  {
     width:2vw;
-    position:absolute;
+    position:fixed;
     margin:4vw;
     cursor: pointer;
+    z-index: 1010;
 }
 
 .sidebar-nav > .sidebar-brand {
@@ -174,11 +174,13 @@ a {
         margin-right: 0;
     }
 
-#appstore {
-    width:10vw;
+#drop_footer #appstore {
+    width:100%;
+
 }
 
 #drop_footer {
+    position:relative;
     width:100%;
     text-align: center;
     margin-top:4vw;
