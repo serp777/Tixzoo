@@ -5938,7 +5938,7 @@ button.close {
 .modalls-content {
   position: relative;
   padding: 0;
-  height: 48vw;
+  height: 40vw;
   margin: auto;
   border-radius: 6px;
   outline: 0;
@@ -5965,7 +5965,7 @@ button.close {
 }
 
 .login_modal_padding {
-  padding-top:5vw;
+  padding-top:0vw;
 }
 
 

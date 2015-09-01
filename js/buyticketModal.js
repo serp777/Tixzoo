@@ -4,21 +4,17 @@
 App.BuyticketModalController = Ember.ObjectController.extend({
   needs: ['application'],
   maxFrat: 'img/max-frat.png',
-  creditCard: 'view-ticket-info',
+  creditCard: 'buy-form-group',
   toggled: false,
   actions: {
   	creditCard: function() {
-      console.log('test');
-      if(this.get('creditCard') == 'view-ticket-info'){
+      if(this.get('creditCard') == 'buy-form-group'){
         this.set('toggled',true);
-        this.set('creditCard','view-ticket-info-affect');
+        this.set('creditCard','buy-form-group-toggled');
       } else {
         this.set('toggled',false);
-        this.set('creditCard','view-ticket-info');
+        this.set('creditCard','buy-form-group');
       }
-    }, 
-  temp: function() {
-
-  }
+    }
   }
 });

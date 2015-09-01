@@ -20,7 +20,6 @@ App.SignupModalController = Ember.ObjectController.extend({
           dataType:'json',
           data: {username: this.get('username'), password: this.get('password'), email: this.get('email'), createMode: "true"},
             success: function(data){
-
               if(data["dataError"]){
                 that.set('errorMessage', data["dataError"]);
                 that.set('existsAlready',true);
