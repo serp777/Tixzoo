@@ -8,9 +8,10 @@
 
     $customer = new customerControllerClass();
 
-    if(isset($_POST['username']) && $_POST['createCustomerMode'] == "true"){
-        $customer->createCustomer($_POST['username']);
-    }    
+    // if(isset($_POST['username']) && $_POST['createCustomerMode'] == "true"){
+    //     $customer->createCustomer($_POST['username']);
+    // } 
+   
     // The following modes (addCard, deleteCard,return JSON object that contains a list of cards (last 4 digit and exp date) the user have 
     //
     // Example:

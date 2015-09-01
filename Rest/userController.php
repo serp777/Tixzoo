@@ -1,5 +1,7 @@
 <?php
 require_once 'databaseController.php';
+require_once '../stripe/customerController.php';
+
 class userControllerClass {
 	private function establishConnection(){
 		$db = new databaseControllerClass();
@@ -17,11 +19,9 @@ class userControllerClass {
 		$username = mysqli_real_escape_string($dbconn, $username);
 		$password = mysqli_real_escape_string($dbconn, $password);
 		$sql="SELECT * FROM accountinfo WHERE username='$username' and password='$password'";
-		$result = $this->executeSqlQuery($sql,$dbconn);
-
-		$count = $result->num_rows;
-		return $count;
-
+		$result['query'] = $this->executeSqlQuery($sql,$dbconn);
+		$result['count'] = $result->num_rows;
+		return $result;
 	}
 	public function createAccount($username,$password,$email){
 		// To protect MySQL injection (more detail about MySQL injection)
@@ -52,7 +52,9 @@ class userControllerClass {
 		}
 
 		$sql="INSERT INTO accountinfo (username, password, emailAddress, credit) VALUES ('$myusername','$mypassword','$myemail','1000')";
-		$result = $this->executeSqlQuery($sql,$dbconn);
+		$customer = new customerControllerClass();
+		$result['customer'] = $customer->createCustomer($_POST['username']);
+		$result['query'] = $this->executeSqlQuery($sql,$dbconn);
 		return $result;
 	}
 	public function getUserInfo($username, $password) {
