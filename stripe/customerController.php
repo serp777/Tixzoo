@@ -1,8 +1,8 @@
 <?php
-require_once './config.php';
+require_once 'config.php';
 require_once '../Rest/userController.php';
 
-\Stripe\Stripe::setApiKey($stripe[secret_key]);
+\Stripe\Stripe::setApiKey($stripe['secret_key']);
 
 class customerControllerClass {
   private function getAssocCustomerId($username){
@@ -11,9 +11,10 @@ class customerControllerClass {
     return $cstmrAssocId;
   }
 
-  public function createCustomer($username) {
+  public function createCustomer($username, $email){
     $customer = \Stripe\Customer::create(array(
-    "description" => "Customer for '$email'"));
+    "description" => "Customer for '$username'",
+    "email" => $email));
     $user = new userControllerClass();
     $user->setAssocCustomerId($customer->id, $username);
     return $customer;
@@ -21,12 +22,12 @@ class customerControllerClass {
   }
 
   // add a credit card to a specific user
-  public function addCreditCard($username, $token) {
+  public function addCreditCard($username, $token){
     $cstmrAssocId = $this->getAssocCustomerId($username);
     $customer = \Stripe\Customer::retrieve($cstmrAssocId);
     $customer->sources->create(array("source" => $token));
     // store card number in database
-    
+
   }
 
   // get a list of credit cards given the username
@@ -34,7 +35,7 @@ class customerControllerClass {
     $cstmrAssocId = $this->getAssocCustomerId($username);
     $json = \Stripe\Customer::retrieve($cstmrAssocId)->sources->all(array("object" => "card"));
     $cards = json_decode($json);
-    $result['cards'] = $cards["data"];
+    $result = $cards["data"];
     return $result;
   }
 
@@ -48,25 +49,34 @@ class customerControllerClass {
     $cstmrAssocId = $this->getAssocCustomerId($username);
     $customer = \Stripe\Customer::retrieve($cstmrAssocId);
     $list = $this->getCreditCards($username);
-    $card_id = $list['cards'][$index]['id'];
+    $card_id = $list[$index]["id"];
     $customer->sources->retrieve($card_id)->delete();
     return $this->getCreditCards($username);
   }
 
   // charge a credit card
-  public function chargeCreditCard($username, $amount){
+  public function chargeCreditCard($username, $index, $amount){
     $cstmrAssocId = $this->getAssocCustomerId($username);
+    $list = $this->getCreditCards($username);
+    $card_id = $list[$index]["id"];
     try {
       $charge = \Stripe\Charge::create(array(
         "amount" => $amount, // amount in cents, again
         "currency" => "usd",
         "customer" => $cstmrAssocId,
+        "source" => $card_id,
         "description" => "Example charge")
       );
       $result['charge'] = $charge->id;
+      // store in db
+      // ....
+
     } catch(\Stripe\Error\Card $e) {
     // The card has been declined
-      $result['error'] = $e;
+      $body = $e->getJsonBody();
+      $err  = $body['error'];
+      
+      $result['error'] = $err['message'];
     }
     return $result; 
   }

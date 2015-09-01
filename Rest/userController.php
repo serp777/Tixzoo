@@ -60,7 +60,7 @@ class userControllerClass {
 		}
 		$sql="INSERT INTO accountinfo (username, password, emailAddress, credit) VALUES ('$myusername','$mypassword','$myemail','1000')";
 		$customer = new customerControllerClass();
-		$result['customer'] = $customer->createCustomer($_POST['username']);
+		$result['customer'] = $customer->createCustomer($myusername, $myemail);
 		$result['query'] = $this->executeSqlQuery($sql,$dbconn);
 		return $result;
 	}
@@ -71,7 +71,7 @@ class userControllerClass {
 		return $result;
 	}
 	public function setAssocCustomerId($id, $username){
-		$dbconn = $this->establishConnection();
+		$dbconn = $this->setupConnection();
 		$id = stripslashes($id);
 		$id = mysqli_real_escape_string($dbconn, $id);
 		$sql = "UPDATE accountinfo SET cstmrAssocId = '$id' WHERE username = '$username'";
@@ -80,7 +80,7 @@ class userControllerClass {
 		return $output;
 	}
 	public function setAssocTicketCustomerBuyId($id, $ticketID){
-		$dbconn = $this->establishConnection();
+		$dbconn = $this->setupConnection();
 		$id = stripslashes($id);
 		$id = mysqli_real_escape_string($dbconn, $id);
 		$sql = "UPDATE tickets SET cstmrPurchaseId = '$id' WHERE ticketID = '$ticketID'";
@@ -89,7 +89,7 @@ class userControllerClass {
 		return $output;
 	}
 	public function getAssocCustomerId($username){
-		$dbconn = $this->establishConnection();
+		$dbconn = $this->setupConnection();
 		$sql = "SELECT * FROM accountinfo WHERE username = '$username'";
 		$result = $this->executeSqlQuery($sql, $dbconn);
 		$row = mysql_fetch_object($result);

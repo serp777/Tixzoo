@@ -48,16 +48,17 @@
     }
     // cardIndex specify the index of the card that the user want to update
     // update card
-    if(isset($_POST['username']) && isset($_POST['cardIndex']) $_POST['updateCardMode'] == "true") {
+    if(isset($_POST['username']) && isset($_POST['cardIndex']) && $_POST['updateCardMode'] == "true") {
         
     }
     // delete card
-    if(isset($_POST['username']) && isset($_POST['cardIndex']) $_POST['deleteCardMode'] == "true") {
-        $customer->deleteCard($_POST['username'], $_POST['cardIndex']);
+    if(isset($_POST['username']) && isset($_POST['cardIndex']) && $_POST['deleteCardMode'] == "true") {
+        $customer->deleteCreditCard($_POST['username'], $_POST['cardIndex']);
         $result = $customer->getCreditCards($_POST['username']);
     }
     // return the status of this transcation
-    if(isset($_POST['username']) && $_POST['chargeMode'] == "true") {
+    if(isset($_POST['username']) && isset($_POST['cardIndex']) && isset($_POST['amount']) && $_POST['chargeMode'] == "true") {
+        $customer->chargeCreditCard($_POST['username'], $_POST['cardIndex'], $_POST['amount']);
         
     }
     return $result;
