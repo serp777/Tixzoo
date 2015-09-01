@@ -7,6 +7,31 @@
 </head>
 <body>
   <script type="text/x-handlebars">
+  <div id="top-nav-bar-container">
+    <div class="nav-bar">
+
+
+        <div id="btn-container">
+        {{#if loginSuccess}}
+          {{#link-to 'user-profile' class="my-tix-btn"}}My Tix{{/link-to}}
+          <br>
+            
+          <br>
+            <img class="my-account-pic" {{action "logout"}} {{bind-attr src=maxFrat alt="maxFrat"}}>
+        {{else}}
+          <a {{action 'showModal' 'signup-modal'}} class="create_Btn">Sign Up</a>
+          <a {{action 'showModal' 'login-modal' secondmodel}} class="login_Btn">Login</a>
+        {{/if}}
+        </div>
+
+
+
+        <img id="tixzoo-logo" {{bind-attr src=tixzooLogo alt="tixzooLogo"}}>
+
+
+      </div>
+    </div>
+
     <div {{bind-attr id=wrapper class=wrapperClass}}>
         <div id="sidebar-wrapper">
            <a {{action "sideBar"}} id="close">X</a>
@@ -79,6 +104,7 @@
     <script src="js/postTicket.js"></script>
     <script src="js/ember-data.js" type="text/javascript"></script>
     <script src="js/buyticketModal.js"></script>
+    <script src="js/customerSupport.js"></script>
     <!-- to activate the test runner, add the "?test" query string parameter -->
     <script src="tests/runner.js"></script>
 

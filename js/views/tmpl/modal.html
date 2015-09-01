@@ -6,7 +6,12 @@
             <div {{bind-attr id=creditCard}}>
               <div class="credit-card-info">
                <form class="payment-info">
-                <p><input type="text">Your name</p>
+                  <ul class="payment-input">
+                  <li><input type="text" placeholder="Name"></li>
+                  <li><input type="text" placeholder="Credit Card Number"></li>
+                  <li><input type="text" placeholder="CVC"></li>
+                  <li><input type="text" placeholder=""></li>
+                  <li><input type="text" placeholder="Name"></li>
                 </form>
               </div>
             </div>
@@ -96,7 +101,6 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h4 class="modal-title">{{title}}</h4>
             </div>
             <div class="modal-body">
               {{yield}}

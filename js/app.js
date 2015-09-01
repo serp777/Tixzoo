@@ -6,7 +6,8 @@ var loaderObj = {
     'tmpl/postticket.html',
     'tmpl/userprofile.html',
     'tmpl/viewticket.html',
-    'tmpl/confirmticket.html'
+    'tmpl/confirmticket.html',
+    'tmpl/customersupport.html'
     ],
     css : [
     '../../css/bootstrap.css',
@@ -21,7 +22,8 @@ var loaderObj = {
     '../../css/to-post-ticket.css',
     '../../css/date_test.css',
     '../../css/user-profile.css',
-    '../../css/view-ticket.css'
+    '../../css/view-ticket.css',
+    '../../css/customer-support.css'
   ]
 };
 
@@ -87,6 +89,9 @@ App.Router.map(function() {
     this.route("load", { path: "/" });
   });
   this.resource("view-ticket", function(){
+    this.route("load", { path: "/" });
+  });
+  this.resource("customer-support", function(){
     this.route("load", { path: "/" });
   });
 });
