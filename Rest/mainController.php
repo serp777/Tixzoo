@@ -1,13 +1,12 @@
 <?php
-ob_start();
+//ob_start();
     if(isset($_GET['logoutMode']) && $_GET['logoutMode'] == "true") {
         setcookie('user', "", time()-1000, '/', '127.0.0.1');
         $result = "success";
     }
-
-
 require_once 'userController.php';
 require_once 'ticketController.php';
+require_once 'emailController.php';
 header("Content-Type: application/json", true);
     if(isset($_GET['init']) && $_GET['init'] == "true"){
         $tickets = new ticketControllerClass();
@@ -37,6 +36,7 @@ header("Content-Type: application/json", true);
         ob_end_flush();
         return $result;
 	}
+
     if(isset($_GET['cookieMode']) && $_GET['cookieMode'] == "true"){
         if(!isset($_COOKIE['user'])){
             $result = 0;
@@ -44,7 +44,16 @@ header("Content-Type: application/json", true);
         } else {
             $result = json_decode($_COOKIE['user']);
         }
-        //return $result;
+        echo json_encode($result);
+        return "";
+    }
+
+    if(isset($_POST['emailMode']) && $_POST['emailMode'] == "true")
+    {
+        $email = new emailControllerClass();
+        $output = $email->sendEmail($_POST['emailAddress'],$_POST['message']);
+        echo json_encode($output);
+        return "";
     }
 
 	if(isset($_POST['createMode']) && $_POST['createMode'] == "true"){
