@@ -425,6 +425,10 @@ table {
     border-spacing: 0;
 }
 
+.form-group {
+  margin: .5vw;
+  background:none;
+}
 
 
 #top-left {
@@ -465,7 +469,7 @@ table {
   margin-right: auto;
   height: 10vw;
   z-index: 1000;
-  background-color: black;
+  background-color: rgba(0, 0, 0, .5);
   width:100%;
   position:fixed;
   left:0;
@@ -603,9 +607,9 @@ table {
   padding-top:13vw;
 }
 
-.newsletter-form {
+.newsletter .newsletter-form {
   color:white;
-  height:3vw;
+  height:3vw !important;
   font-size:1.5vw;
   margin-top:1vw;
   padding-left: 1vw;

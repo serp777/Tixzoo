@@ -1,39 +1,32 @@
 
 #user-search  {
   width:100%;
-  height:2vw;
-  line-height:2vw;
+  height:0;
   position:absolute;
-  margin-top:30.5vw;
+  margin-top:32.5vw;
   padding-right:50vw;
   padding-left:50vw;
   box-sizing:border-box;
 }
 
 #user-profile-container {
-  height: 70em;
+  height: 100%;
   width:100%;
-  background-image: url(img/profile-background.png);
-  background-repeat: no-repeat;
-  background-size-width:100%;
-  background-size-height:100%;
+
 }
 
 #profile-upright-container {
-  position: absolute;
-  right: 0;
-  background-color: gray;
-  height: 32vw;
-  width: 64%;
-  margin-left: 2.5vw;
-  margin-top:10vw;
-  background-color: #F7F7F7;
+  position: relative;
+  float:left;
+  background-color: rgba(255, 255, 255, .8);
+  height: 23vw;
+  width:57vw;
+  margin: 12vw 0 1vw 0;
 }
 
 .user-prof-pic {
   position: absolute;
-  height: 20vw;
-  width: 20vw;
+  width: 10vw;
   border-radius: 10px;
   top: 1vw;
   left: 1vw;
@@ -61,7 +54,7 @@
   width: 60%;
   left: 24vw;
   top: 11vw;
-  font-size: 1.5vw;
+  font-size: 1vw;
 }
 
 .rating {
@@ -80,9 +73,8 @@
 }
 
 #music-tag-list {
-  position: absolute;
-  left: 22vw;
-  top: 19.5vw;
+  position: relative;
+  display:none;
 }
 
 #music-tag-list li {
@@ -96,9 +88,10 @@
 }
 
 #add-friend-btn {
+  display:none;
   position: absolute;
   text-align: center;
-
+  display:none;
   top: 24vw;
   left: 3vw;
   color: white;
@@ -120,22 +113,23 @@
   left: 9vw;
   color:rgb(67,173,216);
   font-size: 1.7vw;
+  display:none;
 }
 
 #profile-midright-container {
-  position: absolute;
-  right: 0vw;
-  top: 43vw;
-  height: 24vw;
-  width: 64%;
-  margin: 1vw;
+  clear:both;
+  position: relative;
+  height: 20vw;
+  width:60vw;
+  float:right;
+  margin-bottom:10vw;
 }
 
 #buy-profile {
-  position: absolute;
+  position: relative;
+  margin: 0 1vw 2vw 1vw;
+  float:right;
   height: 22vw;
-  left: 1.5vw;
-  top: 1vw;
   width: 19vw;
   background-color: white;
   border-radius: 5px;
@@ -202,11 +196,10 @@
 }
 
 #sell-profile {
-  position: absolute;
+  position: relative;
+  float:right;
   height: 22vw;
   width: 19vw;
-  top: 1vw;
-  left: 22vw;
   background-color: white;
   border-radius: 5px;
   text-align: center;
@@ -215,7 +208,7 @@
 
 #sell-profile-header {
   position: absolute;
-  top: 0vw;
+  padding:1vw;
   border-radius: 4px 4px 0 0;
   background-color: red;
   height: 8vw;
@@ -232,9 +225,7 @@
 #sell-profile-header a {
   position: absolute;
   color: white;
-  left: 4.5vw;
-  top: 2vw;
-  font-size: 3vw;
+  font-size: 2vw;
 }
 
 #sell-profile-price {
@@ -279,13 +270,13 @@
 }
 
 #trade-profile {
-  position: absolute;
+  position: relative;
+  margin-right: 1vw;
+  float:right;
   height: 22vw;
   width: 19vw;
   border-radius: 5px;
-  top: 1vw;
   background-color: white;
-  right: 1.5vw;
   text-align: center;
 }
 
@@ -358,23 +349,23 @@
 
 
 #profile-upleft-container {
-  position: absolute;
-  height: 30vw;
+  position: relative;
   width: 33%;
-  margin-top:12vw;
-  left: 0vw;
+  float:left;
+  margin:4vw;
+
 
 }
 
 #recent-activity {
-  position: absolute;
-  top: 1vw;
-  left: 1vw;
+  position: relative;
   background-color: white;
   width: 30vw;
-  height: 27.8vw;
+  height: 23vw;
   border-radius: 5px;
-  overflow: scroll;
+  float:left;
+  margin: 8vw 1vw 5vw 2vw;
+  overflow: hidden;
 
 }
 
@@ -384,15 +375,14 @@
   left: 3vw;
   width: 8vw;
   list-style: none;
-
 }
 
 #recent-activity li {
   position: relative;
-  right: 4.2vw;
-  padding: 16px;
-  width: 30vw;
+  padding:1.5vw 3vw 1.5vw 3vw;
+  width: 25vw;
   border-bottom: 1px solid black;
+  font-size: 1vw;
 }
 
 #recent-activity p {
@@ -422,15 +412,6 @@
   color: white;
 }
 
-#profile-midleft-container {
-  position: absolute;
-  height: 26vw;
-  width: 33%;
-  margin: 1vw;
-  left: 0vw;
-  top: 41vw;
-  background-color: white;
-}
 
 .video-wrapper {
   position: absolute;
