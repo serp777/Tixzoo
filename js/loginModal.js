@@ -7,8 +7,14 @@ App.LoginModalController = Ember.ObjectController.extend({
   usernameText: 'Enter Username',
   password: '',
   passwordText: 'Enter Password',
+  errorMessage: 'This is a glitch if this shows up',
+  spinnerImg: 'img/spinner.GIF',
+  signInError: false,
+  spinner: false,
   actions: {
     save: function() {
+      this.set('spinner', true);
+      this.set('signInError', false);
       var that = this;
       var message = null;
        var xhr = $.ajax({
@@ -17,17 +23,19 @@ App.LoginModalController = Ember.ObjectController.extend({
           dataType:'json',
           data: {username: this.get('username'), password: this.get('password'), loginMode: "true"},
             success: function(data){
-              if(data["loginVal"] > 0){
-
+              if(data["loginVal"] > 0 && data["error"] == false){
                 that.set('controllers.application.username',that.get('username'));
                 that.set('controllers.application.password',that.get('password'));
                 that.set('controllers.application.loginSuccess',true);
-                console.log(that.get('controllers.application.loginSuccess'));
+                $('.modal').modal('hide');
+              } 
+              if(data["error"]){
+                that.set('errorMessage',data["errorMessage"]);
+                that.set('signInError',true);
               }
-
+              that.set('spinner', false);
             },
             error: function(error){
-              console.log("error occured");
               console.log(error);
             }
           });

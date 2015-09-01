@@ -679,7 +679,20 @@ button {
   background-color: white;
   transform: scale(1.2);
 }
-
+.buy-form-group {
+  text-align: center !important;
+  position: relative;
+}
+.buy-form-group-toggled{
+  transition: transform 2s;
+  transform: rotateY( 360deg );
+}
+#spinnerImg{
+  margin-left: 45%; 
+  margin-top: 1.5vw;
+  width: 3vw;
+  height: 3vw;
+}
 /**** Footer container content ****/
 
 

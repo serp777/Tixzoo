@@ -19,9 +19,11 @@ header("Content-Type: application/json", true);
 	if(isset($_POST['loginMode']) && $_POST['loginMode'] == "true"){
 		$login = new userControllerClass();
     	$result["loginVal"] = $login->login($_POST['username'],$_POST['password']);
+        $result["error"] = false;
         if($result["loginVal"] == 0){
-            $result["response"] = "badLogin";
-            echo $result;
+            $result["errorMessage"] = "Username or Password combination does not exist";
+            $result["error"] = true;
+            echo json_encode($result);
             return $result;
         }
         ob_start();
