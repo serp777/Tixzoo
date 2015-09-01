@@ -20,8 +20,8 @@ class userControllerClass {
 		$password = mysqli_real_escape_string($dbconn, $password);
 		$sql="SELECT * FROM accountinfo WHERE username='$username' and password='$password'";
 
-		$result['query'] = $this->executeSqlQuery($sql,$dbconn);
-		$result['count'] = $result->num_rows;
+		$result = $this->executeSqlQuery($sql,$dbconn);
+		$count= $result->num_rows;
 		return $count;
 	}
 	public function addNewsletterEmail($email)

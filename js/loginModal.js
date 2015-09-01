@@ -18,13 +18,11 @@ App.LoginModalController = Ember.ObjectController.extend({
           data: {username: this.get('username'), password: this.get('password'), loginMode: "true"},
             success: function(data){
               if(data["loginVal"] > 0){
-
                 that.set('controllers.application.username',that.get('username'));
                 that.set('controllers.application.password',that.get('password'));
                 that.set('controllers.application.loginSuccess',true);
                 console.log(that.get('controllers.application.loginSuccess'));
               }
-
             },
             error: function(error){
               console.log("error occured");
