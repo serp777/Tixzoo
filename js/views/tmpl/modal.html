@@ -1,17 +1,20 @@
 <script type="text/x-handlebars" data-template-name="buyticket-modal">
       {{#my-modal title='Welcome' ok='save' close='removeModal'}}
         <form {{action 'ok' on='submit' target=view}}>
+        {{#if toggled}}
           <div {{bind-attr class=creditCard}}>
               <div class="credit-card-info">
                <form class="payment-info">
                   <ul class="payment-input">
-                  <li><input type="text" placeholder="Name"></li>
-                  <li><input type="text" placeholder="Credit Card Number"></li>
-                  <li><input type="text" placeholder="CVC"></li>
-                  <li><input type="text" placeholder=""></li>
-                  <li><input type="text" placeholder="Name"></li>
+                  <li>{{input placeholder="Full Name" value=fullName}}</li>
+                  <li>{{input placeholder="Credit Card Number" value=creditCardNumber}}</li>
+                  <li>{{input placeholder="CVC (security code)" value=CVC}}</li>
+                  <li>{{input placeholder="Expiration Date" value=expDate}}</li>
                 </form>
               </div>
+              <a {{action 'creditCardOutput'}}>Click to Add credit card</a>
+              <a {{action 'creditCard'}}>Return</a>
+        {{else}}
               <div id="front">
                 <img class="view-ticket-userpic" {{bind-attr src=maxFrat alt="maxFrat"}}>
                 <p id="view-ticket-price"><span>$24</span></p>
@@ -25,6 +28,7 @@
                 </div>
               </div>
             <a {{action 'creditCard'}}>Add Credit Card</a>
+        {{/if}}
           </div>
         </form>
       {{/my-modal}}

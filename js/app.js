@@ -124,6 +124,17 @@ App.ApplicationController = Ember.Controller.extend({
       this.transitionToRoute(this.get('route'));
     }
   },
+  sendCreditCardInfo: function(username, response) {
+      return $.ajax({
+          url: "Rest/stripeController.php",
+          type: "POST",
+          dataType:'json',
+          data: {username: username, response: response},
+          error: function(data){
+            console.log(data);
+          }
+      });
+  },
   getTicketAjax: function() {
       return $.ajax({
           url: "Rest/mainController.php",
@@ -213,7 +224,6 @@ App.LogoutModalController = Ember.Controller.extend({
 App.MysecondModalComponent = Ember.Component.extend({
   actions: {
     ok: function() {
-
       this.sendAction('ok');
     }
   },
