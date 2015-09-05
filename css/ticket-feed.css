@@ -3,15 +3,34 @@
 
 /* Nav Container Contents */
 
+#top-ticketfeed-navbar {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  height: 9vw;
+  z-index: 1000;
+   background: -moz-linear-gradient(top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.65)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* IE10+ */
+  background: linear-gradient(to bottom, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+  copy
+  width:100%;
+  position:fixed;
+  left:0;
+  right:0;
+  top:0;
+}
 
-#content-container {
-  position: relative;
-  display: table;
-  width: 100%;
-  left: 0px;
+#search-suggestions {
+  padding: 1em;
+}
+
+#search-suggestions a {
   color: white;
-  background-color: gray;
-  height: 200em;
+  padding: 0 1em 0 1em;
 }
 
 #tixzoo-logo-feed {
@@ -42,21 +61,12 @@ a:hover {
 }
 
 .dropdown {
-  position: relative;
-  bottom: 3vw;
-  right: 0vw;
-
-}
-
-#ticket-feed-filter {
-  width: 100%;
-  background-color: #EEEFF7;
-  position: relative;
-  top: 0;
-  height: 6.2em;
+  position: ;
 }
 
 #filter-suggestion-links {
+  position: relative;
+  top: 2em;
   text-align: center;
   padding: 2.5em 1.5em 0 1.5em;
   height: 6em;
@@ -102,7 +112,8 @@ a:hover {
 }
 
 #ticket-feed-positioner {
-  background-color: lightgrey;
+  padding-top: 9vw;
+  background-color: #f2f2f2;
   z-index: 2;
   height: 110vw;
   height: 290em;

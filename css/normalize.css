@@ -467,7 +467,7 @@ table {
 #top-nav-bar-container {
   margin-left: auto;
   margin-right: auto;
-  height: 5vw;
+  height: 8vw;
   z-index: 1000;
  background: -moz-linear-gradient(top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%); /* FF3.6+ */
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.65)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
@@ -625,7 +625,7 @@ copy
   border-radius: 2px;
   font-family:gill sans;
 }
- 
+
  input[type="button"] {
   background-color:#FFF;
  }
@@ -699,7 +699,7 @@ button {
   transform: rotateY( 360deg );
 }
 #spinnerImg{
-  margin-left: 45%; 
+  margin-left: 45%;
   margin-top: 1.5vw;
   width: 3vw;
   height: 3vw;
