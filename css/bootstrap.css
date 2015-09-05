@@ -3693,6 +3693,19 @@ tbody.collapse.in {
   width: 1%;
 }
 
+.credit-card-info .payment-input > li {
+  display: inline-block;
+  margin:1vw;
+}
+
+.credit-card-info .payment-input input {
+  width:20vw;
+  padding-left:.5vw;
+  font-family: gill sans;
+  font-weight: lighter;
+
+}
+
 .ember-view.ember-text-field.form-control {
   border-width:0 0 2px 0;
   margin:1vw 6vw;
