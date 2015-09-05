@@ -1,4 +1,4 @@
-App.SignupModalController = Ember.ObjectController.extend({
+App.SignupModalController = Ember.Controller.extend({
   username: '',
   usernameText: 'Enter Username',
   password: '',

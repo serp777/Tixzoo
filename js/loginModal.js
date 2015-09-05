@@ -1,7 +1,7 @@
 /*
  * LoginModalController
  */
-App.LoginModalController = Ember.ObjectController.extend({
+App.LoginModalController = Ember.Controller.extend({
   needs: ['application'],
   username: '',
   usernameText: 'Enter Username',

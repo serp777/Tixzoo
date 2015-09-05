@@ -1,3 +1,3 @@
-App.ConfirmTicketController = Ember.ObjectController.extend({
+App.ConfirmTicketController = Ember.Controller.extend({
 
 });

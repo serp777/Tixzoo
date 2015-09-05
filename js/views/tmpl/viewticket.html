@@ -4,9 +4,9 @@
        <div class="nav-bar">
         <div id="btn-container">
         <a {{action "logout"}} class="my-tix-btn">My Tix</a>
-          <br>
+          <br/>
             <a {{action "logout"}} class="sell-btn">Sell</a>
-          <br>
+          <br/>
             <img class="my-account-pic" {{action "logout"}} {{bind-attr src=maxFrat alt="maxFrat"}}>
         </div>
           <div id="search-bar">
@@ -26,39 +26,7 @@
       </div>
     </div>
 
-
-      <div id="view-ticket-container">
-        <div id="view-ticket-main">
-          <p id="step-one">Step One</p>
-          <img class="view-ticket-userpic" {{bind-attr src=maxFrat alt="maxFrat"}}>
-          <div id="view-ticket-info">
-            <p id="view-ticket-price">Price: <span>$24</span></p>
-            <div class="view-rating">
-            <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-            </div>
-            <div id="ticket-details">
-            <p>Justin Martin</p>
-            <p>June 25th, 2015</p>
-            <p>8:00 pm</p>
-            <a>Avalon Nightclub, Hollywood, CA</a>
-            </div>
-            </div>
-            <div id="lower-ticket-details"></li>
-            <li><ul class="ticket-details"></li>
-            <li><a id="view-ticket-mins-ago">25 mins ago</a></li>
-            <li><p id="want-this">Want this ticket? <a href="#">Buy now.</a></p></li>
-            <li><a {{action 'showModal' 'signup-modal' model}} class="buy_Btn-postview">Buy</a></li>
-            <p id="user-agreement">By clicking "Buy", you agree to Tixzoo"'"s <a href="#">Terms of Service</a> and <a href="#">User Agreement</a>.</p>
-            </ul>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-
-
-
+    
     <div id="footer-container">
       <footer>
         <div id="social">
@@ -74,7 +42,4 @@
       </footer>
     </div>
 
-
-    {{outlet}}
-    {{outlet 'modal'}}
   </script>

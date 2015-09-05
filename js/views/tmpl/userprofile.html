@@ -1,23 +1,16 @@
 <script type="text/x-handlebars" data-template-name="user-profile">
-
-    <div id="top-nav-bar-container">
-       <div class="nav-bar">
-    
-        <div id="btn-container">
-
-         <a {{action 'showModal' 'signup-modal' model}} class="create_Btn">Sign Up</a>
-         <a {{action 'showModal' 'login-modal' model}} class="login_Btn">Login</a>
-        </div>
-        </form>
-         </div>
-        </div>
-        <a href="index.html"><img id="tixzoo-logo" {{bind-attr src=tixzoo-logo alt="tixzoo-logo"}}></a>
+  <div id="top-nav-bar-container">
+    <div class="nav-bar">
+      <div id="btn-container">
+        <a {{action 'showModal' 'signup-modal' model}} class="create_Btn">Sign Up</a>
+        <a {{action 'showModal' 'login-modal' model}} class="login_Btn">Login</a>
       </div>
+      <a href="index.html"><img id="tixzoo-logo" {{bind-attr src=tixzoo-logo alt="tixzoo-logo"}}></a>
     </div>
+  </div>
 
-
-      <div id="user-profile-container">
-      <div id ="top-layer">
+  <div id="user-profile-container">
+    <div id ="top-layer">
       <div id="profile-upleft-container">
         <div class="recent-activity-title">Recent Activity</div>
           <div id="recent-activity">
@@ -30,29 +23,29 @@
               <li><strong>Cinnamon Mercedes</strong> bought <a href="#"><strong>Justin Martin</strong></a> tix from Jessica.<p>7m</p></li>
               <li><strong>Cinnamon Mercedes</strong> bought <a href="#"><strong>Justin Martin</strong></a> tix from Jessica.<p>7m</p></li>
             </ul>
-          </div>
         </div>
+      </div>
 
       <div class="profile">
-       <a class="about-me">About me</a>
+        <a class="about-me">About me</a>
         <a class="message">Message</a>
-         <div class="profile-upright-container">
-         <div class="profile-upright-container active">
-          <img class="user-prof-pic" {{bind-attr src=maxFrat alt="maxFrat"}}>
-          <h2 id="profile-title"></h2>
-          <div class="rating">
-            <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+          <div class="profile-upright-container">
+           <div class="profile-upright-container active">
+            <img class="user-prof-pic" {{bind-attr src=maxFrat alt="maxFrat"}}>
+            <h2 id="profile-title"></h2>
+            <div class="rating">
+              <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+            </div>
+            <p id="music-tags">Music Tags</p>
+            <ul id="music-tag-list">
+              <a href="#"><li>House</li></a>
+              <a href="#"><li>Tropical</li></a>
+              <a href="#"><li>Drake</li><br></a>
+              <a href="#"><li>Dirty Bird</li></a>
+              <a href="#"><li>Justin Martin</li></a>
+            </ul>
           </div>
-          <p id="music-tags">Music Tags</p>
-          <ul id="music-tag-list">
-            <a href="#"><li>House</li></a>
-            <a href="#"><li>Tropical</li></a>
-            <a href="#"><li>Drake</li><br></a>
-            <a href="#"><li>Dirty Bird</li></a>
-            <a href="#"><li>Justin Martin</li></a>
-          </ul>
-         </div>
-         </div>
+        </div>
       </div>
 
           <div id="profile-midright-container">
@@ -83,18 +76,10 @@
               </li>
             </ul>
           </div>
-
-        
-
-
         <div id="profile-downleft-container">
         </div>
-
+      </div>
       </div>
 
 
-
-
- 
-
-  </script>
+</script>

@@ -1,4 +1,4 @@
-App.MainPageController = Ember.ObjectController.extend({
+App.MainPageController = Ember.Controller.extend({
   needs: ['application'],
   creditCard: '',
   username: '',
@@ -32,6 +32,7 @@ App.MainPageController = Ember.ObjectController.extend({
   init: function() {
     this._super();
     var that = this;
+    console.log(this.get('needs'));
     this.get('controllers.application').getTicketAjax().success(function (data) {
       that.set('ticketJson', data["tickets"]);
       that.set('tempTicketJson', data["tickets"]);

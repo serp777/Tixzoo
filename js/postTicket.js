@@ -1,3 +1,3 @@
-App.PostTicketController = Ember.ObjectController.extend({
+App.PostTicketController = Ember.Controller.extend({
 
 });
