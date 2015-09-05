@@ -79,7 +79,7 @@ a {
     position: absolute;
     top: 0;
     width: 100%;
-    margin-: 0;
+    margin: 0;
     padding: 0;
     list-style: none;
 }
@@ -174,6 +174,8 @@ a {
         margin-right: 0;
     }
 
+
+
 #user-search .searchbox .ember-view{
   height:3vw;
    background-position:15vw .6vw;
@@ -182,5 +184,12 @@ a {
    width:20vw;
    border:rgb(39,175,208) 2px solid;
    clear:both;
+}
+
+.sidebar-nav > li:last-child {
+    text-indent: 0;
+    width:100%;
+    text-align:center;
+    padding:0;
 }
 

@@ -211,11 +211,11 @@ textarea:focus, input:focus{
 #user-search {
    margin-left: 0;
    height:3vw;
-   padding:1vw 1vw 1vw 1vw;
-   background-position:12.5vw .6vw;
+   padding:1vw 2.5vw 1vw 1vw;
+   background-position:10.5vw .6vw;
    font-size:1.3vw;
    background-size:1.5vw 1.5vw;
-   width:15vw;
+   width:13vw;
    border:rgb(39,175,208) 2px solid;
    margin-top:3vw;
    background-image:url(img/searchbar1.png);
