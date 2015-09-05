@@ -1,3 +1,4 @@
+
 var loaderObj = {
     templates : [
     'tmpl/modal.html',
@@ -71,7 +72,6 @@ loadTemplates(loaderObj.templates);
 
 
 App = Ember.Application.create();
-
 App.Router.map(function() {
   this.resource("ticket-feed", function(){
     this.route("buy", { path: "/:ticketID" });
@@ -110,6 +110,7 @@ App.ApplicationController = Ember.Controller.extend({
   venueText: 'Venue',
   date: '',
   dateText: 'Date',
+  tixzooLogo: 'img/tixzoo-logo.png',
   quantity: '',
   quantityText: 'Quantity',
   price: '',
@@ -117,6 +118,12 @@ App.ApplicationController = Ember.Controller.extend({
   route: 'main-page',
   ticketJson: [],
   tempTicketJson: [],
+  facebookIcon: 'img/fb.png',
+  instagramIcon: 'img/instagram.png',
+  lockIcon: 'img/lock-icon.png',
+  peertopeerIcon: 'img/messaging-icon.png',
+  snapchatIcon: 'img/',
+  twitterIcon: 'img/twitter.png',
   init: function() {
     this._super();
     var url = window.location.href.split("/");
