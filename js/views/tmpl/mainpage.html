@@ -1,8 +1,8 @@
 <script type="text/x-handlebars" data-template-name="main-page">
 
-    <div id="top-nav-bar-container">
-       <div class="nav-bar">
-
+   <div id="top-nav-bar-container">
+   <img id="tixzoo-logo" {{bind-attr src=tixzooLogo alt="tixzooLogo"}}>
+    <div class="nav-bar">
 
         <div id="btn-container">
         {{#if loginSuccess}}
@@ -16,11 +16,6 @@
           <a {{action 'showModal' 'login-modal' secondmodel}} class="login_Btn">Login</a>
         {{/if}}
         </div>
-
-
-
-        <img id="tixzoo-logo" {{bind-attr src=tixzooLogo alt="tixzooLogo"}}>
-
 
       </div>
     </div>

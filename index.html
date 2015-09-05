@@ -7,30 +7,7 @@
 </head>
 <body>
   <script type="text/x-handlebars">
-  <div id="top-nav-bar-container">
-    <div class="nav-bar">
-
-
-        <div id="btn-container">
-        {{#if loginSuccess}}
-          {{#link-to 'user-profile' class="my-tix-btn"}}My Tix{{/link-to}}
-          <br>
-            
-          <br>
-            <img class="my-account-pic" {{action "logout"}} {{bind-attr src=maxFrat alt="maxFrat"}}>
-        {{else}}
-          <a {{action 'showModal' 'signup-modal'}} class="create_Btn">Sign Up</a>
-          <a {{action 'showModal' 'login-modal' secondmodel}} class="login_Btn">Login</a>
-        {{/if}}
-        </div>
-
-
-
-        <img id="tixzoo-logo" {{bind-attr src=tixzooLogo alt="tixzooLogo"}}>
-
-
-      </div>
-    </div>
+  
 
     <div {{bind-attr id=wrapper class=wrapperClass}}>
         <div id="sidebar-wrapper">
@@ -64,14 +41,17 @@
                     <a href="#">logout</a>
                 </li>
 
-
-
+                <li><input type="text" id="user-search" placeholder = "SEARCH"/></li>
             </ul>
 
 
 
-        </div>
+       
 
+
+
+        </div>
+ 
 
 
     </div>
@@ -83,9 +63,32 @@
 
 
 
-
       {{outlet}}
       {{outlet 'modal'}}
+  <div id="footer-container">
+      <footer>
+        <div id="social">
+        <ul id="social_media_icon">
+        <a href='#'><img class="social-media-icon1" {{bind-attr src=facebookIcon alt="facebookIcon"}}></a>
+        <a href='#'><img class="social-media-icon2" {{bind-attr src=instagramIcon alt="instagramIcon"}}></a>
+        <a href='#'><img class="social-media-icon3" {{bind-attr src=twitterIcon alt="twitterIcon"}}></a>
+        </ul>
+      </div>
+      <div class="footer-pages">
+        <ul id="footer-class">
+        <li><a class="footer-link"  href="#">Home</a></li>
+        <li><a class="footer-link" href="#">Careers</a></li>
+        <li><a class="footer-link" href="#">Developers</a></li>
+        <li><a class="footer-link" id="no-dot-footer" href="#">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <div class="copyright">
+      <p>-Tixzoo inc. 2015-</p>
+      </div>
+
+      </footer>
+    </div>
     </script>
     <script type="text/x-handlebars" id="index" id"mainPage">
 

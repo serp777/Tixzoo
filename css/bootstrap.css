@@ -5803,24 +5803,7 @@ button.close {
   padding-left: 7vw;
   text-align: center;
 }
-#view-ticket-info-affect #front {
-  backface-visibility:hidden;
-  transform:rotateY(180deg);
 
-}
-
-#view-ticket-info-affect .credit-card-info{
-  transform:rotateY(180deg);
-  
-
-}
-
-
-#view-ticket-info-affect {
-  transform:rotateY(180deg);
-  backface-visibility:hidden;
-
-}
 
 .modal-body #view-ticket-price {
   font-size: 4vw;

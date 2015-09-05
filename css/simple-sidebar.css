@@ -128,7 +128,7 @@ a {
 #menu  {
     width:2vw;
     position:fixed;
-    margin:4vw;
+    margin:1.65vw 2vw;
     cursor: pointer;
     z-index: 1010;
 }
@@ -174,5 +174,13 @@ a {
         margin-right: 0;
     }
 
-
+#user-search .searchbox .ember-view{
+  height:3vw;
+   background-position:15vw .6vw;
+   font-size:1.3vw;
+   background-size:1.5vw 1.5vw;
+   width:20vw;
+   border:rgb(39,175,208) 2px solid;
+   clear:both;
+}
 
