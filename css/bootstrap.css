@@ -3694,6 +3694,19 @@ tbody.collapse.in {
   width: 1%;
 }
 
+.credit-card-info .payment-input > li {
+  display: inline-block;
+  margin:1vw;
+}
+
+.credit-card-info .payment-input input {
+  width:20vw;
+  padding-left:.5vw;
+  font-family: gill sans;
+  font-weight: lighter;
+
+}
+
 .ember-view.ember-text-field.form-control {
   border-width:0 0 2px 0;
   margin:1vw 6vw;
@@ -5826,7 +5839,7 @@ button.close {
   border-radius:100%;
   border:rgb(22,124,255) solid 3px;
   margin-top:1vw;
-  
+
 }
 
 .modal-body #user-agreement{

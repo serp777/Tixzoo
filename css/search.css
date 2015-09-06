@@ -10,17 +10,13 @@
 }
 
 #search-bar-feed {
-    position: absolute;
-    height: 2vw;
-    top: 2vw;
-    left: 34vw;
+  margin-left: 40vw;
+  margin-top: 2vw;
 }
 
 .ember-view.ember-text-field {
     width:50vw;
     height:4vw;
-
-
 }
 
 .searchbox{

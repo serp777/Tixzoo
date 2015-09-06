@@ -1,88 +1,32 @@
 <script type="text/x-handlebars" data-template-name="ticket-feed">
 
-    <div id="top-nav-bar-container">
-       <div class="nav-bar">
-        <div id="btn-container">
-
-         <a {{action 'showModal' 'signup-modal' model}} class="create_Btn">Sell Tix</a>
-         <a {{action 'showModal' 'login-modal' model}} class="login_Btn">Login</a>
-        </div>
-          <div id="search-bar-feed">
-            <form class="searchbox" action="">
-              <input type="search" placeholder="search.." />
-              <ul class="suggestions">
-              {{#each object in ticketFeed}}
-                  {{#link-to 'ticket-feed.buy' object}}
-                    <li><a>{{object.name}}</a></li>
-                  {{/link-to}}
-              {{/each}}
-              </ul>
-          </form>
-         </div>
-        <a href="index.html"><img id="tixzoo-logo-feed" {{bind-attr src=tixzooLogo alt="tixzooLogo"}}></a>
-      </div>
-    </div>
-
-
-      <div id="ticket-feed-container">
-
-
-       <div id="ticket-feed-filter">
-
-        <div id="filter-suggestion-links">
-        <p id="users-also-searched">users also searched:</p>
+    <div id="ticket-feed-container">
+      <div id="search-suggestions">
+          <p id="users-also-searched">Trending:</p>
           <a href="#">Justin Martin</a>
           <a href="#">Disclosure</a>
           <a href="#">Hannah Wants</a>
           <a href="#">Avalon Nightclub</a>
-        <div class="dropdown">
-          <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-            Dropdown
-            <span class="caret"></span>
-          </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-              <li><a {{action 'sortBy' 'rating:desc'}}>Seller Rating</a></li>
-              <li><a {{action 'sortBy' 'price:desc'}}>Price: High to Low</a></li>
-              <li><a {{action 'sortBy' 'price:asc'}}>Price: Low to High</a></li>
-              <li><a {{action 'echo'}}>Relevance</a></li>
-          </ul>
-        </div>
-
-        </div>
-        </div>
-
-        <div id="ticket-feed-positioner">
-          {{#each ticket in sortedTickets}}
-
-          <li class="ticket-feed-item">
-            <img class="user-feed-pic" {{bind-attr src=maxFrat alt="maxFrat"}}>
-            <p id="time-ago">{{ticket.submit_time}}</p>
-            <div id="ticket-info">
-              <a id="artist-link" href="#">{{ticket.name}}</a>
-              <a id="date-link">{{ticket.date}}</a>
-              <a id="time-link">{{ticket.time}}</a>
-              <a id="location-link" href="#">{{ticket.location}}</a>
-            </div>
-            <img class="artist-feed-pic" {{bind-attr src=disclosurePhoto alt="disclosurePhoto"}}>
-            <a {{action 'showModal' 'accountsettings/modal' model}} id="price-link" href="#">$24</a>
-          </li>
-          {{/each}}
-        </div>
       </div>
 
+      <div id="ticket-feed-main">
 
-    <div id="footer-container">
-      <footer>
-        <div id="social">
-        <a href='#'><img class="social-media-icon1" {{bind-attr src=facebookIcon alt="facebookIcon"}}></a>
-        <a href='#'><img class="social-media-icon2" {{bind-attr src=instagramIcon alt="instagramIcon"}}></a>
-        <a href='#'><img class="social-media-icon3" {{bind-attr src=twitterIcon alt="twitterIcon"}}></a>
-        </div>
-        <a class="footer-link" href="#">Home</a>
-        <a class="footer-link" href="#">Careers</a>
-        <a class="footer-link" href="#">Developers</a>
-        <a class="footer-link" href="#">Contact Us</a>
+          {{#each ticket in sortedTickets}}
+            <li class="ticket-feed-item">
+              <img class="user-feed-pic" {{bind-attr src=maxFrat alt="maxFrat"}}>
+              <p id="time-ago">{{ticket.submit_time}}</p>
+              <div id="ticket-info">
+                <a id="artist-link" href="#">{{ticket.name}}</a>
+                <a id="date-link">{{ticket.date}}</a>
+                <a id="time-link">{{ticket.time}}</a>
+                <a id="location-link" href="#">{{ticket.location}}</a>
+              </div>
+                <img class="artist-feed-pic" {{bind-attr src=disclosurePhoto alt="disclosurePhoto"}}>
+                <a {{action 'showModal' 'accountsettings/modal' model}} id="price-link" href="#">$24</a>
+            </li>
+          {{/each}}
 
-      </footer>
+      </div>
     </div>
+
   </script>
