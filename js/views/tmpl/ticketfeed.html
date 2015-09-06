@@ -1,6 +1,6 @@
 <script type="text/x-handlebars" data-template-name="ticket-feed">
 
-    <div id="ticket-feed-positioner">
+    <div id="ticket-feed-container">
       <div id="search-suggestions">
           <p id="users-also-searched">Trending:</p>
           <a href="#">Justin Martin</a>
@@ -9,20 +9,24 @@
           <a href="#">Avalon Nightclub</a>
       </div>
 
-      {{#each ticket in sortedTickets}}
-        <li class="ticket-feed-item">
-          <img class="user-feed-pic" {{bind-attr src=maxFrat alt="maxFrat"}}>
-          <p id="time-ago">{{ticket.submit_time}}</p>
-          <div id="ticket-info">
-            <a id="artist-link" href="#">{{ticket.name}}</a>
-            <a id="date-link">{{ticket.date}}</a>
-            <a id="time-link">{{ticket.time}}</a>
-            <a id="location-link" href="#">{{ticket.location}}</a>
-          </div>
-            <img class="artist-feed-pic" {{bind-attr src=disclosurePhoto alt="disclosurePhoto"}}>
-            <a {{action 'showModal' 'accountsettings/modal' model}} id="price-link" href="#">$24</a>
-        </li>
-      {{/each}}
+      <div id="ticket-feed-main">
+
+          {{#each ticket in sortedTickets}}
+            <li class="ticket-feed-item">
+              <img class="user-feed-pic" {{bind-attr src=maxFrat alt="maxFrat"}}>
+              <p id="time-ago">{{ticket.submit_time}}</p>
+              <div id="ticket-info">
+                <a id="artist-link" href="#">{{ticket.name}}</a>
+                <a id="date-link">{{ticket.date}}</a>
+                <a id="time-link">{{ticket.time}}</a>
+                <a id="location-link" href="#">{{ticket.location}}</a>
+              </div>
+                <img class="artist-feed-pic" {{bind-attr src=disclosurePhoto alt="disclosurePhoto"}}>
+                <a {{action 'showModal' 'accountsettings/modal' model}} id="price-link" href="#">$24</a>
+            </li>
+          {{/each}}
+
+      </div>
     </div>
 
   </script>
