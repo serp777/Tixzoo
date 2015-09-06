@@ -94,15 +94,11 @@
 
 .quantity-dropdown {
   display:none !important;
-  position: relative;
-  display: inline;
+  position: absolute;
 }
 
 .type-dropdown {
-  position: relative;
-  display: inline;
-  right: 4vw;
-  top: 2vw;
+  position: absolute;
 }
 
 .btn-file {
