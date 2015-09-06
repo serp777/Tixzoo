@@ -24,7 +24,7 @@ class ticketControllerClass {
 		// To protect MySQL injection (more detail about MySQL injection)
 		$dbconn = $this->setupConnection();
 		$searchKeywords = explode(" ", $quickSearch);
-		$sql="SELECT * FROM accountinfo WHERE username='$username' and password='$password'";
+		$sql="SELECT * FROM accountinfo WHERE emailAddress='$email' and password='$password'";
 		$result = $this->executeSqlQuery($sql,$dbconn);
 		$count = $result->num_rows;
 		return $count;

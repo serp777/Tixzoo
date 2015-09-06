@@ -3069,6 +3069,7 @@ fieldset[disabled] .btn-default.active {
   color: #fff;
   background-color: #337ab7;
   border-color: #2e6da4;
+  margin-top: 5vw;
 }
 .btn-primary:hover,
 .btn-primary:focus,
@@ -5921,7 +5922,7 @@ button.close {
 .modalls-content {
   position: relative;
   padding: 0;
-  height: 40vw;
+  height: 43vw;
   margin: auto;
   border-radius: 6px;
   outline: 0;

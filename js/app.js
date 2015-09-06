@@ -99,7 +99,7 @@ App.Router.map(function() {
 
 
 App.ApplicationController = Ember.Controller.extend({
-  username: '',
+  email: '',
   password: '',
   loginSuccess: false,
   wrapper: 'wrapper',
@@ -131,12 +131,12 @@ App.ApplicationController = Ember.Controller.extend({
       this.transitionToRoute(this.get('route'));
     }
   },
-  sendCreditCardInfo: function(username, response) {
+  sendCreditCardInfo: function(email, response) {
       return $.ajax({
           url: "Rest/stripeController.php",
           type: "POST",
           dataType:'json',
-          data: {username: username, response: response},
+          data: {email: email, response: response},
           error: function(data){
             console.log(data);
           }
@@ -213,7 +213,7 @@ App.ApplicationRoute = Ember.Route.extend({
 App.IndexRoute = Ember.Route.extend({
 
   model: function() {
-    return Ember.Object.create({ username: 'My username'});
+    return Ember.Object.create({ email: 'My email'});
   }
 });
 

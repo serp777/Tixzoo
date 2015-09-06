@@ -18,7 +18,7 @@ header("Content-Type: application/json", true);
 
 	if(isset($_POST['loginMode']) && $_POST['loginMode'] == "true"){
 		$login = new userControllerClass();
-    	$result["loginVal"] = $login->login($_POST['username'],$_POST['password']);
+    	$result["loginVal"] = $login->login($_POST['email'],$_POST['password']);
         $result["error"] = false;
         if($result["loginVal"] == 0){
             $result["errorMessage"] = "Username or Password combination does not exist";
@@ -27,7 +27,7 @@ header("Content-Type: application/json", true);
             return $result;
         }
         ob_start();
-        $cookie_value = json_encode(array("user" => (array("username" => $_POST['username'], "password" => $_POST['password'])), "successOut" => true));
+        $cookie_value = json_encode(array("user" => (array("email" => $_POST['email'], "password" => $_POST['password'])), "successOut" => true));
         setcookie('user', $cookie_value, time()+60*60*24*365, '/', '127.0.0.1');
         if(!isset($_COOKIE['user'])){
             $result["response"] = "goodCookie";
