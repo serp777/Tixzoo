@@ -7,18 +7,18 @@
 
 #ticket-post-positioner-left {
   height: 60em;
-  position: absolute;
+  position: relative;
+  float:left;
   width: 50%;
   background-color: #f0f0f0;
-  text-align: center;
 }
 
 #ticket-post-positioner-right {
   height: 60em;
-  position: absolute;
+  position: relative;
+  float:left;
   width: 50%;
   background-color: lightgray;
-  right: 0;
 }
 
 #ticket-input-box {
@@ -29,6 +29,10 @@
   height: 45vw;
   background-color: black;
   border-radius: 3px;
+}
+
+.dropdown-menu {
+  display:none;
 }
 
 #ticket-post-inputs input {
@@ -89,10 +93,9 @@
 }
 
 .quantity-dropdown {
+  display:none !important;
   position: relative;
   display: inline;
-  right: 4vw;
-  top: 1vw;
 }
 
 .type-dropdown {
