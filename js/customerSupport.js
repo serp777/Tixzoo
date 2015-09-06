@@ -1,3 +1,3 @@
-App.CustomerSupportController = Ember.ObjectController.extend({
+App.CustomerSupportController = Ember.Controller.extend({
 
 });

@@ -57,6 +57,7 @@ a {
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
+    overflow: hidden;
 }
 
 #wrapper.toggled #sidebar-wrapper {
@@ -188,7 +189,6 @@ a {
 
 .sidebar-nav > li:last-child {
     text-indent: 0;
-    width:100%;
     text-align:center;
     padding:0;
 }

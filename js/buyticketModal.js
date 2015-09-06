@@ -1,7 +1,7 @@
 /*
  * CreateTicketModalController
  */
-App.BuyticketModalController = Ember.ObjectController.extend({
+App.BuyticketModalController = Ember.Controller.extend({
   needs: ['application'],
   maxFrat: 'img/max-frat.png',
   creditCard: 'buy-form-group',

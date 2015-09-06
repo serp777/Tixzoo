@@ -1,4 +1,4 @@
-App.TicketFeedController = Ember.ArrayController.extend({
+App.TicketFeedController = Ember.Controller.extend({
   needs: ['application'],
   disclosurePhoto: 'img/disclosure-artist.png',
   maxFrat: 'img/max-frat.png',
