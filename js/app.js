@@ -6,7 +6,8 @@ var loaderObj = {
     'tmpl/postticket.html',
     'tmpl/userprofile.html',
     'tmpl/viewticket.html',
-    'tmpl/confirmticket.html'
+    'tmpl/confirmticket.html',
+    'tmpl/customersupport.html'
     ],
     css : [
     '../../css/bootstrap.css',
@@ -21,7 +22,8 @@ var loaderObj = {
     '../../css/to-post-ticket.css',
     '../../css/date_test.css',
     '../../css/user-profile.css',
-    '../../css/view-ticket.css'
+    '../../css/view-ticket.css',
+    '../../css/customer-support.css'
   ]
 };
 
@@ -89,6 +91,9 @@ App.Router.map(function() {
   this.resource("view-ticket", function(){
     this.route("load", { path: "/" });
   });
+  this.resource("customer-support", function(){
+    this.route("load", { path: "/" });
+  });
 });
 
 
@@ -118,6 +123,17 @@ App.ApplicationController = Ember.Controller.extend({
     if(url[3] === null || url[3] === "" || url[4] === null || url[4] === ""){
       this.transitionToRoute(this.get('route'));
     }
+  },
+  sendCreditCardInfo: function(username, response) {
+      return $.ajax({
+          url: "stripe/stripeController.php",
+          type: "POST",
+          dataType:'json',
+          data: {username: username, response: response},
+          error: function(data){
+            console.log(data);
+          }
+      });
   },
   getTicketAjax: function() {
       return $.ajax({
@@ -208,7 +224,6 @@ App.LogoutModalController = Ember.Controller.extend({
 App.MysecondModalComponent = Ember.Component.extend({
   actions: {
     ok: function() {
-
       this.sendAction('ok');
     }
   },

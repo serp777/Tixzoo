@@ -4,8 +4,9 @@
     require_once 'customerController.php';
     header("Content-Type: application/json", true);
 
-    $token = $_POST['stripeToken'];
-
+    $response = $_POST['response'];
+    $token = $response->id;
+    
     $customer = new customerControllerClass();
 
     // if(isset($_POST['username']) && $_POST['createCustomerMode'] == "true"){

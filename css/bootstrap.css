@@ -3695,7 +3695,7 @@ tbody.collapse.in {
 
 .ember-view.ember-text-field.form-control {
   border-width:0 0 2px 0;
-  margin:2.6vw 6vw;
+  margin:1vw 6vw;
   width:30vw;
   font-family:gill sans;
   font-size:1vw;
@@ -5786,10 +5786,10 @@ button.close {
 }
 .modal-header {
   min-height: 16.42857143px;
-  padding: 10vw;
-  border-bottom: 1px solid #e5e5e5;
-  display:none;
+  padding: 3vw;
+  background:rgb(22,124,255);
 }
+
 .modal-header .close {
   margin-top: -2px;
 }
@@ -5806,16 +5806,20 @@ button.close {
 #view-ticket-info-affect #front {
   backface-visibility:hidden;
   transform:rotateY(180deg);
+
 }
 
 #view-ticket-info-affect .credit-card-info{
   transform:rotateY(180deg);
+  
+
 }
 
 
 #view-ticket-info-affect {
   transform:rotateY(180deg);
   backface-visibility:hidden;
+
 }
 
 .modal-body #view-ticket-price {
@@ -5827,7 +5831,6 @@ button.close {
   font-size:2vw;
   border-top:black 1px solid;
   padding-top:.4vw;
-
 }
 
 .modal-body p {
@@ -5935,7 +5938,7 @@ button.close {
 .modalls-content {
   position: relative;
   padding: 0;
-  height: 48vw;
+  height: 40vw;
   margin: auto;
   border-radius: 6px;
   outline: 0;
@@ -5962,7 +5965,7 @@ button.close {
 }
 
 .login_modal_padding {
-  padding-top:5vw;
+  padding-top:0vw;
 }
 
 
