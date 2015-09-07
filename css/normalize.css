@@ -705,5 +705,8 @@ button {
   height: 3vw;
 }
 /**** Footer container content ****/
-
+@media(max-width:767px){}
+@media(min-width:768px){}
+@media(min-width:992px){}
+@media(min-width:1200px){}
 
