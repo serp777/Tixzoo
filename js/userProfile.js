@@ -1,4 +1,4 @@
-App.UserProfileController = Ember.ObjectController.extend({
+App.UserProfileController = Ember.Controller.extend({
 	maxFrat: 'img/max-frat.png',
   twitterIcon: 'img/twitter.png',
   facebookIcon: 'img/fb.png',

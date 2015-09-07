@@ -3,15 +3,17 @@
         <form {{action 'ok' on='submit' target=view}}>
         {{#if toggled}}
           <div {{bind-attr class=creditCard}}>
-              <div class="credit-card-info">
+            <div class="credit-card-info">
                <form class="payment-info">
                   <ul class="payment-input">
                   <li>{{input placeholder="Full Name" value=fullName}}</li>
                   <li>{{input placeholder="Credit Card Number" value=creditCardNumber}}</li>
                   <li>{{input placeholder="CVC (security code)" value=CVC}}</li>
                   <li>{{input placeholder="Expiration Date" value=expDate}}</li>
+                  </ul>
                 </form>
               </div>
+            </div>
               <a {{action 'creditCardOutput'}}>Click to Add credit card</a>
               <a {{action 'creditCard'}}>Return</a>
         {{else}}
@@ -19,7 +21,6 @@
                 <img class="view-ticket-userpic" {{bind-attr src=maxFrat alt="maxFrat"}}>
                 <p id="view-ticket-price"><span>$24</span></p>
                 <div class="view-rating">
-                  <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span></div>
                   <p id="view-ticket-artist">{{model.name}}</p>
                   <p id="view-ticket-date">June 25th, 2015</p>
                   <p id="view-ticket-time">8:00 pm</p>
@@ -29,10 +30,9 @@
               </div>
             <a {{action 'creditCard'}}>Add Credit Card</a>
         {{/if}}
-          </div>
         </form>
       {{/my-modal}}
-    </script>
+  </script>
 
 
 <script type="text/x-handlebars" data-template-name="signup-modal">
@@ -40,9 +40,10 @@
 
         <form {{action 'ok' on='submit' target=view}}>
           <div class="form-group">
+            {{input class="form-control" placeholder=emailText value=email }}
             {{input class="form-control" type="password" placeholder=passwordText value=password }}
             {{input class="form-control" type="password" placeholder=passwordVerifyText value=passwordVerify }}
-            {{input class="form-control" placeholder=emailText value=email }}
+            <br><br>
             {{#if existsAlready}}
               <div style="color: red;">
               <strong>{{errorMessage}}</strong>
@@ -63,7 +64,7 @@
         <form {{action 'ok' on='submit' target=view}}>
           <div class="form-group">
             <div class="login_modal_padding">
-            {{input class="form-control" placeholder=usernameText value=username}}
+            {{input class="form-control" placeholder=emailText value=email}}
             {{input class="form-control" type="password" placeholder=passwordText value=password }}
             </div>
               {{#if signInError}}

@@ -1,37 +1,19 @@
 <script type="text/x-handlebars" data-template-name="user-profile">
-
-    <div id="top-nav-bar-container">
-       <div class="nav-bar">
-    
-        <div id="btn-container">
-
-         <a {{action 'showModal' 'signup-modal' model}} class="create_Btn">Sign Up</a>
-         <a {{action 'showModal' 'login-modal' model}} class="login_Btn">Login</a>
-        </div>
-        <div id="user-search">
-          <div id="search-bar">
-          <form class="searchbox" action="">
-          {{input type="search" value=searchText placeholder="Search by artist, genre or location"}}
-
-            <ul class="suggestions">
-            {{#each object in ticketFeed}}
-
-                <li><bc>{{#link-to 'ticket-feed.buy' object}}{{object.name}}{{/link-to}}</bc></li>
-             {{/each}}
-            </ul>
-        </form>
-         </div>
-        </div>
-        <a href="index.html"><img id="tixzoo-logo" {{bind-attr src=tixzoo-logo alt="tixzoo-logo"}}></a>
+  <div id="top-nav-bar-container">
+    <div class="nav-bar">
+      <div id="btn-container">
+        <a {{action 'showModal' 'signup-modal' model}} class="create_Btn">Sign Up</a>
+        <a {{action 'showModal' 'login-modal' model}} class="login_Btn">Login</a>
       </div>
+      <a href="index.html"><img id="tixzoo-logo" {{bind-attr src=tixzoo-logo alt="tixzoo-logo"}}></a>
     </div>
+  </div>
 
-
-      <div id="user-profile-container">
-      <div id ="top-layer">
+  <div id="user-profile-container">
+    <div id ="top-layer">
       <div id="profile-upleft-container">
+        <div class="recent-activity-title">Recent Activity</div>
           <div id="recent-activity">
-            
             <ul class="recent-activity-list">
               <li><strong>Cinnamon Mercedes</strong> bought <a href="#"><strong>Justin Martin</strong></a> tix from Jessica.<p>7m</p></li>
               <li><strong>Cinnamon Mercedes</strong> bought <a href="#"><strong>Justin Martin</strong></a> tix from Jessica.<p>7m</p></li>
@@ -41,102 +23,63 @@
               <li><strong>Cinnamon Mercedes</strong> bought <a href="#"><strong>Justin Martin</strong></a> tix from Jessica.<p>7m</p></li>
               <li><strong>Cinnamon Mercedes</strong> bought <a href="#"><strong>Justin Martin</strong></a> tix from Jessica.<p>7m</p></li>
             </ul>
+        </div>
+      </div>
+
+      <div class="profile">
+        <a class="about-me">About me</a>
+        <a class="message">Message</a>
+          <div class="profile-upright-container">
+           <div class="profile-upright-container active">
+            <img class="user-prof-pic" {{bind-attr src=maxFrat alt="maxFrat"}}>
+            <h2 id="profile-title"></h2>
+            <div class="rating">
+              <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+            </div>
+            <p id="music-tags">Music Tags</p>
+            <ul id="music-tag-list">
+              <a href="#"><li>House</li></a>
+              <a href="#"><li>Tropical</li></a>
+              <a href="#"><li>Drake</li><br></a>
+              <a href="#"><li>Dirty Bird</li></a>
+              <a href="#"><li>Justin Martin</li></a>
+            </ul>
           </div>
         </div>
-
-
-        <div id="profile-upright-container">
-          <img class="user-prof-pic" {{bind-attr src=maxFrat alt="maxFrat"}}>
-          <h2 id="profile-title"></h2>
-          <div class="rating">
-            <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-          </div>
-          <p id="music-tags">Music Tags</p>
-          <ul id="music-tag-list">
-            <a href="#"><li>House</li></a>
-            <a href="#"><li>Tropical</li></a>
-            <a href="#"><li>Drake</li><br></a>
-            <a href="#"><li>Dirty Bird</li></a>
-            <a href="#"><li>Justin Martin</li></a>
-          </ul>
-          <a href="#"><div id="add-friend-btn">+</div></a>
-          <a href="#"><p id="add-friend-text">Add Friend</p></a>
-        </div>
-        </div>
+      </div>
 
           <div id="profile-midright-container">
-            <div id="buy-profile">
-              <div id="buy-profile-header">
-                <a href="#">Buying</a>
-              </div>
-              <p id='buy-profile-description'>Description</p>
-              <div id="buy-profile-info">
-                <a id="buy-profile-artist" href="#">Justin Martin</a>
-                <p id="buy-profile-date">June 15th, 2015</p>
-                <p id="buy-profile-time">8:00 pm</p>
-                <p id="buy-profile-venue">Avalon Nightclub</p>
-              </div>
-            </div>
-            <div id="sell-profile">
-              <div id="sell-profile-header">
-                <a href="#">Selling</a>
-              </div>
-              <p id="sell-profile-price">Price: <strong>$24</strong></p>
-              <div id="sell-profile-info">
-                <a id="sell-profile-artist" href="#">Justin Martin</a>
-                <p id="sell-profile-date">June 15th, 2015</p>
-                <p id="sell-profile-time">8:00 pm</p>
-                <p id="sell-profile-venue">Avalon Nightclub</p>
-              </div>
-            </div>
-            <div id="trade-profile">
-              <div id="trade-profile-header">
-                <a href="#">Trading</a>
-              </div>
-              <p id="trade-profile-price">Price: <strong>$24</strong></p>
-              <div id="trade-profile-info">
-                <a id="trade-profile-artist" href="#">Justin Martin</a>
-                <p id="trade-profile-date">June 15th, 2015</p>
-                <p id="trade-profile-time">8:00 pm</p>
-                <p id="trade-profile-venue">Avalon Nightclub</p>
-              </div>
-            </div>
+            <ul class="looking-for">
+              <li class="has-submenu"><a href="#">buying</a>
+                <ul>
+                  <li><a href="#">Justin Martin</a></li>
+                  <li><a href="#">Hollywood Palladium</a></li>
+                  <li><a href="#" class="action-btn">Sell for 24$</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="has-submenu"><a href="#">selling</a>
+                <ul>
+                  <li><a href="#">Justin Martin</a></li>
+                  <li><a href="#">Hollywood Palladium</a></li>
+                  <li><a href="#">24$</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="has-submenu"><a href="#">trading</a>
+                <ul>
+                  <li><a href="#">Justin Martin</a></li>
+                  <li><a href="#">Hollywood Palladium</a></li>
+                  <li><a href="#">trade</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
           </div>
-
-        
-
-
         <div id="profile-downleft-container">
         </div>
-
+      </div>
       </div>
 
 
-
-
-   <div id="footer-container">
-      <footer>
-        <div id="social">
-        <ul id="social_media_icon">
-        <a href='#'><img class="social-media-icon1" {{bind-attr src=facebookIcon alt="facebookIcon"}}></a>
-        <a href='#'><img class="social-media-icon2" {{bind-attr src=instagramIcon alt="instagramIcon"}}></a>
-        <a href='#'><img class="social-media-icon3" {{bind-attr src=twitterIcon alt="twitterIcon"}}></a>
-        </ul>
-      </div>
-      <div class="footer-pages">
-        <ul id="footer-class">
-        <li><a class="footer-link"  href="#">Home</a></li>
-        <li><a class="footer-link" href="#">Careers</a></li>
-        <li><a class="footer-link" href="#">Developers</a></li>
-        <li><a class="footer-link" id="no-dot-footer" href="#">Contact Us</a></li>
-        </ul>
-      </div>
-
-      <div class="copyright">
-      <p>-Tixzoo inc. 2015-</p>
-      </div>
-
-      </footer>
-    </div>
-
-  </script>
+</script>

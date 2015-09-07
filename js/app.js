@@ -1,3 +1,4 @@
+
 var loaderObj = {
     templates : [
     'tmpl/modal.html',
@@ -71,7 +72,6 @@ loadTemplates(loaderObj.templates);
 
 
 App = Ember.Application.create();
-
 App.Router.map(function() {
   this.resource("ticket-feed", function(){
     this.route("buy", { path: "/:ticketID" });
@@ -99,7 +99,7 @@ App.Router.map(function() {
 
 
 App.ApplicationController = Ember.Controller.extend({
-  username: '',
+  email: '',
   password: '',
   loginSuccess: false,
   wrapper: 'wrapper',
@@ -110,6 +110,7 @@ App.ApplicationController = Ember.Controller.extend({
   venueText: 'Venue',
   date: '',
   dateText: 'Date',
+  tixzooLogo: 'img/tixzoo-logo.png',
   quantity: '',
   quantityText: 'Quantity',
   price: '',
@@ -117,6 +118,12 @@ App.ApplicationController = Ember.Controller.extend({
   route: 'main-page',
   ticketJson: [],
   tempTicketJson: [],
+  facebookIcon: 'img/fb.png',
+  instagramIcon: 'img/instagram.png',
+  lockIcon: 'img/lock-icon.png',
+  peertopeerIcon: 'img/messaging-icon.png',
+  snapchatIcon: 'img/',
+  twitterIcon: 'img/twitter.png',
   init: function() {
     this._super();
     var url = window.location.href.split("/");
@@ -124,12 +131,12 @@ App.ApplicationController = Ember.Controller.extend({
       this.transitionToRoute(this.get('route'));
     }
   },
-  sendCreditCardInfo: function(username, response) {
+  sendCreditCardInfo: function(email, response) {
       return $.ajax({
           url: "stripe/stripeController.php",
           type: "POST",
           dataType:'json',
-          data: {username: username, response: response},
+          data: {email: email, response: response},
           error: function(data){
             console.log(data);
           }
@@ -206,7 +213,7 @@ App.ApplicationRoute = Ember.Route.extend({
 App.IndexRoute = Ember.Route.extend({
 
   model: function() {
-    return Ember.Object.create({ username: 'My username'});
+    return Ember.Object.create({ email: 'My email'});
   }
 });
 

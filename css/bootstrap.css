@@ -3069,6 +3069,7 @@ fieldset[disabled] .btn-default.active {
   color: #fff;
   background-color: #337ab7;
   border-color: #2e6da4;
+  margin-top: 5vw;
 }
 .btn-primary:hover,
 .btn-primary:focus,
@@ -3691,6 +3692,19 @@ tbody.collapse.in {
   display: table-cell;
   float: none;
   width: 1%;
+}
+
+.credit-card-info .payment-input > li {
+  display: inline-block;
+  margin:1vw;
+}
+
+.credit-card-info .payment-input input {
+  width:20vw;
+  padding-left:.5vw;
+  font-family: gill sans;
+  font-weight: lighter;
+
 }
 
 .ember-view.ember-text-field.form-control {
@@ -5803,24 +5817,7 @@ button.close {
   padding-left: 7vw;
   text-align: center;
 }
-#view-ticket-info-affect #front {
-  backface-visibility:hidden;
-  transform:rotateY(180deg);
 
-}
-
-#view-ticket-info-affect .credit-card-info{
-  transform:rotateY(180deg);
-  
-
-}
-
-
-#view-ticket-info-affect {
-  transform:rotateY(180deg);
-  backface-visibility:hidden;
-
-}
 
 .modal-body #view-ticket-price {
   font-size: 4vw;
@@ -5842,7 +5839,7 @@ button.close {
   border-radius:100%;
   border:rgb(22,124,255) solid 3px;
   margin-top:1vw;
-  
+
 }
 
 .modal-body #user-agreement{
@@ -5938,7 +5935,7 @@ button.close {
 .modalls-content {
   position: relative;
   padding: 0;
-  height: 40vw;
+  height: 43vw;
   margin: auto;
   border-radius: 6px;
   outline: 0;

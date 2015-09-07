@@ -15,10 +15,9 @@ header("Content-Type: application/json", true);
         echo json_encode($result);
         return $result;
     }
-
 	if(isset($_POST['loginMode']) && $_POST['loginMode'] == "true"){
 		$login = new userControllerClass();
-    	$result["loginVal"] = $login->login($_POST['username'],$_POST['password']);
+    	$result["loginVal"] = $login->login($_POST['email'], $_POST['password']);
         $result["error"] = false;
         if($result["loginVal"] == 0){
             $result["errorMessage"] = "Username or Password combination does not exist";
@@ -27,7 +26,7 @@ header("Content-Type: application/json", true);
             return $result;
         }
         ob_start();
-        $cookie_value = json_encode(array("user" => (array("username" => $_POST['username'], "password" => $_POST['password'])), "successOut" => true));
+        $cookie_value = json_encode(array("user" => (array("email" => $_POST['email'], "password" => $_POST['password'])), "successOut" => true));
         setcookie('user', $cookie_value, time()+60*60*24*365, '/', '127.0.0.1');
         if(!isset($_COOKIE['user'])){
             $result["response"] = "goodCookie";
@@ -53,14 +52,14 @@ header("Content-Type: application/json", true);
     if(isset($_POST['emailMode']) && $_POST['emailMode'] == "true")
     {
         $email = new emailControllerClass();
-        $output = $email->sendEmail($_POST['emailAddress'],$_POST['message']);
+        $output = $email->sendEmail($_POST['email'],$_POST['message']);
         echo json_encode($output);
         return "";
     }
 
 	if(isset($_POST['createMode']) && $_POST['createMode'] == "true"){
 		$create = new userControllerClass();
-    	$result = $create->createAccount($_POST['username'],$_POST['password'],$_POST['email']);
+    	$result = $create->createAccount($_POST['email'],$_POST['password']);
     	if(isset($result["dataError"]))
         {
             echo json_encode($result);
@@ -82,10 +81,10 @@ header("Content-Type: application/json", true);
     if(isset($_POST['createticketMode']) && $_POST['createticketMode'] == "true"){
         $ticketController = new ticketControllerClass();
         $login = new userControllerClass();
-        $userInfo = $login->getUserInfo($_POST['username'], $_POST['password']);
+        $userInfo = $login->getUserInfo($_POST['email'], $_POST['password']);
         $userInfo = json_decode($userInfo, true);
         $sellerID = $userInfo['accountID'];
-        error_log($sellerID);
+        // error_log($sellerID);
         $result = $ticketController->createTicket($_POST['name'], $sellerID, $_POST['location'],
             $_POST['date'], $_POST['price'], $_POST['type'], $_POST['description']);
 

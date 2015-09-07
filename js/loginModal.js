@@ -1,12 +1,12 @@
 /*
  * LoginModalController
  */
-App.LoginModalController = Ember.ObjectController.extend({
+App.LoginModalController = Ember.Controller.extend({
   needs: ['application'],
-  username: '',
-  usernameText: 'Enter Username',
   password: '',
   passwordText: 'Enter Password',
+  email: '',
+  emailText: 'example@example.com',
   errorMessage: 'This is a glitch if this shows up',
   spinnerImg: 'img/spinner.GIF',
   signInError: false,
@@ -22,10 +22,10 @@ App.LoginModalController = Ember.ObjectController.extend({
             url: "Rest/mainController.php",
             type: "POST",
             dataType:'json',
-            data: {username: that.get('username'), password: that.get('password'), loginMode: "true"},
+            data: {email: that.get('email'), password: that.get('password'), loginMode: "true"},
               success: function(data){
                 if(data["loginVal"] > 0 && data["error"] == false){
-                  that.set('controllers.application.username',that.get('username'));
+                  that.set('controllers.application.email',that.get('email'));
                   that.set('controllers.application.password',that.get('password'));
                   that.set('controllers.application.loginSuccess',true);
                   $('.modal').modal('hide');

@@ -1,3 +1,3 @@
-App.ViewTicketController = Ember.ObjectController.extend({
+App.ViewTicketController = Ember.Controller.extend({
 
 });

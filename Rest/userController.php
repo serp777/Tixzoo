@@ -1,6 +1,6 @@
 <?php
 require_once 'authController.php';
-require_once '../stripe/customerController.php';
+require_once 'stripe/customerController.php';
 class userControllerClass {
 	private function setupConnection(){
 		$con = new authControllerClass();
@@ -10,22 +10,19 @@ class userControllerClass {
 		$result = $dbconn->query($sql);
 		return $result;
 	}
-	public function login($username,$password)
-	{
+	public function login($email, $password){
 		// To protect MySQL injection (more detail about MySQL injection)
 		$dbconn = $this->setupConnection();
-		$username = stripslashes($username);
+		$email = stripslashes($email);
 		$password = stripslashes($password);
-		$username = mysqli_real_escape_string($dbconn, $username);
+		$email = mysqli_real_escape_string($dbconn, $email);
 		$password = mysqli_real_escape_string($dbconn, $password);
-		$sql="SELECT * FROM accountinfo WHERE username='$username' and password='$password'";
-
+		$sql="SELECT * FROM accountinfo WHERE emailAddress='$email' and password='$password'";
 		$result = $this->executeSqlQuery($sql,$dbconn);
 		$count= $result->num_rows;
 		return $count;
 	}
-	public function addNewsletterEmail($email)
-	{
+	public function addNewsletterEmail($email){
 		$dbconn = $this->setupConnection();
 		$myemail = stripslashes($email);
 		$myemail = mysqli_real_escape_string($dbconn, $myemail);		
@@ -33,48 +30,37 @@ class userControllerClass {
 		$result = $this->executeSqlQuery($sql,$dbconn);
 		return $result;
 	}
-	public function createAccount($username,$password,$email){
+	public function createAccount($password,$email){
 		// To protect MySQL injection (more detail about MySQL injection)
 		$dbconn = $this->setupConnection();
-		$myusername = stripslashes($username);
 		$mypassword = stripslashes($password);
 		$myemail = stripslashes($email);
-		$myusername = mysqli_real_escape_string($dbconn, $myusername);
 		$mypassword = mysqli_real_escape_string($dbconn, $mypassword);
 		$myemail = mysqli_real_escape_string($dbconn, $myemail);
-		$sql="SELECT * FROM accountinfo WHERE username='$myusername'";
-		$usrnameTest = $this->executeSqlQuery($sql,$dbconn);
-		$usrnameTest = $usrnameTest->num_rows;
-		$sql="SELECT * FROM accountinfo WHERE username='$myemail'";
+		$sql="SELECT * FROM accountinfo WHERE emailAddress='$myemail'";
 		$emlTest = $this->executeSqlQuery($sql,$dbconn);
 		$emlTest = $emlTest->num_rows;
-		if($usrnameTest > 0 && $emlTest > 0){
-			$result["dataError"] = "email and username in use";
-			return $result; 
-		} elseif($usrnameTest > 0 && $emlTest == 0){
-			$result["dataError"] = "username in use";
-			return $result;  
-		} elseif($emlTest > 0 && $usrnameTest == 0){
+		if($emlTest > 0 && $usrnameTest == 0){
 			$result["dataError"] = "email in use";
 			return $result;  
 		}
-		$sql="INSERT INTO accountinfo (username, password, emailAddress, credit) VALUES ('$myusername','$mypassword','$myemail','1000')";
-		$customer = new customerControllerClass();
-		$result['customer'] = $customer->createCustomer($myusername, $myemail);
+		$sql="INSERT INTO accountinfo (password, emailAddress, credit) VALUES ('$mypassword','$myemail','1000')";
 		$result['query'] = $this->executeSqlQuery($sql,$dbconn);
+		$customer = new customerControllerClass();
+		$result['customer'] = $customer->createCustomer($myemail);
 		return $result;
 	}
-	public function getUserInfo($username, $password) {
-		$result = $this->login($username, $password);
+	public function getUserInfo($email, $password) {
+		$result = $this->login($email, $password);
 		$row = mysqli_fetch_assoc($result);
 		$result = json_encode($row);
 		return $result;
 	}
-	public function setAssocCustomerId($id, $username){
+	public function setAssocCustomerId($id, $email){
 		$dbconn = $this->setupConnection();
 		$id = stripslashes($id);
 		$id = mysqli_real_escape_string($dbconn, $id);
-		$sql = "UPDATE accountinfo SET cstmrAssocId = '$id' WHERE username = '$username'";
+		$sql = "UPDATE accountinfo SET cstmrAssocId = '$id' WHERE emailAddress = '$email'";
 		$result = $this->executeSqlQuery($sql,$dbconn);
 		$output["response"] = $result;
 		return $output;
@@ -88,9 +74,9 @@ class userControllerClass {
 		$output["response"] = $result;
 		return $output;
 	}
-	public function getAssocCustomerId($username){
+	public function getAssocCustomerId($email){
 		$dbconn = $this->setupConnection();
-		$sql = "SELECT * FROM accountinfo WHERE username = '$username'";
+		$sql = "SELECT * FROM accountinfo WHERE emailAddress = '$email'";
 		$result = $this->executeSqlQuery($sql, $dbconn);
 		$row = mysql_fetch_object($result);
 		return $row->cstmrAssocId;

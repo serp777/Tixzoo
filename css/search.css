@@ -10,17 +10,13 @@
 }
 
 #search-bar-feed {
-    position: absolute;
-    height: 2vw;
-    top: 2vw;
-    left: 34vw;
+  margin-left: 40vw;
+  margin-top: 2vw;
 }
 
 .ember-view.ember-text-field {
     width:50vw;
     height:4vw;
-
-
 }
 
 .searchbox{
@@ -68,11 +64,11 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#167cff', end
 }
 
 input[type="search"]:hover  {
-  background-image:url(img/searchbar2.png);
+  background-image:url(img/searchbar1.png);;
 }
 
 input[type="search"]:focus  {
-  background-image:url(img/searchbar2.png);
+  background-image:url(img/searchbar1.png);;
 
 
 }
@@ -208,12 +204,16 @@ textarea:focus, input:focus{
     text-align: justify;
 }
 
-#user-search .searchbox .ember-view{
-    height:3vw;
-   background-position:32vw .6vw;
+#user-search {
+   margin-left: 0;
+   height:3vw;
+   padding:1vw 1vw 1vw 1vw;
+   background-position:12.5vw .6vw;
    font-size:1.3vw;
    background-size:1.5vw 1.5vw;
-   width:35vw;
-   margin-left: 5vw;
+   width:15vw;
    border:rgb(39,175,208) 2px solid;
+   margin-top:3vw;
+   background-image:url(img/searchbar1.png);
+   background-repeat: no-repeat;
 }
