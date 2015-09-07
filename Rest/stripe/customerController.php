@@ -1,6 +1,6 @@
 <?php
 require_once 'config.php';
-require_once '../Rest/userController.php';
+require_once '../userController.php';
 
 \Stripe\Stripe::setApiKey($stripe['secret_key']);
 
