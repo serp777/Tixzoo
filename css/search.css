@@ -15,47 +15,49 @@
 }
 
 .ember-view.ember-text-field {
-    width:50vw;
+    width:45vw;
     height:4vw;
+    border-radius: 0;
+    display: inline-block;
+    float:right;
 }
 
 .searchbox{
 /*definint width of form element*/
-    z-index: 15;
-    width:10vw;
-    margin:0;
-    padding:0;
+    height:4vw;
+    z-index: 10000;
+    width:50vw;
+    position:absolute;
+    overflow: none;
+
 /*centering the form element*/
 
 }
 .ember-view #search-btn {
+  background-image:url("img/searchbar2.png");
   overflow:hidden;
+  height:4vw;
   width:5vw;
-  display:block;
-  padding:1.2vw 0 1.2vw 0;
-  margin-left:45vw;
+  padding:1vw 0 1vw 0;
+  display:inline-block;
  background: rgb(22,124,255); /* Old browsers */
-background: -moz-linear-gradient(top, rgba(22,124,255,1) 0%, rgba(79,143,255,1) 51%, rgba(22,124,255,1) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(22,124,255,1)), color-stop(51%,rgba(79,143,255,1)), color-stop(100%,rgba(22,124,255,1))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top, rgba(22,124,255,1) 0%,rgba(79,143,255,1) 51%,rgba(22,124,255,1) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top, rgba(22,124,255,1) 0%,rgba(79,143,255,1) 51%,rgba(22,124,255,1) 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top, rgba(22,124,255,1) 0%,rgba(79,143,255,1) 51%,rgba(22,124,255,1) 100%); /* IE10+ */
-background: linear-gradient(to bottom, rgba(22,124,255,1) 0%,rgba(79,143,255,1) 51%,rgba(22,124,255,1) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#167cff', endColorstr='#167cff',GradientType=0 ); /* IE6-9 */
-  position:absolute;
+  position:relative;
+  float:right;
   -webkit-box-sizing:border-box;
   border-bottom-right-radius: 3px;
   border-top-right-radius: 3px;
-  z-index: 0;
+  z-index: 1000;
   transition: all .3s ease-in-out;
   max-height: 4vw;
-  text-align: center;
 }
 
 #search-btn img {
   width:1.5vw;
-  margin-bottom:.5vw;
-
+  box-sizing:border-box;
+  padding: 0;
+  margin: 0;
+  top:0;
+  position:relative;
 }
 
 #search-btn:hover {
@@ -153,6 +155,10 @@ padding:0;
     color:rgb(22,124,255);
     background:rgba(255,255,255,255);
 }
+
+.searchbox ul li a:hover {
+  text-align: justify;
+}
 /*moving it slightly toware right when hovered*/
 .searchbox ul li:hover{
 /*transform*/
@@ -162,6 +168,10 @@ padding:0;
      -o-transform:scale(1.1);
         transform:scale(1.1);
 }
+
+.searchbox ul li:focus{
+  text-align: justify;
+  }
 /*now first we will hide the suggestion list*/
 .suggestions li{
     overflow:hidden;

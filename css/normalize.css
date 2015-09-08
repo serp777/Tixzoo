@@ -607,14 +607,18 @@ copy
   left: 0px;
   margin-top: 0;
   position: relative;
-  text-align: center;
+  text-align: center !important;
   background-image:url(img/bottom-background.gif);
   background-repeat: no-repeat;
   background-size: 100% 110%;
   padding-top:13vw;
 }
-
+ 
+.newsletter .ember-view {
+  float:none !important;
+}
 .newsletter .newsletter-form {
+  position:relative;
   color:white;
   height:3vw !important;
   font-size:1.5vw;
@@ -624,6 +628,7 @@ copy
   background:none;
   border-radius: 2px;
   font-family:gill sans;
+  float:none;
 }
 
  input[type="button"] {
@@ -665,6 +670,7 @@ button {
 }
 
 .newsletter-title {
+  font-size: 2vw;
   color:white;
 }
 

@@ -9,13 +9,13 @@
   text-align: center;
   height: 9vw;
   z-index: 1000;
-   background: -moz-linear-gradient(top, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0) 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.65)), color-stop(100%,rgba(0,0,0,0))); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* IE10+ */
-  background: linear-gradient(to bottom, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
+   background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(0,0,0,0.65) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(100%,rgba(0,0,0,0.65))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(0,0,0,0.65) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(0,0,0,0.65) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(0,0,0,0.65) 100%); /* IE10+ */
+background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(0,0,0,0.65) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
 
   width:100%;
   position:fixed;
@@ -27,29 +27,32 @@
 
 
 #ticket-feed-container {
-  padding-top: 9vw;
+  padding-top: 5vw;
   background-color: #f2f2f2;
   z-index: 2;
-  height: 200em;
-  background: -webkit-linear-gradient(lightgrey, #f2f2f2); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(lightgrey, #f2f2f2); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(lightgrey, #f2f2f2); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(lightgrey, #f2f2f2); /* Standard syntax */
-  position: relative;
+  height: 100%;
+  background-image: url(img/90.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%
 }
 
 #search-suggestions {
-  padding: 1em;
+  padding:1.5vw 0 1vw 0;
   text-align: center;
+  box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.5);
+  background:lightgray;
 }
 
 #search-suggestions a {
   color: white;
   padding: 0 .5em 0 .5em;
   font-size: 1.2em;
+  border-right: 1px white solid;
 }
 
-
+#search-suggestions a:last-child {
+  border:none;
+}
 #search-suggestions p {
   font-size: 1em;
 }
@@ -81,10 +84,6 @@ a:hover {
   z-index: 1
 }
 
-.dropdown {
-  position: ;
-}
-
 #filter-suggestion-links a {
   margin: .5em;
 }
@@ -99,114 +98,113 @@ a:hover {
 #ticket-feed-main {
 
   height: 160em;
-  margin: 0 5vw;
-  padding: 2vw 2vw;
+  padding: 2vw 0;
   text-align: center;
 }
 
 .ticket-feed-item {
   z-index: 3;
-  width: 28%;
-  margin-top: 2vw;
-  margin-right: 2vw;
-  height: 25vw;
+  width: 30%;
+  height: 23vw;
   display: inline-block;
-  background-color: white;
-  border-radius: 3%;
   position: relative;
-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+  margin:0;
+  overflow: hidden;
+
 }
 
-.ticket-feed-item:hover {
-
-  -ms-transform: scale(1.15, 1.15); /* IE 9 */
-  -webkit-transform: scale(1.15 ,1.15); /* Safari */
-  transform: scale(1.15, 1.15);
-  cursor: pointer;
+#price-link {
+  position: absolute;
+  right: 0;
+  bottom:.3vw;
+  margin:.5vw 1vw;
+  font-size: 1.6vw;
+  color:white;
+  z-index: 100;
+  font-family: gill sans;
 }
 
+#price-link:first-letter {
+color:rgb(22.124,255); 
+
+}
+
+.ticket-feed-item > #ticket-info {
+  transform:translateY(50%);
+  position:absolute;
+  z-index: 0;
+  transition:transform .5s ease;
+}
+
+.ticket-feed-item:hover > #ticket-info {
+  transform:translateY(0%);
+  display:block;
+  z-index: 0;
+}
 
 
 #ticket-info {
-  color: black;
-  position: relative;
-  margin: -3.8vw 6vw;
-  width: 17vw;
-  font-size: 1.4vw
+  background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.65))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* IE10+ */
+background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
+  position: absolute;
+  font-size: 1vw;
+  z-index: 1;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:7vw;
 }
+
+#ticket-info > li {
+  display:block;
+  text-transform: none;
+  text-align: justify;
+  padding-left: 1vw;
+
+}
+
+#ticket-info > li > a {
+  font-size: 1.2vw;
+  display:block;
+  text-transform: none;
+  color:white;
+  font-family: gill sans;
+}
+
+#ticket-info > li:first-child > a {
+  font-size:2vw;
+  font-weight:lighter;
+} 
+
 
 #ticket-info a {
   display: block;
   margin-top: .2vw;
 }
 
-.user-feed-pic {
-  height: 5vw;
-  width: 5vw;
-  border-radius: 50%;
-  position: absolute;
-  left: 1vw;
-  top: 1vw;
-  margin-left: 1vw;
-  margin-top: 1vw;
+
+
+#time-ago {
+  position:absolute;
+  margin:.5vw;
+  right:0;
 }
 
 .artist-feed-pic {
-  max-height: 10vw;
-  left: 1vw;
-  border-radius: 5%;
-  width: 22vw;
-  bottom: 1vw;
-  position: absolute;
-
-}
-
-#artist-link {
-  font-size: 1.75vw;
-  position: absolute;
-  top: 6vw;
-  left: 3vw;
-}
-
-#date-link {
-  color: black;
-  position: absolute;
-  top: 8.5vw;
-  left: 6vw;
-}
-
-#time-link {
-  color: black;
-  position: absolute;
-  top: 10.75vw;
-  left: 5.75vw;
+  width:100%;
+  height: 100%;
+  z-index: 0;
 }
 
 #location-link {
-  color: black;
-  position: absolute;
-  top: 13vw;
-  left: 5;
-}
-
-#price-link {
-  position: absolute;
-  bottom: 1vw;
-  right: 1.5vw;
-  font-size: 4vw;
-}
-
-#price-link {
-  position: absolute;
-  bottom: 1vw;
-  right: 1.5vw;
-  font-size: 4vw;
-}
-
-#time-ago {
-  color: orange;
-  position: absolute;
-  top: .5vw;
-  right: 1.5vw;
   font-size: 1.2vw;
 }
+
+
+#ticket-info > li:first-child {}

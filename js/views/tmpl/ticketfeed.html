@@ -13,14 +13,14 @@
 
           {{#each ticket in sortedTickets}}
             <li class="ticket-feed-item">
-              <img class="user-feed-pic" {{bind-attr src=maxFrat alt="maxFrat"}}>
               <p id="time-ago">{{ticket.submit_time}}</p>
-              <div id="ticket-info">
-                <a id="artist-link" href="#">{{ticket.name}}</a>
-                <a id="date-link">{{ticket.date}}</a>
-                <a id="time-link">{{ticket.time}}</a>
-                <a id="location-link" href="#">{{ticket.location}}</a>
-              </div>
+              <ul id="ticket-info">
+                <li><a id="artist-link" href="#">{{ticket.name}}</a></li>
+                <li><a id="date-link">{{ticket.date}}</a></li>
+                <li><a id="time-link">{{ticket.time}}</a></li>
+                <li><a id="location-link" href="#">{{ticket.location}}</a></li>
+              </ul>
+                
                 <img class="artist-feed-pic" {{bind-attr src=disclosurePhoto alt="disclosurePhoto"}}>
                 <a {{action 'showModal' 'accountsettings/modal' model}} id="price-link" href="#">$24</a>
             </li>
