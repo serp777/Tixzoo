@@ -10,6 +10,13 @@ App.BuyticketModalController = Ember.Controller.extend({
   creditCardNumber: "",
   CVC: "",
   expDate: "",
+  init: function() {
+  this.set('toggled',this.get('controllers.application.creditCardModalToggled'));
+  },
+  cardToggled: function() {
+  this.set('toggled',this.get('controllers.application.creditCardModalToggled'));
+  }.property('controllers.application.creditCardModalToggled'),
+
   actions: {
     creditCardOutput: function() {
       var that = this;

@@ -102,6 +102,7 @@ App.ApplicationController = Ember.Controller.extend({
   username: '',
   password: '',
   loginSuccess: false,
+  creditCardModalToggled: false,
   wrapper: 'wrapper',
   wrapperClass: 'toggled',
   artist: '',
@@ -177,7 +178,7 @@ App.ApplicationController = Ember.Controller.extend({
       } else {
         this.set('wrapperClass','');
       }
-      
+
     }
   }
 });
@@ -194,7 +195,7 @@ App.ApplicationRoute = Ember.Route.extend({
           outlet: 'modal',
           model: model
         });
-      
+
 
     },
     removeModal: function() {
