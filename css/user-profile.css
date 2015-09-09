@@ -14,6 +14,11 @@
   background-color: rgba(255, 255, 255, 0.5);
   height: 23vw;
   width:60vw;
+  border: 1px solid white;
+}
+
+a:hover {
+  text-decoration: none;
 }
 
 .profile-upright-container .active {

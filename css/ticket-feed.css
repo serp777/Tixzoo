@@ -43,6 +43,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
   background:lightgray;
 }
 
+
+
 #search-suggestions a {
   color: white;
   padding: 0 .5em 0 .5em;
@@ -63,10 +65,6 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', e
   top: 3vw;
 }
 
-a:hover {
-  text-decoration: none;
-  color: orange;
-}
 
 #ticket-feed-pic {
   position: relative;
@@ -117,12 +115,13 @@ a:hover {
 #price-link {
   position: absolute;
   right: 0;
-  bottom:.3vw;
+  bottom:.2vw;
   margin:.5vw 1vw;
   font-size: 1.6vw;
   color:white;
   z-index: 100;
   font-family: gill sans;
+  font-weight: lighter;
 }
 
 #price-link:first-letter {
@@ -170,6 +169,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 }
 
 #ticket-info > li > a {
+  font-weight: lighter;
   font-size: 1.2vw;
   display:block;
   text-transform: none;
@@ -185,7 +185,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', e
 
 #ticket-info a {
   display: block;
-  margin-top: .2vw;
+  margin-top: .25vw;
 }
 
 
