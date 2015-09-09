@@ -5,34 +5,34 @@ require_once __DIR__.'/../userController.php';
 \Stripe\Stripe::setApiKey($stripe['secret_key']);
 
 class customerControllerClass {
-  private function getAssocCustomerId($username){
+  private function getAssocCustomerId($email){
     $user = new userControllerClass();
-    $cstmrAssocId = $user->getAssocCustomerId($username);
+    $cstmrAssocId = $user->getAssocCustomerId($email);
     return $cstmrAssocId;
   }
 
-  public function createCustomer($username, $email){
+  public function createCustomer($email){
     $customer = \Stripe\Customer::create(array(
-    "description" => "Customer for '$username'",
+    "description" => "Customer for '$email'",
     "email" => $email));
     $user = new userControllerClass();
-    $user->setAssocCustomerId($customer->id, $username);
+    $user->setAssocCustomerId($customer->id, $email);
     return $customer;
     // store customer's id into database
   }
 
   // add a credit card to a specific user
-  public function addCreditCard($username, $token){
-    $cstmrAssocId = $this->getAssocCustomerId($username);
+  public function addCreditCard($email, $token){
+    $cstmrAssocId = $this->getAssocCustomerId($email);
     $customer = \Stripe\Customer::retrieve($cstmrAssocId);
     $customer->sources->create(array("source" => $token));
     // store card number in database
 
   }
 
-  // get a list of credit cards given the username
-  public function getCreditCards($username){
-    $cstmrAssocId = $this->getAssocCustomerId($username);
+  // get a list of credit cards given the email
+  public function getCreditCards($email){
+    $cstmrAssocId = $this->getAssocCustomerId($email);
     $json = \Stripe\Customer::retrieve($cstmrAssocId)->sources->all(array("object" => "card"));
     $cards = json_decode($json);
     $result = $cards["data"];
@@ -41,23 +41,23 @@ class customerControllerClass {
 
   // update a specific credit cards that a user have
   public function updateCreditCard(){
-    $cstmrAssocId = $this->getAssocCustomerId($username);
+    $cstmrAssocId = $this->getAssocCustomerId($email);
   }
   
   // delete a credit card
-  public function deleteCreditCard($username, $index){
-    $cstmrAssocId = $this->getAssocCustomerId($username);
+  public function deleteCreditCard($email, $index){
+    $cstmrAssocId = $this->getAssocCustomerId($email);
     $customer = \Stripe\Customer::retrieve($cstmrAssocId);
-    $list = $this->getCreditCards($username);
+    $list = $this->getCreditCards($email);
     $card_id = $list[$index]["id"];
     $customer->sources->retrieve($card_id)->delete();
-    return $this->getCreditCards($username);
+    return $this->getCreditCards($email);
   }
 
   // charge a credit card
-  public function chargeCreditCard($username, $index, $amount){
-    $cstmrAssocId = $this->getAssocCustomerId($username);
-    $list = $this->getCreditCards($username);
+  public function chargeCreditCard($email, $index, $amount){
+    $cstmrAssocId = $this->getAssocCustomerId($email);
+    $list = $this->getCreditCards($email);
     $card_id = $list[$index]["id"];
     try {
       $charge = \Stripe\Charge::create(array(

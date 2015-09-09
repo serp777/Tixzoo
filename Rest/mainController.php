@@ -78,6 +78,20 @@ header("Content-Type: application/json", true);
         return "";
 	}
 
+    if(isset($_POST['verifyMode']) && $_POST['verifyMode'] == "true"){
+        $verify = new userControllerClass();
+        if(isset($_POST['confirm'])) {
+            $result = $verify->verifyAccount($_POST['confirm']);
+            if ($result == 1){
+                $result["success"] = true;
+            } else {
+                $result["success"] = false;
+            }
+        }
+        echo json_encode($result);
+        return "";
+    }
+
     if(isset($_POST['createticketMode']) && $_POST['createticketMode'] == "true"){
         $ticketController = new ticketControllerClass();
         $login = new userControllerClass();

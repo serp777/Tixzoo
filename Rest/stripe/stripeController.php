@@ -9,8 +9,8 @@
     
     $customer = new customerControllerClass();
 
-    // if(isset($_POST['username']) && $_POST['createCustomerMode'] == "true"){
-    //     $customer->createCustomer($_POST['username']);
+    // if(isset($_POST['email']) && $_POST['createCustomerMode'] == "true"){
+    //     $customer->createCustomer($_POST['email']);
     // } 
    
     // The following modes (addCard, deleteCard,return JSON object that contains a list of cards (last 4 digit and exp date) the user have 
@@ -43,23 +43,23 @@
     //   "customer": "cus_6q5goD54UGArJX"
     //   }
     // ]
-    if(isset($_POST['username']) && $_POST['addCardMode'] == "true"){
+    if(isset($_POST['email']) && $_POST['addCardMode'] == "true"){
         $customer->addCreditCard($token);
-        $result = $customer->getCreditCards($_POST['username']);
+        $result = $customer->getCreditCards($_POST['email']);
     }
     // cardIndex specify the index of the card that the user want to update
     // update card
-    if(isset($_POST['username']) && isset($_POST['cardIndex']) && $_POST['updateCardMode'] == "true") {
+    if(isset($_POST['email']) && isset($_POST['cardIndex']) && $_POST['updateCardMode'] == "true") {
         
     }
     // delete card
-    if(isset($_POST['username']) && isset($_POST['cardIndex']) && $_POST['deleteCardMode'] == "true") {
-        $customer->deleteCreditCard($_POST['username'], $_POST['cardIndex']);
-        $result = $customer->getCreditCards($_POST['username']);
+    if(isset($_POST['email']) && isset($_POST['cardIndex']) && $_POST['deleteCardMode'] == "true") {
+        $customer->deleteCreditCard($_POST['email'], $_POST['cardIndex']);
+        $result = $customer->getCreditCards($_POST['email']);
     }
     // return the status of this transcation
-    if(isset($_POST['username']) && isset($_POST['cardIndex']) && isset($_POST['amount']) && $_POST['chargeMode'] == "true") {
-        $customer->chargeCreditCard($_POST['username'], $_POST['cardIndex'], $_POST['amount']);
+    if(isset($_POST['email']) && isset($_POST['cardIndex']) && isset($_POST['amount']) && $_POST['chargeMode'] == "true") {
+        $customer->chargeCreditCard($_POST['email'], $_POST['cardIndex'], $_POST['amount']);
         
     }
     return $result;
