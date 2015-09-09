@@ -1,7 +1,6 @@
 App.MainPageController = Ember.Controller.extend({
   needs: ['application'],
   creditCard: '',
-  username: '',
   password: '',
   passwordVerify: '',
   email: '',
@@ -32,7 +31,6 @@ App.MainPageController = Ember.Controller.extend({
   init: function() {
     this._super();
     var that = this;
-    console.log(this.get('needs'));
     this.get('controllers.application').getTicketAjax().success(function (data) {
       that.set('ticketJson', data["tickets"]);
       that.set('tempTicketJson', data["tickets"]);
@@ -43,8 +41,8 @@ App.MainPageController = Ember.Controller.extend({
   },
   updateLogin: function(){
     this.set('loginSuccess',this.get('controllers.application.loginSuccess'));
-    this.set('username',this.get('controllers.application.username'));
-    this.set('password',this.get('controllers.application.password'));
+    this.set('email',this.get('controllers.application.email'));
+    this.set('password',this.get('controllers.application.password')); 
   }.observes('controllers.application.loginSuccess'),
   modifiedContent: function(){
       var that = this;

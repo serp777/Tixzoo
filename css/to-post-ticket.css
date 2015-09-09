@@ -3,22 +3,27 @@
 #ticket-post-container {
   height: 60em;
   background-color: white;
+  background-image:url(img/90.jpg);
 }
 
 #ticket-post-positioner-left {
-  height: 60em;
-  position: absolute;
+  margin-top: 3vw;
+  height: 50%;
+  position: relative;
+  float:left;
   width: 50%;
-  background-color: #f0f0f0;
-  text-align: center;
+  background-color: none;
 }
-
+.btn-file {
+  margin-top:2vw;
+}
 #ticket-post-positioner-right {
-  height: 60em;
-  position: absolute;
+  margin-top: 3vw;
+  height: 50%;
+  position: relative;
+  float:left;
   width: 50%;
-  background-color: lightgray;
-  right: 0;
+  background-color: none;
 }
 
 #ticket-input-box {
@@ -27,88 +32,141 @@
   left: 5vw;
   width: 39vw;
   height: 45vw;
-  background-color: black;
+  background-color: rgba(0, 0, 0, .6);
   border-radius: 3px;
+  border:1px white solid;
 }
+
+.dropdown-menu {
+  display:none;
+  background:lightgray;
+  width:6.2vw;
+}
+.dropdown-menu ul {
+  background:lightgray;
+}
+
+.credit-dropdown .btn, #ticket-input-box .btn  {
+  padding:0 .5vw;
+  background:none;
+  border-radius:0;
+  color:white;
+  border:1px white solid;
+
+}
+
+#ticket-input-box .btn:last-child {
+  padding:1vw .5vw;
+}
+
+.dropdown-menu li {
+  width:100%;
+}
+.credit-dropdown .dropdown-menu ul {
+  text-align: center;
+  }
+
+.credit-dropdown .dropdown-menu {
+  width:14.5vw;
+  padding:0;
+}
+
+.credit-dropdown .dropdown-menu li {
+  width:14.5vw;
+  left:0;
+  right:0;
+  top:0;
+} 
+
+.credit-dropdown .dropdown-menu li a {
+  font-size: .8vw;
+  }
 
 #ticket-post-inputs input {
   height: 3vw;
   width: 22vw;
-  font-size: 1.1em;
+  font-size: 1.1vw;
+  border:1px white solid;
   display: block;
-  border-radius: 5px;
-  margin: 15px;
-  text-align: center;
+  background: none;
+  margin-top: 2vw;
+  padding-left: 1vw;
+  color:white;
 }
 
 
 #ticket-post-inputs input[type=submit] {
-  position: absolute;
-  left: 3.2vw;
-  top: 26vw;
+  position: relative;
   height: 3vw;
   width: 15vw;
-  background-color: #155EFC;
   color: white;
-  font-size: 1.3em;
-  border: none;
+  font-size: 1.2vw;
+  border: white 1px solid;
+  font-family: gill sans;
+  font-weight: lighter;
+  margin: 32vw 3vw 0 3vw;
+  text-align: center !important;
 }
-
 #ticket-post-inputs input[type=submit]:hover {
-  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #155EFC), color-stop(1, #33bdef));
-  background:-moz-linear-gradient(top, #155EFC 5%, #33bdef 100%);
-  background:-webkit-linear-gradient(top, #155EFC 5%, #33bdef 100%);
-  background:-o-linear-gradient(top, #155EFC 5%, #33bdef 100%);
-  background:-ms-linear-gradient(top, #155EFC 5%, #33bdef 100%);
-  background:linear-gradient(to bottom, #155EFC 5%, #33bdef 100%);
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#155EFC', endColorstr='#33bdef',GradientType=0);
-  background-color:#155EFC
+  background: rgba(255, 255, 255, 0.2);
 }
 
+.input-text {
+  width:100%;
+  text-align: center;
+  color:white;
+  font-size: 1.2;
+  margin-top: 3vw;
+}
+
+#ticket-post-inputs input[type=submit]:focus {
+  text-align: center;
+}
 
 #ticket-post-inputs {
-  position: absolute;
-  left: 8vw;
-  top: 10vw;
-  text-align: center;
+  position: relative;
+  margin: 3vw 8.5vw;
 }
 
 #enter-post-info {
   color: white;
-  top: 1.8em;
+  margin-top: 1.5vw;
+  font-family: gill sans;
+  font-weight: lighter;
+  text-align: center;
   position: relative;
   font-size: 2.5vw;
+  padding-bottom: 1vw;
+  border-bottom: rgb(22, 124 ,255) solid 1px;
 }
 
 #enter-validation {
   color: white;
-  top: 1.8em;
+  margin-top: 1.5vw;
+  font-family: gill sans;
+  font-weight: lighter;
+  text-align: center;
   position: relative;
   font-size: 2.5vw;
-  text-align: center;
+  padding-bottom: 1vw;
+  border-bottom: rgb(22, 124 ,255) solid 1px;
 }
 
 .quantity-dropdown {
-  position: relative;
-  display: inline;
-  right: 4vw;
-  top: 1vw;
+  display:none !important;
+  position: absolute;
 }
 
 .type-dropdown {
-  position: relative;
-  display: inline;
-  right: 4vw;
-  top: 2vw;
+  margin-top: 2vw;
+  position: absolute;
+  max-width: 1vw;
 }
 
 .btn-file {
   overflow: hidden;
   background-color: white;
   position: absolute;
-  bottom: 9.5vw;
-  left: 22vw;
-  height: 2.7em;
 }
 .btn-file input[type=file] {
     position: absolute;
@@ -116,7 +174,7 @@
     right: 0;
     min-width: 100%;
     min-height: 100%;
-    font-size: 100px;
+    font-size: 1.2vw;
     text-align: center;
     filter: alpha(opacity=0);
     opacity: 0;
@@ -126,19 +184,9 @@
     display: block;
 }
 
-#drag-and-drop {
-  height: 8vw;
-  width: 12vw;
-  background-color: white;
-  position: absolute;
-  bottom: 9.5vw;
-  left: 8vw;
-  border-radius: 3px;
-}
-
 .credit-dropdown {
   position: absolute;
   display: inline;
-  left: 8vw;
-  top: 22vw;
+  left: 16vw;
+  top: 33.4825vw;
 }

@@ -1,20 +1,13 @@
 <script type="text/x-handlebars" data-template-name="post-ticket">
 
-    <div id="top-nav-bar-container">
-       <div class="nav-bar">
-        <div id="btn-container">
-         <a {{action 'showModal' 'createticket-modal' model}} class="create_Btn">Sell Tix</a>
-         <a {{action 'showModal' 'login-modal' model}} class="login_Btn">Login</a>
-        </div>
-
-        <a href="index.html"><img id="tixzoo-logo-feed" {{bind-attr src=tixzooLogo alt="tixzooLogo"}}></a>
-      </div>
-    </div>
+  
 
       <div id="ticket-post-container">
         <div id="ticket-post-positioner-left">
+
         <div id="ticket-input-box">
           <p id="enter-post-info">Enter ticket information</p>
+           <p class="input-text">Enter details on ticket(s)</p>
           <form id="ticket-post-inputs">
             {{input class="artist-text" placeholder=artistText value=artist}}
             {{input class="venue-text" placeholder=venueText value=venue}}
@@ -34,7 +27,7 @@
             </div>
             <div class="type-dropdown">
               <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                Quantity
+                Add Tix
                 <span class="caret"></span>
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -42,20 +35,10 @@
                 <li><a href="#">2</a></li>
                 <li><a href="#">3</a></li>
                 <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li><a href="#">6</a></li>
-                <li><a href="#">7</a></li>
-                <li><a href="#">8</a></li>
-                <li><a href="#">9</a></li>
-                <li><a href="#">10</a></li>
               </ul>
             </div>
           </form>
-        </div>
-        </div>
-        <div id="ticket-post-positioner-right">
-        <div id="ticket-input-box">
-          <div class="credit-dropdown">
+        <div class="credit-dropdown">
               <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                 Select Payment Method
                 <span class="caret"></span>
@@ -66,31 +49,21 @@
                 <li><a href="#">MasterCard ending in 5490</a></li>
               </ul>
             </div>
-          <div id="drag-and-drop">
-          </div>
-          <p id="enter-validation">Validate your ticket</p>
+        </div>
+        </div>
+        <div id="ticket-post-positioner-right">
+        <div id="ticket-input-box">
+          
+          <p id="enter-validation">upload your ticket</p>
           <span class="btn btn-default btn-file">
           Browse <input type="file">
           </span>
           <form id="ticket-post-inputs">
           <input type="submit" value="Submit">
           </form>
+
         </div>
         </div>
       </div>
-
-    <div id="footer-container">
-      <footer>
-        <div id="social">
-        <a href='#'><img class="social-media-icon1" {{bind-attr src=facebookIcon alt="facebookIcon"}}></a>
-        <a href='#'><img class="social-media-icon2" {{bind-attr src=instagramIcon alt="instagramIcon"}}></a>
-        <a href='#'><img class="social-media-icon3" {{bind-attr src=twitterIcon alt="twitterIcon"}}></a>
-        </div>
-        <a class="footer-link" href="#">Home</a>
-        <a class="footer-link" href="#">Careers</a>
-        <a class="footer-link" href="#">Developers</a>
-        <a class="footer-link" href="#">Contact Us</a>
-
-      </footer>
-    </div>
+   
 </script>

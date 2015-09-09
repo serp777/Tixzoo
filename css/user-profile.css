@@ -413,17 +413,11 @@ p {
   height: 23vw;
   width:57vw;
   margin: 7.8vw 0 1vw 0;
+  border:none;
 }
 
 
-.profile > a:active {
-text-align: center;
-width:8vw;
-padding:.2vw;
-display:inline-block;
-border:1px white solid;
-background:white;
-}
+
 
 .profile > a {
 text-align: center;
@@ -431,4 +425,6 @@ width:8vw;
 padding:.2vw;
 display:inline-block;
 border:1px white solid;
+border-bottom-width: 0;
+background: rgba(255, 255, 255, 0.5);
 }

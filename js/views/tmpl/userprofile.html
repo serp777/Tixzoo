@@ -1,13 +1,5 @@
 <script type="text/x-handlebars" data-template-name="user-profile">
-  <div id="top-nav-bar-container">
-    <div class="nav-bar">
-      <div id="btn-container">
-        <a {{action 'showModal' 'signup-modal' model}} class="create_Btn">Sign Up</a>
-        <a {{action 'showModal' 'login-modal' model}} class="login_Btn">Login</a>
-      </div>
-      <a href="index.html"><img id="tixzoo-logo" {{bind-attr src=tixzoo-logo alt="tixzoo-logo"}}></a>
-    </div>
-  </div>
+
 
   <div id="user-profile-container">
     <div id ="top-layer">
@@ -28,9 +20,7 @@
 
       <div class="profile">
         <a class="about-me">About me</a>
-        <a class="message">Message</a>
           <div class="profile-upright-container">
-           <div class="profile-upright-container active">
             <img class="user-prof-pic" {{bind-attr src=maxFrat alt="maxFrat"}}>
             <h2 id="profile-title"></h2>
             <div class="rating">
@@ -45,7 +35,6 @@
               <a href="#"><li>Justin Martin</li></a>
             </ul>
           </div>
-        </div>
       </div>
 
           <div id="profile-midright-container">

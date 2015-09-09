@@ -8,8 +8,8 @@
                   <ul class="payment-input">
                   <li>{{input placeholder="Full Name" value=fullName}}</li>
                   <li>{{input placeholder="Credit Card Number" value=creditCardNumber}}</li>
-                  <li>{{input placeholder="CVC (security code)" value=CVC}}</li>
-                  <li>{{input placeholder="Expiration Date" value=expDate}}</li>
+                  <li>{{input placeholder="Exp. Date" value=expDate}}</li>
+                  <li>{{input placeholder="CVV"value=CVC}}</li>
                   </ul>
                 </form>
               </div>
@@ -40,9 +40,10 @@
 
         <form {{action 'ok' on='submit' target=view}}>
           <div class="form-group">
+            {{input class="form-control" placeholder=emailText value=email }}
             {{input class="form-control" type="password" placeholder=passwordText value=password }}
             {{input class="form-control" type="password" placeholder=passwordVerifyText value=passwordVerify }}
-            {{input class="form-control" placeholder=emailText value=email }}
+            <br><br>
             {{#if existsAlready}}
               <div style="color: red;">
               <strong>{{errorMessage}}</strong>
@@ -63,7 +64,7 @@
         <form {{action 'ok' on='submit' target=view}}>
           <div class="form-group">
             <div class="login_modal_padding">
-            {{input class="form-control" placeholder=usernameText value=username}}
+            {{input class="form-control" placeholder=emailText value=email}}
             {{input class="form-control" type="password" placeholder=passwordText value=password }}
             </div>
               {{#if signInError}}
