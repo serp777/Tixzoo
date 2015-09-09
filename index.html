@@ -11,6 +11,8 @@
         <img id="tixzoo-logo" {{bind-attr src=tixzooLogo alt="tixzooLogo"}}>
         <div class="nav-bar">
             <div id="btn-container">
+
+                  {{view "calendar-date"}}
                 {{#if loginSuccess}}
                     {{#link-to 'user-profile' class="my-tix-btn"}}Profile{{/link-to}}
                     <br><br>
@@ -86,20 +88,21 @@
     <script type="text/x-handlebars" id="index" id"mainPage">
 
     </script>
+    <script src="js/pickaday.js"></script>
     <script src="js/libs/jquery-1.10.2.js"></script>
     <script src="js/ember-template-compiler.js"></script>
-     <script src="js/libs/ember-1.9.1.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/loginModal.js"></script>
-    <script src="js/signupModal.js"></script>
-    <script src="js/mainPage.js"></script>
-    <script src="js/ticketFeed.js"></script>
-    <script src="js/userProfile.js"></script>
-    <script src="js/viewTicket.js"></script>
-    <script src="js/postTicket.js"></script>
-    <script src="js/buyticketModal.js"></script>
-    <script src="js/customerSupport.js"></script>
-    <script src="js/bootstrap.js"></script>
+    <script src="js/libs/ember-1.9.1.js"></script>
+    <script src="js/controllers/app.js"></script>
+    <script src="js/controllers/loginModal.js"></script>
+    <script src="js/controllers/signupModal.js"></script>
+    <script src="js/controllers/mainPage.js"></script>
+    <script src="js/controllers/ticketFeed.js"></script>
+    <script src="js/controllers/userProfile.js"></script>
+    <script src="js/controllers/viewTicket.js"></script>
+    <script src="js/controllers/postTicket.js"></script>
+    <script src="js/controllers/buyticketModal.js"></script>
+    <script src="js/controllers/customerSupport.js"></script>
+    <script src="js/controllers/bootstrap.js"></script>
     <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
     <!-- to activate the test runner, add the "?test" query string parameter -->
     <script src="tests/runner.js"></script>

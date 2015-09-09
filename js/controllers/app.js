@@ -1,30 +1,29 @@
-
 var loaderObj = {
     templates : [
-    'tmpl/modal.html',
-    'tmpl/ticketfeed.html',
-    'tmpl/mainpage.html',
-    'tmpl/postticket.html',
-    'tmpl/userprofile.html',
-    'tmpl/viewticket.html',
-    'tmpl/confirmticket.html',
-    'tmpl/customersupport.html'
+    'modal.html',
+    'ticketfeed.html',
+    'mainpage.html',
+    'postticket.html',
+    'userprofile.html',
+    'viewticket.html',
+    'confirmticket.html',
+    'customersupport.html'
     ],
     css : [
-    '../../css/bootstrap.css',
-    '../../css/simple-sidebar.css',
-    '../../css/buttons.css',
-    '../../css/media_queries.css',
-    '../../css/normalize.css',
-    '../../css/search.css',
-    '../../css/slideshow.css',
-    '../../css/style.css',
-    '../../css/ticket-feed.css',
-    '../../css/to-post-ticket.css',
-    '../../css/date_test.css',
-    '../../css/user-profile.css',
-    '../../css/view-ticket.css',
-    '../../css/customer-support.css'
+    'bootstrap.css',
+    'simple-sidebar.css',
+    'pickaday.css',
+    'buttons.css',
+    'media_queries.css',
+    'normalize.css',
+    'search.css',
+    'slideshow.css',
+    'style.css',
+    'ticket-feed.css',
+    'to-post-ticket.css',
+    'user-profile.css',
+    'view-ticket.css',
+    'customer-support.css'
   ]
 };
 
@@ -39,7 +38,7 @@ function loadTemplates(templates) {
         $.ajax({
             async: false,
             type: 'GET',
-            url: 'js/views/' + this,
+            url: 'js/views/tmpl/' + this,
             success: function(resp) {
                 tempObj.html(resp);
                 $('body').append(tempObj);
@@ -57,7 +56,7 @@ function loadCss(css) {
         $.ajax({
             async: false,
             type: 'GET',
-            url: 'js/views/' + this,
+            url: 'css/' + this,
             success: function(resp) {
                 tempObjCss.html(resp);
                 $('body').append(tempObjCss);
@@ -65,6 +64,9 @@ function loadCss(css) {
         });
     });
 }
+
+        
+
 
 loadCss(loaderObj.css);
 loadTemplates(loaderObj.templates);
@@ -109,6 +111,7 @@ App.ApplicationController = Ember.Controller.extend({
   venue: '',
   venueText: 'Venue',
   date: '',
+  dateVal: '',
   dateText: 'Date',
   tixzooLogo: 'img/tixzoo-logo.png',
   quantity: '',
@@ -130,6 +133,7 @@ App.ApplicationController = Ember.Controller.extend({
     if(url[3] === null || url[3] === "" || url[4] === null || url[4] === ""){
       this.transitionToRoute(this.get('route'));
     }
+
   },
   sendCreditCardInfo: function(email, response) {
       return $.ajax({
@@ -165,13 +169,15 @@ App.ApplicationController = Ember.Controller.extend({
       });
   },
     actions: {
+    dateActivate: function() {
+      $("#datepicker").datepicker();
+    },
     query: function() {
       // the current value of the text field
       var query = this.get('search');
       this.transitionToRoute('search', { query: query });
     },
     sideBar: function() {
-      console.log('test');
       if(this.get('wrapperClass') == ''){
         this.set('wrapperClass','toggled');
       } else {
@@ -182,6 +188,34 @@ App.ApplicationController = Ember.Controller.extend({
   }
 });
 
+App.CalendarDateView = Ember.TextField.extend({
+  _picker: null,
+ 
+  modelChangedValue: function(){
+    var picker = this.get("_picker");
+    if (picker){
+      picker.setDate(this.get("value"));
+    }
+  }.observes("value"),
+ 
+  didInsertElement: function(){
+    currentYear = (new Date()).getFullYear();
+    formElement = this.$()[0];
+    picker = new Pikaday({
+      field: formElement,
+      yearRange: [1900,currentYear+2]
+    });
+    this.set("_picker", picker);
+  },
+ 
+  willDestroyElement: function(){
+    picker = this.get("_picker");
+    if (picker) {
+      picker.destroy();
+    }
+    this.set("_picker", null);
+  }
+});
 /*
  * ApplicationRoute
  */
