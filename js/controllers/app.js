@@ -65,7 +65,7 @@ function loadCss(css) {
     });
 }
 
-        
+
 
 
 loadCss(loaderObj.css);
@@ -170,6 +170,17 @@ App.ApplicationController = Ember.Controller.extend({
       });
   },
     actions: {
+    showInRuby: function() {
+      $.ajax({
+          url: "Rest/photoController.rb",
+          type: "GET",
+          dataType:'json'
+          data: {search: "Hey this is a test!"},
+          error: function(data){
+          console.log(data);
+          }
+      });
+  },
     dateActivate: function() {
       $("#datepicker").datepicker();
     },
@@ -191,14 +202,14 @@ App.ApplicationController = Ember.Controller.extend({
 
 App.CalendarDateView = Ember.TextField.extend({
   _picker: null,
- 
+
   modelChangedValue: function(){
     var picker = this.get("_picker");
     if (picker){
       picker.setDate(this.get("value"));
     }
   }.observes("value"),
- 
+
   didInsertElement: function(){
     currentYear = (new Date()).getFullYear();
     formElement = this.$()[0];
@@ -208,7 +219,7 @@ App.CalendarDateView = Ember.TextField.extend({
     });
     this.set("_picker", picker);
   },
- 
+
   willDestroyElement: function(){
     picker = this.get("_picker");
     if (picker) {
