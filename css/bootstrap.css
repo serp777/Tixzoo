@@ -5976,7 +5976,7 @@ button.close {
   width: 45vw;
   background-image: url(img/background_modal.png);
   background-repeat: no-repeat;
-  background-size: 45vw 50vw;
+  background-size: 44vw 48vw;
   background-position: 0vw -1.5vw;
 }
 .modalls-backdrop {
@@ -6016,12 +6016,17 @@ margin-top:3vw !important;
   width: 100%;
 
 }
+
+.modalls-body input {
+  margin-bottom:.5vw;
+}
 .modalls-footer {
-  padding: 15px;
+  padding: 1px 15px;
   text-align: right;
   position: absolute;
   bottom: 2.5vw;
   left: 8.8vw;
+  box-sizing:border-box;
 }
 .modalls-footer .btn + .btn {
   margin-bottom: 0;
