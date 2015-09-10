@@ -76,7 +76,7 @@ loadTemplates(loaderObj.templates);
 App = Ember.Application.create();
 App.Router.map(function() {
   this.resource("ticket-feed", function(){
-    this.route("buy", { path: "/:ticketID" });
+    this.route("search", { path: "/:searchVal" });
   });
   this.resource("main-page", function(){
     this.route("load", { path: "/" });
@@ -146,6 +146,17 @@ App.ApplicationController = Ember.Controller.extend({
           }
       });
   },
+  getCookies: function() {
+        return $.ajax({
+          url: "Rest/mainController.php",
+          type: "GET",
+          dataType:'json',
+          data: {cookieMode: true},
+          error: function(data){
+            console.log(data);
+          }
+        });
+  },
   getTicketAjax: function() {
       return $.ajax({
           url: "Rest/mainController.php",
@@ -169,6 +180,20 @@ App.ApplicationController = Ember.Controller.extend({
       });
   },
     actions: {
+      logout: function() {
+        this.set('loginSuccess', false);
+        var that = this;
+        var message = null;
+        var xhr = $.ajax({
+          url: "Rest/mainController.php",
+          type: "GET",
+          data: {logoutMode: "true"}
+          });
+        if (xhr.status != 200) { // error
+            message = { errorCode: xhr.status, errorMessage: xhr.statusText };
+        }
+        return message;
+    },
     query: function() {
       // the current value of the text field
       var query = this.get('search');

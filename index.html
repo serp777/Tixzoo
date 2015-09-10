@@ -8,17 +8,20 @@
 <body>
 <script type="text/x-handlebars">
     <div id="top-nav-bar-container">
-        <img id="tixzoo-logo" {{bind-attr src=tixzooLogo alt="tixzooLogo"}}>
+        {{#link-to 'main-page'}}<img id="tixzoo-logo" {{bind-attr src=tixzooLogo alt="tixzooLogo"}}>{{/link-to}}
         <div class="nav-bar">
             <div id="btn-container">
+                <table> 
                 {{#if loginSuccess}}
-                    {{#link-to 'user-profile' class="my-tix-btn"}}Profile{{/link-to}}
-                    <br><br>
-                    <img class="my-account-pic" {{action "logout"}} {{bind-attr src=maxFrat alt="maxFrat"}}>
+                    <tr><td style="padding-right: 2vw;"><a {{action "logout"}} class="create_Btn">Logout</a></td>
+                    <td>{{#link-to 'user-profile' class="login_Btn"}}Profile{{/link-to}}</td></tr>
+                    
+                    
                 {{else}}
-                    <a {{action 'showModal' 'signup-modal'}} class="create_Btn">Sign Up</a>
-                    <a {{action 'showModal' 'login-modal' secondmodel}} class="login_Btn">Login</a>
+                    <tr><td style="padding-right: 2vw;"><a {{action 'showModal' 'signup-modal'}} class="create_Btn">Sign Up</a></td>
+                    <td><a {{action 'showModal' 'login-modal' secondmodel}} class="login_Btn">Login</a></td></tr>
                 {{/if}}
+                </table>
             </div>
         </div>
     </div>

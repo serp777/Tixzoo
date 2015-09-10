@@ -490,7 +490,13 @@ copy
   position: fixed;
   z-index: 10000;
 }
-
+#tixzoo-logo:hover {
+  transition: all .5s ease;
+  width: 20vw;
+  margin:.50vw 42.5vw;
+  position: fixed;
+  z-index: 10000;
+}
 .my-account-pic {
   position: absolute;
   border-radius: 50%;

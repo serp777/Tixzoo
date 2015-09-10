@@ -31,6 +31,14 @@ App.MainPageController = Ember.Controller.extend({
   init: function() {
     this._super();
     var that = this;
+    if(!this.get('loginSuccess')){
+      this.get('controllers.application').getCookies().success(function (data){
+        if(data.cookie.email && data.cookie !== "noCookie"){
+          that.set('controllers.application.loginSuccess',true);
+          that.set('controllers.application.email',data.cookie.email.email);
+        }
+      });
+    }
     this.get('controllers.application').getTicketAjax().success(function (data) {
       that.set('ticketJson', data["tickets"]);
       that.set('tempTicketJson', data["tickets"]);
@@ -62,28 +70,7 @@ App.MainPageController = Ember.Controller.extend({
       });
     }.observes('searchText','ticketEn'),
   actions: {
-    logout: function() {
-      this.set('loginSuccess', false);
-        var that = this;
-        var message = null;
-        var xhr = $.ajax({
-          url: "Rest/mainController.php",
-          type: "GET",
-          dataType:'json',
-          data: {logoutMode: "true"},
-            success: function(data){
-                that.set('controllers.application.loginSuccess',false);
-            },
-            error: function(error){
-              console.log("why");
-              console.log(error);
-            }
-          });
-
-        if (xhr.status != 200) { // error
-            message = { errorCode: xhr.status, errorMessage: xhr.statusText };
-        }
-        return message;
+    tempAction: function() {
 
     }
   }

@@ -11,7 +11,7 @@
     </ul>
     <div id="search-bar">
       <form class="searchbox" >
-        <div id="search-btn"><a href="#"><img src="img/searchbar2.png"></a></div>
+        <div id="search-btn">{{#link-to 'ticket-feed.search' searchText}}Profile<img src="img/searchbar2.png">{{/link-to}}</div>
         {{input type="search" value=searchText placeholder="Search by artist, genre or location"}}
         <ul class="suggestions">
           {{#each object in tempTicketJson}}

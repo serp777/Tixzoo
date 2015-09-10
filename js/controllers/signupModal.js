@@ -16,7 +16,7 @@ App.SignupModalController = Ember.Controller.extend({
           url: "Rest/mainController.php",
           type: "POST",
           dataType:'json',
-          data: {password: this.get('password'), email: this.get('email'), createMode: "true"},
+          data: {email: this.get('email'), password: this.get('password'), createMode: "true"},
             success: function(data){
               if(data["dataError"]){
                 that.set('errorMessage', data["dataError"]);
