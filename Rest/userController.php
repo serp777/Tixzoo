@@ -31,7 +31,7 @@ class userControllerClass {
 		$result = $this->executeSqlQuery($sql,$dbconn);
 		return $result;
 	}
-	public function createAccount($password,$email){
+	public function createAccount($email, $password){
 		// To protect MySQL injection (more detail about MySQL injection)
 		$dbconn = $this->setupConnection();
 		$mypassword = stripslashes($password);
@@ -57,7 +57,7 @@ class userControllerClass {
 	}
 	public function deleteCookie(){
 		ob_start();
-		unset($_COOKIE['user']);
+		unset($_COOKIE['email']);
 		ob_end_flush();
 	}
 }

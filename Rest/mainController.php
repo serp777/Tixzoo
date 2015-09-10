@@ -1,7 +1,7 @@
 <?php
 //ob_start();
     if(isset($_GET['logoutMode']) && $_GET['logoutMode'] == "true") {
-        setcookie('user', "", time()-1000, '/', '127.0.0.1');
+        setcookie('email', "", time()-1000, '/', '127.0.0.1');
         $result = "success";
     }
 require_once 'userController.php';
@@ -11,7 +11,7 @@ header("Content-Type: application/json", true);
     if(isset($_GET['init']) && $_GET['init'] == "true"){
         $tickets = new ticketControllerClass();
         $result["tickets"] = $tickets->getTickets();
-        $result["cookie"] = json_decode($_COOKIE['user']);
+        $result["cookie"] = json_decode($_COOKIE['email'], true);
         echo json_encode($result);
         return $result;
     }
@@ -27,9 +27,9 @@ header("Content-Type: application/json", true);
             return $result;
         }
         ob_start();
-        $cookie_value = json_encode(array("user" => (array("email" => $_POST['email'], "password" => $_POST['password'])), "successOut" => true));
-        setcookie('user', $cookie_value, time()+60*60*24*365, '/', '127.0.0.1');
-        if(!isset($_COOKIE['user'])){
+        $cookie_value = json_encode(array("email" => (array("email" => $_POST['email'], "password" => $_POST['password'])), "successOut" => true));
+        setcookie('email', $cookie_value, time()+60*60*24*365, '/', '127.0.0.1');
+        if(!isset($_COOKIE['email'])){
             $result["response"] = "goodCookie";
         } else {
             $result["response"] = "badCookie";
@@ -40,11 +40,10 @@ header("Content-Type: application/json", true);
 	}
 
     if(isset($_GET['cookieMode']) && $_GET['cookieMode'] == "true"){
-        if(!isset($_COOKIE['user'])){
-            $result = 0;
-            error_log("Cookie is not set!");
+        if(!isset($_COOKIE['email'])){
+            $result["cookie"] = "noCookie";
         } else {
-            $result = json_decode($_COOKIE['user']);
+            $result["cookie"] = json_decode($_COOKIE['email'], true);
         }
         echo json_encode($result);
         return "";
@@ -60,7 +59,7 @@ header("Content-Type: application/json", true);
 
 	if(isset($_POST['createMode']) && $_POST['createMode'] == "true"){
 		$create = new userControllerClass();
-    	$result = $create->createAccount($_POST['username'],$_POST['password'],$_POST['email']);
+    	$result = $create->createAccount($_POST['email'],$_POST['password']);
     	if(isset($result["dataError"]))
         {
             echo json_encode($result);
@@ -82,7 +81,7 @@ header("Content-Type: application/json", true);
     if(isset($_POST['createticketMode']) && $_POST['createticketMode'] == "true"){
         $ticketController = new ticketControllerClass();
         $login = new userControllerClass();
-        $userInfo = $login->getUserInfo($_POST['username'], $_POST['password']);
+        $userInfo = $login->getUserInfo($_POST['email'], $_POST['password']);
         $userInfo = json_decode($userInfo, true);
         $sellerID = $userInfo['accountID'];
         error_log($sellerID);

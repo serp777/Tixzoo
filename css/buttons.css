@@ -5,10 +5,10 @@ html {
 #btn-container{
 	position: relative;
 	display:inline-block;
-	width:30vw;
+	width:17vw;
 	float:right;
 	margin:1.25vw 1vw 0 5vw;
-}
+}]
 
 .login_Btn{
 	float:right;
@@ -39,7 +39,6 @@ html {
 
 .create_Btn{
 	position: relative;
-	margin: 0px 3%;
 	width: 8vw;
 	text-align: center;
 	z-index: 2;
