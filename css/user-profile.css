@@ -12,7 +12,7 @@
   position: relative;
   float:left;
   background-color: rgba(255, 255, 255, 0.5);
-  height: 23vw;
+  height: 12vw;
   width:60vw;
   border: 1px solid white;
 }
@@ -138,27 +138,6 @@ a:hover {
 
 } 
 
-
-.has-submenu > ul > li {
-  border-top: darkgray 1px solid;
-  width:20vw;
-  background:white;
-  padding: .5vw;
-  box-sizing:border-box;
-  z-index: 10000;
-  }
-
-  .has-submenu > ul > li:last-child {
-    text-align: center;
-
-  }
-
-.has-submenu > ul > li:last-child:hover {
-  background:lightgray;
-}
-.has-submenu ul > a {
-font-size: 1vw;
-}
 #profile-midright-container {
 
   background:rgba(255, 255, 255, 0.5);
@@ -166,7 +145,6 @@ font-size: 1vw;
   height:5vw;
   float:left;
   width:60vw;
-  margin-top: 3.2vw;
   padding:0;
  
 
@@ -185,7 +163,7 @@ font-size: 1vw;
 }
 
 .looking-for > li > a {
-  width:20vw;
+  width:30vw;
   height:5vw;
   display:inline-block;
   padding:1.75vw 0;
@@ -415,9 +393,8 @@ p {
 .profile {
   position: relative;
   float:left;
-  height: 23vw;
   width:57vw;
-  margin: 7.8vw 0 1vw 0;
+  margin: 7.8vw 0 0 0;
   border:none;
 }
 

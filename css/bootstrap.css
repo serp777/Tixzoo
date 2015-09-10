@@ -3734,10 +3734,19 @@ tbody.collapse.in {
 
 .ember-view.ember-text-field.form-control {
   border-width:0 0 2px 0;
-  margin:1vw 6vw;
-  width:30vw;
+margin-right:10.5vw;
+  width:25vw;
   font-family:gill sans;
   font-size:1vw;
+}
+
+.form-group:first-child {
+  margin-top:2vw;
+}
+
+.ember-view.ember-text-field.form-control input:first-child {
+  margin-top:8vw;
+
 }
 
 .btn-group-justified > .btn-group .btn {
@@ -5985,9 +5994,11 @@ button.close {
   filter: alpha(opacity=50);
   opacity: .5;
 }
-
 .login_modal_padding {
-  padding-top:0vw;
+  text-align: center!important;
+}
+.login_modal_padding input:first-child {
+margin-top:3vw !important;
 }
 
 

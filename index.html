@@ -11,8 +11,6 @@
         <img id="tixzoo-logo" {{bind-attr src=tixzooLogo alt="tixzooLogo"}}>
         <div class="nav-bar">
             <div id="btn-container">
-
-                  {{view "calendar-date"}}
                 {{#if loginSuccess}}
                     {{#link-to 'user-profile' class="my-tix-btn"}}Profile{{/link-to}}
                     <br><br>

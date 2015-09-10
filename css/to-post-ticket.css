@@ -89,13 +89,14 @@
   border:1px white solid;
   display: block;
   background: none;
-  margin-top: 2vw;
+  margin-top: 1.5vw;
   padding-left: 1vw;
   color:white;
 }
 
 
 #ticket-post-inputs input[type=submit] {
+  margin-top: 0;
   position: relative;
   height: 3vw;
   width: 15vw;
@@ -104,11 +105,12 @@
   border: white 1px solid;
   font-family: gill sans;
   font-weight: lighter;
-  margin: 32vw 3vw 0 3vw;
+  margin: 28vw 3vw 0 3vw;
   text-align: center !important;
+  padding:0;
 }
 #ticket-post-inputs input[type=submit]:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgb(22, 124, 255);
 }
 
 .input-text {
@@ -116,7 +118,7 @@
   text-align: center;
   color:white;
   font-size: 1.2;
-  margin-top: 3vw;
+  margin-top: 4vw;
 }
 
 #ticket-post-inputs input[type=submit]:focus {
@@ -132,6 +134,7 @@
   color: white;
   margin-top: 1.5vw;
   font-family: gill sans;
+  letter-spacing: .5vw;
   font-weight: lighter;
   text-align: center;
   position: relative;
@@ -142,6 +145,7 @@
 
 #enter-validation {
   color: white;
+  letter-spacing: .5vw;
   margin-top: 1.5vw;
   font-family: gill sans;
   font-weight: lighter;
@@ -158,9 +162,10 @@
 }
 
 .type-dropdown {
-  margin-top: 2vw;
-  position: absolute;
   max-width: 1vw;
+  position:relative;
+  float:right;
+  margin:2vw 5vw 1vw 0;
 }
 
 .btn-file {
@@ -185,8 +190,9 @@
 }
 
 .credit-dropdown {
-  position: absolute;
+  position: relative;
   display: inline;
-  left: 16vw;
-  top: 33.4825vw;
+  width:4vw;
+  margin:2vw 13vw 0 0;
+  float:right;
 }
