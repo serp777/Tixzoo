@@ -9,10 +9,15 @@
           <p id="enter-post-info">Enter ticket information</p>
            <p class="input-text">Enter details on ticket(s)</p>
           <form id="ticket-post-inputs">
+            <p>Artist name</p>
             {{input class="artist-text" placeholder=artistText value=artist}}
+            <p>Venue name</p>
             {{input class="venue-text" placeholder=venueText value=venue}}
+            <p>Date (mm/dd/yyyy)</p>
             {{input id="datepicker" placeholder=dateText value=date}}
+            <p>Price</p>
             {{input class="price-text" placeholder=priceText value=price}}
+    <div class="drop-container">
             <div class="quantity-dropdown">
               <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                 Type
@@ -27,7 +32,7 @@
             </div>
             <div class="type-dropdown">
               <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                Add Tix
+                + Tix
                 <span class="caret"></span>
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
@@ -37,8 +42,7 @@
                 <li><a href="#">4</a></li>
               </ul>
             </div>
-          </form>
-        <div class="credit-dropdown">
+               <div class="credit-dropdown">
               <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                 Select Payment Method
                 <span class="caret"></span>
@@ -49,8 +53,13 @@
                 <li><a href="#">MasterCard ending in 5490</a></li>
               </ul>
             </div>
+          </div>
+          </form>
+     
         </div>
         </div>
+
+
         <div id="ticket-post-positioner-right">
         <div id="ticket-input-box">
           
