@@ -29,6 +29,10 @@ html {
 
 }
 
+.btn-container .login_Btn {
+	color:white;
+}
+
 .login_Btn:hover {
 	color:rgb(22,124,255);
 	text-decoration: none;

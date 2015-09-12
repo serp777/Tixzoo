@@ -7,7 +7,8 @@ var loaderObj = {
     'userprofile.html',
     'viewticket.html',
     'confirmticket.html',
-    'customersupport.html'
+    'customersupport.html',
+    'ticketwallet.html'
     ],
     css : [
     'bootstrap.css',
@@ -23,7 +24,8 @@ var loaderObj = {
     'to-post-ticket.css',
     'user-profile.css',
     'view-ticket.css',
-    'customer-support.css'
+    'customer-support.css',
+    'ticket-wallet.css'
   ]
 };
 
@@ -94,6 +96,9 @@ App.Router.map(function() {
     this.route("load", { path: "/" });
   });
   this.resource("customer-support", function(){
+    this.route("load", { path: "/" });
+  });
+  this.resource("ticket-wallet", function(){
     this.route("load", { path: "/" });
   });
 });
