@@ -146,7 +146,8 @@ App.ApplicationController = Ember.Controller.extend({
           that.transitionToRoute(that.get('route'));
           }
       }).done(function(){
-        that.transitionToRoute(that.get('route'));
+        //that.transitionToRoute(that.get('route'));
+        window.location.replace("http://127.0.0.1:8080/#/main-page");
       });
       if(url[3] === null || url[3] === "" || url[4] === null || url[4] === ""){
       this.transitionToRoute(this.get('route'));
