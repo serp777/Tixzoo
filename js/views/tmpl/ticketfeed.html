@@ -1,0 +1,33 @@
+<script type="text/x-handlebars" data-template-name="ticket-feed">
+
+    <div id="ticket-feed-container">
+      <div id="search-suggestions">
+          <p id="users-also-searched">Trending:</p>
+          <a href="#">Justin Martin</a>
+          <a href="#">Disclosure</a>
+          <a href="#">Hannah Wants</a>
+          <a href="#">Avalon Nightclub</a>
+      </div>
+
+      <div id="ticket-feed-main">
+
+          {{#each ticket in sortedTickets}}
+            <li class="ticket-feed-item">
+              <p id="time-ago">{{ticket.submit_time}}</p>
+              <ul id="ticket-info">
+                <li><a id="artist-link" href="#">{{ticket.name}}</a></li>
+                <li><a id="location-link" href="#">{{ticket.location}}</a></li>
+                <li><a id="date-link">{{ticket.date}}</a></li>
+                <li><a id="time-link">{{ticket.time}}</a></li>
+                
+              </ul>
+                
+                <img class="artist-feed-pic" {{bind-attr src=disclosurePhoto alt="disclosurePhoto"}}>
+                <a {{action 'showModal' 'accountsettings/modal' model}} id="price-link" href="#">$24</a>
+            </li>
+          {{/each}}
+
+      </div>
+    </div>
+
+  </script>

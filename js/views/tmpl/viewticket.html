@@ -1,0 +1,45 @@
+<script type="text/x-handlebars" data-template-name="view-ticket">
+
+    <div id="top-nav-bar-container">
+       <div class="nav-bar">
+        <div id="btn-container">
+        <a {{action "logout"}} class="my-tix-btn">My Tix</a>
+          <br/>
+            <a {{action "logout"}} class="sell-btn">Sell</a>
+          <br/>
+            <img class="my-account-pic" {{action "logout"}} {{bind-attr src=maxFrat alt="maxFrat"}}>
+        </div>
+          <div id="search-bar">
+           <section class="main">
+             <form class="search-feed" method="post" action="index.html" >
+               <input type="text" name="q" placeholder="Search..." />
+               <ul class="results" >
+                 <li><a href="index.html">Search Result #1<br /><span>Description...</span></a></li>
+                 <li><a href="index.html">Search Result #2<br /><span>Description...</span></a></li>
+                 <li><a href="index.html">Search Result #3<br /><span>Description...</span></a></li>
+                 <li><a href="index.html">Search Result #4</a></li>
+               </ul>
+             </form>
+          </section>
+         </div>
+        <a href="index.html"><img id="tixzoo-logo-feed" {{bind-attr src=tixzooLogo alt="tixzooLogo"}}></a>
+      </div>
+    </div>
+
+    
+    <div id="footer-container">
+      <footer>
+        <div id="social">
+        <a href='#'><img class="social-media-icon1" {{bind-attr src=facebookIcon alt="facebookIcon"}}></a>
+        <a href='#'><img class="social-media-icon2" {{bind-attr src=instagramIcon alt="instagramIcon"}}></a>
+        <a href='#'><img class="social-media-icon3" {{bind-attr src=twitterIcon alt="twitterIcon"}}></a>
+        </div>
+        <a class="footer-link" href="#">Home</a>
+        <a class="footer-link" href="#">Careers</a>
+        <a class="footer-link" href="#">Developers</a>
+        <a class="footer-link" href="#">Contact Us</a>
+
+      </footer>
+    </div>
+
+  </script>

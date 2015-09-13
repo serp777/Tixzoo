@@ -1,0 +1,210 @@
+
+
+
+/* Nav Container Contents */
+
+#top-ticketfeed-navbar {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  height: 9vw;
+  z-index: 1000;
+   background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(0,0,0,0.65) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(100%,rgba(0,0,0,0.65))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(0,0,0,0.65) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(0,0,0,0.65) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(0,0,0,0.65) 100%); /* IE10+ */
+background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(0,0,0,0.65) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
+
+  width:100%;
+  position:fixed;
+  left:0;
+  right:0;
+  top:0;
+}
+
+
+
+#ticket-feed-container {
+  padding-top: 5vw;
+  background-color: #f2f2f2;
+  z-index: 2;
+  height: 100%;
+  background-image: url(img/90.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%
+}
+
+#search-suggestions {
+  padding:1.5vw 0 1vw 0;
+  text-align: center;
+  box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.5);
+  background:lightgray;
+}
+
+
+
+#search-suggestions a {
+  color: white;
+  padding: 0 .5em 0 .5em;
+  font-size: 1.2em;
+  border-right: 1px white solid;
+}
+
+#search-suggestions a:last-child {
+  border:none;
+}
+#search-suggestions p {
+  font-size: 1em;
+}
+
+#tixzoo-logo-feed {
+  position:absolute;
+  left: 3vw;
+  top: 3vw;
+}
+
+
+#ticket-feed-pic {
+  position: relative;
+  height: 1000em;
+  width: 100em;
+  z-index: 1;
+}
+
+#ticket-feed-container {
+  position: relative;
+  display: table;
+  width: 100%;
+  left: 0px;
+  color: white;
+  z-index: 1
+}
+
+#filter-suggestion-links a {
+  margin: .5em;
+}
+
+#users-also-searched {
+  display: inline-block;
+  top: 1em;
+  color: black;
+}
+
+
+#ticket-feed-main {
+
+  height: 160em;
+  padding: 2vw 0;
+  text-align: center;
+}
+
+.ticket-feed-item {
+  z-index: 3;
+  width: 30%;
+  height: 23vw;
+  display: inline-block;
+  position: relative;
+  transition: all .4s ease-in-out;
+  margin:0;
+  overflow: hidden;
+
+}
+
+#price-link {
+  position: absolute;
+  right: 0;
+  bottom:.2vw;
+  margin:.5vw 1vw;
+  font-size: 1.6vw;
+  color:white;
+  z-index: 100;
+  font-family: gill sans;
+  font-weight: lighter;
+}
+
+#price-link:first-letter {
+color:rgb(22.124,255); 
+
+}
+
+.ticket-feed-item > #ticket-info {
+  transform:translateY(50%);
+  position:absolute;
+  z-index: 0;
+  transition:transform .5s ease;
+}
+
+.ticket-feed-item:hover > #ticket-info {
+  transform:translateY(0%);
+  display:block;
+  z-index: 0;
+}
+
+
+#ticket-info {
+  background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.65))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* IE10+ */
+background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
+  position: absolute;
+  font-size: 1vw;
+  z-index: 1;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:7vw;
+}
+
+#ticket-info > li {
+  display:block;
+  text-transform: none;
+  text-align: justify;
+  padding-left: 1vw;
+
+}
+
+#ticket-info > li > a {
+  font-weight: lighter;
+  font-size: 1.2vw;
+  display:block;
+  text-transform: none;
+  color:white;
+  font-family: gill sans;
+}
+
+#ticket-info > li:first-child > a {
+  font-size:2vw;
+  font-weight:lighter;
+} 
+
+
+#ticket-info a {
+  display: block;
+  margin-top: .25vw;
+}
+
+
+
+#time-ago {
+  position:absolute;
+  margin:.5vw;
+  right:0;
+}
+
+.artist-feed-pic {
+  width:100%;
+  height: 100%;
+  z-index: 0;
+}
+
+#location-link {
+  font-size: 1.2vw;
+}
+
+
+#ticket-info > li:first-child {}
