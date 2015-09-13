@@ -1,6 +1,7 @@
 <?php
 require_once 'authController.php';
 class ticketControllerClass {
+	
 	private function setupConnection(){
 		$con = new authControllerClass();
 		return $con->getConnection();

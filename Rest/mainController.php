@@ -15,10 +15,9 @@ header("Content-Type: application/json", true);
         echo json_encode($result);
         return $result;
     }
-
 	if(isset($_POST['loginMode']) && $_POST['loginMode'] == "true"){
 		$login = new userControllerClass();
-    	$result["loginVal"] = $login->login($_POST['email'],$_POST['password']);
+    	$result["loginVal"] = $login->login($_POST['email'], $_POST['password']);
         $result["error"] = false;
         if($result["loginVal"] == 0){
             $result["errorMessage"] = "Username or Password combination does not exist";
@@ -52,7 +51,7 @@ header("Content-Type: application/json", true);
     if(isset($_POST['emailMode']) && $_POST['emailMode'] == "true")
     {
         $email = new emailControllerClass();
-        $output = $email->sendEmail($_POST['emailAddress'],$_POST['message']);
+        $output = $email->sendEmail($_POST['email'],$_POST['message']);
         echo json_encode($output);
         return "";
     }
@@ -78,18 +77,31 @@ header("Content-Type: application/json", true);
         return "";
 	}
 
+    if(isset($_POST['verifyMode']) && $_POST['verifyMode'] == "true"){
+        $verify = new userControllerClass();
+        if(isset($_POST['confirm'])) {
+            $result = $verify->verifyAccount($_POST['confirm']);
+            if ($result == 1){
+                $result["success"] = true;
+            } else {
+                $result["success"] = false;
+            }
+        }
+        echo json_encode($result);
+        return "";
+    }
+
     if(isset($_POST['createticketMode']) && $_POST['createticketMode'] == "true"){
         $ticketController = new ticketControllerClass();
         $login = new userControllerClass();
         $userInfo = $login->getUserInfo($_POST['email'], $_POST['password']);
         $userInfo = json_decode($userInfo, true);
         $sellerID = $userInfo['accountID'];
-        error_log($sellerID);
+        // error_log($sellerID);
         $result = $ticketController->createTicket($_POST['name'], $sellerID, $_POST['location'],
             $_POST['date'], $_POST['price'], $_POST['type'], $_POST['description']);
 
     }
 
-        return $result || '';
-
-
+    return $result || '';
+?>
