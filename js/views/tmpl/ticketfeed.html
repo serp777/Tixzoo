@@ -23,7 +23,7 @@
               </ul>
                 
                 <img class="artist-feed-pic" {{bind-attr src=disclosurePhoto alt="disclosurePhoto"}}>
-                <a {{action 'showModal' 'accountsettings/modal' model}} id="price-link" href="#">$24</a>
+                <a {{action 'showModal' 'accountsettings/modal' model}} id="price-link" href="#">${{ticket.price}}</a>
             </li>
           {{/each}}
 

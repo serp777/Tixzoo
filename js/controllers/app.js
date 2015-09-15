@@ -135,14 +135,39 @@ App.ApplicationController = Ember.Controller.extend({
   init: function() {
     this._super();
     var url = window.location.href.split("/");
-    if(url[3] === null || url[3] === "" || url[4] === null || url[4] === ""){
-      this.transitionToRoute(this.get('route'));
+    if(url[3].split("=")[0] == "?id"){
+      this.set('test123',true);
+      var that = this;
+      console.log("hello");
+      //ajax stuff
+      $.ajax({
+        url: "Rest/mainController.php",
+        type: "POST",
+        dataType:'json',
+        data: {verifyMode: "true", confirm: url[3].split("=")[1]},
+        success: function(data) {
+          console.log("good");
+        },
+        error: function(data){
+          console.log(data);
+          //some error handling if invalid
+          that.transitionToRoute(that.get('route'));
+          }
+      }).done(function(){
+        //that.transitionToRoute(that.get('route'));
+        window.location.replace("http://mytixzoo.com/#/main-page");
+      });
+      
+    } else {
+      if(url[3] === null || url[3] === "" || url[4] === null || url[4] === ""){
+        this.transitionToRoute(this.get('route'));
+      }
     }
 
   },
   sendCreditCardInfo: function(email, response) {
       return $.ajax({
-          url: "Rest/stripeController.php",
+          url: "Rest/stripe/stripeController.php",
           type: "POST",
           dataType:'json',
           data: {email: email, response: response},
