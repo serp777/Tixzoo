@@ -19,7 +19,6 @@ var loaderObj = {
     'normalize.css',
     'search.css',
     'slideshow.css',
-    'style.css',
     'ticket-feed.css',
     'to-post-ticket.css',
     'user-profile.css',
@@ -110,7 +109,7 @@ App.ApplicationController = Ember.Controller.extend({
   password: '',
   loginSuccess: false,
   wrapper: 'wrapper',
-  wrapperClass: 'toggled',
+  wrapperClass: '',
   artist: '',
   artistText: 'Artist | Event',
   venue: '',
@@ -138,7 +137,6 @@ App.ApplicationController = Ember.Controller.extend({
     if(url[3].split("=")[0] == "?id"){
       this.set('test123',true);
       var that = this;
-      console.log("hello");
       //ajax stuff
       $.ajax({
         url: "Rest/mainController.php",
@@ -245,7 +243,6 @@ App.ApplicationController = Ember.Controller.extend({
 App.ApplicationRoute = Ember.Route.extend({
   actions: {
     showModal: function(name, model) {
-      console.log(model);
         this.render(name, {
           into: 'application',
           outlet: 'modal',
