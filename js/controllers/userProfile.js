@@ -41,7 +41,7 @@ App.UserProfileController = Ember.Controller.extend({
                 if(data["error"] == false){
                   that.set('firstName', data["first_name"]);
                   that.set('lastName', data["last_name"]);
-                  that.set('userTicketsSell', data["tickets"]);
+                  that.set('userTicketsSell', data["selling"]);
                 } 
               },
               error: function(error){
