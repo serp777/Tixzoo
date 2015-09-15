@@ -17,18 +17,24 @@
               <a {{action 'creditCardOutput'}}>Click to Add credit card</a>
               <a {{action 'creditCard'}}>Return</a>
         {{else}}
-              <div id="front">
-                <img class="view-ticket-userpic" {{bind-attr src=maxFrat alt="maxFrat"}}>
-                <p id="view-ticket-price"><span>$24</span></p>
-                <div class="view-rating">
-                  <p id="view-ticket-artist">{{model.name}}</p>
-                  <p id="view-ticket-date">June 25th, 2015</p>
-                  <p id="view-ticket-time">8:00 pm</p>
-                  <a id="view-ticket-venue">Avalon Nightclub, Hollywood, CA</a>
-                  <p id="user-agreement">By clicking "Buy", you agree to Tixzoos <a href="#">Terms of Service</a> and <a href="#">User Agreement</a>.</p>
-                </div>
-              </div>
-            <a {{action 'creditCard'}}>Add Credit Card</a>
+            <table style="margin-top: auto; height: 7vw; width: 100%; margin-left: auto; margin-right: auto;">
+              <tr>
+                <td style="padding-right: 3vw; padding-bottom: 3vw;">
+                <img style="margin-bottom: 2vw;"{{bind-attr src=maxFrat alt="maxFrat"}}>
+                </td>
+                <td>
+                  <div style="text-align: center;">
+                    <span><p style="font-size: 2vw; text-align: center; display: inline-block;">{{model.name}}</p></span>
+                    <p style="font-size: 1vw;">$24</p>
+                    <p id="view-ticket-date">June 25th, 2015</p>
+                    <p id="view-ticket-time">8:00 pm</p>
+                    <p id="view-ticket-venue">Avalon Nightclub, Hollywood, CA</p>
+                    <p id="user-agreement">By clicking "Buy", you agree to Tixzoos <a style="font-color: blue;" href="#">Terms of Service</a> and <a href="#">User Agreement</a>.</p>
+                    <a {{action 'creditCard'}}>Add Credit Card</a>
+                  </div>
+                </td>
+              </tr>
+            </table>
         {{/if}}
         </form>
       {{/my-modal}}
