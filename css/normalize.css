@@ -650,7 +650,7 @@ button {
 #newsletter-btn {
   padding:1vw 4vw;
   margin:2vw;
-  border:1px solid #FFF;
+  border:3px solid #FFF;
   color:white;
   background:none;
   transition:all .3s ease-in-out;
