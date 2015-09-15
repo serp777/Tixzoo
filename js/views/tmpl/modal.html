@@ -4,6 +4,7 @@
         {{#if toggled}}
           <div {{bind-attr class=creditCard}}>
             <div class="credit-card-info">
+              
                <form class="payment-info">
                   <ul class="payment-input">
                   <li>{{input placeholder="Full Name" value=fullName}}</li>
@@ -43,8 +44,8 @@
 
 <script type="text/x-handlebars" data-template-name="signup-modal">
       {{#mysecond-modal id="signupmodal" title='Welcome' ok='save' close='removeModal'}}
-
         <form {{action 'ok' on='submit' target=view}}>
+
           <div class="form-group">
             {{input class="form-control" placeholder=emailText value=email }}
             {{input class="form-control" type="password" placeholder=passwordText value=password }}
@@ -132,7 +133,7 @@
         <div class="modalls-dialog">
           <div class="modalls-content">
             <div class="modalls-header">
-
+              <a href="#" class="close-btn">X</a>
               <h4 class="modalls-title">{{title}}</h4>
             </div>
             <div class="modalls-body">

@@ -709,6 +709,12 @@ button {
   width: 3vw;
   height: 3vw;
 }
+
+.close-btn {
+  float:right;
+  margin:5vw;
+  margin-right:4.5vw;
+}
 /**** Footer container content ****/
 @media(max-width:767px){}
 @media(min-width:768px){}
