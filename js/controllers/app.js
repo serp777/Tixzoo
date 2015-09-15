@@ -155,17 +155,19 @@ App.ApplicationController = Ember.Controller.extend({
           }
       }).done(function(){
         //that.transitionToRoute(that.get('route'));
-        window.location.replace("http://127.0.0.1:8080/#/main-page");
+        window.location.replace("http://mytixzoo.com/#/main-page");
       });
+      
+    } else {
       if(url[3] === null || url[3] === "" || url[4] === null || url[4] === ""){
-      this.transitionToRoute(this.get('route'));
+        this.transitionToRoute(this.get('route'));
       }
     }
 
   },
   sendCreditCardInfo: function(email, response) {
       return $.ajax({
-          url: "stripe/stripeController.php",
+          url: "Rest/stripe/stripeController.php",
           type: "POST",
           dataType:'json',
           data: {email: email, response: response},

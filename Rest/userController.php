@@ -20,8 +20,7 @@ class userControllerClass {
 		$password = mysqli_real_escape_string($dbconn, $password);
 		$sql="SELECT * FROM accountinfo WHERE emailAddress='$email' and password='$password'";
 		$result = $this->executeSqlQuery($sql,$dbconn);
-		$count= $result->num_rows;
-		return $count;
+		return $result;
 	}
 	public function addNewsletterEmail($email){
 		$dbconn = $this->setupConnection();
@@ -65,8 +64,6 @@ class userControllerClass {
 			error_log("else");
 			$result['error'] = "Could not send email for verification!!";
 		}
-
-		
 		//$customer = new customerControllerClass();
 		//$result['customer'] = $customer->createCustomer($myemail);
 		return $result;
@@ -95,9 +92,10 @@ class userControllerClass {
 	}
 	public function getUserInfo($email, $password) {
 		$result = $this->login($email, $password);
-		$row = mysqli_fetch_assoc($result);
-		$result = json_encode($row);
-		return $result;
+		if($row = mysqli_fetch_assoc($result)){
+			return $row;	
+		}
+		return 1;
 	}
 	
 	public function setAssocCustomerId($id, $email){

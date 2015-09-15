@@ -30,6 +30,17 @@ class ticketControllerClass {
 		$count = $result->num_rows;
 		return $count;
 	}
+	public function getTicketsBySellerID($sellerID){
+		$dbconn = $this->setupConnection();
+		$sql = "SELECT * FROM tickets WHERE sellerID = '$sellerID'";
+		$result = $this->executeSqlQuery($sql,$dbconn);
+		$rows = array();
+		while($r = mysqli_fetch_assoc($result)) {
+			$rows[] = $r;
+		}
+		$result = $rows;
+		return $result;
+	}
 	public function createTicket($name, $sellerID, $location, $date, $price, $type, $description){
 		// To protect MySQL injection (more detail about MySQL injection)
 		$dbconn = $this->setupConnection();
