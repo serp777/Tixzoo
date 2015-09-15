@@ -158,16 +158,9 @@ padding:0;
 
 .searchbox ul li a:hover {
   text-align: justify;
+  cursor: pointer;
 }
 /*moving it slightly toware right when hovered*/
-.searchbox ul li:hover{
-/*transform*/
--webkit-transform:scale(1.1);
-   -moz-transform:scale(1.1);
-    -ms-transform:scale(1.1);
-     -o-transform:scale(1.1);
-        transform:scale(1.1);
-}
 
 .searchbox ul li:focus{
   text-align: justify;

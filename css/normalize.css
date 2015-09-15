@@ -650,7 +650,7 @@ button {
 #newsletter-btn {
   padding:1vw 4vw;
   margin:2vw;
-  border:1px solid #FFF;
+  border:3px solid #FFF;
   color:white;
   background:none;
   transition:all .3s ease-in-out;
@@ -708,6 +708,12 @@ button {
   margin-right: auto;
   width: 10vw;
   height: 10vw;
+}
+
+.close-btn {
+  float:right;
+  margin:5vw;
+  margin-right:4.5vw;
 }
 /**** Footer container content ****/
 @media(max-width:767px){}
