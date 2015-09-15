@@ -44,7 +44,6 @@ App.LoginModalController = Ember.Controller.extend({
           if (xhr.status != 200) { // error
               message = { errorCode: xhr.status, errorMessage: xhr.statusText };
           }
-
           return message;
         }, 1000);
     }
