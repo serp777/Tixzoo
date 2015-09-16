@@ -8,17 +8,15 @@ App.UserProfileController = Ember.Controller.extend({
   password: '',
   email: '',
   loginSuccess: false,
-  firstName: 'Max',
-  lastName: 'McGee',
+  firstName: '',
+  lastName: '',
   userTicketsBuy: [],
   userTicketsSell: [],
 	init: function() {
 	    this._super();
 	    var that = this;
-	    console.log("test");
 	    if(!this.get('loginSuccess')){ 
 	      this.get('controllers.application').getCookies().success(function (data){
-	      	console.log("hi");
 	        if(data.cookie.email && data.cookie !== "noCookie"){
 	        	that.set('controllers.application.loginSuccess',true);
 	          that.set('controllers.application.email',data.cookie.email.email);
@@ -30,8 +28,21 @@ App.UserProfileController = Ember.Controller.extend({
 	        }
         });
       }
-	    setTimeout(function(){
-         	var xhr = $.ajax({
+      if (this.get('loginSuccess')){
+        this.getUserInfo();
+      }
+	    this.get('controllers.application').getTicketAjax().success(function (data) {
+	      	that.set('ticketJson', data["tickets"]);
+	      	that.set('tempTicketJson', data["tickets"]);
+	      	that.set('controllers.application.ticketJson', data["tickets"]);
+	      	that.set('controllers.application.tempTicketJson', data["tickets"]);
+	      	that.set('ticketEn',true);
+	    });
+	  },
+  getUserInfo: function() {
+    var that = this;
+    setTimeout(function(){
+          var xhr = $.ajax({
             url: "Rest/mainController.php",
             type: "POST",
             dataType:'json',
@@ -41,7 +52,7 @@ App.UserProfileController = Ember.Controller.extend({
                 if(data["error"] == false){
                   that.set('firstName', data["first_name"]);
                   that.set('lastName', data["last_name"]);
-                  that.set('userTicketsSell', data["tickets"]);
+                  that.set('userTicketsSell', data["selling"]);
                 } 
               },
               error: function(error){
@@ -54,18 +65,17 @@ App.UserProfileController = Ember.Controller.extend({
           }
           // return message;
         }, 1000);
-	  
-	    this.get('controllers.application').getTicketAjax().success(function (data) {
-	      	that.set('ticketJson', data["tickets"]);
-	      	that.set('tempTicketJson', data["tickets"]);
-	      	that.set('controllers.application.ticketJson', data["tickets"]);
-	      	that.set('controllers.application.tempTicketJson', data["tickets"]);
-	      	that.set('ticketEn',true);
-	    });
-	  },
-	 updateLogin: function(){
+  },
+	updateLogin: function(){
+      console.log(this.get('controllers.application.loginSuccess'));
 	    this.set('loginSuccess',this.get('controllers.application.loginSuccess'));
 	    this.set('email',this.get('controllers.application.email'));
 	    this.set('password',this.get('controllers.application.password')); 
+      if (!this.get('controllers.application.loginSuccess')) {
+        this.set('firstName', '');
+        this.set('lastName', '');
+      } else {
+        this.getUserInfo();
+      }
 	 }.observes('controllers.application.loginSuccess'),
 });
