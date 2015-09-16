@@ -1,12 +1,11 @@
 
 
 #search-bar {
-    position: absolute;
-    height: 4vw;
-    width: 10vw;
-    bottom: 25vw;
-    left: 24.2vw;
+    height:100%;
+    width: 100%;
     z-index: 16;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #search-bar-feed {
@@ -14,24 +13,26 @@
   margin-top: 2vw;
 }
 
-.ember-view.ember-text-field {
-    width:45vw;
-    height:4vw;
-    border-radius: 0;
-    display: inline-block;
-    float:right;
-}
 
 .searchbox{
 /*definint width of form element*/
-    height:4vw;
-    z-index: 10000;
-    width:50vw;
+    z-index: 10;
+    width:100%;
     position:absolute;
     overflow: none;
-
+    top: 40vw;
 /*centering the form element*/
 
+}
+#innerSearch {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+}
+#searchField {
+  position: relative;
+  width: 91%;
+  height: 4vw;
 }
 .ember-view #search-btn {
   background-image:url("img/searchbar2.png");
@@ -48,7 +49,7 @@
   border-top-right-radius: 3px;
   z-index: 1000;
   transition: all .3s ease-in-out;
-  max-height: 4vw;
+  width: 9%;
 }
 
 #search-btn img {
@@ -126,9 +127,11 @@ input[type="search"]:-ms-input-placeholder {  /* interner explorer*/
     padding:1vw;
     margin:0;
     font-family:gill sans;
+    text-align: center;
 }
 
 .suggestions {
+  width: 100%;
   padding:0;
   margin:0;
 }
@@ -154,10 +157,11 @@ padding:0;
 .searchbox ul li a:hover{
     color:rgb(22,124,255);
     background:rgba(255,255,255,255);
+    text-align: center;
 }
 
 .searchbox ul li a:hover {
-  text-align: justify;
+  text-align: center;
   cursor: pointer;
 }
 /*moving it slightly toware right when hovered*/

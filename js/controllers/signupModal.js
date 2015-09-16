@@ -8,6 +8,7 @@ App.SignupModalController = Ember.Controller.extend({
   signupModal: '/img/background_modal.png',
   existsAlready: false,
   errorMessage: "No errors",
+  spinner: false,
   actions: {
     save: function() {
       var that = this;
