@@ -207,15 +207,23 @@ App.ApplicationController = Ember.Controller.extend({
           }
       });
   },
+  clearInfo: function() {
+    this.set('email', '');
+    this.set('password', '');
+    this.set('loginSuccess', false);
+  },
     actions: {
       logout: function() {
-        this.set('loginSuccess', false);
+        this.clearInfo();
         var that = this;
         var message = null;
         var xhr = $.ajax({
           url: "Rest/mainController.php",
           type: "GET",
-          data: {logoutMode: "true"}
+          data: {logoutMode: "true"},
+            success: function(data){
+              console.log(data);
+            }
           });
         if (xhr.status != 200) { // error
             message = { errorCode: xhr.status, errorMessage: xhr.statusText };

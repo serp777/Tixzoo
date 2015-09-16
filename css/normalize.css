@@ -650,7 +650,7 @@ button {
 #newsletter-btn {
   padding:1vw 4vw;
   margin:2vw;
-  border:3px solid #FFF;
+  border:1px solid #FFF;
   color:white;
   background:none;
   transition:all .3s ease-in-out;
@@ -723,7 +723,11 @@ button {
   float:right;
 }
 /**** Footer container content ****/
-@media(max-width:767px){}
+@media screen and (max-width:767px){
+  
+
+
+}
 @media(min-width:768px){}
 @media(min-width:992px){}
 @media(min-width:1200px){}
