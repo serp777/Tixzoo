@@ -15,7 +15,6 @@ var loaderObj = {
     'simple-sidebar.css',
     'pickaday.css',
     'buttons.css',
-    'media_queries.css',
     'normalize.css',
     'search.css',
     'slideshow.css',
@@ -24,7 +23,8 @@ var loaderObj = {
     'user-profile.css',
     'view-ticket.css',
     'customer-support.css',
-    'ticket-wallet.css'
+    'ticket-wallet.css',
+    'media_queries.css'
   ]
 };
 

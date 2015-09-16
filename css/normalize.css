@@ -715,6 +715,13 @@ button {
   margin:5vw;
   margin-right:4.5vw;
 }
+#textfieldGeneric {
+  width:45vw;
+  height:4vw;
+  border-radius: 0;
+  display: inline-block;
+  float:right;
+}
 /**** Footer container content ****/
 @media(max-width:767px){}
 @media(min-width:768px){}

@@ -11,15 +11,17 @@
     </ul>
     <div id="search-bar">
       <form class="searchbox" >
-        <div id="search-btn">{{#link-to 'ticket-feed.search' searchText}}Profile<img src="img/searchbar2.png">{{/link-to}}</div>
-        {{input type="search" value=searchText placeholder="Search by artist, genre or location"}}
-        <ul class="suggestions">
-          {{#each object in tempTicketJson}}
-            <span {{action 'showModal' 'buyticket-modal' object}}>
-            <li><bc><a>Ticket: {{object.name}}</a></bc></li>
-            </span>
-          {{/each}}
-        </ul>
+        <div id="innerSearch">
+          <div id="search-btn">{{#link-to 'ticket-feed.search' searchText}}<img style="" src="img/searchbar2.png">{{/link-to}}</div>
+          {{input type="search" id="searchField" value=searchText placeholder="Search by artist, genre or location"}}
+          <ul class="suggestions">
+            {{#each object in tempTicketJson}}
+              <span {{action 'showModal' 'buyticket-modal' object}}>
+              <li><bc><a>{{object.name}}</a></bc></li>
+              </span>
+            {{/each}}
+          </ul>
+        </div>
       </form>
     </div>
   </div>

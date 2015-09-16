@@ -320,11 +320,9 @@ footer {
 }
 
 #social {
+  padding-top:1vw;
   padding-bottom:1vw;
-  margin-top:1vw;
   text-align: center
- 
-
 }
 
 .social-media-icon1 {
