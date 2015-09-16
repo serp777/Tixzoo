@@ -38,7 +38,7 @@
   overflow:hidden;
   height:4vw;
   width:5vw;
-  padding:1vw 0 1vw 0;
+  padding:1.3vw 0 1.3vw 0;
   display:inline-block;
  background: rgb(22,124,255); /* Old browsers */
   position:relative;
@@ -219,4 +219,8 @@ textarea:focus, input:focus{
    margin-top:3vw;
    background-image:url(img/searchbar1.png);
    background-repeat: no-repeat;
+}
+
+@media screen and (max-width:767px){
+
 }

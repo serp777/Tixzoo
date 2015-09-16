@@ -36,9 +36,13 @@ a:hover {
 
 #profile-title {
   position: absolute;
-  left: 34.5vw;
-  top: 2vw;
-  margin: 0vw;
+  color:rgb(22,124,255);
+  width:20vw;
+  left:0;
+  right:0;
+  margin-left:13vw;
+  font-size: 2vw;
+  text-transform: none;
 }
 
 #current-mood {
@@ -60,9 +64,13 @@ a:hover {
 
 .rating {
   position: absolute;
-  left: 38.5vw;
-  top: 5.5vw;
-  display: none;
+  width:20vw;
+  left:0;
+  right:0;
+  margin-left:13vw;
+  top: 4vw;
+  display: inline;
+  color: white
 }
 
 #music-tags {
@@ -227,6 +235,9 @@ a:hover {
   width: 25vw;
   border-bottom: 1px solid black;
   font-size: 1vw;
+}
+#recent-activity li a {
+  color:rgb(22,124,255);
 }
 
 #recent-activity p {
