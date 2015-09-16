@@ -41,7 +41,14 @@
           <div id="profile-midright-container">
             <ul class="looking-for">
               <li class="has-submenu"><a href="#">buying</a>
-               
+               {{#each ticket in userTicketsBuy}}
+                <li>{{ticket.submit_time}}</li>
+                <li>{{ticket.name}}</li>
+                <li>{{ticket.location}}</li>
+                <li>{{ticket.date}}</li>
+                <li>{{ticket.time}}</li>
+                <li>{{ticket.price}}</li>     
+              {{/each}}  
               </li>
               <li class="has-submenu"><a href="#">selling</a>
               {{#each ticket in userTicketsSell}}

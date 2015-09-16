@@ -113,8 +113,9 @@ header("Content-Type: application/json", true);
         }
         $result["error"] = false;
         $sellerID = $result["accountID"];
-        error_log($sellerID);
+        $buyerID = $result["accountID"];
         $result["selling"] = $ticketController->getTicketsBySellerID($sellerID);
+        $result["buying"] = $ticketController->getTicketsByBuyerID($buyerID);
         echo json_encode($result);
         return "";
     }
