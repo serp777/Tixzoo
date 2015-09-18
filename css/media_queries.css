@@ -8,6 +8,7 @@
 	.sidebar-nav li {
 		height: 10vw;
 		text-align: center;
+		margin-top:3vw;
 	}
 	.sidebar-nav li a {
 		font-size: 6vw;
@@ -49,12 +50,17 @@
 	#searchField {
 		height: 10vw;
 		font-size: 5vw;
+		padding-left: 2vw;
 	}
 	.ember-view #search-btn {
+		padding:3vw 0;
 		height: 10vw;
 	}
 	.suggestions a {
 		font-size: 5vw;
+	}
+	#search-btn img {
+		width:4vw;
 	}
 	input[type="search"]:focus + .suggestions li{
     height:7.8vw;
@@ -78,6 +84,8 @@
 		font-size: 3.5vw !important;
 		color: white !important;
 	}
+
+
 	#newsletter-btn {
 		width: 25vw;
 		font-size: 1.5vw !important;
@@ -99,7 +107,7 @@
 		width: 5vw;
 	}
 	#footer-class li {
-		padding-left: 5.5vw;
+		padding-left: 8vw;
 	}
 	.copyright p {
 		font-size: 2vw;

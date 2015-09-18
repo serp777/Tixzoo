@@ -26,20 +26,22 @@
     </div>
   </div>
   <div id="middle-background-container">
-    <img id="middle-img" {{bind-attr src=middleBackground alt="middleBackground"}}>
     <div id="main-features">
-      <h1>features</h1>
+      <h1>About Us</h1>
       <div class="column" id="peer-to-peer-icon">
-        <h3>peer to peer</h3>
-        <p>Tixzoo is a peer-to-peer ticket exchange platform</p>
+        <img src="splash-page/talk-feature.png">
+        <h3>Peer-to-Peer</h3>
+        <p>Tixzoo users are given freedom to determine the ticket price they want and with whom they exchange.</p>
       </div>
       <div class="column" id="security-icon">
-        <h3>security</h3>
-        <p>User exchange, identity, and payment is secured and authenticated</p>
+        <img src="splash-page/lock-feature.png">
+        <h3>Security</h3>
+        <p>Tixzoo users are given freedom to determine the ticket price they want and with whom they exchange.</p>
       </div>
       <div class="column" id="affordability-icon">
-        <h3>affordability</h3>
-        <p>Tixzoo charges the bare minimum for transaction fees and offers rewards as long term incentive</p>
+          <img src="splash-page/money-feature.png">
+        <h3>Affordability</h3>
+        <p>Lowest transaction fees in the market. Get rewarded with every exchange and your next concert could be on us.</p>
       </div>
     </div>
   </div>
@@ -47,7 +49,7 @@
       <div class="main-about">
         <form class="newsletter">
         <h1 class="newsletter-title">newsletter</h1>
-          <p>{{input class="newsletter-form" placeholder="Your email address" value=email }}</p>
+          <p>{{input class="newsletter-form" placeholder="Your email address..." value=email }}</p>
           <button type="button" id="newsletter-btn" {{action 'ok'}}>Join the Zoo</button>
         </form>
       </div>

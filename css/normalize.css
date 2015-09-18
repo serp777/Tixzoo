@@ -507,12 +507,17 @@ copy
   width: 100%;
   left: 0px;
   color: white;
+  height:50vw;
+  background:white;
 }
 
 #middle-img{
   left: 0%;
   z-index: 2;
   width: 100%;
+}
+.column img {
+  width:15vw;
 }
 
 #main-features {
@@ -522,17 +527,23 @@ copy
   width: 100%;
   color: black;
   left: 0px;
-  top: 6vw;
+  top: 1vw;
   position: absolute;
 
 }
 
 #main-features h1  {
-  color: black;
+  color: #5C6B7B;
   font-family: gill sans;
   margin-bottom: 0;
   font-size: 4vw;
+  font-weight: normal;
+  text-transform: none;
   z-index: 10;
+  border-bottom: 1px lightgray solid;
+  padding-bottom: 1vw;
+  width:30vw;
+  margin:0 auto;
 }
 
 .column {
@@ -567,11 +578,15 @@ copy
 
 .column h3 {
   position: relative;
+  text-transform: none;
+  font-weight: 400;
+  font-family: gill sans;
   top: 4vw;
   margin: 0;
   padding: 0;
   font-size: 2vw;
   z-index: 10;
+  color:#5C6B7B;
 }
 
 .column p {
@@ -587,6 +602,10 @@ copy
   font-size: 1.2vw;
   z-index: 10;
   text-align: center;
+  text-transform: none;
+  font-weight: lighter;
+  color:#5C6B7B;
+
 }
 
 #column-3 {
