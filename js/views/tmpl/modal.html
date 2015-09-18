@@ -7,10 +7,10 @@
               
                <form class="payment-info">
                   <ul class="payment-input">
-                  <li>{{input placeholder="Full Name" value=fullName}}</li>
-                  <li>{{input placeholder="Credit Card Number" value=creditCardNumber}}</li>
-                  <li>{{input placeholder="Exp. Date" value=expDate}}</li>
-                  <li>{{input placeholder="CVV"value=CVC}}</li>
+                  <li>{{input id="textfieldGeneric" placeholder="Full Name" value=fullName}}</li>
+                  <li>{{input id="textfieldGeneric" placeholder="Credit Card Number" value=creditCardNumber}}</li>
+                  <li>{{input id="textfieldGeneric" placeholder="Exp. Date" value=expDate}}</li>
+                  <li>{{input id="textfieldGeneric" placeholder="CVV"value=CVC}}</li>
                   </ul>
                 </form>
               </div>
@@ -64,15 +64,20 @@
     </script>
 
     <script type="text/x-handlebars" data-template-name="login-modal">
-      {{#mysecond-modal title='Welcome' ok='save' close='removeModal'}}
-        {{#if spinner}}
-        <img id="spinnerImg" {{bind-attr src=spinnerImg alt="spins"}}>
-        {{/if}}
+      {{#mysecond-modal ok='save' close='removeModal'}}
         <form {{action 'ok' on='submit' target=view}}>
-          <div class="form-group">
+          <div style="width: 100%">
             <div class="login_modal_padding">
-            {{input class="form-control" placeholder=emailText value=email}}
-            {{input class="form-control" type="password" placeholder=passwordText value=password }}
+              {{#if spinner}}
+              <div style="width: 100%;">
+                <img id="spinnerImg" {{bind-attr src=spinnerImg alt="spins"}}>
+                <br>
+                <span style="text-align: center;">Loggin you in...</span>
+              </div>
+              {{else}}
+                {{input class="form-control" placeholder=emailText value=email}}
+                {{input class="form-control" type="password" placeholder=passwordText value=password }}
+              {{/if}}
             </div>
               {{#if signInError}}
                 <div style="color: red;">
@@ -82,12 +87,6 @@
           </div>
         </form>
       {{/mysecond-modal}}
-    </script>
-
-    <script type="text/x-handlebars" data-template-name="logout-modal">
-      {{#my-modal title='Logout' ok='logout' close='removeModal'}}
-        Are you sure you want to logout?
-      {{/my-modal}}
     </script>
 
     <script type="text/x-handlebars" data-template-name="createticket-modal">

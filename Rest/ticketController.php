@@ -32,7 +32,18 @@ class ticketControllerClass {
 	}
 	public function getTicketsBySellerID($sellerID){
 		$dbconn = $this->setupConnection();
-		$sql = "SELECT * FROM tickets WHERE sellerID = '$sellerID'";
+		$sql = "SELECT * FROM tickets WHERE isSold = 0 AND sellerID = '$sellerID'";
+		$result = $this->executeSqlQuery($sql,$dbconn);
+		$rows = array();
+		while($r = mysqli_fetch_assoc($result)) {
+			$rows[] = $r;
+		}
+		$result = $rows;
+		return $result;
+	}
+	public function getTicketsByBuyerID($buyerID){
+		$dbconn = $this->setupConnection();
+		$sql = "SELECT * FROM tickets WHERE isSold = 1 AND buyerID = '$buyerID'";
 		$result = $this->executeSqlQuery($sql,$dbconn);
 		$rows = array();
 		while($r = mysqli_fetch_assoc($result)) {

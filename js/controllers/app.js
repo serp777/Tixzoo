@@ -15,7 +15,6 @@ var loaderObj = {
     'simple-sidebar.css',
     'pickaday.css',
     'buttons.css',
-    'media_queries.css',
     'normalize.css',
     'search.css',
     'slideshow.css',
@@ -24,7 +23,8 @@ var loaderObj = {
     'user-profile.css',
     'view-ticket.css',
     'customer-support.css',
-    'ticket-wallet.css'
+    'ticket-wallet.css',
+    'media_queries.css'
   ]
 };
 
@@ -109,7 +109,7 @@ App.ApplicationController = Ember.Controller.extend({
   password: '',
   loginSuccess: false,
   wrapper: 'wrapper',
-  wrapperClass: 'toggled',
+  wrapperClass: '',
   artist: '',
   artistText: 'Artist | Event',
   venue: '',
@@ -137,7 +137,6 @@ App.ApplicationController = Ember.Controller.extend({
     if(url[3].split("=")[0] == "?id"){
       this.set('test123',true);
       var that = this;
-      console.log("hello");
       //ajax stuff
       $.ajax({
         url: "Rest/mainController.php",
@@ -252,7 +251,6 @@ App.ApplicationController = Ember.Controller.extend({
 App.ApplicationRoute = Ember.Route.extend({
   actions: {
     showModal: function(name, model) {
-      console.log(model);
         this.render(name, {
           into: 'application',
           outlet: 'modal',

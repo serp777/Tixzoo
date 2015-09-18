@@ -53,6 +53,7 @@ App.UserProfileController = Ember.Controller.extend({
                   that.set('firstName', data["first_name"]);
                   that.set('lastName', data["last_name"]);
                   that.set('userTicketsSell', data["selling"]);
+                  that.set('userTicketsBuy', data["buying"]);
                 } 
               },
               error: function(error){
@@ -74,6 +75,8 @@ App.UserProfileController = Ember.Controller.extend({
       if (!this.get('controllers.application.loginSuccess')) {
         this.set('firstName', '');
         this.set('lastName', '');
+        this.set('userTicketsBuy', []);
+        this.set('userTicketsSell', []);
       } else {
         this.getUserInfo();
       }

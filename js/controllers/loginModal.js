@@ -45,7 +45,7 @@ App.LoginModalController = Ember.Controller.extend({
               message = { errorCode: xhr.status, errorMessage: xhr.statusText };
           }
           return message;
-        }, 1000);
+        }, 1500);
     }
   }
 });
