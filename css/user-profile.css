@@ -68,7 +68,7 @@ a:hover {
   left:0;
   right:0;
   margin-left:13vw;
-  top: 4vw;
+  top: 6vw;
   display: inline;
   color: white
 }
@@ -126,10 +126,23 @@ a:hover {
   display:none;
 }
 
+.has-submenu > ul > li {
+  display:block;
+  height:2vw;
+  color:white;
+  background:lightgray;
+  text-transform: none;
+  border-bottom: 1px white 
+}
+
+.has-submenu > ul > li:first-child {
+  font-weight: 600;
+
+}
 
 .has-submenu:hover > ul {
   display:block;
-  max-width:20vw;
+  max-width:30vw;
   -webkit-animation-name:slideDown;
   -webkit-animation-duration:.5s;
   -webkit-animation-timing-function: ease;

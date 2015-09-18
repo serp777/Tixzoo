@@ -44,14 +44,15 @@
                
               </li>
               <li class="has-submenu"><a href="#">selling</a>
-              {{#each ticket in userTicketsSell}}
-                <li>{{ticket.submit_time}}</li>
-                <li>{{ticket.name}}</li>
-                <li>{{ticket.location}}</li>
-                <li>{{ticket.date}}</li>
-                <li>{{ticket.time}}</li>
-                <li>{{ticket.price}}</li>     
-              {{/each}}  
+                <ul class="profile-buy-sell">
+                  {{#each ticket in userTicketsSell}}
+                  <li>{{ticket.name}}</li>
+                  <li>{{ticket.location}}</li>
+                  <li>{{ticket.date}}</li>
+                  <li>{{ticket.time}}</li>
+                  <li>{{ticket.price}}</li>     
+                  {{/each}}
+                </ul>  
               </li>
             </ul>
           </div>
