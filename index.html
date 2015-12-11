@@ -2,12 +2,13 @@
 
 <head>
   <meta charset="utf-8">
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700,900' rel='stylesheet' type='text/css'>
   <title>Tixzoo</title>
 </head>
 <body>
 <script type="text/x-handlebars">
     <div id="top-nav-bar-container">
-        {{#link-to 'main-page'}}<img id="tixzoo-logo" {{bind-attr src=tixzooLogo alt="tixzooLogo"}}>{{/link-to}}
+        {{#link-to 'main-page'}}<img id="tixzoo-logo" img src="img/tixzoo-logo.png">{{/link-to}}
         <div class="nav-bar">
             <div id="btn-container">
                 <table> 
@@ -32,6 +33,12 @@
                 <li >
                     <a href="#">Home</a>
                 </li>
+                <li class="login-media">
+                    <a href="#">login</a>
+                </li>
+                <li class="signup-media">
+                    <a href="#">sign up</a>
+                </li>
                 <li>
                     <a href="#">edit&nbsp;profile</a>
                 </li>
@@ -53,7 +60,8 @@
                 <li>
                     <a href="#">logout</a>
                 </li>
-                <li><div style="padding-top: 2vw;">{{input type="search" id="searchField" value=searchText placeholder="Search tickets"}}</div></li>
+
+                <li><div style="padding-top: 2vw;">{{input type="search" id="searchField" class="sideBar-search" value=searchText placeholder="Search tickets"}}</div></li>
             </ul>
         </div>
     </div>
