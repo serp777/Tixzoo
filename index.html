@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -8,21 +7,20 @@
 <body>
 <script type="text/x-handlebars">
     <div id="top-nav-bar-container">
-        <img id="tixzoo-logo" {{bind-attr src=tixzooLogo alt="tixzooLogo"}}>
+        {{#link-to 'main-page'}}<img id="tixzoo-logo" {{bind-attr src=tixzooLogo alt="tixzooLogo"}}>{{/link-to}}
         <div class="nav-bar">
             <div id="btn-container">
-
-            <span><a {{action 'showInRuby'}} class="login_Btn">Login</a></span>
-
-                  {{view "calendar-date"}}
+                <table>
                 {{#if loginSuccess}}
-                    {{#link-to 'user-profile' class="my-tix-btn"}}Profile{{/link-to}}
-                    <br><br>
-                    <img class="my-account-pic" {{action "logout"}} {{bind-attr src=maxFrat alt="maxFrat"}}>
+                    <tr><td style="padding-right: 2vw;"><a {{action "logout"}} class="create_Btn">Logout</a></td>
+                    <td>{{#link-to 'user-profile' class="login_Btn"}}Profile{{/link-to}}</td></tr>
+
+
                 {{else}}
-                    <a {{action 'showModal' 'signup-modal'}} class="create_Btn">Sign Up</a>
-                    <a {{action 'showModal' 'login-modal' secondmodel}} class="login_Btn">Login</a>
+                    <tr><td style="padding-right: 2vw;"><a {{action 'showModal' 'signup-modal'}} class="create_Btn">Sign Up</a></td>
+                    <td><a {{action 'showModal' 'login-modal' secondmodel}} class="login_Btn">Login</a></td></tr>
                 {{/if}}
+                </table>
             </div>
         </div>
     </div>
@@ -31,23 +29,23 @@
         <div id="sidebar-wrapper">
             <a {{action "sideBar"}} id="close">X</a>
             <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    <a href="#" id="edit_profile">edit profile</a>
+                <li >
+                    <a href="#">Home</a>
                 </li>
                 <li>
-                    <a href="#"></a>
+                    <a href="#">edit&nbsp;profile</a>
                 </li>
                 <li>
-                    <a href="#">about</a>
+                    <a href="#">about&nbsp;tixzoo</a>
                 </li>
                 <li>
-                    <a href="#">ticket wallet</a>
+                    <a href="#">ticket&nbsp;wallet</a>
                 </li>
                 <li>
-                    <a href="#">post tickets</a>
+                    <a href="#">post&nbsp;tickets</a>
                 </li>
                 <li>
-                    <a href="#">terms of service</a>
+                    <a href="#">terms&nbsp;of&nbsp;service</a>
                 </li>
                 <li>
                     <a href="#">contact</a>
@@ -55,11 +53,11 @@
                 <li>
                     <a href="#">logout</a>
                 </li>
-                <li><input type="text" id="user-search" placeholder = "SEARCH"/></li>
+                <li><div style="padding-top: 2vw;">{{input type="search" id="searchField" value=searchText placeholder="Search tickets"}}</div></li>
             </ul>
         </div>
     </div>
-    <a {{action "sideBar"}} class="menu"><img src="img/menu.png" id="menu"></a>
+    <a {{action "sideBar"}} class="menu"><img src="public/img/menu.png" id="menu"></a>
 
     {{outlet}}
     {{outlet 'modal'}}
@@ -90,21 +88,30 @@
     <script type="text/x-handlebars" id="index" id"mainPage">
 
     </script>
-    <script src="js/pickaday.js"></script>
-    <script src="js/libs/jquery-1.10.2.js"></script>
-    <script src="js/ember-template-compiler.js"></script>
-    <script src="js/libs/ember-1.9.1.js"></script>
-    <script src="js/controllers/app.js"></script>
-    <script src="js/controllers/loginModal.js"></script>
-    <script src="js/controllers/signupModal.js"></script>
-    <script src="js/controllers/mainPage.js"></script>
-    <script src="js/controllers/ticketFeed.js"></script>
-    <script src="js/controllers/userProfile.js"></script>
-    <script src="js/controllers/viewTicket.js"></script>
-    <script src="js/controllers/postTicket.js"></script>
-    <script src="js/controllers/buyticketModal.js"></script>
-    <script src="js/controllers/customerSupport.js"></script>
-    <script src="js/controllers/bootstrap.js"></script>
+
+    <script src="app/pickaday.js"></script>
+    <script src="app/libs/jquery-1.10.2.js"></script>
+    <script src="app/ember-template-compiler.js"></script>
+    <script src="app/libs/ember-1.21.1.js"></script>
+
+    <script src="app/controllers/app.js"></script>
+    <script src="app/router.js"></script>
+    <script src="app/routes/application.js"></script>
+    <script src="app/routes/index.js"></script>
+    <script src="app/components/firstModal.js"></script>
+    <script src="app/components/secondModal.js"></script>
+    <script src="app/controllers/loginModal.js"></script>
+    <script src="app/controllers/logoutModal.js"></script>
+    <script src="app/controllers/signupModal.js"></script>
+    <script src="app/controllers/mainPage.js"></script>
+    <script src="app/controllers/ticketFeed.js"></script>
+    <script src="app/controllers/userProfile.js"></script>
+    <script src="app/controllers/viewTicket.js"></script>
+    <script src="app/controllers/postTicket.js"></script>
+    <script src="app/controllers/buyticketModal.js"></script>
+    <script src="app/controllers/customerSupport.js"></script>
+    <script src="app/controllers/bootstrap.js"></script>
+    <script src="app/controllers/ticketWallet.js"></script>
     <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
     <!-- to activate the test runner, add the "?test" query string parameter -->
     <script src="tests/runner.js"></script>
