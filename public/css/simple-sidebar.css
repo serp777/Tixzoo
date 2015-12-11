@@ -7,7 +7,7 @@
 /* Toggle Styles */
 
 html  {
-    font-family:gill sans;
+    font-family: 'Lato', sans-serif !important;
     text-transform:uppercase;
 }
 body{
@@ -26,6 +26,14 @@ a {
 
 
 
+}
+
+.login-media {
+    display:none;
+}
+
+.signup-media {
+    display:none;
 }
 
 #edit_profile:hover  {
@@ -157,3 +165,7 @@ a {
     padding:0;
 }
 
+.sideBar-search {
+    border-radius: 0 !important;
+    border:2px rgb(39,175,208) solid !important;
+}

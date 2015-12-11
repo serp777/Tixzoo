@@ -1,29 +1,62 @@
 @media screen and (max-width: 768px) {
     #wrapper.toggled #sidebar-wrapper {
     width: 100%;
-	}
-	#close {
-		font-size: 5vw;
-	}
-	.sidebar-nav li {
-		height: 10vw;
-		text-align: center;
-		margin-top:3vw;
-	}
-	.sidebar-nav li a {
-		font-size: 6vw;
-		z-index: 500;
-	}
+  }
+  #close {
+    font-size: 5vw;
+  }
+  .sidebar-nav li {
+    height: 10vw;
+    text-align: center;
+    margin-top:3vw;
+  }
+  .sidebar-nav li a {
+    font-size: 6vw;
+    z-index: 500;
+  }
     #top-nav-bar-container {
-    	height: 15vw;
+      height: 15vw;
     }
+
+    .modalls-content {
+      height:60vw;
+      width:65vw;
+      background-size:60vw 65vw;
+    }
+
+   .modalls-title {
+      font-size:4vw;
+      margin-top:2.5vw;
+      margin-left: 3vw;
+    }
+
+ .ember-view.ember-text-field.form-control {
+    width:45vw;
+    font-size:4vw;
+ }
+ .close-btn {
+  font-size: 3vw;
+ }
+
+ .btn {
+  font-size:3vw;
+  padding:1.2vw 13vw;
+ }
+ .modalls-footer {
+  margin-top:3vw;
+ }
+
+ .form-group:first-child {
+  margin-top:5vw;
+ }
     #menu {
-    	width: 7vw;
-    	height: 7vw;
+      width: 7vw;
+      margin-top:2.3vw;
+      height: 7vw;
     }
     #tixzoo-logo {
-    	width: 50vw;
-    	margin-left: 35vw;
+      width: 30vw;
+      margin-left: 34vw;
     }
     #btn-container {
         display: none;
@@ -32,84 +65,136 @@
         display: none;
     }
     .cb-slideshow h1 {
-    	font-size: 9vw;
-    	margin-top: 2vw;
-    	margin-left: 0vw;
+      font-size: 8vw;
+      margin-top: 2vw;
+      margin-left: 0vw;
     }
     .cb-slideshow h3 {
-    	font-size: 5vw;
-    	margin-left: 0vw;
-    	margin-top: 8vw;
+      font-size: 5vw;
+      margin-left: 0vw;
+      margin-top: 8vw;
     }
     #innerSearch {
-	    width: 95%;
-	    margin-left: auto;
-	    margin-right: auto;
-	    margin-top: 13vw;
-	}
-	#searchField {
-		height: 10vw;
-		font-size: 5vw;
-		padding-left: 2vw;
-	}
-	.ember-view #search-btn {
-		padding:3vw 0;
-		height: 10vw;
-	}
-	.suggestions a {
-		font-size: 5vw;
-	}
-	#search-btn img {
-		width:4vw;
-	}
-	input[type="search"]:focus + .suggestions li{
+      width: 95%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 13vw;
+  }
+  #searchField {
+    height: 10vw;
+    font-size: 5vw;
+    padding-left: 2vw;
+  }
+  .ember-view #search-btn {
+    padding:3vw 0;
+    height: 10vw;
+  }
+  .suggestions a {
+    font-size: 5vw;
+  }
+  #search-btn img {
+    width:4vw;
+  }
+  input[type="search"]:focus + .suggestions li{
     height:7.8vw;
-	}
-	#main-features{
-		z-index: 5;
-	}
-	#footer-container{
-		height: 20vw;
-	}
-	.newsletter-title{
-		font-size: 8vw;
-		margin-top: -2vw;
-	}
-	footer {
-		height: 20vw;
-	}
-	.newsletter .newsletter-form {
-		width: 60%;
-		height: 7vw !important;
-		font-size: 3.5vw !important;
-		color: white !important;
-	}
+  }
+  #main-features{
+    z-index: 5;
+  }
+  #footer-container{
+    height: 20vw;
+  }
+  .newsletter-title{
+    font-size: 8vw;
+    margin-top: -2vw;
+  }
+  footer {
+    height: 20vw;
+    padding-top: 2vw;
+  }
 
 
-	#newsletter-btn {
-		width: 25vw;
-		font-size: 1.5vw !important;
-	}
-	.footer-link {
-		font-size: 3vw;
-	}
-	ul#footer-class {
-		width: 100%;
-		text-align: center;
-	}
-	.social-media-icon1 {
-		width: 5vw;
-	}
-	.social-media-icon2 {
-		width: 5vw;
-	}
-	.social-media-icon3 {
-		width: 5vw;
-	}
-	#footer-class li {
-		padding-left: 8vw;
-	}
-	.copyright p {
-		font-size: 2vw;
-	}
+  .newsletter .newsletter-form {
+    width: 60%;
+    height: 7vw !important;
+    font-size: 3.5vw !important;
+    color: white !important;
+  }
+  .login-media {
+    display:block;
+  }
+
+  .signup-media {
+    display:block;
+  }
+
+  #newsletter-btn {
+    width: 25vw;
+    font-size: 1.5vw !important;
+  }
+  .footer-link {
+    font-size: 3vw;
+  }
+  ul#footer-class {
+    width: 100%;
+    text-align: center;
+  }
+  .social-media-icon1 {
+    width: 5vw;
+  }
+  .social-media-icon2 {
+    width: 5vw;
+  }
+  .social-media-icon3 {
+    width: 5vw;
+  }
+  #footer-class li {
+    padding-left: 8vw;
+  }
+  .copyright p {
+    font-size: 2vw;
+  }
+
+  /* ticket-feed */
+
+  #search-suggestions {
+    margin-top:6vw;
+  }
+
+  .ticket-feed-item {
+    width:auto;
+    height:auto;
+  }
+
+  .artist-feed-pic {
+    width:auto;
+    height:auto;
+  }
+  .ticket-feed-item > #ticket-info {
+    transform:translateY(0);
+  }
+  #ticket-info{
+    width:100%;
+    height:auto;
+  }
+  #ticket-info > li > a {
+    font-size: 4vw;
+  }
+  #ticket-info > li:first-child > a {
+    font-size:5vw;
+  }
+  #price-link {
+    font-size: 4vw;
+  }
+  #time-ago {
+    font-size: 4vw;
+  }
+
+  /* post ticket */
+
+  #ticket-post-container {
+    padding-top: 5vw;
+  }
+
+
 }

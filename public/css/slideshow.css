@@ -12,11 +12,12 @@
 .cb-slideshow h1 {
     color: white;
     font-size: 6vw;
-    font-weight: bold;
+    font-weight: 900;
     position: absolute;
     width: 100%;
     left: 0%;
-    font-family: gill sans;
+    letter-spacing: .5vw;
+    font-family: 'Lato', sans-serif;
     top: 18%;
 }
 
@@ -24,12 +25,13 @@
     color: white;
     font-size: 3vw;
     position: absolute;
-    text-transform: none; 
+    text-transform: none;
+    font-weight: 300;
     width: 100%;
     left: 0%;
-    font-family: gill sans;
+    font-family: 'Lato', sans-serif;
     top: 42%;
-    letter-spacing: .2vw;
+    letter-spacing: .3vw;
 }
 
 .cb-slideshow li span {

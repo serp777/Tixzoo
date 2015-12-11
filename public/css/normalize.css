@@ -68,7 +68,7 @@ template {
  */
 
 html {
-    font-family: gill sans; /* 1 */
+    font-family: 'Lato', sans-serif !important; /* 1 */
     height: 100%;
     /*height: 3000px;*/
     margin: 0px;
@@ -104,6 +104,7 @@ body > .ember-view {
 
 a {
     background: transparent;
+    cursor: pointer;
 }
 
 /**
@@ -430,6 +431,17 @@ table {
   background:none;
 }
 
+.login_modal_padding input {
+  margin-top:2vw;
+}
+
+.modalls_body .form-group {
+  margin-top:2vw;
+}
+
+.form-control {
+  margin-top:2vw;
+}
 
 #top-left {
   display: table;
@@ -485,8 +497,8 @@ copy
 }
 
 #tixzoo-logo {
-  width: 17vw;
-  margin:.75vw 44vw;
+  width: 11vw;
+  margin:.65vw 44vw;
   position: fixed;
   z-index: 10000;
 }
@@ -534,13 +546,15 @@ copy
 
 #main-features h1  {
   color: #5C6B7B;
-  font-family: gill sans;
+  font-family: 'Lato', sans-serif;
   margin-bottom: 0;
-  font-size: 4vw;
+  font-weight: 300;
+  letter-spacing: .3vw;
+  font-size: 3vw;
   font-weight: normal;
   text-transform: none;
   z-index: 10;
-  border-bottom: 1px lightgray solid;
+  border-bottom: 1px rgba(209,209,209,0.5) solid;
   padding-bottom: 1vw;
   width:30vw;
   margin:0 auto;
@@ -556,7 +570,7 @@ copy
   margin-top: 5vw;
   z-index: 10;
   border-radius: 50%;
-  font-family: gill sans;
+  font-family: 'Lato', sans-serif;
   transition: all .5s ease;
 }
 
@@ -580,7 +594,7 @@ copy
   position: relative;
   text-transform: none;
   font-weight: 400;
-  font-family: gill sans;
+  font-family: 'Lato', sans-serif;
   top: 4vw;
   margin: 0;
   padding: 0;
@@ -626,9 +640,7 @@ copy
   margin-top: 0;
   position: relative;
   text-align: center !important;
-  background-image:url(public/img/bottom-background.gif);
-  background-repeat: no-repeat;
-  background-size: 100% 110%;
+  background-color: lightgray;
   padding-top:13vw;
 }
 
@@ -637,16 +649,19 @@ copy
 }
 .newsletter .newsletter-form {
   position:relative;
-  color:white;
   height:3vw !important;
+  width: 50vw;
   font-size:1.5vw;
   margin-top:1vw;
   padding-left: 1vw;
-  border:1px solid white;
-  background:none;
-  border-radius: 2px;
-  font-family:gill sans;
+  border-radius: 1px;
+  font-family:'Lato', sans-serif;
   float:none;
+  border: white 1px solid;
+}
+
+-webkit-placeholder {
+  color:#5C6B7B;
 }
 
  input[type="button"] {
@@ -654,12 +669,6 @@ copy
  }
 
 
-.newsletter-form::-webkit-input-placeholder {
-color:white;
-font-family:gill sans;
-font-weight: lighter;
-
-}
 
 button {
   background:none;
@@ -669,32 +678,34 @@ button {
 #newsletter-btn {
   padding:1vw 4vw;
   margin:2vw;
-  border:1px solid #FFF;
   color:white;
-  background:none;
+  background:rgb(22,124,255);
   transition:all .3s ease-in-out;
   font-weight:lighter;
   font-size: 1vw;
   text-transform: uppercase;
-  font-family: gill sans;
+  font-family: 'Lato', sans-serif;
+  letter-spacing: .2vw;
+  border:rgb(22,124,255) solid 1px;
 
 }
 
 .newsletter #newsletter-btn:hover {
-  color:rgb(22,124,255);
+  background-color:rgb(22,120,255);
   font-weight: lighter;
-  background-color:#FFF;
   opacity:.8;
 }
 
 .newsletter-title {
   font-size: 2vw;
+  letter-spacing: .2vw;
   color:white;
+  font-family: 'Lato', sans-serif;
 }
 
 
 .column {
-  font-family: gill sans;
+  font-family: 'Lato', sans-serif;
 }
 
 
@@ -750,4 +761,3 @@ button {
 @media(min-width:768px){}
 @media(min-width:992px){}
 @media(min-width:1200px){}
-
