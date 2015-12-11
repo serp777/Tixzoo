@@ -22,12 +22,12 @@
         {{#link-to 'main-page'}}<img id="tixzoo-logo" img src="img/tixzoo-logo.png">{{/link-to}}
         <div class="nav-bar">
             <div id="btn-container">
-                <table> 
+                <table>
                 {{#if loginSuccess}}
                     <tr><td style="padding-right: 2vw;"><a {{action "logout"}} class="create_Btn">Logout</a></td>
                     <td>{{#link-to 'user-profile' class="login_Btn"}}Profile{{/link-to}}</td></tr>
-                    
-                    
+
+
 >>>>>>> 1e08ac9fb47d96879ce999b6ff9037196e0dd2f2
                 {{else}}
                     <tr><td style="padding-right: 2vw;"><a {{action 'showModal' 'signup-modal'}} class="create_Btn">Sign Up</a></td>
@@ -114,8 +114,8 @@
     </script>
     <script type="text/x-handlebars" id="index" id"mainPage">
 
+
     </script>
-<<<<<<< HEAD
 
     <script src="app/pickaday.js"></script>
     <script src="app/libs/jquery-1.10.2.js"></script>
@@ -140,24 +140,7 @@
     <script src="app/controllers/customerSupport.js"></script>
     <script src="app/controllers/bootstrap.js"></script>
     <script src="app/controllers/ticketWallet.js"></script>
-=======
-    <script src="js/pickaday.js"></script>
-    <script src="js/libs/jquery-1.10.2.js"></script>
-    <script src="js/ember-template-compiler.js"></script>
-    <script src="js/libs/ember-1.21.1.js"></script>
-    <script src="js/controllers/app.js"></script>
-    <script src="js/controllers/loginModal.js"></script>
-    <script src="js/controllers/signupModal.js"></script>
-    <script src="js/controllers/mainPage.js"></script>
-    <script src="js/controllers/ticketFeed.js"></script>
-    <script src="js/controllers/userProfile.js"></script>
-    <script src="js/controllers/viewTicket.js"></script>
-    <script src="js/controllers/postTicket.js"></script>
-    <script src="js/controllers/buyticketModal.js"></script>
-    <script src="js/controllers/customerSupport.js"></script>
-    <script src="js/controllers/bootstrap.js"></script>
-    <script src="js/controllers/ticketWallet.js"></script>
->>>>>>> 1e08ac9fb47d96879ce999b6ff9037196e0dd2f2
+
     <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
     <!-- to activate the test runner, add the "?test" query string parameter -->
     <script src="tests/runner.js"></script>
