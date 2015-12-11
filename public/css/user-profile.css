@@ -132,7 +132,11 @@ a:hover {
   color:white;
   background:lightgray;
   text-transform: none;
+<<<<<<< HEAD:public/css/user-profile.css
   border-bottom: 1px white
+=======
+  border-bottom: 1px white 
+>>>>>>> 1e08ac9fb47d96879ce999b6ff9037196e0dd2f2:css/user-profile.css
 }
 
 .has-submenu > ul > li:first-child {
@@ -157,7 +161,11 @@ a:hover {
     -webkit-transform:translateY(0);
   }
 
+<<<<<<< HEAD:public/css/user-profile.css
 }
+=======
+} 
+>>>>>>> 1e08ac9fb47d96879ce999b6ff9037196e0dd2f2:css/user-profile.css
 
 #profile-midright-container {
 
