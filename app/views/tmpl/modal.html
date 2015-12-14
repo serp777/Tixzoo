@@ -15,8 +15,10 @@
                 </form>
               </div>
             </div>
-              <a {{action 'creditCardOutput'}}>Click to Add credit card</a>
-              <a {{action 'creditCard'}}>Return</a>
+            <div id="add-credit">
+              <a {{action 'creditCardOutput'}} style="color:rgb(22,124,255);">Click to Add credit card</a>
+              <br><a {{action 'creditCard'}}><strong>Return</strong></a>
+            </div>
         {{else}}
             <table style="margin-top: auto; height: 7vw; width: 100%; margin-left: auto; margin-right: auto;">
               <tr>
@@ -31,7 +33,9 @@
                     <p id="view-ticket-time">8:00 pm</p>
                     <p id="view-ticket-venue">Avalon Nightclub, Hollywood, CA</p>
                     <p id="user-agreement">By clicking "Buy", you agree to Tixzoos <a style="font-color: blue;" href="#">Terms of Service</a> and <a href="#">User Agreement</a>.</p>
-                    <a {{action 'creditCard'}}>Add Credit Card</a>
+                    <div id="add-credit">
+                      <a {{action 'creditCard'}}>Add Credit Card</a>
+                    </div>
                   </div>
                 </td>
               </tr>

@@ -19,6 +19,24 @@
   text-align: center;
 }
 
+#textfieldGeneric {
+  float: none;
+  margin: 0 auto;
+}
+
+.payment-input li input {
+  width: 20vw !important;
+  margin: 0 auto !important;
+}
+
+#add-credit a {
+  color: rgb(22,124,255) !important;
+}
+
+#user-agreement a {
+  color: rgb(22,124,255) !important;
+}
+
 
 .login_Btn-postview:active {
   position: absolute;
