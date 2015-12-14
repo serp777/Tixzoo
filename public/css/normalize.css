@@ -643,7 +643,7 @@ copy
   background-color: lightgray;
   padding-top:13vw;
 }
- 
+
 .newsletter .ember-view {
   float:none !important;
 }
@@ -754,11 +754,14 @@ button {
 }
 /**** Footer container content ****/
 @media screen and (max-width:767px){
+<<<<<<< HEAD:public/css/normalize.css
+
+=======
   
+>>>>>>> 1e08ac9fb47d96879ce999b6ff9037196e0dd2f2:css/normalize.css
 
 
 }
 @media(min-width:768px){}
 @media(min-width:992px){}
 @media(min-width:1200px){}
-

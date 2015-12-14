@@ -1,10 +1,10 @@
 App.UserProfileController = Ember.Controller.extend({
 	needs: ['application'],
-  twitterIcon: 'img/twitter.png',
-  facebookIcon: 'img/fb.png',
-  instagramIcon: 'img/instagram.png',
-  tixzooLogo: 'img/tixzoo-logo.png',
-  maxFrat: 'img/max-frat.png',
+  twitterIcon: 'public/img/twitter.png',
+  facebookIcon: 'public/img/fb.png',
+  instagramIcon: 'public/img/instagram.png',
+  tixzooLogo: 'public/img/tixzoo-logo.png',
+  maxFrat: 'public/img/max-frat.png',
   password: '',
   email: '',
   loginSuccess: false,
@@ -15,7 +15,7 @@ App.UserProfileController = Ember.Controller.extend({
 	init: function() {
 	    this._super();
 	    var that = this;
-	    if(!this.get('loginSuccess')){ 
+	    if(!this.get('loginSuccess')){
 	      this.get('controllers.application').getCookies().success(function (data){
 	        if(data.cookie.email && data.cookie !== "noCookie"){
 	        	that.set('controllers.application.loginSuccess',true);
@@ -54,7 +54,7 @@ App.UserProfileController = Ember.Controller.extend({
                   that.set('lastName', data["last_name"]);
                   that.set('userTicketsSell', data["selling"]);
                   that.set('userTicketsBuy', data["buying"]);
-                } 
+                }
               },
               error: function(error){
                 console.log(error);
@@ -71,7 +71,7 @@ App.UserProfileController = Ember.Controller.extend({
       console.log(this.get('controllers.application.loginSuccess'));
 	    this.set('loginSuccess',this.get('controllers.application.loginSuccess'));
 	    this.set('email',this.get('controllers.application.email'));
-	    this.set('password',this.get('controllers.application.password')); 
+	    this.set('password',this.get('controllers.application.password'));
       if (!this.get('controllers.application.loginSuccess')) {
         this.set('firstName', '');
         this.set('lastName', '');

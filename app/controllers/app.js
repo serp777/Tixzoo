@@ -28,6 +28,10 @@ var loaderObj = {
   ]
 };
 
+loadCss(loaderObj.css);
+loadTemplates(loaderObj.templates);
+
+App = Ember.Application.create();
 
 //This function loads all templates into the view
 function loadTemplates(templates) {
@@ -39,7 +43,7 @@ function loadTemplates(templates) {
         $.ajax({
             async: false,
             type: 'GET',
-            url: 'js/views/tmpl/' + this,
+            url: 'app/views/tmpl/' + this,
             success: function(resp) {
                 tempObj.html(resp);
                 $('body').append(tempObj);
@@ -57,7 +61,7 @@ function loadCss(css) {
         $.ajax({
             async: false,
             type: 'GET',
-            url: 'css/' + this,
+            url: 'public/css/' + this,
             success: function(resp) {
                 tempObjCss.html(resp);
                 $('body').append(tempObjCss);
@@ -65,43 +69,6 @@ function loadCss(css) {
         });
     });
 }
-
-        
-
-
-loadCss(loaderObj.css);
-loadTemplates(loaderObj.templates);
-
-
-
-App = Ember.Application.create();
-App.Router.map(function() {
-  this.resource("ticket-feed", function(){
-    this.route("search", { path: "/:searchVal" });
-  });
-  this.resource("main-page", function(){
-    this.route("load", { path: "/" });
-  });
-  this.resource("post-ticket", function(){
-    this.route("load", { path: "/" });
-  });
-  this.resource("confirm-ticket", function(){
-    this.route("load", { path: "/" });
-  });
-  this.resource("user-profile", function(){
-    this.route("load", { path: "/" });
-  });
-  this.resource("view-ticket", function(){
-    this.route("load", { path: "/" });
-  });
-  this.resource("customer-support", function(){
-    this.route("load", { path: "/" });
-  });
-  this.resource("ticket-wallet", function(){
-    this.route("load", { path: "/" });
-  });
-});
-
 
 
 App.ApplicationController = Ember.Controller.extend({
@@ -117,20 +84,20 @@ App.ApplicationController = Ember.Controller.extend({
   date: '',
   dateVal: '',
   dateText: 'Date',
-  tixzooLogo: 'img/tixzoo-logo.png',
+  tixzooLogo: '/public/img/tixzoo-logo.png',
   quantity: '',
   quantityText: 'Quantity',
   price: '',
-  searchMag: 'img/searchbar1.png',
+  searchMag: '/public/img/searchbar1.png',
   route: 'main-page',
   ticketJson: [],
   tempTicketJson: [],
-  facebookIcon: 'img/fb.png',
-  instagramIcon: 'img/instagram.png',
-  lockIcon: 'img/lock-icon.png',
-  peertopeerIcon: 'img/messaging-icon.png',
-  snapchatIcon: 'img/',
-  twitterIcon: 'img/twitter.png',
+  facebookIcon: '/public/img/fb.png',
+  instagramIcon: '/public/img/instagram.png',
+  lockIcon: '/public/img/lock-icon.png',
+  peertopeerIcon: '/public/img/messaging-icon.png',
+  snapchatIcon: '/public/img/',
+  twitterIcon: '/public/img/twitter.png',
   init: function() {
     this._super();
     var url = window.location.href.split("/");
@@ -155,7 +122,7 @@ App.ApplicationController = Ember.Controller.extend({
         //that.transitionToRoute(that.get('route'));
         window.location.replace("http://mytixzoo.com/#/main-page");
       });
-      
+
     } else {
       if(url[3] === null || url[3] === "" || url[4] === null || url[4] === ""){
         this.transitionToRoute(this.get('route'));
@@ -241,82 +208,14 @@ App.ApplicationController = Ember.Controller.extend({
       } else {
         this.set('wrapperClass','');
       }
-      
-    }
-  }
-});
-/*
- * ApplicationRoute
- */
-App.ApplicationRoute = Ember.Route.extend({
-  actions: {
-    showModal: function(name, model) {
-        this.render(name, {
-          into: 'application',
-          outlet: 'modal',
-          model: model
-        });
-      
 
-    },
-    removeModal: function() {
-      this.disconnectOutlet({
-        outlet: 'modal',
-        parentView: 'application'
-      });
     }
   }
 });
 
 
-/*
- * IndexRoute
- */
-App.IndexRoute = Ember.Route.extend({
 
-  model: function() {
-    return Ember.Object.create({ email: 'My email'});
-  }
-});
 
-/*
- * LogoutModalController
- */
-App.LogoutModalController = Ember.Controller.extend({
-  actions: {
-    logout: function() {
-      alert('logout');
-    }
-  }
-});
 
-App.MysecondModalComponent = Ember.Component.extend({
-  actions: {
-    ok: function() {
-      this.sendAction('ok');
-    }
-  },
-  show: function() {
-    this.$('.modal').modal().on('hidden.bs.modal', function() {
-      this.sendAction('close');
-    }.bind(this));
-  }.on('didInsertElement')
-});
 
-/*
- * MyModalComponent
- */
-App.MyModalComponent = Ember.Component.extend({
-  actions: {
-    ok: function() {
-      this.$('.modal').modal('hide');
-      this.sendAction('ok');
-    }
-  },
-  show: function() {
-    this.$('.modal').modal().on('hidden.bs.modal', function() {
-      this.sendAction('close');
-    }.bind(this));
-  }.on('didInsertElement')
-});
 

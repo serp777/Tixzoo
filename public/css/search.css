@@ -29,7 +29,7 @@
     margin-left: auto;
     margin-right: auto;
 }
-#searchField {
+.searchField {
   position: relative;
   width: 91%;
   height: 4vw;
@@ -208,7 +208,7 @@ textarea:focus, input:focus{
    width:13vw;
    border:rgb(39,175,208) 2px solid;
    margin-top:3vw;
-   background-image:url(img/searchbar1.png);
+   background-image:url(public/img/searchbar1.png);
    background-repeat: no-repeat;
 }
 

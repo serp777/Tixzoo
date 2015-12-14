@@ -1,6 +1,6 @@
 
 body {
-	background-image:url(img/profile-background.png);
+	background-image:url(public/img/profile-background.png);
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
 }
@@ -82,7 +82,7 @@ input::-webkit-input-placeholder {
 }
 
 .customer-support-title p{
-	
+
 	text-transform: none;
 	color:white;
 	font-weight: lighter;

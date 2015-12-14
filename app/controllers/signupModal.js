@@ -5,7 +5,7 @@ App.SignupModalController = Ember.Controller.extend({
   passwordVerifyText: 'Verify Password',
   email: '',
   emailText: 'example@example.com',
-  signupModal: '/img/background_modal.png',
+  signupModal: 'public/img/background_modal.png',
   existsAlready: false,
   errorMessage: "No errors",
   spinner: false,
@@ -25,7 +25,7 @@ App.SignupModalController = Ember.Controller.extend({
                 console.log("failed");
               } else {
                 $('.modal').modal('hide');
-              } 
+              }
             }
           });
           console.log(xhr);

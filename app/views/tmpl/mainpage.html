@@ -12,8 +12,8 @@
     <div id="search-bar">
       <form class="searchbox" >
         <div id="innerSearch">
-          <div id="search-btn">{{#link-to 'ticket-feed.search' searchText}}<img style="" src="img/searchbar2.png">{{/link-to}}</div>
-          {{input type="search" id="searchField" value=searchText placeholder="Search by artist, genre or location"}}
+          <div id="search-btn">{{#link-to 'ticket-feed.search' searchText}}<img style="" src="/public/img/searchbar2.png">{{/link-to}}</div>
+          {{input type="search" class="searchField" value=searchText placeholder="Search by artist, genre or location"}}
           <ul class="suggestions">
             {{#each object in tempTicketJson}}
               <span {{action 'showModal' 'buyticket-modal' object}}>
@@ -29,17 +29,17 @@
     <div id="main-features">
       <h1>About Us</h1>
       <div class="column" id="peer-to-peer-icon">
-        <img src="splash-page/talk-feature.png">
+        <img src="/public/img/talk-feature.png">
         <h3>Peer-to-Peer</h3>
         <p>Tixzoo users are given freedom to determine the ticket price they want and with whom they exchange.</p>
       </div>
       <div class="column" id="security-icon">
-        <img src="splash-page/lock-feature.png">
+        <img src="/public/img/lock-feature.png">
         <h3>Security</h3>
-        <p>Every ticket exchange and payment is authenticated. No more sketchy meetups or dubious text messages.</p>
+        <p>Tixzoo users are given freedom to determine the ticket price they want and with whom they exchange.</p>
       </div>
       <div class="column" id="affordability-icon">
-          <img src="splash-page/money-feature.png">
+          <img src="/public/img/money-feature.png">
         <h3>Affordability</h3>
         <p>Lowest transaction fees in the market. Get rewarded with every exchange and your next concert could be on us.</p>
       </div>
@@ -49,7 +49,7 @@
       <div class="main-about">
         <form class="newsletter">
         <h1 class="newsletter-title">newsletter</h1>
-          <p>{{input class="newsletter-form" placeholder="Your email address" value=email }}</p>
+          <p>{{input class="newsletter-form" placeholder="Your email address..." value=email }}</p>
           <button type="button" id="newsletter-btn" {{action 'ok'}}>Join the Zoo</button>
         </form>
       </div>

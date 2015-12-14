@@ -8,7 +8,7 @@ App.LoginModalController = Ember.Controller.extend({
   email: '',
   emailText: 'example@example.com',
   errorMessage: 'This is a glitch if this shows up',
-  spinnerImg: 'img/spinner.GIF',
+  spinnerImg: 'public/img/spinner.GIF',
   signInError: false,
   spinner: false,
   actions: {
@@ -29,7 +29,7 @@ App.LoginModalController = Ember.Controller.extend({
                   that.set('controllers.application.password',that.get('password'));
                   that.set('controllers.application.loginSuccess',true);
                   $('.modal').modal('hide');
-                } 
+                }
                 if(data["error"]){
                   that.set('errorMessage',data["errorMessage"]);
                   that.set('signInError',true);

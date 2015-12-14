@@ -3,7 +3,7 @@
  */
 App.BuyticketModalController = Ember.Controller.extend({
   needs: ['application'],
-  maxFrat: 'img/max-frat.png',
+  maxFrat: 'public/img/max-frat.png',
   creditCard: 'buy-form-group',
   toggled: false,
   fullname: "",

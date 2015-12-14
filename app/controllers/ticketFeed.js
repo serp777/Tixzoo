@@ -3,11 +3,11 @@ App.TicketFeedController = Ember.Controller.extend({
   loginSuccess: false,
   email: '',
   password: '',
-  disclosurePhoto: 'img/disclosure-artist.png',
-  maxFrat: 'img/max-frat.png',
-  facebookIcon: 'img/fb.png',
-  instagramIcon: 'img/instagram.png',
-  twitterIcon: 'img/twitter.png',
+  disclosurePhoto: 'public/img/disclosure-artist.png',
+  maxFrat: 'public/img/max-frat.png',
+  facebookIcon: 'public/img/fb.png',
+  instagramIcon: 'public/img/instagram.png',
+  twitterIcon: 'public/img/twitter.png',
   ticketJson: [],
   sortProperties: ['rating:desc', 'price:asc'],
   sortedTickets: Ember.computed.sort('ticketJson', 'sortProperties'),
@@ -35,7 +35,7 @@ App.TicketFeedController = Ember.Controller.extend({
   updateLogin: function(){
     this.set('loginSuccess',this.get('controllers.application.loginSuccess'));
     this.set('email',this.get('controllers.application.email'));
-    this.set('password',this.get('controllers.application.password')); 
+    this.set('password',this.get('controllers.application.password'));
   }.observes('controllers.application.loginSuccess'),
   actions: {
   	sortBy: function(sortProperties) {

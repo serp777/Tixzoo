@@ -3,7 +3,7 @@
 #ticket-post-container {
   height: 60em;
   background-color: white;
-  background-image:url(img/90.jpg);
+  background-image:url(public/img/90.jpg);
 }
 
 #ticket-post-positioner-left {
@@ -80,7 +80,7 @@
   left:0;
   right:0;
   top:0;
-} 
+}
 
 .credit-dropdown .dropdown-menu li a {
   font-size: .8vw;

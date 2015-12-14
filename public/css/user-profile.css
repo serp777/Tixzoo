@@ -3,7 +3,7 @@
 #user-profile-container {
   height: 100%;
   width:100%;
-  background-image:url(img/93.jpg);
+  background-image:url(public/img/93.jpg);
   background-repeat: no-repeat;
 
 }
@@ -132,7 +132,11 @@ a:hover {
   color:white;
   background:lightgray;
   text-transform: none;
+<<<<<<< HEAD:public/css/user-profile.css
+  border-bottom: 1px white
+=======
   border-bottom: 1px white 
+>>>>>>> 1e08ac9fb47d96879ce999b6ff9037196e0dd2f2:css/user-profile.css
 }
 
 .has-submenu > ul > li:first-child {
@@ -157,7 +161,11 @@ a:hover {
     -webkit-transform:translateY(0);
   }
 
+<<<<<<< HEAD:public/css/user-profile.css
+}
+=======
 } 
+>>>>>>> 1e08ac9fb47d96879ce999b6ff9037196e0dd2f2:css/user-profile.css
 
 #profile-midright-container {
 
@@ -167,7 +175,7 @@ a:hover {
   float:left;
   width:60vw;
   padding:0;
- 
+
 
 }
 
@@ -312,7 +320,7 @@ footer {
   bottom:0;
   clear:both;
   box-sizing:border-box;
-  
+
  }
 
  footer a {
@@ -332,7 +340,7 @@ footer {
   border-style: solid;
   border-color:rgb(39,175,208);
 
- 
+
 }
 
 #no-dot-footer {
@@ -400,7 +408,7 @@ footer a:hover {
 ul#footer-class {
   display:inline-block;
   text-align: center;
- 
+
 }
 
 .footer-pages {

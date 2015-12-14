@@ -2,13 +2,12 @@
 
 <head>
   <meta charset="utf-8">
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700,900' rel='stylesheet' type='text/css'>
   <title>Tixzoo</title>
 </head>
 <body>
 <script type="text/x-handlebars">
     <div id="top-nav-bar-container">
-        {{#link-to 'main-page'}}<img id="tixzoo-logo" img src="img/tixzoo-logo.png">{{/link-to}}
+        {{#link-to 'main-page'}}<img id="tixzoo-logo" {{bind-attr src=tixzooLogo alt="tixzooLogo"}}>{{/link-to}}
         <div class="nav-bar">
             <div id="btn-container">
                 <table> 
@@ -33,12 +32,6 @@
                 <li >
                     <a href="#">Home</a>
                 </li>
-                <li class="login-media">
-                    <a href="#">login</a>
-                </li>
-                <li class="signup-media">
-                    <a href="#">sign up</a>
-                </li>
                 <li>
                     <a href="#">edit&nbsp;profile</a>
                 </li>
@@ -60,8 +53,7 @@
                 <li>
                     <a href="#">logout</a>
                 </li>
-
-                <li><div style="padding-top: 2vw;">{{input type="search" id="searchField" class="sideBar-search" value=searchText placeholder="Search tickets"}}</div></li>
+                <li><div style="padding-top: 2vw;">{{input type="search" id="searchField" value=searchText placeholder="Search tickets"}}</div></li>
             </ul>
         </div>
     </div>
@@ -95,23 +87,33 @@
     </script>
     <script type="text/x-handlebars" id="index" id"mainPage">
 
+
     </script>
-    <script src="js/pickaday.js"></script>
-    <script src="js/libs/jquery-1.10.2.js"></script>
-    <script src="js/ember-template-compiler.js"></script>
-    <script src="js/libs/ember-1.21.1.js"></script>
-    <script src="js/controllers/app.js"></script>
-    <script src="js/controllers/loginModal.js"></script>
-    <script src="js/controllers/signupModal.js"></script>
-    <script src="js/controllers/mainPage.js"></script>
-    <script src="js/controllers/ticketFeed.js"></script>
-    <script src="js/controllers/userProfile.js"></script>
-    <script src="js/controllers/viewTicket.js"></script>
-    <script src="js/controllers/postTicket.js"></script>
-    <script src="js/controllers/buyticketModal.js"></script>
-    <script src="js/controllers/customerSupport.js"></script>
-    <script src="js/controllers/bootstrap.js"></script>
-    <script src="js/controllers/ticketWallet.js"></script>
+
+    <script src="app/pickaday.js"></script>
+    <script src="app/libs/jquery-1.10.2.js"></script>
+    <script src="app/ember-template-compiler.js"></script>
+    <script src="app/libs/ember-1.21.1.js"></script>
+
+    <script src="app/controllers/app.js"></script>
+    <script src="app/router.js"></script>
+    <script src="app/routes/application.js"></script>
+    <script src="app/routes/index.js"></script>
+    <script src="app/components/firstModal.js"></script>
+    <script src="app/components/secondModal.js"></script>
+    <script src="app/controllers/loginModal.js"></script>
+    <script src="app/controllers/logoutModal.js"></script>
+    <script src="app/controllers/signupModal.js"></script>
+    <script src="app/controllers/mainPage.js"></script>
+    <script src="app/controllers/ticketFeed.js"></script>
+    <script src="app/controllers/userProfile.js"></script>
+    <script src="app/controllers/viewTicket.js"></script>
+    <script src="app/controllers/postTicket.js"></script>
+    <script src="app/controllers/buyticketModal.js"></script>
+    <script src="app/controllers/customerSupport.js"></script>
+    <script src="app/controllers/bootstrap.js"></script>
+    <script src="app/controllers/ticketWallet.js"></script>
+
     <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
     <!-- to activate the test runner, add the "?test" query string parameter -->
     <script src="tests/runner.js"></script>

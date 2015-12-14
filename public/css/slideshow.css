@@ -26,7 +26,11 @@
     font-size: 3vw;
     position: absolute;
     text-transform: none;
+<<<<<<< HEAD:public/css/slideshow.css
+    font-weight: 300;
+=======
     font-weight: 300; 
+>>>>>>> 1e08ac9fb47d96879ce999b6ff9037196e0dd2f2:css/slideshow.css
     width: 100%;
     left: 0%;
     font-family: 'Lato', sans-serif;
