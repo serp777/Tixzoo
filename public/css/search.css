@@ -29,7 +29,7 @@
     margin-left: auto;
     margin-right: auto;
 }
-#searchField {
+.searchField {
   position: relative;
   width: 91%;
   height: 4vw;

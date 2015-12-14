@@ -13,7 +13,7 @@
       <form class="searchbox" >
         <div id="innerSearch">
           <div id="search-btn">{{#link-to 'ticket-feed.search' searchText}}<img style="" src="/public/img/searchbar2.png">{{/link-to}}</div>
-          {{input type="search" id="searchField" value=searchText placeholder="Search by artist, genre or location"}}
+          {{input type="search" class="searchField" value=searchText placeholder="Search by artist, genre or location"}}
           <ul class="suggestions">
             {{#each object in tempTicketJson}}
               <span {{action 'showModal' 'buyticket-modal' object}}>

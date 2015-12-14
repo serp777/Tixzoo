@@ -2,33 +2,20 @@
 
 <head>
   <meta charset="utf-8">
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700,900' rel='stylesheet' type='text/css'>
   <title>Tixzoo</title>
 </head>
 <body>
 <script type="text/x-handlebars">
     <div id="top-nav-bar-container">
-<<<<<<< HEAD
         {{#link-to 'main-page'}}<img id="tixzoo-logo" {{bind-attr src=tixzooLogo alt="tixzooLogo"}}>{{/link-to}}
         <div class="nav-bar">
             <div id="btn-container">
-                <table>
+                <table> 
                 {{#if loginSuccess}}
                     <tr><td style="padding-right: 2vw;"><a {{action "logout"}} class="create_Btn">Logout</a></td>
                     <td>{{#link-to 'user-profile' class="login_Btn"}}Profile{{/link-to}}</td></tr>
-
-
-=======
-        {{#link-to 'main-page'}}<img id="tixzoo-logo" img src="img/tixzoo-logo.png">{{/link-to}}
-        <div class="nav-bar">
-            <div id="btn-container">
-                <table>
-                {{#if loginSuccess}}
-                    <tr><td style="padding-right: 2vw;"><a {{action "logout"}} class="create_Btn">Logout</a></td>
-                    <td>{{#link-to 'user-profile' class="login_Btn"}}Profile{{/link-to}}</td></tr>
-
-
->>>>>>> 1e08ac9fb47d96879ce999b6ff9037196e0dd2f2
+                    
+                    
                 {{else}}
                     <tr><td style="padding-right: 2vw;"><a {{action 'showModal' 'signup-modal'}} class="create_Btn">Sign Up</a></td>
                     <td><a {{action 'showModal' 'login-modal' secondmodel}} class="login_Btn">Login</a></td></tr>
@@ -44,15 +31,6 @@
             <ul class="sidebar-nav">
                 <li >
                     <a href="#">Home</a>
-<<<<<<< HEAD
-=======
-                </li>
-                <li class="login-media">
-                    <a href="#">login</a>
-                </li>
-                <li class="signup-media">
-                    <a href="#">sign up</a>
->>>>>>> 1e08ac9fb47d96879ce999b6ff9037196e0dd2f2
                 </li>
                 <li>
                     <a href="#">edit&nbsp;profile</a>
@@ -75,16 +53,11 @@
                 <li>
                     <a href="#">logout</a>
                 </li>
-<<<<<<< HEAD
                 <li><div style="padding-top: 2vw;">{{input type="search" id="searchField" value=searchText placeholder="Search tickets"}}</div></li>
-=======
-
-                <li><div style="padding-top: 2vw;">{{input type="search" id="searchField" class="sideBar-search" value=searchText placeholder="Search tickets"}}</div></li>
->>>>>>> 1e08ac9fb47d96879ce999b6ff9037196e0dd2f2
             </ul>
         </div>
     </div>
-    <a {{action "sideBar"}} class="menu"><img src="public/img/menu.png" id="menu"></a>
+    <a {{action "sideBar"}} class="menu"><img src="img/menu.png" id="menu"></a>
 
     {{outlet}}
     {{outlet 'modal'}}
