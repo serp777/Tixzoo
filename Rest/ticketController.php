@@ -52,6 +52,10 @@ class ticketControllerClass {
 		$result = $rows;
 		return $result;
 	}
+	public function getRecentActivity($accountID){
+		/********* Need update after integrate with Facebook ***********/
+		
+	}
 	public function createTicket($name, $sellerID, $location, $date, $price, $type, $description){
 		// To protect MySQL injection (more detail about MySQL injection)
 		$dbconn = $this->setupConnection();
